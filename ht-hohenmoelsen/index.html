@@ -29,7 +29,8 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--text);color:var(--tinte);background:var(--papier);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;font-family:var(--text);color:var(--tinte);background:var(--papier);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:104px}
+@media (max-width:760px){body{padding-bottom:172px}}
 h1,h2,h3,h4{font-family:var(--sans);margin:0;letter-spacing:-.025em;line-height:1.12;font-weight:800}
 p{margin:0}
 a{color:inherit}
@@ -44,11 +45,33 @@ img{max-width:100%;display:block}
 .btn--hell:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
 .marke{font-family:var(--text);font-size:.73rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--akzent)}
 
-/* ---------- Entwurfs-Banner ---------- */
-.entwurf{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--tief);color:#fff;font-size:.8rem;padding:.7rem 1.2rem;display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap;text-align:center}
-.entwurf b{font-family:var(--sans);font-weight:700}
-.entwurf span{color:#A9B5BD}
+/* ---------- Entwurfs-Kennzeichnung ---------- */
+/* Zwei Stellen, damit auf jedem Bildschirm sofort klar ist: nicht veröffentlicht. */
+.vorschaumarke{
+  position:fixed;top:84px;right:16px;z-index:95;pointer-events:none;
+  display:flex;flex-direction:column;gap:.08rem;
+  background:rgba(20,24,28,.88);border:1px solid rgba(255,255,255,.24);
+  border-radius:10px;padding:.48rem .78rem;
+  font-family:var(--sans);line-height:1.2;color:#fff;
+  box-shadow:0 12px 28px -16px rgba(0,0,0,.7);
+}
+.vorschaumarke b{font-size:.74rem;font-weight:800;letter-spacing:.1em}
+.vorschaumarke span{font-size:.67rem;font-weight:600;color:#BBC6CD}
+/* Auf dem Telefon würde die Marke den Anfragen-Knopf verdecken;
+   dort trägt der untere Balken die Kennzeichnung allein. */
+@media (max-width:760px){.vorschaumarke{display:none}}
+
+.entwurf{
+  position:fixed;left:0;right:0;bottom:0;z-index:96;
+  background:var(--tief);color:#AEBAC2;
+  border-top:2px solid var(--akzent);
+  padding:.9rem max(1.1rem,env(safe-area-inset-right,0px)) calc(.9rem + env(safe-area-inset-bottom,0px)) max(1.1rem,env(safe-area-inset-left,0px));
+  font-size:.81rem;text-align:center;
+}
+.entwurf-haupt{display:block;font-family:var(--sans);font-weight:700;font-size:.92rem;color:#fff;margin-bottom:.28rem}
+.entwurf-rest{display:flex;align-items:center;justify-content:center;gap:.4rem .9rem;flex-wrap:wrap}
 .entwurf a{color:#fff;text-underline-offset:3px}
+.entwurf a:hover{color:var(--akzent)}
 
 /* ---------- Kopf ---------- */
 .kopf{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--linie)}
@@ -425,10 +448,19 @@ section{padding-block:clamp(3.5rem,6vw,5.5rem)}
   </div>
 </footer>
 
+<div class="vorschaumarke" aria-hidden="true">
+  <b>VORSCHAU</b>
+  <span>nicht veröffentlicht</span>
+</div>
+
 <div class="entwurf">
-  <b>Unverbindlicher Entwurf für Hoch- und Tiefbau GmbH Hohenmölsen</b>
-  <span>Gestaltet von TerminWerk Systeme · noch nicht veröffentlicht</span>
-  <a href="https://terminwerk-systeme.de/kontakt/#termin">Gespräch vereinbaren</a>
+  <span class="entwurf-haupt">Unverbindlicher Entwurf für Hoch- und Tiefbau GmbH Hohenmölsen — diese Seite ist nicht veröffentlicht.</span>
+  <span class="entwurf-rest">
+    <span>Gestaltet von TerminWerk Systeme · für Suchmaschinen gesperrt · nur über diesen Link erreichbar</span>
+    <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+    <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+    <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+  </span>
 </div>
 
 </body>
