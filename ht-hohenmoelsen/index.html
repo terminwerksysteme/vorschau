@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Hoch- und Tiefbau GmbH Hohenmölsen — Hoch- und Tiefbau in Hohenmölsen</title>
+<meta name="description" content="Hoch- und Tiefbau GmbH Hohenmölsen: Hausbau, Industriebau, Sanierung, Beton- und Stahlbetonarbeiten sowie Pflaster-, Entwässerungs- und Schachtarbeiten. Eigener Maschinenpark, 15 Mitarbeiter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --akzent:#1E6B8C;
+  --akzent-d:#195873;
+  --tief:#14181C;
+  --tief-2:#1D242A;
+  --papier:#FFFFFF;
+  --papier-2:#F5F6F4;
+  --papier-3:#ECEEEB;
+  --tinte:#14181C;
+  --tinte-weich:#4A545C;
+  --tinte-matt:#737F88;
+  --linie:#E2E6E3;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --text:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --col:1240px;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--text);color:var(--tinte);background:var(--papier);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--sans);margin:0;letter-spacing:-.025em;line-height:1.12;font-weight:800}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--col),100% - 2.5rem);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:700;font-size:.95rem;padding:.95rem 1.6rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn--haupt{background:var(--akzent);color:#fff;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--akzent) 80%,transparent)}
+.btn--haupt:hover{transform:translateY(-2px);background:var(--akzent-d)}
+.btn--rand{background:transparent;color:var(--tinte);border:1.5px solid var(--linie)}
+.btn--rand:hover{border-color:var(--tinte);transform:translateY(-2px)}
+.btn--hell{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn--hell:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+.marke{font-family:var(--text);font-size:.73rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--akzent)}
+
+/* ---------- Entwurfs-Banner ---------- */
+.entwurf{position:fixed;left:0;right:0;bottom:0;z-index:90;background:var(--tief);color:#fff;font-size:.8rem;padding:.7rem 1.2rem;display:flex;align-items:center;justify-content:center;gap:.85rem;flex-wrap:wrap;text-align:center}
+.entwurf b{font-family:var(--sans);font-weight:700}
+.entwurf span{color:#A9B5BD}
+.entwurf a{color:#fff;text-underline-offset:3px}
+
+/* ---------- Kopf ---------- */
+.kopf{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--linie)}
+.kopf-in{display:flex;align-items:center;gap:1.6rem;padding-block:.95rem}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.05}
+.logo b{font-family:var(--sans);font-weight:800;font-size:1.3rem;letter-spacing:-.03em}
+.logo small{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tinte-matt);margin-top:.2rem}
+.nav{display:flex;gap:1.7rem;margin-left:auto}
+.nav a{text-decoration:none;font-size:.93rem;font-weight:600;color:var(--tinte-weich)}
+.nav a:hover{color:var(--akzent)}
+.kopf-tel{display:flex;flex-direction:column;align-items:flex-end;text-decoration:none;line-height:1.15}
+.kopf-tel small{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tinte-matt)}
+.kopf-tel b{font-family:var(--sans);font-size:1.02rem}
+.brenner{display:none;background:none;border:0;padding:.5rem;cursor:pointer}
+
+/* ---------- Bühne ---------- */
+.buehne{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.buehne-bild{position:absolute;inset:0;background:linear-gradient(145deg,var(--tief) 0%,var(--tief-2) 45%,color-mix(in srgb,var(--akzent) 30%,var(--tief)) 100%)}
+.buehne-bild img{width:100%;height:100%;object-fit:cover}
+.buehne-bild::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,28,.55) 0%,rgba(20,24,28,.35) 40%,rgba(20,24,28,.92) 100%)}
+.buehne-in{position:relative;padding-block:4.5rem 3.5rem;max-width:62ch}
+.buehne h1{font-size:clamp(2.3rem,1.5rem + 3.4vw,4.1rem);margin:1.1rem 0 1.2rem}
+.buehne h1 em{font-style:normal;color:var(--akzent)}
+.buehne .lede{font-size:clamp(1.05rem,1rem + .4vw,1.25rem);color:#D8DEE2;max-width:52ch}
+.buehne .tasten{display:flex;gap:.8rem;margin-top:2.1rem;flex-wrap:wrap}
+.buehne .marke{color:#fff;background:var(--akzent);padding:.4rem .85rem;border-radius:999px;display:inline-block}
+
+/* ---------- Zahlenband ---------- */
+.band{background:var(--tief);color:#fff}
+.band-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;padding-block:2.2rem}
+.band-z{display:flex;flex-direction:column;gap:.25rem}
+.band-z b{font-family:var(--sans);font-size:2rem;font-weight:800;letter-spacing:-.03em;color:var(--akzent)}
+.band-z span{font-size:.88rem;color:#A9B5BD}
+
+/* ---------- Abschnitte ---------- */
+section{padding-block:clamp(3.5rem,6vw,5.5rem)}
+.kopfzeile{max-width:60ch;margin-bottom:2.8rem}
+.kopfzeile h2{font-size:clamp(1.9rem,1.4rem + 2vw,2.9rem);margin:.85rem 0 .9rem}
+.kopfzeile p{color:var(--tinte-weich);font-size:1.08rem}
+.hell{background:var(--papier-2)}
+
+/* Leistungen */
+.gewerke{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.gewerk{background:var(--papier);border:1px solid var(--linie);border-radius:var(--r);padding:1.8rem 1.6rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.gewerk:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--akzent) 40%,var(--linie));box-shadow:0 22px 44px -28px rgba(20,24,28,.4)}
+.gewerk-ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--akzent) 12%,#fff);margin-bottom:1.1rem}
+.gewerk-ic svg{width:22px;height:22px;stroke:var(--akzent);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.gewerk h3{font-size:1.18rem;margin-bottom:.5rem}
+.gewerk p{color:var(--tinte-weich);font-size:.95rem}
+
+/* Projekte */
+.projekte{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}
+.projekt{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;display:flex;align-items:flex-end;color:#fff;text-decoration:none;background:linear-gradient(160deg,var(--tief-2) 0%,var(--tief) 60%,color-mix(in srgb,var(--akzent) 24%,var(--tief)) 100%)}
+.projekt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.projekt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(20,24,28,.9) 100%)}
+.projekt:hover img{transform:scale(1.05)}
+.projekt-txt{position:relative;padding:1.5rem;z-index:2}
+.projekt-txt small{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--akzent)}
+.projekt-txt h3{font-size:1.2rem;margin:.4rem 0 .25rem}
+.projekt-txt span{font-size:.88rem;color:#CBD3D8}
+
+/* Über uns */
+.ueber{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.ueber-bild{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(150deg,var(--tief-2) 0%,var(--tief) 55%,color-mix(in srgb,var(--akzent) 22%,var(--tief)) 100%)}
+.ueber-bild img{width:100%;height:100%;object-fit:cover}
+.punkte{list-style:none;margin:1.8rem 0 0;padding:0;display:flex;flex-direction:column;gap:.9rem}
+.punkte li{display:flex;gap:.8rem;align-items:flex-start;font-size:1rem}
+.punkte svg{width:20px;height:20px;flex:none;margin-top:.22rem;stroke:var(--akzent);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* Jobs */
+.jobs{background:var(--tief);color:#fff}
+.jobs .kopfzeile h2{color:#fff}
+.jobs .kopfzeile p{color:#A9B5BD}
+.stellen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+.stelle{background:var(--tief-2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.5rem;display:flex;flex-direction:column;gap:.5rem}
+.stelle b{font-family:var(--sans);font-size:1.08rem}
+.stelle span{font-size:.9rem;color:#A9B5BD}
+.stelle a{margin-top:.7rem;font-size:.9rem;font-weight:700;color:var(--akzent);text-decoration:none}
+
+/* Kontakt */
+.kontakt{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,4vw,3.5rem)}
+.kdaten{display:flex;flex-direction:column;gap:1.3rem}
+.kzeile{display:flex;gap:.95rem;align-items:flex-start}
+.kzeile-ic{width:42px;height:42px;flex:none;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--akzent) 12%,#fff)}
+.kzeile-ic svg{width:19px;height:19px;stroke:var(--akzent);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.kzeile small{display:block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tinte-matt);margin-bottom:.15rem}
+.kzeile b{font-family:var(--sans);font-size:1.05rem;font-weight:700}
+.kzeile p{font-size:.95rem;color:var(--tinte-weich)}
+.form{background:var(--papier);border:1px solid var(--linie);border-radius:var(--r);padding:1.9rem}
+.feld{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.feld label{font-size:.85rem;font-weight:700;font-family:var(--sans)}
+.feld input,.feld textarea,.feld select{font-family:var(--text);font-size:1rem;padding:.8rem .95rem;border:1px solid var(--linie);border-radius:10px;background:var(--papier-2)}
+.feld input:focus,.feld textarea:focus,.feld select:focus{outline:2px solid var(--akzent);outline-offset:1px}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form small{display:block;margin-top:.9rem;font-size:.8rem;color:var(--tinte-matt)}
+
+/* Fuß */
+.fuss{background:var(--tief);color:#A9B5BD;padding-block:3rem 2rem;font-size:.92rem}
+.fuss-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.fuss h4{color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-family:var(--text);font-weight:800;margin-bottom:1rem}
+.fuss ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.fuss a{text-decoration:none}
+.fuss a:hover{color:#fff}
+.fuss-unten{display:flex;justify-content:space-between;gap:1.5rem;padding-top:1.4rem;flex-wrap:wrap;font-size:.85rem}
+
+@media (max-width:980px){
+  .gewerke,.projekte,.stellen{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ueber,.kontakt{grid-template-columns:1fr}
+  .band-in{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem}
+  .fuss-grid{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+  .brenner{display:block;margin-left:auto}
+  .kopf-tel{margin-left:0}
+}
+@media (max-width:620px){
+  .gewerke,.projekte,.stellen{grid-template-columns:1fr}
+  .zwei{grid-template-columns:1fr}
+  .kopf-tel small{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="wrap kopf-in">
+    <a class="logo" href="#top">
+      <b>Hoch- und Tiefbau</b>
+      <small>GmbH Hohenmölsen · seit 1959</small>
+    </a>
+    <nav class="nav">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#ueber">Über uns</a>
+      <a href="#jobs">Karriere</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="kopf-tel" href="tel:+4934441445990">
+      <small>Direkt anrufen</small>
+      <b>034441 445990</b>
+    </a>
+    <a class="btn btn--haupt" href="#kontakt">Projekt anfragen</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="buehne" style="padding:0">
+    <div class="buehne-bild"><img src="https://www.ht-hhm.de/upload/slide/slide2.jpg" alt="Kran setzt ein Betonfertigteil" onerror="this.style.display='none'"></div>
+    <div class="wrap buehne-in">
+      <span class="marke">Hohenmölsen · Burgenlandkreis</span>
+      <h1>Seit 1959 bauen wir hier.<br><em>Mit eigenen Leuten und eigenem Gerät.</em></h1>
+      <p class="lede">Vom Einfamilienhaus bis zur Industriehalle, vom Rohbau bis zur Sanierung im Bestand. Fünfzehn Mitarbeiter, ein eigener Maschinenpark — und ein Ansprechpartner, der die Baustelle kennt.</p>
+      <div class="tasten">
+        <a class="btn btn--haupt" href="#kontakt">Projekt anfragen</a>
+        <a class="btn btn--hell" href="#projekte">Projekte ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap band-in">
+      <div class="band-z"><b>1959</b><span>gegründet, 1992 reprivatisiert</span></div>
+      <div class="band-z"><b>15</b><span>Mitarbeiter im eigenen Betrieb</span></div>
+      <div class="band-z"><b>9</b><span>Bagger und Lader im eigenen Park</span></div>
+      <div class="band-z"><b>4</b><span>Baukräne mit 25 und 30 m Ausleger</span></div>
+    </div>
+  </div>
+
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Leistungen</span>
+        <h2>Was wir übernehmen</h2>
+        <p>Die Gewerke, die wir mit eigenen Leuten ausführen — ohne Umweg über Subunternehmer.</p>
+      </div>
+      <div class="gewerke">
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></span>
+          <h3>Hausbau</h3>
+          <p>Ein-, Doppel- und Mehrfamilienhäuser. Auf Wunsch schlüsselfertig bis zur Übergabe.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20h20M4 20V9l8-5 8 5v11M9 20v-5h6v5"/><path d="M7 12h2M15 12h2"/></svg></span>
+          <h3>Industriebau</h3>
+          <p>Betriebsgebäude und Hallen — abgestimmt auf den laufenden Betrieb.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-8 8M10 20H4v-6M4 20l8-8"/></svg></span>
+          <h3>Sanierung</h3>
+          <p>Instandsetzung im Bestand, vom einzelnen Gewerk bis zur Komplettsanierung.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <h3>Beton und Stahlbeton</h3>
+          <p>Fundamente, Decken und Stützen. Schalung und Eisenverlegung mit eigenen Kolonnen.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v12H3zM7 7V4h10v3"/><path d="M8 13h8"/></svg></span>
+          <h3>Maurer- und Putzarbeiten</h3>
+          <p>Mauerwerk, Innen- und Außenputz — sauber abgesetzt und termingerecht fertig.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 19V8l6-4 6 4v11"/><path d="M10 19v-4h4v4"/></svg></span>
+          <h3>Pflaster, Entwässerung, Schacht</h3>
+          <p>Hofflächen und Zufahrten, Drainagen, Kanal- und Schachtarbeiten.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projekte" class="hell">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Referenzen</span>
+        <h2>Woran wir arbeiten</h2>
+        <p>Ein Querschnitt unserer Arbeit. Wenn Sie etwas Vergleichbares vorhaben, zeigen wir Ihnen gern eine laufende Baustelle in Ihrer Nähe.</p>
+      </div>
+      <div class="projekte">
+        <a class="projekt" href="#kontakt">
+          <img src="https://www.ht-hhm.de/upload/presentation/haus1.jpg" alt="Ein- und Mehrfamilienhäuser" onerror="this.style.display='none'">
+          <div class="projekt-txt">
+            <small>Hausbau</small>
+            <h3>Ein- und Mehrfamilienhäuser</h3>
+            <span>Vom Fundament bis zum Dach, auf Wunsch schlüsselfertig</span>
+          </div>
+        </a>
+        <a class="projekt" href="#kontakt">
+          <img src="https://www.ht-hhm.de/upload/others/hoch_und_tiefbau_1.jpg" alt="Industrie- und Gewerbebau" onerror="this.style.display='none'">
+          <div class="projekt-txt">
+            <small>Gewerbe</small>
+            <h3>Industrie- und Gewerbebau</h3>
+            <span>Beton- und Stahlbetonarbeiten, auch bei laufender Produktion</span>
+          </div>
+        </a>
+        <a class="projekt" href="#kontakt">
+          <img src="https://www.ht-hhm.de/upload/slide/slide3.jpg" alt="Sanierung im Bestand" onerror="this.style.display='none'">
+          <div class="projekt-txt">
+            <small>Sanierung</small>
+            <h3>Sanierung im Bestand</h3>
+            <span>Maurer- und Putzarbeiten, Entwässerung, Pflaster</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="ueber">
+    <div class="wrap ueber">
+      <div>
+        <span class="marke">Über uns</span>
+        <h2 style="font-size:clamp(1.9rem,1.4rem + 2vw,2.9rem);margin:.85rem 0 .9rem">Ein Betrieb mit langer Geschichte</h2>
+        <p style="color:var(--tinte-weich);font-size:1.08rem">Gegründet wurde der Betrieb 1959 als PGH, 1972 in einen VEB Kreisbaubetrieb überführt und 1990 als GmbH neu aufgestellt. Seit der Reprivatisierung 1992 führt Wolfgang Knorr das Unternehmen. Fünfzehn Mitarbeiter, ein eigener Maschinenpark und die Überzeugung, dass Qualität und Termintreue zusammengehören.</p>
+        <ul class="punkte">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Eigene Kolonnen für Beton, Mauerwerk und Putz.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Eigener Maschinenpark: neun Bagger und Lader, vier Lkw, vier Baukräne.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Hausbau, Industriebau und Sanierung aus einer Hand.</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Seit 1959 am Ort, seit 1992 in privater Hand.</span></li>
+        </ul>
+      </div>
+      <div class="ueber-bild"><img src="https://www.ht-hhm.de/upload/others/hoch_und_tiefbau_2.jpg" alt="Bauplanung auf dem Schreibtisch" onerror="this.style.display='none'"></div>
+    </div>
+  </section>
+
+  <section id="jobs" class="jobs">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Karriere</span>
+        <h2>Arbeiten bei uns</h2>
+        <p>Baustellen in der Region statt Fernmontage, eigenes Gerät statt Mietmaschinen, ein Betrieb, den es seit über sechzig Jahren gibt. Eine Bewerbung reicht per Anruf.</p>
+      </div>
+      <div class="stellen">
+        <article class="stelle">
+          <b>Maurer (m/w/d)</b>
+          <span>Vollzeit · Hohenmölsen und Umgebung · Sie sind abends zu Hause</span>
+          <a href="#kontakt">Jetzt bewerben →</a>
+        </article>
+        <article class="stelle">
+          <b>Baugeräteführer (m/w/d)</b>
+          <span>Vollzeit · eigener Maschinenpark · Einarbeitung möglich</span>
+          <a href="#kontakt">Jetzt bewerben →</a>
+        </article>
+        <article class="stelle">
+          <b>Auszubildende Beton- und Stahlbetonbauer</b>
+          <span>Ausbildungsstart im August · Übernahme angestrebt</span>
+          <a href="#kontakt">Jetzt bewerben →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="hell">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Kontakt</span>
+        <h2>Erzählen Sie uns von Ihrem Vorhaben</h2>
+        <p>Ein Anruf genügt für die erste Einschätzung. Für ein belastbares Angebot sehen wir uns die Sache vor Ort an — kostenlos und unverbindlich.</p>
+      </div>
+      <div class="kontakt">
+        <div class="kdaten">
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5v3a2 2 0 0 1-2.2 2 19.5 19.5 0 0 1-8.5-3 19 19 0 0 1-6-6 19.5 19.5 0 0 1-3-8.6A2 2 0 0 1 3.3 1h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.4 8.6a16 16 0 0 0 6 6l1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div><small>Telefon</small><b>034441 445990</b><p>Rufen Sie an — wir melden uns noch am selben Werktag zurück.</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+            <div><small>E-Mail</small><b>info@ht-hhm.de</b><p>Antwort in der Regel am selben Werktag.</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><small>Anschrift</small><b>Zeitzer Str. 29</b><p>06679 Hohenmölsen</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><small>Bürozeiten</small><b>Termine nach Absprache</b><p>Auch früh vor Baustellenbeginn oder nach Feierabend.</p></div>
+          </div>
+        </div>
+
+        <form class="form" onsubmit="event.preventDefault();alert('Dies ist eine Vorschau — das Formular ist noch nicht aktiv.')">
+          <div class="zwei">
+            <div class="feld"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="feld"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="feld"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+          <div class="feld">
+            <label for="f-art">Worum geht es?</label>
+            <select id="f-art" name="art">
+              <option>Hausbau</option>
+              <option>Industriebau</option>
+              <option>Sanierung</option>
+              <option>Beton und Stahlbeton</option>
+              <option>Etwas anderes</option>
+            </select>
+          </div>
+          <div class="feld"><label for="f-text">Ihr Vorhaben</label><textarea id="f-text" name="nachricht" rows="4"></textarea></div>
+          <button class="btn btn--haupt" type="submit" style="width:100%;justify-content:center">Anfrage senden</button>
+          <small>Ihre Angaben werden ausschließlich zur Bearbeitung der Anfrage verwendet.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <div class="wrap">
+    <div class="fuss-grid">
+      <div>
+        <a class="logo" href="#top" style="color:#fff"><b>Hoch- und Tiefbau</b><small style="color:#8C979E">GmbH Hohenmölsen · seit 1959</small></a>
+        <p style="margin-top:1rem;max-width:36ch">Hoch- und Tiefbau, Industriebau und Sanierung in Hohenmölsen und im Burgenlandkreis. Seit 1959.</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="#leistungen">Hausbau</a></li>
+          <li><a href="#leistungen">Industriebau</a></li>
+          <li><a href="#leistungen">Sanierung</a></li>
+          <li><a href="#leistungen">Beton und Stahlbeton</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Zeitzer Str. 29</li>
+          <li>06679 Hohenmölsen</li>
+          <li><a href="tel:+4934441445990">034441 445990</a></li>
+          <li><a href="mailto:info@ht-hhm.de">info@ht-hhm.de</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fuss-unten">
+      <span>© 2026 Hoch- und Tiefbau GmbH Hohenmölsen</span>
+      <span>Impressum · Datenschutz</span>
+    </div>
+  </div>
+</footer>
+
+<div class="entwurf">
+  <b>Unverbindlicher Entwurf für Hoch- und Tiefbau GmbH Hohenmölsen</b>
+  <span>Gestaltet von TerminWerk Systeme · noch nicht veröffentlicht</span>
+  <a href="https://terminwerk-systeme.de/kontakt/#termin">Gespräch vereinbaren</a>
+</div>
+
+</body>
+</html>
