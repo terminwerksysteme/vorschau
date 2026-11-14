@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>W. Runte Hoch- + Tiefbau GmbH & Co. KG — Hoch- und Tiefbau in Bielefeld, seit 1928 als Familienbetrieb</title>
+<meta name="description" content="Runte Bau in Bielefeld: Familienbetrieb für Hoch- und Tiefbau. Maurer-, Putz- und Stahlbetonarbeiten, Sanierung, Abdichtungen, Neubau und Entwässerung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --akzent:#2e7f8c;
+  --akzent-d:#266873;
+  --tief:#14181C;
+  --tief-2:#1D242A;
+  --papier:#FFFFFF;
+  --papier-2:#F5F6F4;
+  --papier-3:#ECEEEB;
+  --tinte:#14181C;
+  --tinte-weich:#4A545C;
+  --tinte-matt:#737F88;
+  --linie:#E2E6E3;
+  --sans:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --text:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --col:1240px;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--text);color:var(--tinte);background:var(--papier);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:104px}
+@media (max-width:760px){body{padding-bottom:172px}}
+h1,h2,h3,h4{font-family:var(--sans);margin:0;letter-spacing:-.025em;line-height:1.12;font-weight:800}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--col),100% - 2.5rem);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:700;font-size:.95rem;padding:.95rem 1.6rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,background .25s ease}
+.btn--haupt{background:var(--akzent);color:#fff;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--akzent) 80%,transparent)}
+.btn--haupt:hover{transform:translateY(-2px);background:var(--akzent-d)}
+.btn--rand{background:transparent;color:var(--tinte);border:1.5px solid var(--linie)}
+.btn--rand:hover{border-color:var(--tinte);transform:translateY(-2px)}
+.btn--hell{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.3)}
+.btn--hell:hover{background:rgba(255,255,255,.2);transform:translateY(-2px)}
+.marke{font-family:var(--text);font-size:.73rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--akzent)}
+
+/* ---------- Entwurfs-Kennzeichnung ---------- */
+/* Zwei Stellen, damit auf jedem Bildschirm sofort klar ist: nicht veröffentlicht. */
+.vorschaumarke{
+  position:fixed;top:84px;right:16px;z-index:95;pointer-events:none;
+  display:flex;flex-direction:column;gap:.08rem;
+  background:rgba(20,24,28,.88);border:1px solid rgba(255,255,255,.24);
+  border-radius:10px;padding:.48rem .78rem;
+  font-family:var(--sans);line-height:1.2;color:#fff;
+  box-shadow:0 12px 28px -16px rgba(0,0,0,.7);
+}
+.vorschaumarke b{font-size:.74rem;font-weight:800;letter-spacing:.1em}
+.vorschaumarke span{font-size:.67rem;font-weight:600;color:#BBC6CD}
+/* Auf dem Telefon würde die Marke den Anfragen-Knopf verdecken;
+   dort trägt der untere Balken die Kennzeichnung allein. */
+@media (max-width:760px){.vorschaumarke{display:none}}
+
+.entwurf{
+  position:fixed;left:0;right:0;bottom:0;z-index:96;
+  background:var(--tief);color:#AEBAC2;
+  border-top:2px solid var(--akzent);
+  padding:.9rem max(1.1rem,env(safe-area-inset-right,0px)) calc(.9rem + env(safe-area-inset-bottom,0px)) max(1.1rem,env(safe-area-inset-left,0px));
+  font-size:.81rem;text-align:center;
+}
+.entwurf-haupt{display:block;font-family:var(--sans);font-weight:700;font-size:.92rem;color:#fff;margin-bottom:.28rem}
+.entwurf-rest{display:flex;align-items:center;justify-content:center;gap:.4rem .9rem;flex-wrap:wrap}
+.entwurf a{color:#fff;text-underline-offset:3px}
+.entwurf a:hover{color:var(--akzent)}
+
+/* ---------- Kopf ---------- */
+.kopf{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.93);backdrop-filter:blur(14px);border-bottom:1px solid var(--linie)}
+.kopf-in{display:flex;align-items:center;gap:1.6rem;padding-block:.95rem}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.05}
+.logo b{font-family:var(--sans);font-weight:800;font-size:1.3rem;letter-spacing:-.03em}
+.logo small{font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tinte-matt);margin-top:.2rem}
+.nav{display:flex;gap:1.7rem;margin-left:auto}
+.nav a{text-decoration:none;font-size:.93rem;font-weight:600;color:var(--tinte-weich)}
+.nav a:hover{color:var(--akzent)}
+.kopf-tel{display:flex;flex-direction:column;align-items:flex-end;text-decoration:none;line-height:1.15}
+.kopf-tel small{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tinte-matt)}
+.kopf-tel b{font-family:var(--sans);font-size:1.02rem}
+.brenner{display:none;background:none;border:0;padding:.5rem;cursor:pointer}
+
+/* ---------- Bühne ---------- */
+.buehne{position:relative;min-height:min(86vh,760px);display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.buehne-bild{position:absolute;inset:0;background:linear-gradient(145deg,var(--tief) 0%,var(--tief-2) 45%,color-mix(in srgb,var(--akzent) 30%,var(--tief)) 100%)}
+.buehne-bild img{width:100%;height:100%;object-fit:cover}
+.buehne-bild::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,28,.55) 0%,rgba(20,24,28,.35) 40%,rgba(20,24,28,.92) 100%)}
+.buehne-in{position:relative;padding-block:4.5rem 3.5rem;max-width:62ch}
+.buehne h1{font-size:clamp(2.3rem,1.5rem + 3.4vw,4.1rem);margin:1.1rem 0 1.2rem}
+.buehne h1 em{font-style:normal;color:var(--akzent)}
+.buehne .lede{font-size:clamp(1.05rem,1rem + .4vw,1.25rem);color:#D8DEE2;max-width:52ch}
+.buehne .tasten{display:flex;gap:.8rem;margin-top:2.1rem;flex-wrap:wrap}
+.buehne .marke{color:#fff;background:var(--akzent);padding:.4rem .85rem;border-radius:999px;display:inline-block}
+
+/* ---------- Zahlenband ---------- */
+.band{background:var(--tief);color:#fff}
+.band-in{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;padding-block:2.2rem}
+.band-z{display:flex;flex-direction:column;gap:.25rem}
+.band-z b{font-family:var(--sans);font-size:2rem;font-weight:800;letter-spacing:-.03em;color:var(--akzent)}
+.band-z span{font-size:.88rem;color:#A9B5BD}
+
+/* ---------- Abschnitte ---------- */
+section{padding-block:clamp(3.5rem,6vw,5.5rem)}
+.kopfzeile{max-width:60ch;margin-bottom:2.8rem}
+.kopfzeile h2{font-size:clamp(1.9rem,1.4rem + 2vw,2.9rem);margin:.85rem 0 .9rem}
+.kopfzeile p{color:var(--tinte-weich);font-size:1.08rem}
+.hell{background:var(--papier-2)}
+
+/* Leistungen */
+.gewerke{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.gewerk{background:var(--papier);border:1px solid var(--linie);border-radius:var(--r);padding:1.8rem 1.6rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.gewerk:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--akzent) 40%,var(--linie));box-shadow:0 22px 44px -28px rgba(20,24,28,.4)}
+.gewerk-ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--akzent) 12%,#fff);margin-bottom:1.1rem}
+.gewerk-ic svg{width:22px;height:22px;stroke:var(--akzent);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.gewerk h3{font-size:1.18rem;margin-bottom:.5rem}
+.gewerk p{color:var(--tinte-weich);font-size:.95rem}
+
+/* Projekte */
+.projekte{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.3rem}
+.projekt{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;display:flex;align-items:flex-end;color:#fff;text-decoration:none;background:linear-gradient(160deg,var(--tief-2) 0%,var(--tief) 60%,color-mix(in srgb,var(--akzent) 24%,var(--tief)) 100%)}
+.projekt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.16,1,.3,1)}
+.projekt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(20,24,28,.9) 100%)}
+.projekt:hover img{transform:scale(1.05)}
+.projekt-txt{position:relative;padding:1.5rem;z-index:2}
+.projekt-txt small{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--akzent)}
+.projekt-txt h3{font-size:1.2rem;margin:.4rem 0 .25rem}
+.projekt-txt span{font-size:.88rem;color:#CBD3D8}
+
+/* Über uns */
+.ueber{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.ueber-bild{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(150deg,var(--tief-2) 0%,var(--tief) 55%,color-mix(in srgb,var(--akzent) 22%,var(--tief)) 100%)}
+.ueber-bild img{width:100%;height:100%;object-fit:cover}
+.punkte{list-style:none;margin:1.8rem 0 0;padding:0;display:flex;flex-direction:column;gap:.9rem}
+.punkte li{display:flex;gap:.8rem;align-items:flex-start;font-size:1rem}
+.punkte svg{width:20px;height:20px;flex:none;margin-top:.22rem;stroke:var(--akzent);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+
+/* Jobs */
+.jobs{background:var(--tief);color:#fff}
+.jobs .kopfzeile h2{color:#fff}
+.jobs .kopfzeile p{color:#A9B5BD}
+.stellen{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+.stelle{background:var(--tief-2);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:1.5rem;display:flex;flex-direction:column;gap:.5rem}
+.stelle b{font-family:var(--sans);font-size:1.08rem}
+.stelle span{font-size:.9rem;color:#A9B5BD}
+.stelle a{margin-top:.7rem;font-size:.9rem;font-weight:700;color:var(--akzent);text-decoration:none}
+
+/* Kontakt */
+.kontakt{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,4vw,3.5rem)}
+.kdaten{display:flex;flex-direction:column;gap:1.3rem}
+.kzeile{display:flex;gap:.95rem;align-items:flex-start}
+.kzeile-ic{width:42px;height:42px;flex:none;border-radius:11px;display:grid;place-items:center;background:color-mix(in srgb,var(--akzent) 12%,#fff)}
+.kzeile-ic svg{width:19px;height:19px;stroke:var(--akzent);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.kzeile small{display:block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tinte-matt);margin-bottom:.15rem}
+.kzeile b{font-family:var(--sans);font-size:1.05rem;font-weight:700}
+.kzeile p{font-size:.95rem;color:var(--tinte-weich)}
+.form{background:var(--papier);border:1px solid var(--linie);border-radius:var(--r);padding:1.9rem}
+.feld{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.feld label{font-size:.85rem;font-weight:700;font-family:var(--sans)}
+.feld input,.feld textarea,.feld select{font-family:var(--text);font-size:1rem;padding:.8rem .95rem;border:1px solid var(--linie);border-radius:10px;background:var(--papier-2)}
+.feld input:focus,.feld textarea:focus,.feld select:focus{outline:2px solid var(--akzent);outline-offset:1px}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form small{display:block;margin-top:.9rem;font-size:.8rem;color:var(--tinte-matt)}
+
+/* Fuß */
+.fuss{background:var(--tief);color:#A9B5BD;padding-block:3rem 2rem;font-size:.92rem}
+.fuss-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.fuss h4{color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-family:var(--text);font-weight:800;margin-bottom:1rem}
+.fuss ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.fuss a{text-decoration:none}
+.fuss a:hover{color:#fff}
+.fuss-unten{display:flex;justify-content:space-between;gap:1.5rem;padding-top:1.4rem;flex-wrap:wrap;font-size:.85rem}
+
+@media (max-width:980px){
+  .gewerke,.projekte,.stellen{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ueber,.kontakt{grid-template-columns:1fr}
+  .band-in{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem}
+  .fuss-grid{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+  .brenner{display:block;margin-left:auto}
+  .kopf-tel{margin-left:0}
+}
+@media (max-width:620px){
+  .gewerke,.projekte,.stellen{grid-template-columns:1fr}
+  .zwei{grid-template-columns:1fr}
+  .kopf-tel small{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="wrap kopf-in">
+    <a class="logo" href="#top">
+      <b>Runte Bau</b>
+      <small>Hoch- + Tiefbau Bielefeld</small>
+    </a>
+    <nav class="nav">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#projekte">Projekte</a>
+      <a href="#ueber">Über uns</a>
+      <a href="#jobs">Karriere</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="kopf-tel" href="tel:052140687">
+      <small>Direkt anrufen</small>
+      <b>0521 40687</b>
+    </a>
+    <a class="btn btn--haupt" href="#kontakt">Projekt anfragen</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="buehne" style="padding:0">
+    <div class="buehne-bild"><img src="https://assets.coco-online.de/43551720165246-KCpZZkcR/01-header-start-neu.jpg" alt="Rohbau mit Mauerwerk in Bielefeld" onerror="this.style.display='none'"></div>
+    <div class="wrap buehne-in">
+      <span class="marke">Familienbetrieb in dritter Generation</span>
+      <h1>Hoch- und Tiefbau<br><em>in Bielefeld</em></h1>
+      <p class="lede">Runte Bau führt Neubau, Umbau und Sanierung aus, vom Mauerwerk bis zur Entwässerung. Das Unternehmen besteht seit der Gründung im Jahr 1928 und wird von Wolfgang Runte geleitet.</p>
+      <div class="tasten">
+        <a class="btn btn--haupt" href="#kontakt">Projekt anfragen</a>
+        <a class="btn btn--hell" href="#projekte">Projekte ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="band">
+    <div class="wrap band-in">
+      <div class="band-z"><b>1928</b><span>Gründung des Unternehmens in Bielefeld</span></div>
+      <div class="band-z"><b>3. Generation</b><span>Der Betrieb wurde vom Vater an den Sohn weitergegeben.</span></div>
+      <div class="band-z"><b>Hoch- und Tiefbau</b><span>Wohnungsbau und Gewerbebau aus einer Hand</span></div>
+      <div class="band-z"><b>Mitglied</b><span>in Baugewerbe-Innung, Handwerkskammer, IHK und BDB</span></div>
+    </div>
+  </div>
+
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Leistungen</span>
+        <h2>Unsere Leistungen</h2>
+        <p>Wir führen Bauarbeiten im Hoch- und Tiefbau für private und gewerbliche Auftraggeber aus. Dazu gehören Neubau, Umbau und Sanierung.</p>
+      </div>
+      <div class="gewerke">
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6"/></svg></span>
+          <h3>Hochbau</h3>
+          <p>Errichtung, Neubau und Umbau von Gebäuden im Wohnungs- und Gewerbebau.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20h20M4 20V9l8-5 8 5v11M9 20v-5h6v5"/><path d="M7 12h2M15 12h2"/></svg></span>
+          <h3>Maurerarbeiten</h3>
+          <p>Innen- und Außenmauerwerk, auch aus Bruchsteinen sowie als Verblendmauerwerk aus Klinkern.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-8 8M10 20H4v-6M4 20l8-8"/></svg></span>
+          <h3>Putzarbeiten</h3>
+          <p>Putzarbeiten an Gebäuden im Rahmen von Neubau und Sanierung.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v6M12 16v6M2 12h6M16 12h6"/><circle cx="12" cy="12" r="4"/></svg></span>
+          <h3>Sanierung</h3>
+          <p>Sanierung und Renovierung von privaten Immobilien und Gewerbegebäuden.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18v12H3zM7 7V4h10v3"/><path d="M8 13h8"/></svg></span>
+          <h3>Abdichtungen</h3>
+          <p>Abdichtungsarbeiten an Bauwerken.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 19V8l6-4 6 4v11"/><path d="M10 19v-4h4v4"/></svg></span>
+          <h3>Stahlbetonarbeiten</h3>
+          <p>Stahlbetonarbeiten sowie Erd- und Entwässerungsarbeiten, einschließlich Kanalarbeiten.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projekte" class="hell">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Referenzen</span>
+        <h2>Arbeiten im Überblick</h2>
+        <p>Hier beschreiben wir, welche Arten von Bauvorhaben wir ausführen. Konkrete Referenzen nennen wir Ihnen gern auf Anfrage.</p>
+      </div>
+      <div class="projekte">
+        <a class="projekt" href="#kontakt">
+          <img src="https://assets.coco-online.de/43551720165249-KwBnaWc8/11-header-kontakt.jpg" alt="Wohnungsbau" onerror="this.style.display='none'">
+          <div class="projekt-txt">
+            <small>Neubau und Umbau</small>
+            <h3>Wohnungsbau</h3>
+            <span>Errichtung und Umbau von Wohngebäuden und privaten Immobilien.</span>
+          </div>
+        </a>
+        <a class="projekt" href="#kontakt">
+          <img src="https://assets.coco-online.de/43551720165245-8ojELW0x/02-header-hochbau-neu.jpg" alt="Gewerbebau" onerror="this.style.display='none'">
+          <div class="projekt-txt">
+            <small>Neubau und Sanierung</small>
+            <h3>Gewerbebau</h3>
+            <span>Bauarbeiten an Gewerbegebäuden, von der Ausführung bis zur Sanierung.</span>
+          </div>
+        </a>
+        <a class="projekt" href="#kontakt">
+          <img src="https://assets.coco-online.de/43551720165246-WjzSZE1H/03-header-maurerarbeiten-neu.jpg" alt="Mauerwerk und Verblendung" onerror="this.style.display='none'">
+          <div class="projekt-txt">
+            <small>Maurerarbeiten</small>
+            <h3>Mauerwerk und Verblendung</h3>
+            <span>Mauern und Verblendungen aus Klinkern oder Bruchsteinen nach Ihren Vorstellungen.</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="ueber">
+    <div class="wrap ueber">
+      <div>
+        <span class="marke">Über uns</span>
+        <h2 style="font-size:clamp(1.9rem,1.4rem + 2vw,2.9rem);margin:.85rem 0 .9rem">Über Runte Bau</h2>
+        <p style="color:var(--tinte-weich);font-size:1.08rem">Runte Bau wurde 1928 gegründet und von Generation zu Generation weitergegeben. Wolfgang Runte leitet das Unternehmen als Diplom-Bau- und Diplom-Wirtschaftsingenieur.</p>
+        <ul class="punkte">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Familienbetrieb in dritter Generation</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Leitung durch Diplom-Bau- und Diplom-Wirtschaftsingenieur</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Mitglied der Baugewerbe-Innung Bielefeld und der Handwerkskammer OWL</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Mitglied der IHK und des BDB</span></li>
+        </ul>
+      </div>
+      <div class="ueber-bild"><img src="https://assets.coco-online.de/43551720165239-Qwo17Rzg/01-maurerarbeiten.jpg" alt="Maurer bei der Arbeit am Mauerwerk" onerror="this.style.display='none'"></div>
+    </div>
+  </section>
+
+  <section id="jobs" class="jobs">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Karriere</span>
+        <h2>Mitarbeit bei Runte Bau</h2>
+        <p>Angaben zu offenen Stellen liegen uns derzeit nicht vor. Sprechen Sie uns bei Interesse gern direkt an.</p>
+      </div>
+      <div class="stellen">
+        <article class="stelle">
+          <b>Maurer</b>
+          <span>Mitarbeit bei Maurer- und Verblendarbeiten, nach Rücksprache.</span>
+          <a href="#kontakt">Jetzt bewerben →</a>
+        </article>
+        <article class="stelle">
+          <b>Bauhelfer</b>
+          <span>Unterstützung auf der Baustelle, nach Rücksprache.</span>
+          <a href="#kontakt">Jetzt bewerben →</a>
+        </article>
+        <article class="stelle">
+          <b>Initiativbewerbung</b>
+          <span>Schreiben Sie uns per E-Mail oder rufen Sie uns an.</span>
+          <a href="#kontakt">Jetzt bewerben →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" class="hell">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Kontakt</span>
+        <h2>Kontakt und Anfahrt</h2>
+        <p>Bei Fragen zu Ihrem Bauvorhaben erreichen Sie uns telefonisch, per E-Mail oder über das Kontaktformular.</p>
+      </div>
+      <div class="kontakt">
+        <div class="kdaten">
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5v3a2 2 0 0 1-2.2 2 19.5 19.5 0 0 1-8.5-3 19 19 0 0 1-6-6 19.5 19.5 0 0 1-3-8.6A2 2 0 0 1 3.3 1h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.4 8.6a16 16 0 0 0 6 6l1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div><small>Telefon</small><b>0521 40687</b><p>Telefon 0521 40687, Telefax 0521 401028</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+            <div><small>E-Mail</small><b>info@runte-bau.de</b><p>Antwort in der Regel am selben Werktag.</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><small>Anschrift</small><b>Wächterstraße 18</b><p>33659 Bielefeld</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><small>Bürozeiten</small><b></b><p>Zeiten nach Vereinbarung</p></div>
+          </div>
+        </div>
+
+        <form class="form" onsubmit="event.preventDefault();alert('Dies ist eine Vorschau — das Formular ist noch nicht aktiv.')">
+          <div class="zwei">
+            <div class="feld"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="feld"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="feld"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email" required></div>
+          <div class="feld">
+            <label for="f-art">Worum geht es?</label>
+            <select id="f-art" name="art">
+              <option>Hochbau</option>
+              <option>Maurerarbeiten</option>
+              <option>Putzarbeiten</option>
+              <option>Sanierung</option>
+              <option>Etwas anderes</option>
+            </select>
+          </div>
+          <div class="feld"><label for="f-text">Ihr Vorhaben</label><textarea id="f-text" name="nachricht" rows="4"></textarea></div>
+          <button class="btn btn--haupt" type="submit" style="width:100%;justify-content:center">Anfrage senden</button>
+          <small>Ihre Angaben werden ausschließlich zur Bearbeitung der Anfrage verwendet.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <div class="wrap">
+    <div class="fuss-grid">
+      <div>
+        <a class="logo" href="#top" style="color:#fff"><b>Runte Bau</b><small style="color:#8C979E">Hoch- + Tiefbau Bielefeld</small></a>
+        <p style="margin-top:1rem;max-width:36ch">W. Runte Hoch- + Tiefbau GmbH & Co. KG, Wächterstraße 18, 33659 Bielefeld</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="#leistungen">Hochbau</a></li>
+          <li><a href="#leistungen">Maurerarbeiten</a></li>
+          <li><a href="#leistungen">Putzarbeiten</a></li>
+          <li><a href="#leistungen">Sanierung</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>Wächterstraße 18</li>
+          <li>33659 Bielefeld</li>
+          <li><a href="tel:052140687">0521 40687</a></li>
+          <li><a href="mailto:info@runte-bau.de">info@runte-bau.de</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fuss-unten">
+      <span>© 2026 W. Runte Hoch- + Tiefbau GmbH & Co. KG</span>
+      <span>Impressum · Datenschutz</span>
+    </div>
+  </div>
+</footer>
+
+<div class="vorschaumarke" aria-hidden="true">
+  <b>VORSCHAU</b>
+  <span>nicht veröffentlicht</span>
+</div>
+
+<div class="entwurf">
+  <span class="entwurf-haupt">Unverbindlicher Entwurf für W. Runte Hoch- + Tiefbau GmbH & Co. KG — diese Seite ist nicht veröffentlicht.</span>
+  <span class="entwurf-rest">
+    <span>Gestaltet von TerminWerk Systeme · für Suchmaschinen gesperrt · nur über diesen Link erreichbar</span>
+    <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+    <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+    <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+    <span>Entwurf gültig bis 14.12.2026</span>
+  </span>
+</div>
+
+<script>
+/* Zwei Wege, auf denen ein Entwurf vom Schirm verschwindet:
+   1. Die Frist läuft ab — passiert von selbst.
+   2. Er wird in status.json abgeschaltet — wirkt beim nächsten Aufruf.
+   Ist status.json nicht erreichbar, bleibt die Seite sichtbar: ein Netzfehler
+   darf keinen Entwurf abschalten, den der Kunde gerade ansehen soll. */
+(function(){
+  var SLUG = "runte-bau";
+
+  function hinweis(titel, satz){
+    document.title = titel;
+    document.body.innerHTML =
+      '<div style="min-height:100vh;display:grid;place-items:center;padding:2rem;'
+      + 'background:#14181C;color:#AEBAC2;text-align:center;font-family:' + "'Manrope'" + ',system-ui,sans-serif">'
+      + '<div style="max-width:46ch">'
+      + '<p style="font-family:' + "'Plus Jakarta Sans'" + ',system-ui,sans-serif;font-weight:800;font-size:1.5rem;color:#fff;margin:0 0 .9rem;letter-spacing:-.02em">' + titel + '</p>'
+      + '<p style="margin:0 0 1.4rem;line-height:1.6">' + satz + ' Veröffentlicht war er zu keiner Zeit.</p>'
+      + '<p style="margin:0 0 1.6rem;line-height:1.6">Wenn Sie ihn noch einmal sehen möchten, melden wir ihn gern erneut frei.</p>'
+      + '<p style="margin:0"><a href="https://terminwerk-systeme.de/kontakt/" style="color:#6FD7D0">TerminWerk Systeme</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/impressum/" style="color:#6FD7D0">Impressum</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/datenschutz/" style="color:#6FD7D0">Datenschutz</a></p>'
+      + '</div></div>';
+    document.body.style.padding = "0";
+  }
+
+  var bis = new Date("2026-12-14T23:59:59");
+  if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
+    hinweis("Dieser Entwurf ist abgelaufen.",
+      "Der unverbindliche Entwurf für W. Runte Hoch- + Tiefbau GmbH & Co. KG stand bis zum 14.12.2026 zur Ansicht bereit.");
+    return;
+  }
+
+  try{
+    fetch("../status.json", { cache: "no-store" })
+      .then(function(a){ return a.ok ? a.json() : null; })
+      .then(function(s){
+        if (s && s[SLUG] === "aus") {
+          hinweis("Dieser Entwurf wurde zurückgezogen.",
+            "Der unverbindliche Entwurf für W. Runte Hoch- + Tiefbau GmbH & Co. KG steht nicht mehr zur Ansicht bereit.");
+        }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
