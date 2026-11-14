@@ -1,5 +1,14 @@
 [
   {
+    "slug": "praxis-mueller",
+    "firma": "Praxis für Zahnheilkunde Fridbert Müller",
+    "branche": "zahnarzt",
+    "gebaut": "2026-11-14",
+    "bis": "2026-12-14",
+    "adresse": "https://www.zamueller.de/",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "runte-bau",
     "firma": "W. Runte Hoch- + Tiefbau GmbH & Co. KG",
     "branche": "bau",
