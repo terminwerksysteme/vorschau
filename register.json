@@ -1,5 +1,14 @@
 [
   {
+    "slug": "elektro-dathe",
+    "firma": "Elektro Dathe",
+    "branche": "handwerk",
+    "gebaut": "2026-11-15",
+    "bis": "2026-12-15",
+    "adresse": "https://elektro-dathe.de",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "schueler-gmbh",
     "firma": "Schüler GmbH",
     "branche": "galabau",
