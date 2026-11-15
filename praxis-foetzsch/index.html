@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Zahnarztpraxis Beate Fötzsch — Zahnarztpraxis in Zeitz</title>
+<meta name="description" content="Zahnarztpraxis Beate Fötzsch in Zeitz, Geußnitzer Str. 12. Sprechzeiten, Anfahrt und Kontakt auf einen Blick.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --akzent:#2e7f8c;
+  --akzent-d:#266873;
+  --tief:#16242B;
+  --tief-2:#1E313A;
+  --papier:#FFFFFF;
+  --papier-2:#F5F8F9;
+  --papier-3:#E8EFF1;
+  --tinte:#16242B;
+  --tinte-weich:#4A5D66;
+  --tinte-matt:#788A93;
+  --linie:#DEE8EB;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --text:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --col:1200px;
+  --r:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--text);color:var(--tinte);background:var(--papier);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:104px}
+@media (max-width:760px){body{padding-bottom:172px}}
+h1,h2,h3,h4{font-family:var(--sans);margin:0;letter-spacing:-.02em;line-height:1.16;font-weight:700;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--col),100% - 2.5rem);margin-inline:auto}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--text);font-weight:700;font-size:.95rem;padding:.95rem 1.7rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .25s ease,background .25s ease,box-shadow .25s ease}
+.btn--haupt{background:var(--akzent);color:#fff;box-shadow:0 14px 30px -14px color-mix(in srgb,var(--akzent) 80%,transparent)}
+.btn--haupt:hover{transform:translateY(-2px);background:var(--akzent-d)}
+.btn--rand{background:transparent;color:var(--tinte);border:1.5px solid var(--linie)}
+.btn--rand:hover{border-color:var(--akzent);color:var(--akzent);transform:translateY(-2px)}
+.marke{font-size:.73rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--akzent)}
+
+/* ---------- Notfallzeile ---------- */
+.notzeile{background:var(--tief);color:#C8D6DC;font-size:.84rem}
+.notzeile-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.55rem;flex-wrap:wrap}
+.notzeile b{color:#fff;font-family:var(--sans)}
+.notzeile a{color:#fff;text-decoration:none;font-weight:700}
+.notzeile a:hover{text-decoration:underline}
+
+/* ---------- Kopf ---------- */
+.kopf{position:sticky;top:0;z-index:80;background:rgba(255,255,255,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--linie)}
+.kopf-in{display:flex;align-items:center;gap:1.5rem;padding-block:.95rem}
+.logo{display:flex;flex-direction:column;text-decoration:none;line-height:1.1}
+.logo b{font-family:var(--sans);font-weight:700;font-size:1.28rem;letter-spacing:-.025em}
+.logo small{font-size:.66rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--tinte-matt);margin-top:.2rem}
+.nav{display:flex;gap:1.6rem;margin-left:auto}
+.nav a{text-decoration:none;font-size:.93rem;font-weight:600;color:var(--tinte-weich)}
+.nav a:hover{color:var(--akzent)}
+.kopf-tel{display:flex;flex-direction:column;align-items:flex-end;text-decoration:none;line-height:1.15}
+.kopf-tel small{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tinte-matt)}
+.kopf-tel b{font-size:1.02rem;font-weight:800}
+
+/* ---------- Bühne ---------- */
+.buehne{background:var(--papier-2);border-bottom:1px solid var(--linie)}
+.buehne-in{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:center;padding-block:clamp(3rem,5vw,4.5rem)}
+.buehne h1{font-size:clamp(2.1rem,1.5rem + 2.8vw,3.4rem);margin:.9rem 0 1.1rem}
+.buehne .lede{font-size:clamp(1.03rem,1rem + .35vw,1.18rem);color:var(--tinte-weich);max-width:48ch}
+.buehne .tasten{display:flex;gap:.75rem;margin-top:1.9rem;flex-wrap:wrap}
+.buehne-bild{border-radius:var(--r);overflow:hidden;aspect-ratio:4/3;background:linear-gradient(150deg,var(--tief-2) 0%,var(--tief) 55%,color-mix(in srgb,var(--akzent) 30%,var(--tief)) 100%)}
+.buehne-bild img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- Sprechzeiten ---------- */
+.zeiten{background:var(--papier)}
+.zeiten-in{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--linie);border:1px solid var(--linie);border-radius:var(--r);overflow:hidden;margin-block:clamp(2.5rem,4vw,3.5rem)}
+.tag{background:var(--papier);padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.2rem}
+.tag b{font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tinte-matt)}
+.tag span{font-size:.98rem;font-variant-numeric:tabular-nums}
+.tag.zu span{color:var(--tinte-matt)}
+.tag.heute{background:color-mix(in srgb,var(--akzent) 9%,#fff)}
+.tag.heute b{color:var(--akzent)}
+
+section{padding-block:clamp(3.2rem,5.5vw,5rem)}
+.kopfzeile{max-width:58ch;margin-bottom:2.6rem}
+.kopfzeile h2{font-size:clamp(1.8rem,1.35rem + 1.9vw,2.7rem);margin:.8rem 0 .85rem}
+.kopfzeile p{color:var(--tinte-weich);font-size:1.06rem}
+.hell{background:var(--papier-2)}
+
+/* ---------- Leistungen ---------- */
+.gewerke{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+.gewerk{background:var(--papier);border:1px solid var(--linie);border-radius:var(--r);padding:1.7rem 1.55rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.gewerk:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--akzent) 40%,var(--linie));box-shadow:0 20px 40px -26px rgba(22,36,43,.35)}
+.gewerk-ic{width:44px;height:44px;border-radius:999px;display:grid;place-items:center;background:color-mix(in srgb,var(--akzent) 12%,#fff);margin-bottom:1rem}
+.gewerk-ic svg{width:21px;height:21px;stroke:var(--akzent);stroke-width:1.8;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.gewerk h3{font-size:1.15rem;margin-bottom:.45rem}
+.gewerk p{color:var(--tinte-weich);font-size:.94rem}
+
+/* ---------- Erster Besuch ---------- */
+.ablauf{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.1rem;counter-reset:schritt}
+.schritt{position:relative;padding-top:2.5rem}
+.schritt::before{counter-increment:schritt;content:counter(schritt);position:absolute;top:0;left:0;
+  width:36px;height:36px;border-radius:999px;display:grid;place-items:center;
+  background:color-mix(in srgb,var(--akzent) 14%,#fff);color:var(--akzent);font-family:var(--sans);font-weight:700;font-size:1rem}
+.schritt h3{font-size:1.05rem;margin-bottom:.35rem}
+.schritt p{color:var(--tinte-weich);font-size:.92rem}
+
+/* ---------- Team ---------- */
+.team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem}
+.person{background:var(--papier);border:1px solid var(--linie);border-radius:var(--r);overflow:hidden}
+.person-bild{aspect-ratio:4/3;background:linear-gradient(150deg,var(--tief-2) 0%,var(--tief) 58%,color-mix(in srgb,var(--akzent) 26%,var(--tief)) 100%)}
+.person-bild img{width:100%;height:100%;object-fit:cover}
+.person-txt{padding:1.2rem 1.3rem 1.4rem}
+.person-txt b{display:block;font-family:var(--sans);font-size:1.08rem;font-weight:700}
+.person-txt small{display:block;font-size:.84rem;color:var(--akzent);font-weight:700;margin-top:.1rem}
+.person-txt p{font-size:.92rem;color:var(--tinte-weich);margin-top:.5rem}
+
+/* ---------- Anfahrt ---------- */
+.anfahrt{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.1rem}
+.weg{display:flex;gap:.9rem;align-items:flex-start;background:var(--papier);border:1px solid var(--linie);border-radius:var(--r);padding:1.35rem 1.4rem}
+.weg-ic{width:40px;height:40px;flex:none;border-radius:999px;display:grid;place-items:center;background:color-mix(in srgb,var(--akzent) 12%,#fff)}
+.weg-ic svg{width:19px;height:19px;stroke:var(--akzent);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.weg b{display:block;font-family:var(--sans);font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.weg p{font-size:.92rem;color:var(--tinte-weich)}
+
+/* ---------- Notfall ---------- */
+.notfall{background:var(--tief);color:#fff}
+.notfall-in{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.notfall h2{font-size:clamp(1.7rem,1.3rem + 1.7vw,2.4rem);margin:.8rem 0 .85rem}
+.notfall p{color:#A9BCC4;font-size:1.04rem}
+.notfall .marke{color:color-mix(in srgb,var(--akzent) 55%,#fff)}
+.notfall-karte{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:var(--r);padding:1.6rem 1.7rem}
+.notfall-karte small{display:block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#8FA6B0;margin-bottom:.4rem}
+.notfall-karte b{display:block;font-family:var(--sans);font-size:1.7rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+.notfall-karte p{font-size:.92rem;margin-top:.7rem;color:#A9BCC4}
+
+/* ---------- Kontakt ---------- */
+.kontakt{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,4vw,3.5rem)}
+.kdaten{display:flex;flex-direction:column;gap:1.25rem}
+.kzeile{display:flex;gap:.95rem;align-items:flex-start}
+.kzeile-ic{width:42px;height:42px;flex:none;border-radius:999px;display:grid;place-items:center;background:color-mix(in srgb,var(--akzent) 12%,#fff)}
+.kzeile-ic svg{width:19px;height:19px;stroke:var(--akzent);stroke-width:1.9;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.kzeile small{display:block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--tinte-matt);margin-bottom:.15rem}
+.kzeile b{font-family:var(--sans);font-size:1.05rem;font-weight:700}
+.kzeile p{font-size:.94rem;color:var(--tinte-weich)}
+.form{background:var(--papier);border:1px solid var(--linie);border-radius:var(--r);padding:1.9rem}
+.feld{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1rem}
+.feld label{font-size:.85rem;font-weight:700}
+.feld input,.feld textarea,.feld select{font-family:var(--text);font-size:1rem;padding:.8rem .95rem;border:1px solid var(--linie);border-radius:11px;background:var(--papier-2)}
+.feld input:focus,.feld textarea:focus,.feld select:focus{outline:2px solid var(--akzent);outline-offset:1px}
+.zwei{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form small{display:block;margin-top:.9rem;font-size:.8rem;color:var(--tinte-matt)}
+
+/* ---------- Fuß ---------- */
+.fuss{background:var(--tief);color:#A9BCC4;padding-block:3rem 2rem;font-size:.92rem}
+.fuss-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:2.2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.fuss h4{color:#fff;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-family:var(--text);font-weight:800;margin-bottom:1rem}
+.fuss ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.55rem}
+.fuss a{text-decoration:none}
+.fuss a:hover{color:#fff}
+.fuss-unten{display:flex;justify-content:space-between;gap:1.5rem;padding-top:1.4rem;flex-wrap:wrap;font-size:.85rem}
+
+/* ---------- Entwurfs-Kennzeichnung ---------- */
+.vorschaumarke{position:fixed;top:120px;right:16px;z-index:95;pointer-events:none;display:flex;flex-direction:column;gap:.08rem;
+  background:rgba(22,36,43,.88);border:1px solid rgba(255,255,255,.24);border-radius:10px;padding:.48rem .78rem;line-height:1.2;color:#fff;
+  box-shadow:0 12px 28px -16px rgba(0,0,0,.7)}
+.vorschaumarke b{font-size:.74rem;font-weight:800;letter-spacing:.1em}
+.vorschaumarke span{font-size:.67rem;font-weight:600;color:#BBC9CF}
+@media (max-width:760px){.vorschaumarke{display:none}}
+
+.entwurf{position:fixed;left:0;right:0;bottom:0;z-index:96;background:var(--tief);color:#AEBEC5;border-top:2px solid var(--akzent);
+  padding:.9rem max(1.1rem,env(safe-area-inset-right,0px)) calc(.9rem + env(safe-area-inset-bottom,0px)) max(1.1rem,env(safe-area-inset-left,0px));
+  font-size:.81rem;text-align:center}
+.entwurf-haupt{display:block;font-family:var(--sans);font-weight:700;font-size:.93rem;color:#fff;margin-bottom:.28rem}
+.entwurf-rest{display:flex;align-items:center;justify-content:center;gap:.4rem .9rem;flex-wrap:wrap}
+.entwurf a{color:#fff;text-underline-offset:3px}
+.entwurf a:hover{color:color-mix(in srgb,var(--akzent) 55%,#fff)}
+
+@media (max-width:980px){
+  .gewerke,.team,.anfahrt,.ablauf{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .buehne-in,.kontakt,.notfall-in{grid-template-columns:1fr}
+  .fuss-grid{grid-template-columns:1fr 1fr}
+  .nav{display:none}
+}
+@media (max-width:620px){
+  .gewerke,.team,.anfahrt,.ablauf{grid-template-columns:1fr}
+  .zwei{grid-template-columns:1fr}
+  .kopf-tel small{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="notzeile">
+  <div class="wrap notzeile-in">
+    <span><b>Schmerzen?</b> Bei akuten Zahnschmerzen rufen Sie uns während der Sprechzeiten an.</span>
+    <a href="tel:+493441710060">+49 3441 710060</a>
+  </div>
+</div>
+
+<header class="kopf">
+  <div class="wrap kopf-in">
+    <a class="logo" href="#top"><b>Praxis Fötzsch</b><small>Zahnarztpraxis Zeitz</small></a>
+    <nav class="nav">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#erstbesuch">Erster Besuch</a>
+      <a href="#team">Praxis</a>
+      <a href="#anfahrt">Anfahrt</a>
+      <a href="#kontakt">Termin</a>
+    </nav>
+    <a class="kopf-tel" href="tel:+493441710060"><small>Termin vereinbaren</small><b>+49 3441 710060</b></a>
+    <a class="btn btn--haupt" href="#kontakt">Termin anfragen</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="buehne" style="padding:0">
+    <div class="wrap buehne-in">
+      <div>
+        <span class="marke">Zahnarztpraxis in Zeitz</span>
+        <h1>Ihre Zahnarztpraxis in Zeitz</h1>
+        <p class="lede">Die Praxis von Frau Beate Fötzsch finden Sie in der Geußnitzer Straße. Hier erfahren Sie, wann wir für Sie da sind und wie Sie uns erreichen.</p>
+        <div class="tasten">
+          <a class="btn btn--haupt" href="#kontakt">Termin anfragen</a>
+          <a class="btn btn--rand" href="#erstbesuch">Erster Besuch bei uns</a>
+        </div>
+      </div>
+      <div class="buehne-bild"><img src="" alt="Behandlungsraum einer Zahnarztpraxis" onerror="this.style.display='none'"></div>
+    </div>
+  </section>
+
+  <div class="zeiten">
+    <div class="wrap">
+      <div class="zeiten-in">
+        <div class="tag"><b>Montag</b><span>08:00–12:00, 12:30–15:00</span></div>
+        <div class="tag"><b>Dienstag</b><span>08:00–12:00</span></div>
+        <div class="tag"><b>Mittwoch</b><span>08:00–12:00, 14:00–18:00</span></div>
+        <div class="tag"><b>Donnerstag</b><span>08:00–12:00, 14:00–18:00</span></div>
+        <div class="tag"><b>Freitag</b><span>08:00–12:00</span></div>
+        <div class="tag zu"><b>Sa / So</b><span>Geschlossen</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="leistungen">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Leistungen</span>
+        <h2>Unsere Leistungen</h2>
+        <p>Die Praxis versorgt Sie zahnärztlich. Welche Leistungen im Einzelnen möglich sind, besprechen wir gern mit Ihnen persönlich.</p>
+      </div>
+      <div class="gewerke">
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-1.5-3-1.5-6c0-1.5-1-2-2-2s-2.5 1-2.5 3.5C6 11 5 8 5 6c0-2 1.5-3 3-3 1.5 0 2.5 1 4 1s2.5-1 4-1c1.5 0 3 1 3 3 0 2-1 5-1 10.5 0-2.5-1.5-3.5-2.5-3.5s-2 .5-2 2c0 3-1.5 6-1.5 6z"/></svg></span>
+          <h3>Untersuchung</h3><p>Zahnärztliche Kontrolle von Zähnen, Zahnfleisch und Mundraum.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M12 9v6"/></svg></span>
+          <h3>Zahnerhaltung</h3><p>Behandlung von Karies und Versorgung beschädigter Zähne, zum Beispiel mit Füllungen.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V9l8-5 8 5v11"/><path d="M9 20v-6h6v6"/></svg></span>
+          <h3>Prophylaxe</h3><p>Vorsorge und Beratung zur Pflege Ihrer Zähne.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v8M8 7l4-4 4 4"/><rect x="5" y="11" width="14" height="10" rx="2"/></svg></span>
+          <h3>Zahnersatz</h3><p>Beratung und Planung, wenn Zähne ersetzt werden müssen.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2"/><path d="M3 20c0-3 2.7-5 6-5s6 2 6 5M15 20c0-2 1-3.2 3-3.2s3 1.2 3 3.2"/></svg></span>
+          <h3>Schmerzbehandlung</h3><p>Bei akuten Beschwerden bitten wir Sie, sich telefonisch bei uns zu melden.</p>
+        </article>
+        <article class="gewerk">
+          <span class="gewerk-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 5.6A5.5 5.5 0 0 0 12 7a5.5 5.5 0 0 0-8.8-1.4 5.6 5.6 0 0 0 0 7.9L12 21l8.8-7.5a5.6 5.6 0 0 0 0-7.9z"/></svg></span>
+          <h3>Beratung</h3><p>Wir besprechen mit Ihnen die möglichen Behandlungswege und beantworten Ihre Fragen.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="erstbesuch" class="hell">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Erster Besuch</span>
+        <h2>So läuft ein Besuch ab</h2>
+        <p>Von der Terminvereinbarung bis zur Behandlung gehen wir Schritt für Schritt vor.</p>
+      </div>
+      <div class="ablauf">
+        <article class="schritt"><h3>Termin</h3><p>Sie rufen uns zu den Sprechzeiten an und vereinbaren einen Termin.</p></article>
+        <article class="schritt"><h3>Untersuchung</h3><p>Wir untersuchen Ihre Zähne und klären Ihre Beschwerden.</p></article>
+        <article class="schritt"><h3>Besprechung</h3><p>Wir erläutern Ihnen den Befund und die möglichen Schritte.</p></article>
+        <article class="schritt"><h3>Behandlung</h3><p>Die Behandlung führen wir nach Absprache mit Ihnen durch.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Praxis</span>
+        <h2>Ihre Zahnärztin</h2>
+        <p>Die Praxis wird von Frau Beate Fötzsch geführt. Bei Fragen zur Behandlung sprechen Sie uns gern an.</p>
+      </div>
+      <div class="team">
+        <article class="person">
+          <div class="person-bild"><img src="" alt="Beate Fötzsch" onerror="this.style.display='none'"></div>
+          <div class="person-txt"><b>Beate Fötzsch</b><small>Zahnärztin</small><p>Frau Fötzsch behandelt Patienten in der Praxis in Zeitz.</p></div>
+        </article>
+        <article class="person">
+          <div class="person-bild"><img src="" alt="" onerror="this.style.display='none'"></div>
+          <div class="person-txt"><b></b><small></small><p></p></div>
+        </article>
+        <article class="person">
+          <div class="person-bild"><img src="" alt="" onerror="this.style.display='none'"></div>
+          <div class="person-txt"><b></b><small></small><p></p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="anfahrt" class="hell">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Anfahrt</span>
+        <h2>So finden Sie uns</h2>
+        <p>Sie finden uns in der Geußnitzer Str. 12 in 06712 Zeitz. Bei Fragen zur Anreise rufen Sie uns gern an.</p>
+      </div>
+      <div class="anfahrt">
+        <div class="weg">
+          <span class="weg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 17h14M6 17V9l2-4h8l2 4v8"/><circle cx="8" cy="18" r="1.6"/><circle cx="16" cy="18" r="1.6"/></svg></span>
+          <div><b>Adresse</b><p>Geußnitzer Str. 12, 06712 Zeitz.</p></div>
+        </div>
+        <div class="weg">
+          <span class="weg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="2"/><path d="M5 10h14M8 21l2-4M16 21l-2-4"/></svg></span>
+          <div><b>Route</b><p>Über die Kartenfunktion können Sie sich die Route zur Praxis anzeigen lassen.</p></div>
+        </div>
+        <div class="weg">
+          <span class="weg-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></span>
+          <div><b>Rückfragen</b><p>Zur Anfahrt beraten wir Sie telefonisch zu den Sprechzeiten.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="notfall">
+    <div class="wrap notfall-in">
+      <div>
+        <span class="marke">Im Notfall</span>
+        <h2>Akute Beschwerden</h2>
+        <p>Bei akuten Zahnschmerzen rufen Sie uns bitte während der Sprechzeiten an, damit wir einen Termin für Sie finden.</p>
+      </div>
+      <div class="notfall-karte">
+        <small>Während der Sprechzeiten</small>
+        <b>+49 3441 710060</b>
+        <p>Außerhalb der Sprechzeiten wenden Sie sich bitte an den zahnärztlichen Notdienst.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="wrap">
+      <div class="kopfzeile">
+        <span class="marke">Termin</span>
+        <h2>Kontakt</h2>
+        <p>Für Termine und Fragen erreichen Sie uns telefonisch zu den Sprechzeiten.</p>
+      </div>
+      <div class="kontakt">
+        <div class="kdaten">
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15.5v3a2 2 0 0 1-2.2 2 19.5 19.5 0 0 1-8.5-3 19 19 0 0 1-6-6 19.5 19.5 0 0 1-3-8.6A2 2 0 0 1 3.3 1h3a2 2 0 0 1 2 1.7c.1 1 .3 1.9.7 2.8a2 2 0 0 1-.5 2.1L7.4 8.6a16 16 0 0 0 6 6l1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+            <div><small>Telefon</small><b>+49 3441 710060</b><p>Montag bis Freitag zu den angegebenen Sprechzeiten</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></span>
+            <div><small>E-Mail</small><b></b><p>Bitte keine Befunde oder Gesundheitsdaten per E-Mail senden.</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <div><small>Anschrift</small><b>Geußnitzer Str. 12</b><p>06712 Zeitz</p></div>
+          </div>
+          <div class="kzeile">
+            <span class="kzeile-ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4M16 2v4M3 10h18"/><rect x="3" y="4" width="18" height="18" rx="2"/></svg></span>
+            <div><small>Kassen</small><b></b><p></p></div>
+          </div>
+        </div>
+
+        <form class="form" onsubmit="event.preventDefault()">
+          <div class="zwei">
+            <div class="feld"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="feld"><label for="f-tel">Telefon</label><input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+          </div>
+          <div class="feld"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email"></div>
+          <div class="feld">
+            <label for="f-art">Anliegen</label>
+            <select id="f-art" name="art">
+              <option>Untersuchung</option>
+              <option>Zahnerhaltung</option>
+              <option>Prophylaxe</option>
+              <option>Beschwerden oder Schmerzen</option>
+              <option>Etwas anderes</option>
+            </select>
+          </div>
+          <div class="feld">
+            <label for="f-zeit">Wann passt es Ihnen?</label>
+            <input id="f-zeit" name="zeit" type="text" placeholder="z. B. vormittags, oder Dienstag und Donnerstag">
+          </div>
+          <button class="btn btn--haupt" type="submit" style="width:100%;justify-content:center">Terminwunsch senden</button>
+          <small>Wir melden uns zur Bestätigung. Bitte senden Sie uns keine Angaben zu Ihrer Gesundheit über dieses Formular.</small>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="fuss">
+  <div class="wrap">
+    <div class="fuss-grid">
+      <div>
+        <a class="logo" href="#top" style="color:#fff"><b>Praxis Fötzsch</b><small style="color:#8EA2AB">Zahnarztpraxis Zeitz</small></a>
+        <p style="margin-top:1rem;max-width:36ch">Zahnarztpraxis Beate Fötzsch · Geußnitzer Str. 12 · 06712 Zeitz</p>
+      </div>
+      <div>
+        <h4>Leistungen</h4>
+        <ul>
+          <li><a href="#leistungen">Untersuchung</a></li>
+          <li><a href="#leistungen">Zahnerhaltung</a></li>
+          <li><a href="#leistungen">Prophylaxe</a></li>
+          <li><a href="#leistungen">Zahnersatz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Praxis</h4>
+        <ul>
+          <li>Geußnitzer Str. 12</li>
+          <li>06712 Zeitz</li>
+          <li><a href="tel:+493441710060">+49 3441 710060</a></li>
+          <li><a href="mailto:"></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fuss-unten">
+      <span>© 2026 Zahnarztpraxis Beate Fötzsch</span>
+      <span>Impressum · Datenschutz</span>
+    </div>
+  </div>
+</footer>
+
+<div class="vorschaumarke" aria-hidden="true">
+  <b>VORSCHAU</b>
+  <span>nicht veröffentlicht</span>
+</div>
+
+<div class="entwurf">
+  <span class="entwurf-haupt">Unverbindlicher Entwurf für Zahnarztpraxis Beate Fötzsch — diese Seite ist nicht veröffentlicht.</span>
+  <span class="entwurf-rest">
+    <span>Gestaltet von TerminWerk Systeme · für Suchmaschinen gesperrt · nur über diesen Link erreichbar</span>
+    <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+    <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+    <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+    <span>Entwurf gültig bis 15.12.2026</span>
+  </span>
+</div>
+
+<script>
+(function(){
+  var SLUG = "praxis-foetzsch";
+  function hinweis(titel, satz){
+    document.title = titel;
+    document.body.innerHTML =
+      '<div style="min-height:100vh;display:grid;place-items:center;padding:2rem;'
+      + 'background:#16242B;color:#AEBEC5;text-align:center;font-family:' + "'Manrope'" + ',system-ui,sans-serif">'
+      + '<div style="max-width:46ch">'
+      + '<p style="font-family:' + "'DM Sans'" + ',system-ui,sans-serif;font-weight:700;font-size:1.5rem;color:#fff;margin:0 0 .9rem">' + titel + '</p>'
+      + '<p style="margin:0 0 1.4rem;line-height:1.6">' + satz + ' Veröffentlicht war er zu keiner Zeit.</p>'
+      + '<p style="margin:0 0 1.6rem;line-height:1.6">Wenn Sie ihn noch einmal sehen möchten, melden wir ihn gern erneut frei.</p>'
+      + '<p style="margin:0"><a href="https://terminwerk-systeme.de/kontakt/" style="color:#7FD3D9">TerminWerk Systeme</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/impressum/" style="color:#7FD3D9">Impressum</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/datenschutz/" style="color:#7FD3D9">Datenschutz</a></p>'
+      + '</div></div>';
+    document.body.style.padding = "0";
+  }
+  var bis = new Date("2026-12-15T23:59:59");
+  if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
+    hinweis("Dieser Entwurf ist abgelaufen.",
+      "Der unverbindliche Entwurf für Zahnarztpraxis Beate Fötzsch stand bis zum 15.12.2026 zur Ansicht bereit.");
+    return;
+  }
+  try{
+    fetch("../status.json", { cache: "no-store" })
+      .then(function(a){ return a.ok ? a.json() : null; })
+      .then(function(s){
+        if (s && s[SLUG] === "aus") {
+          hinweis("Dieser Entwurf wurde zurückgezogen.",
+            "Der unverbindliche Entwurf für Zahnarztpraxis Beate Fötzsch steht nicht mehr zur Ansicht bereit.");
+        }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
