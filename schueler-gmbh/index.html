@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Schüler GmbH — Meisterbetrieb für Garten- und Landschaftsbau in München</title>
+<meta name="description" content="Schüler GmbH, Meisterbetrieb für Garten- und Landschaftsbau in München: Neubau, Sanierung, Teichbau, Umgestaltung, Pflege sowie Planung und Entwurf.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ——————————————————————————————————————————————————————————
+   Garten- und Landschaftsbau — Vorlage TerminWerk Systeme
+   GaLaBau. Saisonal gepraegt: im Fruehjahr sind die Buecher voll,
+   im Herbst entscheidet sich das naechste Jahr.
+   Das gemeinsame Geruest steht in vorlagen/_kern.css.
+   —————————————————————————————————————————————————————————— */
+:root{
+  --akzent:#2e7f8c;
+  --akzent-d:#266873;
+  --licht:#B9D49A;
+
+  --papier:#FAF9F4;
+  --papier-2:#F0EFE5;
+  --sand:#E5E6D6;
+  --sand-tief:#D1D4BE;
+  --tief:#1A1E16;
+  --tief-2:#242A1F;
+
+  --tinte:#171A13;
+  --tinte-weich:#525847;
+  --tinte-matt:#7D8374;
+  --linie:#DCDDCC;
+  --linie-zart:#E9EADC;
+
+  --serif:"Fraunces",ui-serif,Georgia,"Times New Roman",serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  --band-1:url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1800&q=72");
+  --band-2:url("https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1800&q=72");
+
+  --h1-gewicht:700;
+  --h2-gewicht:600;
+  --rand:clamp(1.1rem,5vw,4.5rem);
+  --breite:1180px;
+}
+/* ———— Gemeinsamer Kern aller Vorlagen ————
+   Wird von vorlagen/uebersetzen.js an die Stelle <!--KERN--> gesetzt.
+   Hier stehen Geruest, Kopf, Fuss und die Entwurfs-Kennzeichnung.
+   Farben, Schriften und Bandbilder setzt jede Branche selbst.    */
+:root{ --akzent-hell:color-mix(in srgb,var(--akzent) 68%,white); }
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;padding-bottom:172px;
+  font-family:var(--sans);font-size:17px;line-height:1.65;
+  color:var(--tinte);background:var(--papier);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:-.015em;line-height:1.08;text-wrap:balance}
+p{margin:0}
+[hidden]{display:none!important}
+
+.huelle{width:min(var(--breite),100%);margin-inline:auto;
+  padding-left:max(var(--rand),env(safe-area-inset-left,0px));
+  padding-right:max(var(--rand),env(safe-area-inset-right,0px))}
+
+/* Augenbrauen-Label: gesperrte Versalien, das einzige Ornament der Seite */
+.label{font-size:.7rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;color:var(--akzent)}
+
+/* ———— Notfallzeile / Hinweiszeile ganz oben ———— */
+.notruf{background:var(--tief);color:#CFDAD5;font-size:.84rem}
+.notruf .huelle{display:flex;align-items:center;justify-content:center;gap:.5rem .95rem;flex-wrap:wrap;padding-block:.62rem;text-align:center}
+.notruf b{color:#fff;font-weight:600}
+.notruf a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.45);text-underline-offset:3px}
+
+/* ———— Kopf ———— */
+/* Notrufzeile, Kopf und Bühne bilden oben einen durchgehenden dunklen
+   Block. Der Kopf bleibt beim Scrollen dunkel und steht dann klar
+   gegen die helle Seite. */
+.kopf{position:sticky;top:env(safe-area-inset-top,0px);z-index:90;
+  background:color-mix(in srgb,var(--tief) 93%,transparent);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid rgba(255,255,255,.1)}
+.kopf .huelle{display:flex;align-items:center;gap:1.4rem;padding-block:.95rem}
+.marke{display:flex;align-items:center;gap:.85rem;line-height:1.14;margin-right:auto;min-width:0}
+.wortmarke{display:flex;flex-direction:column;min-width:0}
+.wortmarke b{font-family:var(--serif);font-size:1.26rem;font-weight:500;letter-spacing:-.02em;color:#fff}
+.wortmarke span{font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:#8FA8A1;font-weight:500}
+/* Logo des Betriebs: steht auf einer weißen Platte, damit es auf dem
+   dunklen Kopf immer sitzt. Das Multiplizieren laesst den weissen
+   Kasten verschwinden, den viele alte Logodateien mitbringen —
+   es sieht freigestellt aus, ohne dass etwas beschnitten wurde. */
+.logo{display:none;background:#fff;border-radius:11px;padding:.42rem .72rem;align-items:center;flex:none}
+.logo img{max-height:38px;width:auto;max-width:188px;mix-blend-mode:multiply}
+.nav{display:flex;gap:1.55rem;font-size:.9rem;font-weight:500;color:#B9CAC5}
+.nav a{text-decoration:none}
+.nav a:hover{color:#fff}
+.kopf .knopf-voll{background:#fff;color:var(--tief)}
+.kopf .knopf-voll:hover{background:var(--sand)}
+
+.knopf{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:600;
+  font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;
+  padding:.95rem 1.5rem;border-radius:3px;text-decoration:none;white-space:nowrap;border:1px solid transparent;
+  transition:background .18s,color .18s,border-color .18s,transform .18s}
+.knopf::after{content:"→";font-size:.95em;transition:transform .18s}
+.knopf:hover::after{transform:translateX(3px)}
+.knopf-voll{background:var(--akzent);color:#fff}
+.knopf-voll:hover{background:var(--akzent-d)}
+.knopf-rand{border-color:rgba(255,255,255,.34);color:#fff}
+.knopf-rand:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.knopf-hell{background:#fff;color:var(--tief)}
+.knopf-hell:hover{background:var(--sand)}
+
+/* ———— Bühne ————
+   Ein Foto über die volle Breite, abgedunkelt, Text darüber. Hat der
+   Kunde kein eigenes Foto, steht die hinterlegte Aufnahme da. Rechts
+   drei Fakten statt einer Zeitentabelle: sechsmal "nach Vereinbarung"
+   untereinander ist das Gegenteil von Verkaufen.                      */
+.buehne{position:relative;isolation:isolate;color:#EAF0EE;overflow:hidden;
+  min-height:clamp(540px,76vh,780px);display:flex;align-items:center;
+  background:var(--tief);padding-block:clamp(3.4rem,8vw,6rem)}
+.buehne-bild{position:absolute;inset:0;z-index:-2;background-color:var(--tief);
+  background-image:var(--band-1);background-size:cover;background-position:center 42%}
+.buehne-bild img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.buehne::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(103deg,
+    color-mix(in srgb,var(--tief) 96%,transparent) 0%,
+    color-mix(in srgb,var(--tief) 88%,transparent) 34%,
+    color-mix(in srgb,var(--tief) 54%,transparent) 62%,
+    color-mix(in srgb,var(--tief) 22%,transparent) 88%,
+    color-mix(in srgb,var(--tief) 14%,transparent) 100%)}
+.buehne::after{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;z-index:-1;pointer-events:none;
+  background:linear-gradient(to top,color-mix(in srgb,var(--tief) 72%,transparent),transparent)}
+
+.buehne-in{display:grid;grid-template-columns:1.22fr .78fr;gap:clamp(2.2rem,5vw,4.6rem);align-items:center;width:100%}
+.strich{display:block;width:54px;height:3px;background:var(--akzent);border-radius:2px;margin-bottom:1.15rem}
+.buehne .label{color:#D7E2DE;letter-spacing:.2em}
+.buehne h1{font-size:clamp(2.5rem,1.3rem + 4.6vw,4.5rem);margin:1rem 0 0;color:#fff;
+  font-weight:var(--h1-gewicht,700);letter-spacing:var(--h1-sperrung,-.03em);line-height:1.03}
+.buehne h1 em{font-style:normal;color:var(--akzent-hell,var(--akzent))}
+.lede{margin-top:1.4rem;font-size:clamp(1rem,.96rem + .3vw,1.12rem);color:#C4D2CE;max-width:48ch;line-height:1.7}
+.tasten{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}
+
+/* Drei Fakten. Keine erfundenen Zahlen — steht keine da, traegt das
+   Feld ein Zeichen oder ein kurzes Wort, so wie "§ Feste Ansprechpartner". */
+.fakten{display:grid;gap:0;background:color-mix(in srgb,var(--tief) 64%,transparent);
+  backdrop-filter:blur(6px) saturate(1.2);border:1px solid rgba(255,255,255,.14);border-radius:4px;
+  padding:.3rem clamp(1.3rem,2.4vw,1.8rem)}
+.fakt{padding-block:clamp(1.1rem,2.2vw,1.5rem);border-bottom:1px solid rgba(255,255,255,.12)}
+.fakt:last-child{border-bottom:0}
+.fakt b{display:block;font-family:var(--serif);font-size:clamp(1.7rem,1.3rem + 1.4vw,2.3rem);
+  line-height:1;color:#fff;font-weight:var(--h1-gewicht,700);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fakt span{display:block;margin-top:.45rem;font-size:.74rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--akzent-hell,var(--licht))}
+.fakt p{margin-top:.42rem;font-size:.87rem;line-height:1.55;color:#AFC0BB}
+
+/* ———— Bildbänder ————
+   Hat der Kunde eigene Fotos, stehen sie oben drauf. Hat er keine,
+   bleibt die hinterlegte Aufnahme stehen — die Seite ist nie leer.
+   Die hinterlegten Bilder zeigen niemanden und behaupten nichts.      */
+.band{margin-block:clamp(1.6rem,3.5vw,3rem)}
+.band-rahmen{position:relative;width:100%;aspect-ratio:21/9;border-radius:22px;overflow:hidden;
+  background-color:var(--papier-2);background-size:cover;background-position:center 58%;
+  background-image:var(--band-1)}
+.band-bild{width:100%;height:100%;object-fit:cover}
+.band-schmal .band-rahmen{aspect-ratio:32/9;background-position:center 40%;
+  background-image:var(--band-2)}
+
+/* ———— Abschnittskopf ———— */
+.abschnitt{padding-block:clamp(3.2rem,6.5vw,5.8rem)}
+.a-kopf{max-width:60ch;margin-bottom:clamp(2rem,4vw,3.2rem);padding-top:1.15rem;position:relative}
+.a-kopf::before{content:"";position:absolute;top:0;left:0;width:46px;height:3px;border-radius:2px;background:var(--akzent)}
+.a-kopf h2{font-size:clamp(1.95rem,1.5rem + 1.7vw,2.85rem);margin:.75rem 0 0;
+  font-weight:var(--h2-gewicht,400);letter-spacing:var(--h1-sperrung,-.02em)}
+.a-kopf p{margin-top:1rem;color:var(--tinte-weich);font-size:1.03rem}
+
+/* ———— Leistungen: nummerierte Liste statt Kachelraster ———— */
+.liste{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(2rem,5vw,4.5rem)}
+.posten{display:grid;grid-template-columns:auto 1fr;gap:0 1.35rem;padding-block:1.6rem;border-top:1px solid var(--linie);
+  border-top-color:color-mix(in srgb,var(--akzent) 26%,var(--linie))}
+.posten .zahl{font-family:var(--serif);font-size:1.02rem;color:var(--akzent);padding-top:.16rem;font-variant-numeric:tabular-nums}
+.posten h3{font-family:var(--sans);font-weight:600;font-size:1.08rem;letter-spacing:-.005em;line-height:1.35}
+.posten p{margin-top:.42rem;color:var(--tinte-weich);font-size:.95rem;line-height:1.6}
+
+/* ———— Erster Besuch: Sandfläche, große Ziffern ———— */
+.ablauf-flaeche{background:var(--papier-2);
+  background:color-mix(in srgb,var(--akzent) 11%,var(--papier))}
+.schritte{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.4rem,3vw,2.6rem)}
+.schritt .nr{font-family:var(--serif);font-size:clamp(2.6rem,2rem + 2vw,3.5rem);line-height:1;color:var(--sand-tief);
+  color:color-mix(in srgb,var(--akzent) 62%,var(--sand-tief))}
+.schritt h3{font-family:var(--sans);font-weight:600;font-size:1.04rem;margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--linie)}
+.schritt p{margin-top:.5rem;color:var(--tinte-weich);font-size:.93rem;line-height:1.6}
+
+/* ———— Team: Namen groß, Monogramm statt Fremdgesicht ———— */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.8rem,4vw,3.4rem)}
+.kopfbild{aspect-ratio:4/5;width:100%;object-fit:cover;border-radius:16px;margin-bottom:1.15rem}
+.monogramm{aspect-ratio:4/5;width:100%;border-radius:16px;margin-bottom:1.15rem;display:grid;place-items:center;
+  background:linear-gradient(158deg,var(--akzent) -18%,var(--tief) 86%);position:relative;overflow:hidden}
+.monogramm::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(64% 52% at 30% 16%,rgba(255,255,255,.17),transparent 68%)}
+.monogramm span{position:relative;z-index:1;font-family:var(--serif);
+  font-size:clamp(2.6rem,2rem + 2.2vw,3.7rem);color:#fff;letter-spacing:.03em}
+.person h3{font-size:1.5rem;font-weight:500}
+.person .rolle{margin-top:.3rem;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--akzent);font-weight:600}
+.person p{margin-top:.75rem;color:var(--tinte-weich);font-size:.95rem}
+
+/* ———— Anfahrt ———— */
+.wege{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.6rem,3.5vw,3rem)}
+.weg{padding-top:1.3rem;border-top:1px solid var(--linie)}
+.weg h3{font-family:var(--sans);font-weight:600;font-size:1.04rem}
+.weg p{margin-top:.45rem;color:var(--tinte-weich);font-size:.95rem}
+
+/* ———— Notfall: dunkles Band über volle Breite ———— */
+.dunkelband{background:var(--tief);color:#C8D4CF}
+.dunkelband-in{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center;
+  padding-block:clamp(2.8rem,5vw,4.2rem)}
+.dunkelband h2{color:#fff;font-size:clamp(1.85rem,1.5rem + 1.4vw,2.5rem)}
+.dunkelband p{margin-top:1rem;line-height:1.7}
+.dunkelband .klein{margin-top:1.1rem;font-size:.9rem;color:#92A39D}
+.dunkelband .label{color:var(--licht)}
+
+/* ———— Kontakt ———— */
+.kontakt-flaeche{background:var(--tief-2);color:#C8D4CF}
+.kontakt{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2.2rem,5vw,4.5rem);
+  padding-block:clamp(3.2rem,6vw,5.4rem)}
+.kontakt h2{color:#fff;font-size:clamp(2rem,1.6rem + 1.6vw,2.9rem)}
+.kontakt > div > p{margin-top:1.05rem}
+.ruf{display:block;margin-top:1.9rem;font-family:var(--serif);font-size:clamp(1.85rem,1.4rem + 2vw,2.7rem);
+  color:#fff;text-decoration:none;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.ruf:hover{color:var(--licht)}
+.ruf-zeit{margin-top:.4rem;font-size:.87rem;color:#92A39D}
+.adresse{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.14);display:grid;gap:1.1rem}
+.adresse div span{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--licht);font-weight:600;margin-bottom:.28rem}
+.adresse a{color:#fff;text-underline-offset:3px}
+
+.form{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:clamp(1.4rem,3vw,2rem)}
+.feld{margin-bottom:1rem}
+.feld label{display:block;font-size:.82rem;font-weight:500;margin-bottom:.38rem;color:#C8D4CF}
+.feld input,.feld textarea{width:100%;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.16);border-radius:11px;
+  padding:.76rem .9rem;color:#fff;font:inherit;font-size:.95rem}
+.feld input:focus,.feld textarea:focus{outline:2px solid var(--akzent);outline-offset:1px;border-color:transparent}
+.feld textarea{min-height:104px;resize:vertical}
+.feld .hinweis{margin-top:.34rem;font-size:.78rem;color:#92A39D}
+.form button{width:100%;margin-top:.3rem;background:#fff;color:var(--tief);border:0;border-radius:999px;
+  padding:.88rem 1.3rem;font:inherit;font-weight:600;cursor:pointer}
+.form button:hover{background:var(--sand)}
+.form .datenschutz{margin-top:.95rem;font-size:.79rem;color:#92A39D;line-height:1.55}
+
+/* ———— Kassen ———— */
+.schlusszeile{padding:clamp(1.5rem,3vw,2.1rem) clamp(1.4rem,3vw,2rem);border-radius:18px;
+  background:color-mix(in srgb,var(--akzent) 13%,var(--papier));
+  margin-block:clamp(1.4rem,3vw,2.4rem);
+  display:flex;gap:.8rem 2.2rem;align-items:baseline;flex-wrap:wrap}
+.schlusszeile b{font-family:var(--serif);font-size:1.3rem;font-weight:500}
+.schlusszeile p{color:var(--tinte-weich);font-size:.93rem;max-width:62ch}
+
+/* ———— Fuß ———— */
+.fuss{border-top:1px solid var(--linie);padding-block:2.4rem 2.8rem;font-size:.88rem;color:var(--tinte-weich)}
+.fuss-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1.8rem}
+.fuss b{display:block;font-family:var(--serif);font-size:1.12rem;font-weight:500;color:var(--tinte);margin-bottom:.5rem}
+.fuss .zeile{margin-top:1.9rem;padding-top:1.3rem;border-top:1px solid var(--linie-zart);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem;color:var(--tinte-matt)}
+
+/* ———— Entwurfs-Kennzeichnung ———— */
+.vorschaumarke{position:fixed;top:120px;right:16px;z-index:95;pointer-events:none;display:flex;flex-direction:column;gap:.08rem;
+  background:color-mix(in srgb,var(--tief) 90%,transparent);border:1px solid rgba(255,255,255,.24);border-radius:10px;padding:.48rem .78rem;line-height:1.2;color:#fff;
+  box-shadow:0 12px 28px -16px rgba(0,0,0,.7)}
+.vorschaumarke b{font-size:.74rem;font-weight:700;letter-spacing:.1em}
+.vorschaumarke span{font-size:.67rem;font-weight:500;color:#B6C4BF}
+@media (max-width:760px){.vorschaumarke{display:none}}
+
+.entwurf{position:fixed;left:0;right:0;bottom:0;z-index:96;background:var(--tief);color:#AEBCB7;border-top:2px solid var(--akzent);
+  padding:.9rem max(1.1rem,env(safe-area-inset-right,0px)) calc(.9rem + env(safe-area-inset-bottom,0px)) max(1.1rem,env(safe-area-inset-left,0px));
+  font-size:.81rem;text-align:center}
+.entwurf-haupt{display:block;font-weight:600;font-size:.93rem;color:#fff;margin-bottom:.28rem}
+.entwurf-rest{display:flex;align-items:center;justify-content:center;gap:.4rem .9rem;flex-wrap:wrap}
+.entwurf a{color:#fff;text-underline-offset:3px}
+.entwurf a:hover{color:var(--licht)}
+.nur-schmal{display:none}
+
+@media (max-width:980px){
+  .buehne-in,.dunkelband-in,.kontakt{grid-template-columns:1fr}
+  .schritte,.team,.wege{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav{display:none}
+  .fuss-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  /* Der Entwurfs-Hinweis wird schmal gesetzt: er muss erkennbar bleiben,
+     darf aber auf dem Telefon nicht die Rufnummern-Taste verdecken. */
+  body{padding-bottom:104px}
+  .liste{grid-template-columns:1fr}
+  .schritte,.team,.wege,.fuss-grid{grid-template-columns:1fr}
+  .band-bild{aspect-ratio:3/2;border-radius:16px}
+  .kopf .huelle{gap:.8rem}
+  .marke b{font-size:1.08rem}
+  .marke span{font-size:.62rem;letter-spacing:.08em}
+  .kopf .knopf{padding:.66rem 1rem;font-size:.84rem}
+  .nur-breit,.entwurf-detail{display:none}
+  .nur-schmal{display:inline}
+  .entwurf{font-size:.76rem;padding-top:.7rem}
+  .entwurf-haupt{font-size:.85rem;margin-bottom:.2rem}
+  .entwurf-rest{gap:.3rem .8rem}
+  .buehne{padding-bottom:1.5rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="notruf">
+  <div class="huelle">
+    <span><b>Sturmschaden?</b> Anfragen telefonisch unter 0172-6040167</span>
+    <a href="tel:01726040167">0172-6040167</a>
+  </div>
+</div>
+
+<header class="kopf">
+  <div class="huelle">
+    <div class="marke">
+      <span class="logo" data-logo>
+        <img src="https://static.wixstatic.com/media/f420d1_43f432a0ad77474dbafec7899adeb7b5~mv2.webp" alt="Schüler GmbH" onerror="this.remove();">
+      </span>
+      <span class="wortmarke">
+        <b>Schüler GmbH</b>
+        <span>Garten & Landschaftsbau</span>
+      </span>
+    </div>
+    <nav class="nav">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#projekte">Arbeiten</a>
+      <a href="#team">Betrieb</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="knopf knopf-voll" href="tel:01726040167">Jetzt anrufen</a>
+  </div>
+</header>
+
+<section class="buehne">
+  <div class="buehne-bild">
+    <img src="https://www.gartenbau-schueler.de/quality_auto/neubau_7.webp" alt="Neu angelegter Garten in München" onerror="this.remove();">
+  </div>
+  <div class="huelle buehne-in">
+    <div>
+      <span class="strich"></span>
+      <span class="label">Meisterbetrieb für Garten- und Landschaftsbau</span>
+      <h1>Ihr Garten wird bei uns zum <em>Urlaubsort zu Hause.</em></h1>
+      <p class="lede">Wir planen, bauen und pflegen Gärten in München und Umgebung. Ihre persönlichen Wünsche stehen dabei im Vordergrund.</p>
+      <div class="tasten">
+        <a class="knopf knopf-voll" href="#kontakt">Jetzt anrufen</a>
+        <a class="knopf knopf-rand" href="tel:01726040167">0172-6040167</a>
+      </div>
+    </div>
+    <aside class="fakten">
+      <div class="fakt"><b>2008</b><span>Am Markt seit</span><p>Seit 2008 erfüllen wir die Wünsche unserer Kunden in München und Umgebung.</p></div>
+      <div class="fakt"><b></b><span>Meisterbetrieb</span><p>Nicolas Schüler ist Meister und staatlich geprüfter Wirtschafter für Garten- und Landschaftsbau.</p></div>
+      <div class="fakt"><b></b><span>Kostenfreies Angebot</span><p>Nach Gespräch und Besichtigung vor Ort erstellen wir Ihnen ein individuelles Angebot.</p></div>
+    </aside>
+  </div>
+</section>
+
+<div class="huelle band">
+  <div class="band-rahmen">
+    <img class="band-bild" src="https://www.gartenbau-schueler.de/quality_auto/teichbau_3.webp" alt="Gartenteich als Naturpool angelegt" loading="lazy" onerror="this.remove();">
+  </div>
+</div>
+
+<section class="abschnitt" id="leistungen">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="label">Leistungen</span>
+      <h2>Unsere Leistungen</h2>
+      <p>Ob Neubau oder Sanierung, Umgestaltung oder Pflege: Wir legen großen Wert auf die Individualität jedes Projekts.</p>
+    </div>
+    <div class="liste">
+      <div class="posten"><span class="zahl">01</span><div><h3>Neubau</h3><p>Wir realisieren mit Ihnen oder Ihrem Architekten den passenden Garten zu Ihrem Neubau.</p></div></div>
+      <div class="posten"><span class="zahl">02</span><div><h3>Sanierung</h3><p>Ein verwilderter oder verfallener Garten wird von uns wieder instand gesetzt.</p></div></div>
+      <div class="posten"><span class="zahl">03</span><div><h3>Teichbau</h3><p>Teichplanung nach Ihren Vorstellungen, auch die Umwandlung eines Gartenteichs in einen Naturpool.</p></div></div>
+      <div class="posten"><span class="zahl">04</span><div><h3>Umgestaltung</h3><p>Ob teilweise oder komplett neu: Wir gestalten Ihren Garten nach Ihren Wünschen um oder modernisieren ihn.</p></div></div>
+      <div class="posten"><span class="zahl">05</span><div><h3>Pflege</h3><p>Pflanzen und Garten brauchen Pflege und eine leitende Hand, damit sie ganzjährig gepflegt aussehen.</p></div></div>
+      <div class="posten"><span class="zahl">06</span><div><h3>Planung & Entwurf</h3><p>Ein guter Garten beginnt mit einer guten Planung, die wir nach Ihren Wünschen vornehmen.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt ablauf-flaeche" id="ablauf">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="label">Vom ersten Blick zum fertigen Garten</span>
+      <h2>So arbeiten wir</h2>
+      <p>Von der ersten Anfrage bis zur Umsetzung begleiten wir Sie persönlich.</p>
+    </div>
+    <div class="schritte">
+      <div class="schritt"><div class="nr">01</div><h3>Anfrage</h3><p>Sie rufen an oder schreiben uns, was Sie sich für Ihren Garten wünschen.</p></div>
+      <div class="schritt"><div class="nr">02</div><h3>Gespräch vor Ort</h3><p>Wir nehmen uns Zeit für ein Gespräch und eine Besichtigung bei Ihnen im Garten.</p></div>
+      <div class="schritt"><div class="nr">03</div><h3>Planung und Angebot</h3><p>Wir planen nach Ihren Vorstellungen und erstellen Ihnen ein kostenfreies, individuelles Angebot.</p></div>
+      <div class="schritt"><div class="nr">04</div><h3>Umsetzung</h3><p>Wir setzen das abgestimmte Konzept um, gern in Abstimmung mit Ihrem Architekten.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="huelle band band-schmal">
+  <div class="band-rahmen"></div>
+</div>
+
+<section class="abschnitt" id="projekte" style="padding-top:0">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="label">Arbeiten</span>
+      <h2>Arbeiten im Überblick</h2>
+      <p>Jedes Projekt ist ein Einzelstück. Hier sehen Sie, welche Art von Arbeiten wir ausführen.</p>
+    </div>
+    <div class="wege">
+      <div class="weg"><h3>Neubau</h3><p>Gartenanlage passend zu einem Neubau, geplant mit Bauherr oder Architekt.</p></div>
+      <div class="weg"><h3>Sanierung</h3><p>Instandsetzung eines Gartens, der über Jahre nicht gepflegt wurde.</p></div>
+      <div class="weg"><h3>Teichbau</h3><p>Teichanlage nach Kundenwunsch, auch als Naturpool zum Baden.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="team" style="padding-top:clamp(2rem,4vw,3.4rem)">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="label">Der Betrieb</span>
+      <h2>Der Meister im Betrieb</h2>
+      <p>Hinter der Schüler GmbH steht ein Meister des Garten- und Landschaftsbaus, der sich Ihrer Wünsche persönlich annimmt.</p>
+    </div>
+    <div class="team">
+      <div class="person">
+        <div class="monogramm" data-mono="Nicolas Schüler"><span></span></div>
+        <img class="kopfbild" src="https://www.gartenbau-schueler.de/quality_auto/Nico%202.jpg" alt="Nicolas Schüler" loading="lazy" hidden onerror="this.remove();">
+        <h3>Nicolas Schüler</h3>
+        <div class="rolle">Meister Garten- und Landschaftsbau</div>
+        <p>Staatlich geprüfter Wirtschafter für Garten- und Landschaftsbau. Ihre Wünsche setzen wir gemeinsam mit Ihnen in ein stimmiges Konzept um.</p>
+      </div>
+      <div class="person">
+        <div class="monogramm" data-mono=""><span></span></div>
+        <img class="kopfbild" src="" alt="" loading="lazy" hidden onerror="this.remove();">
+        <h3></h3>
+        <div class="rolle"></div>
+        <p></p>
+      </div>
+      <div class="person">
+        <div class="monogramm" data-mono=""><span></span></div>
+        <img class="kopfbild" src="" alt="" loading="lazy" hidden onerror="this.remove();">
+        <h3></h3>
+        <div class="rolle"></div>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="abschnitt" id="gebiet" style="padding-top:0">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="label">Einsatzgebiet</span>
+      <h2>So erreichen Sie uns</h2>
+      <p>Wir arbeiten in München und Umgebung und kommen für die Besichtigung zu Ihnen.</p>
+    </div>
+    <div class="wege">
+      <div class="weg"><h3>Anrufen</h3><p>Sie erreichen uns telefonisch unter 0172-6040167.</p></div>
+      <div class="weg"><h3>Schreiben</h3><p>Senden Sie uns Ihre Nachricht per Formular oder per E-Mail.</p></div>
+      <div class="weg"><h3>Besichtigung</h3><p>Wir schauen uns Ihren Garten vor Ort an und besprechen Ihre Vorstellungen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dunkelband">
+  <div class="huelle dunkelband-in">
+    <div>
+      <span class="label">Nach dem Sturm</span>
+      <h2 style="margin-top:.7rem">Kurzfristige Anfragen</h2>
+    </div>
+    <div>
+      <p>Wenn es eilt, rufen Sie uns bitte direkt unter 0172-6040167 an.</p>
+      <p class="klein">Wenn wir gerade nicht erreichbar sind, schreiben Sie uns. Wir melden uns zeitnah bei Ihnen.</p>
+      <div class="tasten" style="margin-top:1.5rem">
+        <a class="knopf knopf-hell" href="tel:01726040167">0172-6040167</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt-flaeche" id="kontakt">
+  <div class="huelle kontakt">
+    <div>
+      <span class="label">Kontakt</span>
+      <h2 style="margin-top:.7rem">Kann's losgehen?</h2>
+      <p>Schildern Sie uns Ihr Vorhaben. Wir melden uns zeitnah bei Ihnen.</p>
+      <a class="ruf" href="tel:01726040167">0172-6040167</a>
+      <p class="ruf-zeit">Telefonisch und per E-Mail erreichbar</p>
+      <div class="adresse">
+        <div><span>Anschrift</span>Kreuzhofstraße 10<br>81476 München</div>
+        <div><span>E-Mail</span><a href="mailto:info@gartenbau-schueler.de">info@gartenbau-schueler.de</a></div>
+      </div>
+      <div class="zeiten">
+        <span class="label">Bürozeiten</span>
+        <h2>Wann Sie uns erreichen</h2>
+        <table>
+          <tr><td>Mo</td><td></td></tr>
+          <tr><td>Di</td><td></td></tr>
+          <tr><td>Mi</td><td></td></tr>
+          <tr><td>Do</td><td></td></tr>
+          <tr><td>Fr</td><td></td></tr>
+          <tr><td>Sa</td><td></td></tr>
+        </table>
+        <p class="zeiten-fuss">Rufen Sie uns an oder schreiben Sie uns, wir melden uns zeitnah bei Ihnen.</p>
+      </div>
+    </div>
+    <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='In der Vorschau nicht aktiv';">
+      <div class="feld"><label for="f-name">Ihr Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="feld"><label for="f-tel">Telefon</label>
+        <input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+      <div class="feld"><label for="f-mail">E-Mail <span style="color:#92A39D;font-weight:400">(freiwillig)</span></label>
+        <input id="f-mail" name="email" type="email" autocomplete="email">
+        <span class="hinweis">Bitte keine Grundstücksunterlagen in dieses Feld — bringen Sie die gern zum Termin mit.</span></div>
+      <div class="feld"><label for="f-text">Ihr Anliegen</label>
+        <textarea id="f-text" name="nachricht" placeholder="z. B. Ich möchte meinen Garten umgestalten lassen."></textarea></div>
+      <button type="submit">Nachricht senden</button>
+      <p class="datenschutz">Wir verwenden Ihre Angaben ausschließlich, um Ihre Anfrage zu bearbeiten. Eine Weitergabe an Dritte erfolgt nicht.</p>
+    </form>
+  </div>
+</section>
+
+<div class="huelle">
+  <div class="schlusszeile">
+    <b></b>
+    <p></p>
+  </div>
+</div>
+
+<footer class="huelle fuss">
+  <div class="fuss-grid">
+    <div><b>Schüler GmbH</b><p>Schüler GmbH · Meisterbetrieb für Garten- und Landschaftsbau · München</p></div>
+    <div><b style="font-size:.95rem">Anschrift</b>Kreuzhofstraße 10<br>81476 München<br>
+      <a href="tel:01726040167">0172-6040167</a></div>
+    <div><b style="font-size:.95rem">Erreichbarkeit</b>Telefonisch und per E-Mail erreichbar</div>
+  </div>
+  <div class="zeile">
+    <span>&copy; 2026 Schüler GmbH</span>
+    <span>Entwurf — Impressum und Datenschutzerklärung folgen mit der Veröffentlichung.</span>
+  </div>
+</footer>
+
+<div class="vorschaumarke" aria-hidden="true">
+  <b>VORSCHAU</b>
+  <span>nicht veröffentlicht</span>
+</div>
+
+<div class="entwurf">
+  <span class="entwurf-haupt">
+    <span class="nur-breit">Unverbindlicher Entwurf für Schüler GmbH — diese Seite ist nicht veröffentlicht.</span>
+    <span class="nur-schmal">Unverbindlicher Entwurf — nicht veröffentlicht</span>
+  </span>
+  <span class="entwurf-rest">
+    <span class="entwurf-detail">Gestaltet von TerminWerk Systeme · für Suchmaschinen gesperrt · nur über diesen Link erreichbar</span>
+    <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+    <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+    <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+    <span class="entwurf-detail">Entwurf gültig bis 15.12.2026</span>
+  </span>
+</div>
+
+<script>
+(function(){
+  var SLUG = "schueler-gmbh";
+
+  /* Bilder: leere Platzhalter rauswerfen, damit nie ein kaputtes Bild steht.
+     Wo ein Kopfbild vorhanden ist, tritt es an die Stelle des Monogramms. */
+  function aufraeumen(){
+    var leer = function(el){
+      var s = el.getAttribute('src');
+      return !s || s === window.location.href || s === '#';
+    };
+
+    /* Fakten: ein Platz ohne Inhalt verschwindet. Lieber zwei Fakten
+       als drei, von denen einer leer ist. */
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt'), function(f){
+      var b = f.querySelector('b'), sp = f.querySelector('span'), p = f.querySelector('p');
+      var leerB = !b || !b.textContent.trim();
+      var leerS = !sp || !sp.textContent.trim();
+      if (leerB && leerS) { f.remove(); return; }
+      if (leerB) b.remove();
+      if (leerS) sp.remove();
+      if (p && !p.textContent.trim()) p.remove();
+    });
+    var kasten = document.querySelector('.fakten');
+    if (kasten && !kasten.querySelector('.fakt')) kasten.remove();
+
+    /* Buehnen-Ueberschrift: ist kein Akzentteil da, faellt er weg */
+    var akz = document.querySelector('.buehne h1 em');
+    if (akz && !akz.textContent.trim()) akz.remove();
+
+    /* Sprechzeiten: stehen keine echten Zeiten drin, kommt die Tabelle weg
+       und an ihre Stelle ein sauberer Satz. Eine Tabelle mit sechsmal
+       "bitte telefonisch erfragen" sieht schlechter aus als gar keine. */
+    var karte = document.querySelector('.zeiten');
+    if (karte){
+      var werte = Array.prototype.map.call(
+        karte.querySelectorAll('table td:last-child'),
+        function(c){ return c.textContent.trim(); });
+      var echte = werte.filter(function(w){ return w && !/^[-–—.]*$/.test(w); });
+      if (echte.length === 0){
+        var tab = karte.querySelector('table');
+        if (tab){
+          var satz = document.createElement('p');
+          satz.className = 'zeiten-ersatz';
+          satz.textContent = 'Termine vergeben wir telefonisch — so finden wir gleich einen Tag, der Ihnen passt.';
+          tab.parentNode.replaceChild(satz, tab);
+        }
+        var fuss = karte.querySelector('.zeiten-fuss');
+        if (fuss) fuss.textContent = 'Rufen Sie uns an, wir stimmen den Termin direkt mit Ihnen ab.';
+      }
+    }
+
+    /* Logo: traegt es, tritt es an die Stelle der gesetzten Wortmarke.
+       Traegt es nicht, bleibt die Wortmarke stehen — nie beides, nie keines. */
+    var platte = document.querySelector('.logo');
+    if (platte){
+      var bild = platte.querySelector('img');
+      if (!bild || leer(bild)) {
+        platte.remove();
+      } else {
+        var zeigen = function(){
+          if (!bild.naturalWidth) { platte.remove(); return; }
+          platte.style.display = 'flex';
+          var w = document.querySelector('.wortmarke');
+          if (w) w.remove();
+        };
+        if (bild.complete) zeigen(); else {
+          bild.addEventListener('load', zeigen);
+          bild.addEventListener('error', function(){ platte.remove(); });
+        }
+      }
+    }
+
+    /* Ohne eigenes Foto bleibt die hinterlegte Aufnahme des Rahmens stehen. */
+    Array.prototype.forEach.call(document.querySelectorAll('img.band-bild'), function(b){
+      if (leer(b)) b.remove();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('img.kopfbild'), function(k){
+      if (leer(k)) { k.remove(); return; }
+      k.hidden = false;
+      var mono = k.parentNode.querySelector('.monogramm');
+      if (mono) mono.remove();
+    });
+    /* Monogramm aus den Initialen des Namens, Titel werden übersprungen */
+    Array.prototype.forEach.call(document.querySelectorAll('.monogramm'), function(m){
+      var name = (m.getAttribute('data-mono') || '').trim();
+      var teile = name.split(/\s+/).filter(function(w){
+        return w.length > 1 && !/^(dr|med|dent|prof|dipl|m\.?sc|ba|ma)\.?$/i.test(w.replace(/\./g,''));
+      });
+      var ini = teile.slice(0, 2).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
+      var s = m.querySelector('span');
+      if (s) s.textContent = ini || '·';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aufraeumen);
+  } else { aufraeumen(); }
+
+  function hinweis(titel, satz){
+    document.title = titel;
+    document.body.innerHTML =
+      '<div style="min-height:100vh;display:grid;place-items:center;padding:2rem;'
+      + 'background:#16211E;color:#AEBCB7;text-align:center;font-family:' + "'Inter'" + ',system-ui,sans-serif">'
+      + '<div style="max-width:46ch">'
+      + '<p style="font-family:' + "'Newsreader'" + ',Georgia,serif;font-size:1.7rem;color:#fff;margin:0 0 .9rem">' + titel + '</p>'
+      + '<p style="margin:0 0 1.4rem;line-height:1.6">' + satz + ' Veröffentlicht war er zu keiner Zeit.</p>'
+      + '<p style="margin:0 0 1.6rem;line-height:1.6">Wenn Sie ihn noch einmal sehen möchten, melden wir ihn gern erneut frei.</p>'
+      + '<p style="margin:0"><a href="https://terminwerk-systeme.de/kontakt/" style="color:#8FC9BC">TerminWerk Systeme</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/impressum/" style="color:#8FC9BC">Impressum</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/datenschutz/" style="color:#8FC9BC">Datenschutz</a></p>'
+      + '</div></div>';
+    document.body.style.padding = "0";
+  }
+
+  var bis = new Date("2026-12-15T23:59:59");
+  if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
+    hinweis("Dieser Entwurf ist abgelaufen.",
+      "Der unverbindliche Entwurf für Schüler GmbH stand bis zum 15.12.2026 zur Ansicht bereit.");
+    return;
+  }
+  try{
+    fetch("../status.json", { cache: "no-store" })
+      .then(function(a){ return a.ok ? a.json() : null; })
+      .then(function(s){
+        if (s && s[SLUG] === "aus") {
+          hinweis("Dieser Entwurf wurde zurückgezogen.",
+            "Der unverbindliche Entwurf für Schüler GmbH steht nicht mehr zur Ansicht bereit.");
+        }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
+
+</body>
+</html>
