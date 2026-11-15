@@ -1,5 +1,14 @@
 [
   {
+    "slug": "praxis-horn",
+    "firma": "Zahnarztpraxis Horn",
+    "branche": "zahnarzt",
+    "gebaut": "2026-11-15",
+    "bis": "2026-12-15",
+    "adresse": "https://zahnarzt-horn.de",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "hoch-und-tiefbau-hohenmoelsen",
     "firma": "Hoch- und Tiefbau GmbH Hohenmölsen",
     "branche": "bau",
