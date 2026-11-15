@@ -1,0 +1,1107 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Die Dachexperten — Dachdecker-Meisterbetrieb in Hamburg</title>
+<meta name="description" content="Die Dachexperten, Dachdecker-Meisterbetrieb in Hamburg: Flachdachsanierung, Dacheindeckung, Schieferarbeiten und Sturmschäden. Notdienst rund um die Uhr, Leistungen zum Festpreis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500;75..100,600;75..100,700;75..100,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ——————————————————————————————————————————————————————————
+   HANDWERK — Elektro, Sanitär-Heizung-Klima, Dach
+   Eigener Aufbau, kein gemeinsamer Kern. Der Betrieb wird an drei
+   Dingen gemessen: kommt jemand, kommt er schnell, kann er es.
+   Deshalb: Störungsruf dauerhaft sichtbar, Einsatzgebiet als eigener
+   Abschnitt, Qualifikationen als Leiste statt als Fließtext.
+   Kein Personenraster — die meisten Betriebe haben keine Teamfotos.
+   —————————————————————————————————————————————————————————— */
+:root{
+  --akzent:#d4761b;
+  --akzent-d:#ae6116;
+  --akzent-hell:color-mix(in srgb,var(--akzent) 66%,white);
+
+  --tief:#131210;          /* warmes Fast-Schwarz, nicht Blauschwarz */
+  --tief-2:#1D1B18;
+  --tief-3:#272421;
+  --stahl:#8A8580;
+  --papier:#F6F4F1;
+  --papier-2:#EBE8E3;
+  --tinte:#15130F;
+  --tinte-weich:#55504A;
+  --linie:rgba(255,255,255,.13);
+  --linie-hell:#DDD8D1;
+
+  --kopf:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+
+  --foto-buehne:url("https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=2200&q=78");
+  --foto-gewerk-1:url("https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1400&q=74");
+  --foto-gewerk-2:url("https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1400&q=74");
+  --foto-betrieb:url("https://images.unsplash.com/photo-1497219055242-93359eeed651?auto=format&fit=crop&w=1800&q=76");
+
+  --rand:clamp(1.1rem,5vw,4.5rem);
+  --breite:1240px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;padding-bottom:104px;background:var(--papier);color:var(--tinte);
+  font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;letter-spacing:-.025em;text-wrap:balance}
+[hidden]{display:none!important}
+.huelle{width:min(var(--breite),100%);margin-inline:auto;
+  padding-left:max(var(--rand),env(safe-area-inset-left,0px));
+  padding-right:max(var(--rand),env(safe-area-inset-right,0px))}
+.marke-label{font-family:var(--kopf);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--akzent)}
+
+/* ———— Knöpfe: kantig, Handwerk ———— */
+.knopf{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--kopf);font-weight:700;
+  font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.82rem 1.3rem;border-radius:2px;
+  text-decoration:none;white-space:nowrap;border:2px solid transparent;transition:background .16s,border-color .16s,color .16s}
+.knopf::after{content:"→";font-size:1em;transition:transform .16s}
+.knopf:hover::after{transform:translateX(4px)}
+.knopf-voll{background:var(--akzent);color:#fff}
+.knopf-voll:hover{background:var(--akzent-d)}
+.knopf-rand{border-color:rgba(255,255,255,.38);color:#fff}
+.knopf-rand:hover{border-color:#fff;background:rgba(255,255,255,.09)}
+.knopf-dunkel{background:var(--tief);color:#fff}
+.knopf-dunkel:hover{background:var(--tief-3)}
+
+/* ———— Kopf ———— */
+.kopf{position:fixed;top:0;left:0;right:0;z-index:90;background:transparent;border-bottom:1px solid transparent;
+  transition:background .3s ease,border-color .3s ease,padding .3s ease;
+  padding-top:env(safe-area-inset-top,0px)}
+.kopf.fest{background:rgba(19,18,16,.95);backdrop-filter:blur(12px);border-bottom-color:var(--linie)}
+.kopf.fest .huelle{padding-block:.56rem}
+.kopf .huelle{display:flex;align-items:center;gap:1.2rem;padding-block:.72rem}
+.marke{display:flex;align-items:center;gap:.7rem;margin-right:auto;min-width:0}
+.marke-balken{width:5px;height:30px;background:var(--akzent);flex:none;border-radius:1px}
+.logo{display:none;background:#fff;border-radius:3px;padding:.4rem .66rem;align-items:center;flex:none}
+.logo img{max-height:38px;width:auto;max-width:180px;mix-blend-mode:multiply}
+.wortmarke{display:flex;flex-direction:column;line-height:1.12;min-width:0}
+.wortmarke b{font-family:var(--kopf);font-size:1.02rem;font-weight:800;color:#fff;letter-spacing:.01em;text-transform:uppercase}
+.wortmarke span{font-size:.6rem;letter-spacing:.17em;text-transform:uppercase;color:var(--stahl);font-weight:600}
+.nav{display:flex;gap:1.35rem;font-family:var(--kopf);font-size:.68rem;font-weight:600;letter-spacing:.15em;
+  text-transform:uppercase;color:#A9A49D}
+.nav a{text-decoration:none}
+.nav a:hover{color:var(--akzent-hell)}
+
+/* ———— Bühne: geteilt ————
+   Links eine ruhige dunkle Fläche mit der Schrift, rechts das Foto in
+   voller Qualität. Das Foto hinter den Text zu legen kostet beides:
+   die Schrift kämpft gegen das Bild, das Bild wird zu Matsch.        */
+.buehne{position:relative;background:var(--tief);color:#F0ECE7;padding-top:clamp(3.6rem,6vw,4.6rem);
+  display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+  min-height:clamp(480px,62vw,640px)}
+.buehne-text{display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(2.6rem,5vw,4.4rem) clamp(1.6rem,3.4vw,3.4rem) clamp(2.6rem,5vw,4.4rem)
+          max(var(--rand),env(safe-area-inset-left,0px));
+  width:min(calc(var(--breite)/2 + 1rem),100%);margin-left:auto}
+.buehne-seite{position:relative;overflow:hidden;background:var(--tief-2)}
+.buehne-foto{position:absolute;inset:0;background-color:var(--tief-2);
+  background-image:var(--foto-buehne);background-size:cover;background-position:center 44%}
+.buehne-foto img{width:100%;height:100%;object-fit:cover;object-position:center 44%}
+.buehne-seite::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(95deg,color-mix(in srgb,var(--tief) 86%,transparent) 0%,
+    color-mix(in srgb,var(--tief) 22%,transparent) 26%,transparent 58%),
+    linear-gradient(to top,color-mix(in srgb,var(--tief) 78%,transparent) 0%,transparent 46%)}
+
+.balken{display:block;width:46px;height:4px;background:var(--akzent);margin-bottom:1rem}
+.buehne h1{font-size:clamp(2rem,.9rem + 2.9vw,3.35rem);margin-top:.75rem;color:#fff;
+  text-transform:uppercase;letter-spacing:-.03em;line-height:1.01}
+.buehne h1 em{font-style:normal;color:var(--akzent)}
+.lede{margin-top:1.15rem;font-size:clamp(.97rem,.94rem + .2vw,1.04rem);color:#BDB6AE;
+  max-width:46ch;line-height:1.66}
+.tasten{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1.7rem}
+
+/* Die Karte über dem Foto — das Detail, das aus einer Vorlage
+   eine Seite für genau diesen Betrieb macht. */
+.projektkarte{position:absolute;left:clamp(1.2rem,2.4vw,2rem);right:clamp(1.2rem,2.4vw,2rem);
+  bottom:clamp(1.2rem,2.4vw,2rem);z-index:3;max-width:23rem}
+.projektkarte .marke-label{color:var(--akzent-hell)}
+.projektkarte b{display:block;font-family:var(--kopf);font-weight:800;font-size:1.08rem;
+  color:#fff;margin-top:.35rem;letter-spacing:-.01em}
+.projektkarte p{margin-top:.22rem;font-size:.85rem;color:#C2BBB3;line-height:1.5}
+.chip{display:inline-flex;align-items:center;gap:.45rem;margin-top:.85rem;background:var(--akzent);
+  color:#fff;font-family:var(--kopf);font-weight:800;font-size:.68rem;letter-spacing:.14em;
+  text-transform:uppercase;padding:.5rem .85rem;border-radius:2px}
+
+/* Störungsleiste: jetzt unter der Bühne über die volle Breite */
+.stoerung{position:relative;z-index:3;background:var(--akzent);color:#fff}
+.stoerung-in{display:grid;grid-template-columns:auto 1fr auto;gap:.5rem 1.8rem;align-items:center;
+  padding-block:clamp(.95rem,2vw,1.3rem)}
+.stoerung b{font-family:var(--kopf);font-size:.72rem;font-weight:800;letter-spacing:.2em;
+  text-transform:uppercase;padding-right:1.8rem;border-right:2px solid rgba(255,255,255,.34)}
+.stoerung p{font-size:.93rem;line-height:1.5}
+.stoerung .nummer{font-family:var(--kopf);font-size:clamp(1.3rem,1.1rem + .9vw,1.8rem);font-weight:800;
+  color:#fff;text-decoration:none;letter-spacing:-.025em;white-space:nowrap;font-variant-numeric:tabular-nums}
+.stoerung .nummer:hover{text-decoration:underline;text-underline-offset:5px}
+
+/* ———— Qualifikationen: Leiste statt Kacheln ———— */
+.koennen{background:var(--tief-2);color:#D8D2CB;border-top:1px solid var(--linie)}
+.koennen-in{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding-block:clamp(1.6rem,3vw,2.4rem)}
+.fakt{padding:.4rem clamp(1rem,2.4vw,2rem);border-left:1px solid var(--linie)}
+.fakt:first-child{border-left:0;padding-left:0}
+.fakt b{display:block;font-family:var(--kopf);font-size:clamp(1.4rem,1.1rem + 1.1vw,2rem);font-weight:800;
+  color:#fff;line-height:1.04;letter-spacing:-.02em}
+.fakt span{display:block;margin-top:.3rem;font-family:var(--kopf);font-size:.68rem;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--akzent)}
+.fakt p{margin-top:.5rem;font-size:.87rem;line-height:1.55;color:#A7A099}
+
+/* ———— Gewerke: zwei große Bildkacheln, vier kompakte darunter ———— */
+.gewerke{background:var(--papier);padding-block:clamp(3.2rem,7vw,5.6rem)}
+.a-kopf{max-width:58ch;margin-bottom:clamp(1.8rem,4vw,2.8rem)}
+.a-kopf h2{font-size:clamp(1.9rem,1.4rem + 2vw,3.1rem);margin-top:.7rem;text-transform:uppercase}
+.a-kopf p{margin-top:1rem;color:var(--tinte-weich);font-size:1.02rem}
+
+.gross{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1rem,2vw,1.4rem);margin-bottom:clamp(1rem,2vw,1.4rem)}
+.kachel{position:relative;min-height:clamp(260px,30vw,360px);border-radius:3px;overflow:hidden;
+  background:var(--tief-2) center/cover no-repeat;display:flex;align-items:flex-end}
+.kachel:nth-child(1){background-image:var(--foto-gewerk-1)}
+.kachel:nth-child(2){background-image:var(--foto-gewerk-2)}
+.kachel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.kachel::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(10,9,8,.92) 4%,rgba(10,9,8,.3) 52%,rgba(10,9,8,.05) 100%)}
+.kachel-text{position:relative;z-index:2;padding:clamp(1.2rem,2.6vw,1.8rem);color:#fff}
+.kachel-text .nr{font-family:var(--kopf);font-size:.72rem;font-weight:800;letter-spacing:.2em;color:var(--akzent)}
+.kachel-text h3{font-size:clamp(1.25rem,1.05rem + .7vw,1.6rem);margin-top:.4rem;text-transform:uppercase}
+.kachel-text p{margin-top:.5rem;font-size:.92rem;line-height:1.55;color:#CFC8C0;max-width:40ch}
+
+.klein{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2vw,1.4rem)}
+.posten{background:var(--papier-2);border-radius:3px;padding:clamp(1.2rem,2.4vw,1.6rem);
+  border-top:4px solid var(--akzent);display:flex;flex-direction:column}
+.posten .nr{font-family:var(--kopf);font-size:.72rem;font-weight:800;letter-spacing:.2em;color:var(--akzent)}
+.posten h3{font-size:1.06rem;margin-top:.45rem;line-height:1.25}
+.posten p{margin-top:.5rem;font-size:.9rem;line-height:1.55;color:var(--tinte-weich)}
+
+
+/* ———— Laufband ————
+   Ein durchlaufendes Band mit den Gewerken. Kostet nichts, braucht
+   kein Bild und gibt der Seite sofort Bewegung. */
+.laufband{background:var(--tief-2);border-block:1px solid var(--linie);overflow:hidden;padding-block:.9rem}
+.laufband-spur{display:flex;gap:0;width:max-content;animation:laufen 38s linear infinite}
+.laufband:hover .laufband-spur{animation-play-state:paused}
+.laufband span{font-family:var(--kopf);font-weight:800;font-size:clamp(.82rem,.78rem + .2vw,.95rem);
+  letter-spacing:.17em;text-transform:uppercase;color:#6F6A64;padding-inline:1.5rem;white-space:nowrap}
+.laufband span::after{content:"◆";color:var(--akzent);margin-left:1.5rem;font-size:.6em;vertical-align:middle}
+@keyframes laufen{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+@media (prefers-reduced-motion:reduce){.laufband-spur{animation:none}}
+
+/* ———— Leistungen als Liste mit wechselndem Bild ———— */
+.leiste{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
+.leiste-liste{list-style:none;margin:0;padding:0;border-top:1px solid var(--linie-hell)}
+.zeile{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:0 1.3rem;align-items:center;
+  padding-block:clamp(1.05rem,2.2vw,1.5rem);border-bottom:1px solid var(--linie-hell);cursor:default;
+  transition:padding-left .28s cubic-bezier(.22,.61,.36,1),color .22s}
+.zeile::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--akzent);
+  transform:scaleY(0);transform-origin:top;transition:transform .32s cubic-bezier(.22,.61,.36,1)}
+.zeile.an{padding-left:1.1rem}
+.zeile.an::before{transform:scaleY(1)}
+.zeile .nr{font-family:var(--kopf);font-size:.7rem;font-weight:800;letter-spacing:.18em;color:var(--akzent);
+  width:2.1em;padding-top:.25em}
+.zeile h3{font-family:var(--kopf);font-size:clamp(1.12rem,1rem + .7vw,1.55rem);font-weight:700;
+  letter-spacing:-.015em;transition:color .22s}
+.zeile.an h3{color:var(--akzent)}
+.zeile p{grid-column:2;margin-top:.3rem;font-size:.91rem;line-height:1.55;color:var(--tinte-weich);
+  max-height:0;overflow:hidden;opacity:0;transition:max-height .34s cubic-bezier(.22,.61,.36,1),opacity .28s,margin .28s}
+.zeile.an p{max-height:7rem;opacity:1;margin-top:.5rem}
+.zeile .pfeil{font-family:var(--kopf);color:var(--akzent);opacity:0;transform:translateX(-6px);
+  transition:opacity .24s,transform .24s;font-size:1.1rem}
+.zeile.an .pfeil{opacity:1;transform:none}
+
+.leiste-buehne{position:sticky;top:96px;aspect-ratio:4/5;border-radius:3px;overflow:hidden;background:var(--tief-2)}
+.leiste-bild{position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;transform:scale(1.06);transition:opacity .5s ease,transform 1.1s cubic-bezier(.22,.61,.36,1)}
+.leiste-bild.an{opacity:1;transform:none}
+.leiste-platte{position:absolute;inset:0;display:grid;place-items:center;
+  background:linear-gradient(158deg,var(--akzent) -10%,var(--tief) 92%);opacity:0;transition:opacity .45s}
+.leiste-platte.an{opacity:1}
+.leiste-platte span{font-family:var(--kopf);font-size:clamp(4rem,3rem + 6vw,8rem);font-weight:800;
+  color:rgba(255,255,255,.17);letter-spacing:-.04em}
+
+/* ———— Ablauf: Zeitstrahl ———— */
+.ablauf{background:var(--tief);color:#D8D2CB;padding-block:clamp(3.2rem,7vw,5.4rem)}
+.ablauf .a-kopf h2{color:#fff}
+.ablauf .a-kopf p{color:#A7A099}
+.strahl{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.2rem,2.6vw,2.2rem);position:relative;margin-top:.6rem}
+.strahl::before{content:"";position:absolute;left:0;right:0;top:19px;height:2px;background:var(--linie)}
+.schritt{position:relative;padding-top:0}
+.schritt .nr{position:relative;z-index:2;width:40px;height:40px;border-radius:50%;background:var(--akzent);color:#fff;
+  display:grid;place-items:center;font-family:var(--kopf);font-weight:800;font-size:.95rem}
+.schritt h3{font-size:1.04rem;margin-top:1.1rem;color:#fff;text-transform:uppercase;letter-spacing:-.01em}
+.schritt p{margin-top:.5rem;font-size:.9rem;line-height:1.58;color:#A7A099}
+
+/* ———— Einsatzgebiet: Farbfläche, groß gesetzt ———— */
+.gebiet{background:var(--akzent);color:#fff;padding-block:clamp(2.8rem,6vw,4.4rem)}
+.gebiet-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.gebiet h2{font-size:clamp(1.8rem,1.4rem + 1.7vw,2.7rem);text-transform:uppercase}
+.gebiet .marke-label{color:rgba(255,255,255,.78)}
+.gebiet-liste{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem 1.6rem}
+.weg{border-top:2px solid rgba(255,255,255,.35);padding-top:.85rem}
+.weg h3{font-family:var(--kopf);font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+.weg p{margin-top:.35rem;font-size:.89rem;line-height:1.55;color:rgba(255,255,255,.84)}
+
+/* ———— Der Betrieb: Bild und Text nebeneinander ———— */
+.betrieb{background:var(--papier);padding-block:clamp(3.2rem,7vw,5.4rem)}
+.betrieb-in{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.betrieb-bild{position:relative;aspect-ratio:4/3;border-radius:3px;overflow:hidden;
+  background:var(--papier-2) center/cover no-repeat;background-image:var(--foto-betrieb)}
+.betrieb-bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.betrieb h2{font-size:clamp(1.8rem,1.4rem + 1.7vw,2.7rem);text-transform:uppercase;margin-top:.7rem}
+.betrieb > .huelle > div > p{margin-top:1.1rem;color:var(--tinte-weich)}
+
+/* Öffnungszeiten als kompakte Karte */
+.zeiten{margin-top:1.8rem;background:var(--papier-2);border-radius:3px;padding:1.3rem 1.5rem;border-left:4px solid var(--akzent)}
+.zeiten h2{font-family:var(--kopf);font-size:1.04rem;font-weight:800;text-transform:uppercase;margin:.4rem 0 .8rem}
+.zeiten table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;max-width:26rem}
+.zeiten td{padding:.36rem 0;border-bottom:1px solid var(--linie-hell);font-size:.92rem}
+.zeiten tr:last-child td{border-bottom:0}
+.zeiten td:first-child{color:var(--tinte-weich);width:3.6em;font-weight:600}
+.zeiten td:last-child{text-align:right;font-weight:600}
+.zeiten-ersatz{font-size:.96rem;color:var(--tinte-weich);line-height:1.6}
+.zeiten-fuss{margin-top:.8rem;font-size:.84rem;color:var(--tinte-weich)}
+
+/* ———— Notdienst: schwarzes Band ———— */
+.notdienst{background:var(--tief);color:#D8D2CB;padding-block:clamp(2.6rem,5vw,4rem);
+  border-top:5px solid var(--akzent)}
+.notdienst-in{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.4rem,4vw,3rem);align-items:center}
+.notdienst h2{color:#fff;font-size:clamp(1.7rem,1.35rem + 1.4vw,2.4rem);text-transform:uppercase;margin-top:.7rem}
+.notdienst p{line-height:1.7}
+.notdienst .klein-text{margin-top:1rem;font-size:.9rem;color:#A7A099}
+
+/* ———— Kontakt ———— */
+.kontakt-flaeche{background:var(--tief-2);color:#D8D2CB;padding-block:clamp(3.2rem,6vw,5rem)}
+.kontakt{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(2rem,5vw,4.2rem)}
+.kontakt h2{color:#fff;font-size:clamp(1.9rem,1.5rem + 1.6vw,2.8rem);text-transform:uppercase;margin-top:.7rem}
+.ruf{display:block;margin-top:1.8rem;font-family:var(--kopf);font-weight:800;
+  font-size:clamp(1.8rem,1.4rem + 2vw,2.6rem);color:#fff;text-decoration:none;letter-spacing:-.025em;
+  font-variant-numeric:tabular-nums}
+.ruf:hover{color:var(--akzent-hell)}
+.ruf-zeit{margin-top:.35rem;font-size:.87rem;color:#A7A099}
+.adresse{margin-top:1.9rem;padding-top:1.4rem;border-top:1px solid var(--linie);display:grid;gap:1.1rem}
+.adresse div span{display:block;font-family:var(--kopf);font-size:.67rem;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--akzent);margin-bottom:.3rem}
+.adresse a{color:#fff;text-underline-offset:3px}
+
+.form{background:rgba(255,255,255,.05);border:1px solid var(--linie);border-radius:3px;padding:clamp(1.4rem,3vw,2rem)}
+.feld{margin-bottom:1rem}
+.feld label{display:block;font-family:var(--kopf);font-size:.72rem;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;margin-bottom:.4rem;color:#C8C3BC}
+.feld input,.feld textarea{width:100%;background:rgba(0,0,0,.26);border:1px solid var(--linie);border-radius:2px;
+  padding:.78rem .9rem;color:#fff;font:inherit;font-size:.95rem}
+.feld input:focus,.feld textarea:focus{outline:2px solid var(--akzent);outline-offset:1px;border-color:transparent}
+.feld textarea{min-height:104px;resize:vertical}
+.feld .hinweis{margin-top:.32rem;font-size:.78rem;color:#A7A099}
+.form button{width:100%;margin-top:.3rem;background:var(--akzent);color:#fff;border:0;border-radius:2px;
+  padding:.95rem 1.3rem;font-family:var(--kopf);font-weight:800;font-size:.8rem;letter-spacing:.12em;
+  text-transform:uppercase;cursor:pointer}
+.form button:hover{background:var(--akzent-d)}
+.form .datenschutz{margin-top:.9rem;font-size:.79rem;color:#A7A099;line-height:1.55}
+
+/* ———— Fuß ———— */
+.fuss{background:var(--tief);color:#8A8580;padding-block:2.4rem 2.8rem;font-size:.86rem;border-top:1px solid var(--linie)}
+.fuss-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1.8rem}
+.fuss b{display:block;font-family:var(--kopf);font-weight:800;font-size:1rem;color:#fff;margin-bottom:.5rem;text-transform:uppercase}
+.fuss .zeile{margin-top:1.9rem;padding-top:1.2rem;border-top:1px solid var(--linie);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.8rem}
+
+/* ———— Entwurfs-Kennzeichnung ———— */
+.vorschaumarke{position:fixed;top:112px;right:16px;z-index:95;pointer-events:none;display:flex;flex-direction:column;
+  gap:.08rem;background:rgba(19,18,16,.92);border:1px solid rgba(255,255,255,.26);border-radius:3px;
+  padding:.46rem .76rem;line-height:1.2;color:#fff}
+.vorschaumarke b{font-family:var(--kopf);font-size:.7rem;font-weight:800;letter-spacing:.12em}
+.vorschaumarke span{font-size:.64rem;font-weight:500;color:#B6B0A9}
+@media (max-width:760px){.vorschaumarke{display:none}}
+
+.entwurf{position:fixed;left:0;right:0;bottom:0;z-index:96;background:var(--tief);color:#A7A099;
+  border-top:3px solid var(--akzent);
+  padding:.85rem max(1.1rem,env(safe-area-inset-right,0px)) calc(.85rem + env(safe-area-inset-bottom,0px)) max(1.1rem,env(safe-area-inset-left,0px));
+  font-size:.8rem;text-align:center}
+.entwurf-haupt{display:block;font-family:var(--kopf);font-weight:700;font-size:.9rem;color:#fff;margin-bottom:.26rem}
+.entwurf-rest{display:flex;align-items:center;justify-content:center;gap:.4rem .9rem;flex-wrap:wrap}
+.entwurf a{color:#fff;text-underline-offset:3px}
+.entwurf a:hover{color:var(--akzent-hell)}
+.nur-schmal{display:none}
+
+@media (max-width:1000px){
+  .buehne{grid-template-columns:1fr;min-height:0}
+  .buehne-text{width:100%;margin-left:0;
+    padding-inline:max(var(--rand),env(safe-area-inset-left,0px)) max(var(--rand),env(safe-area-inset-right,0px))}
+  .buehne-seite{min-height:clamp(260px,52vw,380px);order:-1}
+  .projektkarte{max-width:none}
+  .betrieb-in,.notdienst-in,.kontakt,.gebiet-in{grid-template-columns:1fr}
+  .leiste{grid-template-columns:1fr}
+  .leiste-buehne{display:none}
+  .zeile p{max-height:none;opacity:1;margin-top:.5rem}
+  .zeile .pfeil{display:none}
+  .strahl{grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem 1.4rem}
+  .strahl::before{display:none}
+  .nav{display:none}
+  .fuss-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:700px){
+  body{padding-bottom:98px}
+  .klein,.koennen-in,.gebiet-liste,.strahl,.fuss-grid{grid-template-columns:1fr}
+  .fakt{border-left:0;border-top:1px solid var(--linie);padding:1rem 0 .2rem}
+  .fakt:first-child{border-top:0;padding-top:.2rem}
+  .stoerung-in{grid-template-columns:1fr;gap:.6rem}
+  .stoerung b{border-right:0;border-bottom:2px solid rgba(255,255,255,.34);padding:0 0 .6rem}
+  .nur-breit,.entwurf-detail{display:none}
+  .nur-schmal{display:inline}
+  .entwurf{font-size:.75rem}
+  .entwurf-haupt{font-size:.83rem}
+  .wortmarke b{font-size:1rem}
+  .kopf .knopf{padding:.7rem 1rem;font-size:.7rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="huelle">
+    <div class="marke">
+      <span class="marke-balken" aria-hidden="true"></span>
+      <span class="logo" data-logo>
+        <img src="https://www.diedachexperten.de/assets/template/images/Logo-dachexperten-small.png" alt="Die Dachexperten" onerror="this.remove();">
+      </span>
+      <span class="wortmarke">
+        <b>Die Dachexperten</b>
+        <span>Ihr Dachdecker von de Waterkant</span>
+      </span>
+    </div>
+    <nav class="nav">
+      <a href="#gewerke">Gewerke</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#gebiet">Einsatzgebiet</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="knopf knopf-voll" href="tel:04021988883">Beratung anfragen</a>
+  </div>
+</header>
+
+<section class="buehne">
+  <div class="buehne-text">
+    <span class="balken"></span>
+    <span class="marke-label">Dachdecker-Meisterbetrieb Hamburg</span>
+    <h1>Der Festpreis steht, <em>bevor wir anfangen.</em></h1>
+    <p class="lede">Meisterbetrieb aus Hamburg für Reparatur und Sanierung von Dächern aller Art. Nach kostenloser Besichtigung erhalten Sie einen Kostenvoranschlag, der alle Positionen enthält.</p>
+    <div class="tasten">
+      <a class="knopf knopf-voll" href="#kontakt">Anfrage senden</a>
+      <a class="knopf knopf-rand" href="tel:04021988883">040 / 219 88 88 3</a>
+    </div>
+  </div>
+  <div class="buehne-seite">
+    <div class="buehne-foto">
+      <img class="band-bild" src="" alt="Dachdecker bei der Arbeit" onerror="this.remove();">
+    </div>
+    <div class="projektkarte">
+      <span class="marke-label">Schwerpunkt</span>
+      <b>Flachdachsanierung</b>
+      <p>Reparatur und Sanierung von Dächern aller Art</p>
+      <span class="chip" data-chip>25 Jahre Erfahrung</span>
+    </div>
+  </div>
+</section>
+
+<div class="stoerung">
+  <div class="huelle stoerung-in">
+    <b>Notdienst</b>
+    <p>24 Stunden am Tag erreichbar</p>
+    <a class="nummer" href="tel:04021988883">040 / 219 88 88 3</a>
+  </div>
+</div>
+
+<div class="laufband" aria-hidden="true">
+  <div class="laufband-spur" data-laufband>
+    <span>Flachdachsanierung</span><span>Dachbeschichtung</span><span>Dacheindeckung</span>
+    <span>Schieferarbeiten</span><span>Sturmschäden</span><span>Fassadensanierung</span>
+  </div>
+</div>
+
+<section class="koennen">
+  <div class="huelle koennen-in">
+    <div class="fakt"><b>25</b><span>Jahre Erfahrung</span><p>Seit mehr als 25 Jahren arbeiten wir als Meisterbetrieb im Großraum Hamburg.</p></div>
+    <div class="fakt"><b>24</b><span>Stunden Notdienst</span><p>Bei Schäden am Dach erreichen Sie uns zu jeder Tageszeit.</p></div>
+    <div class="fakt"><b>2.</b><span>Generation im Familienbetrieb</span><p>Der Betrieb wird in zweiter Generation geführt und soll in der Familie bleiben.</p></div>
+  </div>
+</section>
+
+<section class="gewerke" id="gewerke">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="marke-label">Gewerke</span>
+      <h2>Alle Leistungen rund ums Dach</h2>
+      <p>Wir arbeiten im Großraum Hamburg und führen Reparaturen, Sanierungen und Neueindeckungen nach den Regeln der Handwerkskunst aus.</p>
+    </div>
+
+    <div class="leiste">
+      <ul class="leiste-liste">
+        <li class="zeile" data-zeile data-bild="https://www.diedachexperten.de/assets/userfiles/startseite/Box_Flachdachsanierung.jpg" data-nr="01">
+          <span class="nr">01</span><h3>Flachdachsanierung</h3><span class="pfeil">→</span>
+          <p>Von der Reparatur bis zur vollständigen Sanierung Ihres Flachdaches.</p>
+        </li>
+        <li class="zeile" data-zeile data-bild="https://www.diedachexperten.de/assets/userfiles/startseite/Box_Dachbeschichtung.jpg" data-nr="02">
+          <span class="nr">02</span><h3>Dachbeschichtung</h3><span class="pfeil">→</span>
+          <p>Fachgerechte Beratung und Ausführung für die Beschichtung Ihres Daches.</p>
+        </li>
+        <li class="zeile" data-zeile data-bild="" data-nr="03">
+          <span class="nr">03</span><h3>Dacheindeckung</h3><span class="pfeil">→</span>
+          <p>Eindeckung Ihres Daches, von der Reparatur bis zur Neueindeckung.</p>
+        </li>
+        <li class="zeile" data-zeile data-bild="" data-nr="04">
+          <span class="nr">04</span><h3>Schieferarbeiten</h3><span class="pfeil">→</span>
+          <p>Schieferarbeiten, zum Beispiel bei der Schornstein- und der Giebelverschieferung.</p>
+        </li>
+        <li class="zeile" data-zeile data-bild="" data-nr="05">
+          <span class="nr">05</span><h3>Sturmschäden</h3><span class="pfeil">→</span>
+          <p>Wir beseitigen Sturmschäden an Ihrem Dach. Im Notdienst sind wir rund um die Uhr erreichbar.</p>
+        </li>
+        <li class="zeile" data-zeile data-bild="" data-nr="06">
+          <span class="nr">06</span><h3>Fassadensanierung</h3><span class="pfeil">→</span>
+          <p>Fassadensanierung nach Besichtigung vor Ort, zu einem vereinbarten Festpreis.</p>
+        </li>
+      </ul>
+      <div class="leiste-buehne" aria-hidden="true">
+        <div class="leiste-bild" data-leiste-bild></div>
+        <div class="leiste-platte" data-leiste-platte><span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ablauf" id="ablauf">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="marke-label">Ablauf</span>
+      <h2>So arbeiten wir</h2>
+      <p>Vor jedem Auftrag steht die Besichtigung vor Ort. Danach wissen Sie, was die Arbeiten kosten.</p>
+    </div>
+    <div class="strahl">
+      <div class="schritt"><div class="nr">01</div><h3>Besichtigung</h3><p>Wir begutachten Ihr Dach vor Ort, kostenlos und ohne Anfahrkosten.</p></div>
+      <div class="schritt"><div class="nr">02</div><h3>Beratung</h3><p>Wir zeigen Ihnen mögliche Wege zur Instandsetzung auf und behalten die Kosten im Blick.</p></div>
+      <div class="schritt"><div class="nr">03</div><h3>Festpreis</h3><p>Sie erhalten einen Kostenvoranschlag mit allen Positionen und vereinbaren mit uns einen Festpreis.</p></div>
+      <div class="schritt"><div class="nr">04</div><h3>Umsetzung</h3><p>Wir führen die vereinbarten Arbeiten zum Festpreis aus, ohne verdeckte Kosten.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gebiet" id="gebiet">
+  <div class="huelle gebiet-in">
+    <div>
+      <span class="marke-label">Einsatzgebiet</span>
+      <h2 style="margin-top:.7rem">Im Großraum Hamburg</h2>
+      <p style="margin-top:1rem;color:rgba(255,255,255,.9)">Unser Betrieb sitzt in der Lohkampstraße in Hamburg. Anfahrkosten berechnen wir nicht.</p>
+    </div>
+    <div class="gebiet-liste">
+      <div class="weg"><h3>Anrufen</h3><p>Unter 040 / 219 88 88 3 erreichen Sie uns auch im Notdienst.</p></div>
+      <div class="weg"><h3>E-Mail</h3><p>Schreiben Sie uns Ihr Anliegen an dachexperten@web.de.</p></div>
+      <div class="weg"><h3>Kontaktformular</h3><p>Hinterlassen Sie eine Rufnummer, wir rufen Sie zurück.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="betrieb">
+  <div class="huelle betrieb-in">
+    <div class="betrieb-bild">
+      <img class="band-bild" src="" alt="Dächer im Großraum Hamburg" loading="lazy" onerror="this.remove();">
+    </div>
+    <div>
+      <span class="marke-label">Der Betrieb</span>
+      <h2>Ein Familienbetrieb</h2>
+      <p>Der Betrieb ist in zweiter Generation für Kunden im Großraum Hamburg tätig. Auch die nächste Generation soll ihn fortführen.</p>
+
+      <div class="zeiten">
+        <span class="marke-label">Erreichbarkeit</span>
+        <h2>Wann Sie uns erreichen</h2>
+        <table>
+          <tr><td>Mo</td><td></td></tr>
+          <tr><td>Di</td><td></td></tr>
+          <tr><td>Mi</td><td></td></tr>
+          <tr><td>Do</td><td></td></tr>
+          <tr><td>Fr</td><td></td></tr>
+          <tr><td>Sa</td><td></td></tr>
+        </table>
+        <p class="zeiten-fuss">Bei Schäden am Dach erreichen Sie uns rund um die Uhr unter 040 / 219 88 88 3.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="notdienst">
+  <div class="huelle notdienst-in">
+    <div>
+      <span class="marke-label">Notdienst</span>
+      <h2>Notdienst für Ihr Dach</h2>
+    </div>
+    <div>
+      <p>Wir sind 24 Stunden am Tag in Hamburg und Umgebung für Sie da. Die meisten Materialien haben wir am Lager.</p>
+      <p class="klein-text">Auch nachts und am Wochenende erreichen Sie uns unter 040 / 219 88 88 3.</p>
+      <div class="tasten" style="margin-top:1.4rem">
+        <a class="knopf knopf-voll" href="tel:04021988883">040 / 219 88 88 3</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt-flaeche" id="kontakt">
+  <div class="huelle kontakt">
+    <div>
+      <span class="marke-label">Kontakt</span>
+      <h2>Sprechen Sie mit uns</h2>
+      <p style="margin-top:1rem">Rufen Sie an, schreiben Sie eine E-Mail oder nutzen Sie das Formular. Die erste Beratung ist kostenlos.</p>
+
+      <a class="ruf" href="tel:04021988883">040 / 219 88 88 3</a>
+      <p class="ruf-zeit">Mobil erreichen Sie uns unter 01522 / 1 08 69 75.</p>
+
+      <div class="adresse">
+        <div><span>Anschrift</span>Lohkampstr. 275<br>22523 Hamburg</div>
+        <div><span>E-Mail</span><a href="mailto:dachexperten@web.de">dachexperten@web.de</a></div>
+      </div>
+    </div>
+
+    <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='In der Vorschau nicht aktiv';">
+      <div class="feld"><label for="f-name">Ihr Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="feld"><label for="f-tel">Telefon</label>
+        <input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+      <div class="feld"><label for="f-mail">E-Mail <span style="text-transform:none;letter-spacing:0;font-weight:400;color:#A7A099">(freiwillig)</span></label>
+        <input id="f-mail" name="email" type="email" autocomplete="email">
+        <span class="hinweis">Bitte keine Zugangsdaten oder Zahlungsdaten in dieses Feld.</span></div>
+      <div class="feld"><label for="f-text">Ihr Anliegen</label>
+        <textarea id="f-text" name="nachricht" placeholder="Zum Beispiel: Dach nach dem Sturm undicht"></textarea></div>
+      <button type="submit">Rückruf anfordern</button>
+      <p class="datenschutz">Wir verwenden Ihre Angaben ausschließlich, um Ihr Anliegen zu bearbeiten und Sie zurückzurufen. Eine Weitergabe an Dritte erfolgt nicht.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="fuss">
+  <div class="huelle">
+    <div class="fuss-grid">
+      <div><b>Die Dachexperten</b><p>Die Dachexperten, Ihr Dachdecker von de Waterkant, Hamburg</p></div>
+      <div><b style="font-size:.84rem">Anschrift</b>Lohkampstr. 275<br>22523 Hamburg<br>
+        <a href="tel:04021988883">040 / 219 88 88 3</a></div>
+      <div><b style="font-size:.84rem">Erreichbarkeit</b>Mobil erreichen Sie uns unter 01522 / 1 08 69 75.<br></div>
+    </div>
+    <div class="zeile">
+      <span>&copy; 2026 Die Dachexperten</span>
+      <span>Entwurf — Impressum und Datenschutzerklärung folgen mit der Veröffentlichung.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="vorschaumarke" aria-hidden="true">
+  <b>VORSCHAU</b>
+  <span>nicht veröffentlicht</span>
+</div>
+
+<div class="entwurf">
+  <span class="entwurf-haupt">
+    <span class="nur-breit">Unverbindlicher Entwurf für Die Dachexperten — diese Seite ist nicht veröffentlicht.</span>
+    <span class="nur-schmal">Unverbindlicher Entwurf — nicht veröffentlicht</span>
+  </span>
+  <span class="entwurf-rest">
+    <span class="entwurf-detail">Gestaltet von TerminWerk Systeme · für Suchmaschinen gesperrt · nur über diesen Link erreichbar</span>
+    <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+    <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+    <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+    <span class="entwurf-detail">Entwurf gültig bis 15.12.2026</span>
+  </span>
+</div>
+
+<script>
+(function(){
+  var SLUG = "die-dachexperten";
+
+  /* Bilder: leere Platzhalter rauswerfen, damit nie ein kaputtes Bild steht.
+     Wo ein Kopfbild vorhanden ist, tritt es an die Stelle des Monogramms. */
+  function aufraeumen(){
+    var leer = function(el){
+      var s = el.getAttribute('src');
+      return !s || s === window.location.href || s === '#';
+    };
+
+    /* Ein Chip ohne Inhalt verschwindet. */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-chip]'), function(c){
+      if (!c.textContent.trim()) c.remove();
+    });
+
+    /* Personen: wer keinen Namen hat, existiert nicht. Eine Kanzlei mit
+       einem Anwalt bekommt eine Kachel, nicht drei. Bleibt nur eine
+       uebrig, rueckt sie auf die halbe Breite statt auf ein Drittel. */
+    Array.prototype.forEach.call(document.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = document.querySelectorAll('.team .person');
+    var raster = document.querySelector('.team');
+    if (raster){
+      if (leute.length === 0){
+        var ab = raster.closest('.abschnitt');
+        if (ab) ab.remove();
+      } else if (leute.length === 1){
+        raster.style.gridTemplateColumns = 'minmax(0,22rem)';
+      } else if (leute.length === 2){
+        raster.style.gridTemplateColumns = 'repeat(2,minmax(0,1fr))';
+        raster.style.maxWidth = '52rem';
+      }
+    }
+
+    /* Dasselbe fuer Leistungen, Schritte, Wege und Referenzen: leere
+       Eintraege verschwinden, statt als leere Kaestchen dazustehen. */
+    [['.posten','h3'],['.schritt','h3'],['.weg','h3']].forEach(function(paar){
+      Array.prototype.forEach.call(document.querySelectorAll(paar[0]), function(el){
+        var t = el.querySelector(paar[1]);
+        if (!t || !t.textContent.trim()) el.remove();
+      });
+    });
+
+    /* Fakten: ein Platz ohne Inhalt verschwindet. Lieber zwei Fakten
+       als drei, von denen einer leer ist. */
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt'), function(f){
+      var b = f.querySelector('b'), sp = f.querySelector('span'), p = f.querySelector('p');
+      var leerB = !b || !b.textContent.trim();
+      var leerS = !sp || !sp.textContent.trim();
+      if (leerB && leerS) { f.remove(); return; }
+      if (leerB) b.remove();
+      if (leerS) sp.remove();
+      if (p && !p.textContent.trim()) p.remove();
+    });
+    var kasten = document.querySelector('.fakten');
+    if (kasten && !kasten.querySelector('.fakt')) kasten.remove();
+
+    /* Buehnen-Ueberschrift: ist kein Akzentteil da, faellt er weg */
+    var akz = document.querySelector('.buehne h1 em');
+    if (akz && !akz.textContent.trim()) akz.remove();
+
+    /* Sprechzeiten: stehen keine echten Zeiten drin, kommt die Tabelle weg
+       und an ihre Stelle ein sauberer Satz. Eine Tabelle mit sechsmal
+       "bitte telefonisch erfragen" sieht schlechter aus als gar keine. */
+    var karte = document.querySelector('.zeiten');
+    if (karte){
+      var werte = Array.prototype.map.call(
+        karte.querySelectorAll('table td:last-child'),
+        function(c){ return c.textContent.trim(); });
+      var echte = werte.filter(function(w){ return w && !/^[-–—.]*$/.test(w); });
+      if (echte.length === 0){
+        var tab = karte.querySelector('table');
+        if (tab){
+          var satz = document.createElement('p');
+          satz.className = 'zeiten-ersatz';
+          satz.textContent = 'Termine vergeben wir telefonisch — so finden wir gleich einen Tag, der Ihnen passt.';
+          tab.parentNode.replaceChild(satz, tab);
+        }
+        var fuss = karte.querySelector('.zeiten-fuss');
+        if (fuss) fuss.textContent = 'Rufen Sie uns an, wir stimmen den Termin direkt mit Ihnen ab.';
+      }
+    }
+
+    /* Logo: traegt es, tritt es an die Stelle der gesetzten Wortmarke.
+       Traegt es nicht, bleibt die Wortmarke stehen — nie beides, nie keines. */
+    var platte = document.querySelector('.logo');
+    if (platte){
+      var bild = platte.querySelector('img');
+      if (!bild || leer(bild)) {
+        platte.remove();
+      } else {
+        var zeigen = function(){
+          if (!bild.naturalWidth) { platte.remove(); return; }
+          platte.style.display = 'flex';
+          var w = document.querySelector('.wortmarke');
+          if (w) w.remove();
+        };
+        if (bild.complete) zeigen(); else {
+          bild.addEventListener('load', zeigen);
+          bild.addEventListener('error', function(){ platte.remove(); });
+        }
+      }
+    }
+
+    /* Ohne eigenes Foto bleibt die hinterlegte Aufnahme des Rahmens stehen. */
+    Array.prototype.forEach.call(document.querySelectorAll('img.band-bild'), function(b){
+      if (leer(b)) b.remove();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('img.kopfbild'), function(k){
+      if (leer(k)) { k.remove(); return; }
+      k.hidden = false;
+      var mono = k.parentNode.querySelector('.monogramm');
+      if (mono) mono.remove();
+      /* Ist das Foto quer — etwa ein Kopfbereich der alten Seite —,
+         bekommt die Kachel Querformat statt eines engen Beschnitts. */
+      var passe = function(){
+        if (!k.naturalWidth || !k.naturalHeight) return;
+        var v = k.naturalWidth / k.naturalHeight;
+        if (v > 1.3){ k.style.aspectRatio = '16/9'; k.style.objectPosition = 'center 28%'; }
+        else if (v > 1.05){ k.style.aspectRatio = '4/3'; }
+      };
+      if (k.complete) passe(); else k.addEventListener('load', passe);
+    });
+    /* Monogramm aus den Initialen des Namens, Titel werden übersprungen */
+    Array.prototype.forEach.call(document.querySelectorAll('.monogramm'), function(m){
+      var name = (m.getAttribute('data-mono') || '').trim();
+      var teile = name.split(/\s+/).filter(function(w){
+        return w.length > 1 && !/^(dr|med|dent|prof|dipl|m\.?sc|ba|ma)\.?$/i.test(w.replace(/\./g,''));
+      });
+      var ini = teile.slice(0, 2).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
+      var s = m.querySelector('span');
+      if (s) s.textContent = ini || '·';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aufraeumen);
+  } else { aufraeumen(); }
+
+  /* Zahlen zaehlen hoch, sobald sie ins Bild kommen. Nur echte Zahlen —
+     "Kostal Partnerbetrieb" bleibt stehen wie es ist. */
+  function zaehlwerk(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+    var felder = [];
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt b, [data-zaehlen]'), function(el){
+      var roh = el.textContent.trim();
+      var t = roh.match(/^(\D*?)(\d[\d.]*)(\D*)$/);
+      if (!t) return;
+      var ziel = parseInt(t[2].replace(/\./g, ''), 10);
+      if (!ziel || ziel > 100000) return;
+      el.dataset.vor = t[1]; el.dataset.nach = t[3]; el.dataset.ziel = String(ziel);
+      el.textContent = t[1] + '0' + t[3];
+      felder.push(el);
+    });
+    if (!felder.length) return;
+    var auge = new IntersectionObserver(function(e){
+      e.forEach(function(x){
+        if (!x.isIntersecting) return;
+        var el = x.target, ziel = +el.dataset.ziel, start = performance.now(), dauer = 1100;
+        (function lauf(jetzt){
+          var p = Math.min((jetzt - start) / dauer, 1);
+          var w = Math.round(ziel * (1 - Math.pow(1 - p, 3)));
+          el.textContent = el.dataset.vor + w + el.dataset.nach;
+          if (p < 1) requestAnimationFrame(lauf);
+        })(start);
+        auge.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    felder.forEach(function(el){ auge.observe(el); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', zaehlwerk);
+  else zaehlwerk();
+
+  /* Bewegung beim Scrollen. Zurueckhaltend: einblenden und ein Stueck
+     nach oben, gestaffelt innerhalb einer Gruppe. Wer im Betriebssystem
+     weniger Bewegung eingestellt hat, bekommt gar keine. */
+  function bewegung(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+
+    var gruppen = ['.a-kopf','.kachel','.posten','.schritt','.weg','.fakt','.person',
+                   '.betrieb-bild','.zeiten','.form','.stoerung-in','.buehne-text > *',
+                   '.gebiet-in > *','.notdienst-in > *','.kontakt > div'];
+    var teile = [];
+    gruppen.forEach(function(w){
+      var n = document.querySelectorAll(w);
+      Array.prototype.forEach.call(n, function(el, i){
+        if (el.dataset.auf) return;
+        el.dataset.auf = '1';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms, ' +
+                              'transform .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms';
+        teile.push(el);
+      });
+    });
+    if (!teile.length) return;
+
+    var zeigen = function(el){
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    };
+
+    /* Was beim Laden schon im Bild steht, wird sofort gezeigt — sonst
+       startet die Seite mit einem Loch, bis der Beobachter anspringt. */
+    var sofort = [];
+    teile.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) sofort.push(el);
+    });
+    requestAnimationFrame(function(){ sofort.forEach(zeigen); });
+
+    var auge = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if (!e.isIntersecting) return;
+        zeigen(e.target);
+        auge.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    teile.forEach(function(el){ auge.observe(el); });
+
+    /* Sicherheitsnetz: was nach zwei Sekunden noch unsichtbar ist, wird
+       sichtbar. Lieber ohne Effekt als eine leere Seite. */
+    setTimeout(function(){
+      teile.forEach(function(el){ if (el.style.opacity === '0'){ el.style.opacity='1'; el.style.transform='none'; } });
+    }, 2600);
+
+    /* Das Buehnenfoto faehrt beim Scrollen langsam mit. */
+    var foto = document.querySelector('.buehne-foto');
+    if (foto){
+      var laeuft = false;
+      window.addEventListener('scroll', function(){
+        if (laeuft) return;
+        laeuft = true;
+        requestAnimationFrame(function(){
+          var y = Math.min(window.scrollY, 700);
+          foto.style.transform = 'translate3d(0,' + (y * 0.12) + 'px,0) scale(1.06)';
+          laeuft = false;
+        });
+      }, { passive: true });
+      foto.style.transform = 'scale(1.06)';
+      foto.style.willChange = 'transform';
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bewegung);
+  else bewegung();
+
+  function hinweis(titel, satz){
+    document.title = titel;
+    document.body.innerHTML =
+      '<div style="min-height:100vh;display:grid;place-items:center;padding:2rem;'
+      + 'background:#16211E;color:#AEBCB7;text-align:center;font-family:' + "'Inter'" + ',system-ui,sans-serif">'
+      + '<div style="max-width:46ch">'
+      + '<p style="font-family:' + "'Newsreader'" + ',Georgia,serif;font-size:1.7rem;color:#fff;margin:0 0 .9rem">' + titel + '</p>'
+      + '<p style="margin:0 0 1.4rem;line-height:1.6">' + satz + ' Veröffentlicht war er zu keiner Zeit.</p>'
+      + '<p style="margin:0 0 1.6rem;line-height:1.6">Wenn Sie ihn noch einmal sehen möchten, melden wir ihn gern erneut frei.</p>'
+      + '<p style="margin:0"><a href="https://terminwerk-systeme.de/kontakt/" style="color:#8FC9BC">TerminWerk Systeme</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/impressum/" style="color:#8FC9BC">Impressum</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/datenschutz/" style="color:#8FC9BC">Datenschutz</a></p>'
+      + '</div></div>';
+    document.body.style.padding = "0";
+  }
+
+  var bis = new Date("2026-12-15T23:59:59");
+  if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
+    hinweis("Dieser Entwurf ist abgelaufen.",
+      "Der unverbindliche Entwurf für Die Dachexperten stand bis zum 15.12.2026 zur Ansicht bereit.");
+    return;
+  }
+  try{
+    fetch("../status.json", { cache: "no-store" })
+      .then(function(a){ return a.ok ? a.json() : null; })
+      .then(function(s){
+        if (s && s[SLUG] === "aus") {
+          hinweis("Dieser Entwurf wurde zurückgezogen.",
+            "Der unverbindliche Entwurf für Die Dachexperten steht nicht mehr zur Ansicht bereit.");
+        }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Kopf wird fest, sobald man die Bühne verlässt. */
+  var kopf = document.querySelector('.kopf');
+  if (kopf){
+    var pruefen = function(){
+      if (window.scrollY > 40) kopf.classList.add('fest'); else kopf.classList.remove('fest');
+    };
+    pruefen();
+    window.addEventListener('scroll', pruefen, { passive: true });
+  }
+
+  /* Laufband: Inhalt einmal verdoppeln, damit es nahtlos umläuft.
+     Leere Einträge vorher raus. */
+  var spur = document.querySelector('[data-laufband]');
+  if (spur){
+    Array.prototype.forEach.call(spur.querySelectorAll('span'), function(x){
+      if (!x.textContent.trim()) x.remove();
+    });
+    if (spur.children.length < 2){ spur.closest('.laufband').remove(); }
+    else { spur.innerHTML = spur.innerHTML + spur.innerHTML; }
+  }
+
+
+  /* ———— Bildvorrat ————
+     Von Hand ausgesucht und einzeln angesehen. Jedes Bild traegt
+     Schlagwoerter, und die Zuordnung laeuft ueber den Inhalt, nicht
+     ueber eine Rechenformel: "Photovoltaik" bekommt ein Solardach,
+     "Brandschutztechnik" einen Rauchmelder. Vorher wurde blind
+     durchgezaehlt, und dann lag beim Brandschutz eine Solaranlage.
+     Eigene Fotos des Kunden haben immer Vorrang. */
+  var A = 'https://images.unsplash.com/';
+  var GROSS = '?auto=format&fit=crop&w=2000&q=76';
+  var MITTE = '?auto=format&fit=crop&w=1200&q=74';
+
+  var VORRAT = [
+    /* Menschen bei der Arbeit — taugen fuer Buehne und Gewerk */
+    {id:'photo-1621905251189-08b45d6a269e', b:1, s:'elektro installation montage baustelle bohren wand allgemein'},
+    {id:'photo-1624397640148-949b1732bb0a', b:1, s:'photovoltaik solar pv dach montage modul speicher'},
+    {id:'photo-1661930941624-f4b43e3079f1', b:1, s:'photovoltaik solar pv dach montage modul'},
+    {id:'photo-1635424824849-1b09bdcc55b1', b:1, s:'dach dachdecker steildach ziegel bedachung sturm'},
+    {id:'photo-1635424709845-3a85ad5e1f5e', b:1, s:'dach dachdecker steildach ziegel bedachung'},
+    {id:'photo-1628147529780-36964fbb8d54', b:1, s:'team mannschaft baustelle allgemein betrieb'},
+    {id:'photo-1785682117029-86171f64c826', b:1, s:'wechselrichter speicher photovoltaik elektro schrank'},
+
+    /* Werkstatt und Technik — Betrieb */
+    {id:'photo-1731694411560-050e5b91e943', t:1, s:'werkstatt werkzeug betrieb allgemein'},
+    {id:'photo-1570129476815-ba368ac77013', t:1, s:'werkstatt werkzeug betrieb lager allgemein'},
+    {id:'photo-1698668975271-2ba9a323be6b', t:1, s:'netzwerk daten antenne bus eib server technik'},
+    {id:'photo-1620653713380-7a34b773fef8', t:1, s:'heizung sanitaer therme kessel warmwasser bad'},
+    {id:'photo-1726589004565-bedfba94d3a2', t:1, s:'dach dachdecker ziegel bedachung'},
+
+    /* Gewerke */
+    {id:'photo-1758101755915-462eddc23f57', s:'elektroinstallation installation steckdose leitung verteiler hausinstallation echeck baustrom'},
+    {id:'photo-1682345262055-8f95f3c513ea', s:'elektroinstallation leitung kabel wand installation echeck'},
+    {id:'photo-1559302504-64aae6ca6b6d', s:'photovoltaik solar pv modul dach energie speicher'},
+    {id:'photo-1655300256335-beef51a914fe', s:'photovoltaik solar pv modul dach energie'},
+    {id:'photo-1655300256486-4ec7251bf84e', s:'photovoltaik solar pv modul energie'},
+    {id:'photo-1544197150-b99a580bb7a8', s:'netzwerk daten antenne bus eib bustechnik smart gebaeudeautomation kommunikation'},
+    {id:'photo-1698668975271-2ba9a323be6b', s:'netzwerk daten bus eib server schrank'},
+    {id:'photo-1665655034446-1536f6de3fe6', s:'brandschutz rauchmelder rauchwarnmelder rauchwarnanlage melder decke'},
+    {id:'photo-1691465576659-938b08b99959', s:'brandschutz rauchmelder rauchwarnmelder melder decke'},
+    {id:'photo-1718221621618-e477ce33485a', s:'beleuchtung licht leuchte lampe innenbeleuchtung'},
+    {id:'photo-1572457598110-2e060c4588ad', s:'beleuchtung licht leuchte decke innenbeleuchtung'},
+    {id:'photo-1650551182991-b07558247564', s:'heizung sanitaer rohr leitung wasser installation bad'},
+    {id:'photo-1669582389450-67a661bccde0', n:1, s:'werkzeug wartung service kundendienst reparatur allgemein'},
+    {id:'photo-1530124566582-a618bc2615dc', n:1, s:'werkzeug wartung service reparatur allgemein'},
+    {id:'photo-1509453721491-c3af5961df76', n:1, s:'baustelle schutz sicherheit allgemein planung'},
+    {id:'photo-1662309376159-b95fb193d96b', n:1, s:'baustelle sicherheit allgemein team'},
+
+    /* Schaltschrank, Verteilung, Mess- und Regeltechnik */
+    {id:'photo-1635335874521-7987db781153', s:'schaltschrank verteiler unterverteilung sicherung automat klemme mess regel steuerung'},
+    {id:'photo-1576446470246-499c738d1c8e', s:'schaltschrank verteiler unterverteilung sicherung zaehler mess regel'},
+    {id:'photo-1558054665-fbe00cd7d920', s:'schaltanlage industrie mittelspannung schaltschrank steuerung regel'},
+    {id:'photo-1601462904263-f2fa0c851cb9', s:'verdrahtung klemmen steuerung schaltschrank mess regel industrie'},
+
+    /* Dach */
+    {id:'photo-1518736346281-76873166a64a', s:'dach steildach ziegel eindeckung bedachung schiefer'},
+    {id:'photo-1605450099279-533bd3ce379a', s:'dach steildach ziegel eindeckung bedachung'},
+    {id:'photo-1640476750068-72c645e653cd', s:'flachdach abdichtung daemmung dach bitumen'},
+    {id:'photo-1771236665755-a178f7ecad0f', s:'flachdach dach abdichtung technik aufbau'},
+    {id:'photo-1635359800970-90b35af94a4a', s:'dachrinne fallrohr rinne entwaesserung regen blech'},
+    {id:'photo-1779755376652-22ca6eba86b8', s:'dachrinne rinne entwaesserung regen blech klempner'},
+
+    /* Sanitaer, Heizung, Bad */
+    {id:'photo-1629079447777-1e605162dc8d', s:'bad badsanierung sanitaer dusche waschtisch wohnbad'},
+    {id:'photo-1638799869566-b17fa794c4de', s:'bad badsanierung sanitaer waschtisch armatur'},
+    {id:'photo-1631048499052-e6d9f305d2c0', s:'bad badsanierung sanitaer wanne dusche'},
+    {id:'photo-1776860150305-108ed577d7d4', s:'waermepumpe heizung aussengeraet energie klima'},
+    {id:'photo-1710829558360-6f8f5e49fedd', s:'waermepumpe heizung aussengeraet klima lueftung'},
+    {id:'photo-1580401410158-1f0b0a406762', s:'sanitaer rohr armatur werkzeug zange installation wasser klempner'}
+  ];
+
+  var samen = (function(t){ var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h; })("die-dachexperten" || "x");
+
+  /* Aehnlichkeit zwischen einem Text und den Schlagwoertern eines Bildes.
+     Ein Wort zaehlt auch, wenn es nur Teil des anderen ist, damit
+     "Brandschutztechnik" zu "brandschutz" passt. */
+  function passt(text, schlag){
+    var t = (text || '').toLowerCase().replace(/[^a-zäöüß]+/g, ' ');
+    var punkte = 0;
+    schlag.split(' ').forEach(function(w){
+      if (!w) return;
+      if (t.indexOf(w) >= 0) punkte += (w === 'allgemein' ? 1 : 10);
+      else if (w.length > 5 && t.split(' ').some(function(x){ return x.length > 4 && w.indexOf(x) >= 0; })) punkte += 6;
+    });
+    return punkte;
+  }
+
+  var vergeben = {};
+  function inFrage(e, rolle){
+    if (rolle === 'b') return !!e.b;
+    if (rolle === 't') return !!e.t;
+    return !(e.b || e.t);
+  }
+  function waehle(text, nurRolle, versatz){
+    var beste = null, bestePunkte = -1, besteGesamt = -1;
+    VORRAT.forEach(function(e, i){
+      if (!inFrage(e, nurRolle) || vergeben[e.id]) return;
+      var inhalt = passt(text, e.s);
+      var gesamt = inhalt * 100 + ((samen + i * 7 + (versatz || 0)) % 97);
+      if (gesamt > besteGesamt){ besteGesamt = gesamt; bestePunkte = inhalt; beste = e; }
+    });
+
+    /* Kein inhaltlicher Treffer? Dann ein neutrales Motiv — Werkzeug,
+       Werkstatt, Baustelle. Ein neutrales Bild neben "Dachrinnen" ist in
+       Ordnung; ein Patchfeld neben "Trinkwasser" ist schlicht falsch. */
+    if (!beste || bestePunkte < 10){
+      var neutral = VORRAT.filter(function(e){ return e.n && inFrage(e, nurRolle) && !vergeben[e.id]; });
+      if (neutral.length) beste = neutral[(samen + (versatz || 0)) % neutral.length];
+    }
+    if (!beste){                       /* alles vergeben: Sperre loesen */
+      var frei = VORRAT.filter(function(e){ return inFrage(e, nurRolle); });
+      beste = frei[(samen + (versatz || 0)) % frei.length];
+    }
+    vergeben[beste.id] = 1;
+    return A + beste.id;
+  }
+  /* Leistungsliste: die aktive Zeile bestimmt das Bild daneben.
+     Hat der Kunde kein eigenes Foto, kommt eines aus dem Vorrat. */
+  var zeilen = Array.prototype.slice.call(document.querySelectorAll('[data-zeile]'));
+  zeilen = zeilen.filter(function(z){
+    var h = z.querySelector('h3');
+    if (!h || !h.textContent.trim()){ z.remove(); return false; }
+    return true;
+  });
+  /* Worum geht es in diesem Betrieb? Daraus kommen Buehne und Betriebsbild. */
+  var fach = zeilen.map(function(z){
+    var h = z.querySelector('h3'), p = z.querySelector('p');
+    return (h ? h.textContent : '') + ' ' + (p ? p.textContent : '');
+  }).join(' ') + ' ' + (document.querySelector('.buehne h1') ? document.querySelector('.buehne h1').textContent : '');
+
+  var wurzel = document.documentElement;
+  wurzel.style.setProperty('--foto-buehne',  'url("' + waehle(fach, 'b', 0) + GROSS + '")');
+  wurzel.style.setProperty('--foto-betrieb', 'url("' + waehle(fach, 't', 3) + GROSS + '")');
+
+  /* Jede Zeile bekommt ein Bild, das zu ihrer Leistung passt. */
+  zeilen.forEach(function(z, i){
+    var eigen = (z.getAttribute('data-bild') || '').trim();
+    if (eigen && eigen !== window.location.href) return;
+    var h = z.querySelector('h3'), p = z.querySelector('p');
+    var text = (h ? h.textContent : '') + ' ' + (p ? p.textContent : '');
+    z.setAttribute('data-bild', waehle(text, 'g', i) + MITTE);
+  });
+  var bild   = document.querySelector('[data-leiste-bild]');
+  var platte = document.querySelector('[data-leiste-platte]');
+
+  if (zeilen.length && bild && platte){
+    var zeigen = function(z){
+      zeilen.forEach(function(x){ x.classList.toggle('an', x === z); });
+      var q = (z.getAttribute('data-bild') || '').trim();
+      if (q && q !== window.location.href){
+        bild.style.backgroundImage = 'url("' + q + '")';
+        bild.classList.add('an'); platte.classList.remove('an');
+      } else {
+        bild.classList.remove('an'); platte.classList.add('an');
+        platte.querySelector('span').textContent = z.getAttribute('data-nr') || '';
+      }
+    };
+    zeilen.forEach(function(z){
+      z.addEventListener('mouseenter', function(){ zeigen(z); });
+      z.addEventListener('focusin', function(){ zeigen(z); });
+    });
+    zeigen(zeilen[0]);
+
+    /* Ohne Maus — auf dem Telefon — wandert die aktive Zeile beim Scrollen mit. */
+    if (!sanft && 'IntersectionObserver' in window && window.matchMedia('(hover: none)').matches){
+      var auge = new IntersectionObserver(function(e){
+        e.forEach(function(x){ if (x.isIntersecting) zeigen(x.target); });
+      }, { rootMargin: '-45% 0px -45% 0px' });
+      zeilen.forEach(function(z){ auge.observe(z); });
+    }
+  }
+})();
+</script>
+
+
+</body>
+</html>
