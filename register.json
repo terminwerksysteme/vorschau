@@ -1,5 +1,14 @@
 [
   {
+    "slug": "praxis-foetzsch",
+    "firma": "Zahnarztpraxis Beate Fötzsch",
+    "branche": "zahnarzt",
+    "gebaut": "2026-11-15",
+    "bis": "2026-12-15",
+    "adresse": "",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "praxis-mueller",
     "firma": "Praxis für Zahnheilkunde Fridbert Müller",
     "branche": "zahnarzt",
