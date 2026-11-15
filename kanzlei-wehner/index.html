@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<title>Rechtsanwalt Florian Wehner — Rechtsanwalt in München für Arbeitsrecht, Verkehrsrecht, Strafrecht und Vertragsrecht</title>
-<meta name="description" content="Rechtsanwalt Florian Wehner in München: Beratung und Vertretung im Arbeitsrecht, Verkehrsrecht, Strafrecht, Vertragsrecht und Inkassorecht, außergerichtlich und vor Gericht, bundesweit.">
+<title>Rechtsanwalt Florian Wehner — Rechtsanwalt in München</title>
+<meta name="description" content="Rechtsanwalt Florian Wehner in München: Beratung und Vertretung im Arbeitsrecht, Verkehrsrecht, Strafrecht, Vertragsrecht und Inkassorecht, auch bundesweit.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ——————————————————————————————————————————————————————————
    Rechtsanwaltskanzlei — Vorlage TerminWerk Systeme
@@ -34,12 +34,14 @@
   --linie:#DFD9CB;
   --linie-zart:#ECE7DC;
 
-  --serif:"EB Garamond",ui-serif,Garamond,Georgia,serif;
+  --serif:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
 
   --band-1:url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1800&q=72");
   --band-2:url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1800&q=72");
 
+  --h1-gewicht:800;
+  --h2-gewicht:700;
   --rand:clamp(1.1rem,5vw,4.5rem);
   --breite:1180px;
 }
@@ -47,6 +49,7 @@
    Wird von vorlagen/uebersetzen.js an die Stelle <!--KERN--> gesetzt.
    Hier stehen Geruest, Kopf, Fuss und die Entwurfs-Kennzeichnung.
    Farben, Schriften und Bandbilder setzt jede Branche selbst.    */
+:root{ --akzent-hell:color-mix(in srgb,var(--akzent) 68%,white); }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
@@ -78,7 +81,8 @@ p{margin:0}
 /* Notrufzeile, Kopf und Bühne bilden oben einen durchgehenden dunklen
    Block. Der Kopf bleibt beim Scrollen dunkel und steht dann klar
    gegen die helle Seite. */
-.kopf{position:sticky;top:env(safe-area-inset-top,0px);z-index:90;background:rgba(22,33,30,.94);
+.kopf{position:sticky;top:env(safe-area-inset-top,0px);z-index:90;
+  background:color-mix(in srgb,var(--tief) 93%,transparent);
   backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid rgba(255,255,255,.1)}
 .kopf .huelle{display:flex;align-items:center;gap:1.4rem;padding-block:.95rem}
 .marke{display:flex;align-items:center;gap:.85rem;line-height:1.14;margin-right:auto;min-width:0}
@@ -97,46 +101,61 @@ p{margin:0}
 .kopf .knopf-voll{background:#fff;color:var(--tief)}
 .kopf .knopf-voll:hover{background:var(--sand)}
 
-.knopf{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:.92rem;
-  padding:.78rem 1.35rem;border-radius:999px;text-decoration:none;white-space:nowrap;border:1px solid transparent;
-  transition:background .18s,color .18s,border-color .18s}
-.knopf-voll{background:var(--tief);color:#fff}
+.knopf{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-weight:600;
+  font-size:.8rem;letter-spacing:.09em;text-transform:uppercase;
+  padding:.95rem 1.5rem;border-radius:3px;text-decoration:none;white-space:nowrap;border:1px solid transparent;
+  transition:background .18s,color .18s,border-color .18s,transform .18s}
+.knopf::after{content:"→";font-size:.95em;transition:transform .18s}
+.knopf:hover::after{transform:translateX(3px)}
+.knopf-voll{background:var(--akzent);color:#fff}
 .knopf-voll:hover{background:var(--akzent-d)}
-.knopf-rand{border-color:var(--linie);color:var(--tinte)}
-.knopf-rand:hover{border-color:var(--tinte);background:#fff}
+.knopf-rand{border-color:rgba(255,255,255,.34);color:#fff}
+.knopf-rand:hover{border-color:#fff;background:rgba(255,255,255,.1)}
 .knopf-hell{background:#fff;color:var(--tief)}
 .knopf-hell:hover{background:var(--sand)}
 
-/* ———— Bühne: farbige Fläche, Sprechzeiten gleichberechtigt daneben ————
-   Der Verlauf geht von fast-schwarz in den Akzent des Kunden. Damit
-   bekommt jede Praxis ihre eigene Farbe, ohne dass ein greller Ton die
-   Seite kippen kann.                                                  */
-.buehne{position:relative;isolation:isolate;color:#E6EEEB;
-  background:linear-gradient(142deg,var(--tief) 0%,var(--tief) 26%,var(--akzent-d) 128%);
-  padding-block:clamp(3.2rem,7vw,6rem) clamp(3rem,6vw,5.2rem)}
-.buehne::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(72% 58% at 88% 8%,rgba(255,255,255,.1),transparent 62%)}
-.buehne-in{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(2.2rem,5vw,4.4rem);align-items:center}
-.buehne .label{color:var(--licht)}
-.buehne h1{font-size:clamp(2.6rem,1.5rem + 4.4vw,4.75rem);margin:1.1rem 0 0;color:#fff}
-.buehne h1 em{font-style:italic;color:var(--licht)}
-.lede{margin-top:1.5rem;font-size:clamp(1.04rem,.98rem + .3vw,1.19rem);color:#C3D3CE;max-width:46ch}
-.tasten{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.1rem}
-.buehne .knopf-voll{background:#fff;color:var(--tief)}
-.buehne .knopf-voll:hover{background:var(--sand)}
-.buehne .knopf-rand{border-color:rgba(255,255,255,.4);color:#fff}
-.buehne .knopf-rand:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+/* ———— Bühne ————
+   Ein Foto über die volle Breite, abgedunkelt, Text darüber. Hat der
+   Kunde kein eigenes Foto, steht die hinterlegte Aufnahme da. Rechts
+   drei Fakten statt einer Zeitentabelle: sechsmal "nach Vereinbarung"
+   untereinander ist das Gegenteil von Verkaufen.                      */
+.buehne{position:relative;isolation:isolate;color:#EAF0EE;overflow:hidden;
+  min-height:clamp(540px,76vh,780px);display:flex;align-items:center;
+  background:var(--tief);padding-block:clamp(3.4rem,8vw,6rem)}
+.buehne-bild{position:absolute;inset:0;z-index:-2;background-color:var(--tief);
+  background-image:var(--band-1);background-size:cover;background-position:center 42%}
+.buehne-bild img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.buehne::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(103deg,
+    color-mix(in srgb,var(--tief) 96%,transparent) 0%,
+    color-mix(in srgb,var(--tief) 88%,transparent) 34%,
+    color-mix(in srgb,var(--tief) 54%,transparent) 62%,
+    color-mix(in srgb,var(--tief) 22%,transparent) 88%,
+    color-mix(in srgb,var(--tief) 14%,transparent) 100%)}
+.buehne::after{content:"";position:absolute;left:0;right:0;bottom:0;height:30%;z-index:-1;pointer-events:none;
+  background:linear-gradient(to top,color-mix(in srgb,var(--tief) 72%,transparent),transparent)}
 
-/* Sprechzeiten als Karte — das meistgesuchte auf jeder Praxisseite */
-.zeiten{background:var(--papier);color:var(--tinte);border-radius:20px;padding:clamp(1.5rem,3vw,2.1rem);
-  box-shadow:0 40px 70px -40px rgba(0,0,0,.55)}
-.zeiten h2{font-size:1.3rem;margin:.55rem 0 1.15rem}
-.zeiten table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
-.zeiten td{padding:.56rem 0;border-bottom:1px solid var(--linie-zart);font-size:.95rem;vertical-align:baseline}
-.zeiten tr:last-child td{border-bottom:0}
-.zeiten td:first-child{color:var(--tinte-weich);width:4.4em;font-weight:500}
-.zeiten td:last-child{text-align:right;font-weight:500}
-.zeiten-fuss{margin-top:1.25rem;padding-top:1.1rem;border-top:1px solid var(--linie-zart);font-size:.87rem;color:var(--tinte-weich)}
+.buehne-in{display:grid;grid-template-columns:1.22fr .78fr;gap:clamp(2.2rem,5vw,4.6rem);align-items:center;width:100%}
+.strich{display:block;width:54px;height:3px;background:var(--akzent);border-radius:2px;margin-bottom:1.15rem}
+.buehne .label{color:#D7E2DE;letter-spacing:.2em}
+.buehne h1{font-size:clamp(2.5rem,1.3rem + 4.6vw,4.5rem);margin:1rem 0 0;color:#fff;
+  font-weight:var(--h1-gewicht,700);letter-spacing:var(--h1-sperrung,-.03em);line-height:1.03}
+.buehne h1 em{font-style:normal;color:var(--akzent-hell,var(--akzent))}
+.lede{margin-top:1.4rem;font-size:clamp(1rem,.96rem + .3vw,1.12rem);color:#C4D2CE;max-width:48ch;line-height:1.7}
+.tasten{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}
+
+/* Drei Fakten. Keine erfundenen Zahlen — steht keine da, traegt das
+   Feld ein Zeichen oder ein kurzes Wort, so wie "§ Feste Ansprechpartner". */
+.fakten{display:grid;gap:0;background:color-mix(in srgb,var(--tief) 64%,transparent);
+  backdrop-filter:blur(6px) saturate(1.2);border:1px solid rgba(255,255,255,.14);border-radius:4px;
+  padding:.3rem clamp(1.3rem,2.4vw,1.8rem)}
+.fakt{padding-block:clamp(1.1rem,2.2vw,1.5rem);border-bottom:1px solid rgba(255,255,255,.12)}
+.fakt:last-child{border-bottom:0}
+.fakt b{display:block;font-family:var(--serif);font-size:clamp(1.7rem,1.3rem + 1.4vw,2.3rem);
+  line-height:1;color:#fff;font-weight:var(--h1-gewicht,700);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fakt span{display:block;margin-top:.45rem;font-size:.74rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--akzent-hell,var(--licht))}
+.fakt p{margin-top:.42rem;font-size:.87rem;line-height:1.55;color:#AFC0BB}
 
 /* ———— Bildbänder ————
    Hat der Kunde eigene Fotos, stehen sie oben drauf. Hat er keine,
@@ -152,21 +171,26 @@ p{margin:0}
 
 /* ———— Abschnittskopf ———— */
 .abschnitt{padding-block:clamp(3.2rem,6.5vw,5.8rem)}
-.a-kopf{max-width:60ch;margin-bottom:clamp(2rem,4vw,3.2rem)}
-.a-kopf h2{font-size:clamp(1.95rem,1.5rem + 1.7vw,2.85rem);margin:.75rem 0 0}
+.a-kopf{max-width:60ch;margin-bottom:clamp(2rem,4vw,3.2rem);padding-top:1.15rem;position:relative}
+.a-kopf::before{content:"";position:absolute;top:0;left:0;width:46px;height:3px;border-radius:2px;background:var(--akzent)}
+.a-kopf h2{font-size:clamp(1.95rem,1.5rem + 1.7vw,2.85rem);margin:.75rem 0 0;
+  font-weight:var(--h2-gewicht,400);letter-spacing:var(--h1-sperrung,-.02em)}
 .a-kopf p{margin-top:1rem;color:var(--tinte-weich);font-size:1.03rem}
 
 /* ———— Leistungen: nummerierte Liste statt Kachelraster ———— */
 .liste{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(2rem,5vw,4.5rem)}
-.posten{display:grid;grid-template-columns:auto 1fr;gap:0 1.35rem;padding-block:1.6rem;border-top:1px solid var(--linie)}
+.posten{display:grid;grid-template-columns:auto 1fr;gap:0 1.35rem;padding-block:1.6rem;border-top:1px solid var(--linie);
+  border-top-color:color-mix(in srgb,var(--akzent) 26%,var(--linie))}
 .posten .zahl{font-family:var(--serif);font-size:1.02rem;color:var(--akzent);padding-top:.16rem;font-variant-numeric:tabular-nums}
 .posten h3{font-family:var(--sans);font-weight:600;font-size:1.08rem;letter-spacing:-.005em;line-height:1.35}
 .posten p{margin-top:.42rem;color:var(--tinte-weich);font-size:.95rem;line-height:1.6}
 
 /* ———— Erster Besuch: Sandfläche, große Ziffern ———— */
-.ablauf-flaeche{background:var(--papier-2)}
+.ablauf-flaeche{background:var(--papier-2);
+  background:color-mix(in srgb,var(--akzent) 11%,var(--papier))}
 .schritte{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.4rem,3vw,2.6rem)}
-.schritt .nr{font-family:var(--serif);font-size:clamp(2.6rem,2rem + 2vw,3.5rem);line-height:1;color:var(--sand-tief)}
+.schritt .nr{font-family:var(--serif);font-size:clamp(2.6rem,2rem + 2vw,3.5rem);line-height:1;color:var(--sand-tief);
+  color:color-mix(in srgb,var(--akzent) 62%,var(--sand-tief))}
 .schritt h3{font-family:var(--sans);font-weight:600;font-size:1.04rem;margin-top:.85rem;padding-top:.85rem;border-top:1px solid var(--linie)}
 .schritt p{margin-top:.5rem;color:var(--tinte-weich);font-size:.93rem;line-height:1.6}
 
@@ -226,8 +250,10 @@ p{margin:0}
 .form .datenschutz{margin-top:.95rem;font-size:.79rem;color:#92A39D;line-height:1.55}
 
 /* ———— Kassen ———— */
-.schlusszeile{border-top:1px solid var(--linie);padding-block:clamp(1.8rem,3.5vw,2.6rem);
-  display:flex;gap:1rem 2.2rem;align-items:baseline;flex-wrap:wrap}
+.schlusszeile{padding:clamp(1.5rem,3vw,2.1rem) clamp(1.4rem,3vw,2rem);border-radius:18px;
+  background:color-mix(in srgb,var(--akzent) 13%,var(--papier));
+  margin-block:clamp(1.4rem,3vw,2.4rem);
+  display:flex;gap:.8rem 2.2rem;align-items:baseline;flex-wrap:wrap}
 .schlusszeile b{font-family:var(--serif);font-size:1.3rem;font-weight:500}
 .schlusszeile p{color:var(--tinte-weich);font-size:.93rem;max-width:62ch}
 
@@ -240,7 +266,7 @@ p{margin:0}
 
 /* ———— Entwurfs-Kennzeichnung ———— */
 .vorschaumarke{position:fixed;top:120px;right:16px;z-index:95;pointer-events:none;display:flex;flex-direction:column;gap:.08rem;
-  background:rgba(22,33,30,.9);border:1px solid rgba(255,255,255,.24);border-radius:10px;padding:.48rem .78rem;line-height:1.2;color:#fff;
+  background:color-mix(in srgb,var(--tief) 90%,transparent);border:1px solid rgba(255,255,255,.24);border-radius:10px;padding:.48rem .78rem;line-height:1.2;color:#fff;
   box-shadow:0 12px 28px -16px rgba(0,0,0,.7)}
 .vorschaumarke b{font-size:.74rem;font-weight:700;letter-spacing:.1em}
 .vorschaumarke span{font-size:.67rem;font-weight:500;color:#B6C4BF}
@@ -299,7 +325,7 @@ p{margin:0}
       </span>
       <span class="wortmarke">
         <b>Kanzlei Wehner</b>
-        <span>Rechtsanwalt in München</span>
+        <span>Rechtsanwalt · München</span>
       </span>
     </div>
     <nav class="nav">
@@ -313,35 +339,31 @@ p{margin:0}
 </header>
 
 <section class="buehne">
+  <div class="buehne-bild">
+    <img src="https://www.kanzleiwehner.de/wp-content/uploads/RA-Wehner_Header_Arbeitsrecht_864x350px.jpg" alt="Rechtsanwalt für Arbeitsrecht München" onerror="this.remove();">
+  </div>
   <div class="huelle buehne-in">
     <div>
-      <span class="label">Kanzlei in der Münchner Innenstadt, gegründet 1953</span>
-      <h1>Rechtsanwalt in München für Arbeits-, Verkehrs- und Strafrecht</h1>
-      <p class="lede">Die Kanzlei berät Rechtssuchende aus München und dem gesamten Bundesgebiet. Sie vertritt Sie außergerichtlich und vor Gericht und vergibt Termine kurzfristig, auch abends oder am Wochenende.</p>
+      <span class="strich"></span>
+      <span class="label">Rechtsanwalt in München</span>
+      <h1>Wenn es auf Fristen ankommt, erhalten Sie bei uns zeitnah <em>einen Beratungstermin.</em></h1>
+      <p class="lede">Die Kanzlei in zentraler Innenstadtlage berät und vertritt Sie im Arbeitsrecht, Verkehrsrecht, Strafrecht und Vertragsrecht, vor Gericht ebenso wie außergerichtlich.</p>
       <div class="tasten">
-        <a class="knopf knopf-voll" href="tel:089226617">089 / 226 617</a>
-        <a class="knopf knopf-rand" href="#kontakt">Erstberatung anfragen</a>
+        <a class="knopf knopf-voll" href="#kontakt">Info-Hotline anrufen</a>
+        <a class="knopf knopf-rand" href="tel:089226617">089 / 226 617</a>
       </div>
     </div>
-    <div class="zeiten">
-      <span class="label">Sprechzeiten</span>
-      <h2>Wann wir erreichbar sind</h2>
-      <table>
-        <tr><td>Mo</td><td>Termin nach Vereinbarung</td></tr>
-        <tr><td>Di</td><td>Termin nach Vereinbarung</td></tr>
-        <tr><td>Mi</td><td>Termin nach Vereinbarung</td></tr>
-        <tr><td>Do</td><td>Termin nach Vereinbarung</td></tr>
-        <tr><td>Fr</td><td>Termin nach Vereinbarung</td></tr>
-        <tr><td>Sa</td><td>Nach Vereinbarung möglich</td></tr>
-      </table>
-      <p class="zeiten-fuss">Termine nach Vereinbarung. In Fristsachen rufen Sie bitte an, statt zu schreiben.</p>
-    </div>
+    <aside class="fakten">
+      <div class="fakt"><b>1953</b><span>Kanzlei seit der Gründung</span><p>Die Kanzlei in zentraler Innenstadtlage Münchens besteht seit dem Jahr 1953.</p></div>
+      <div class="fakt"><b>24 h</b><span>Notruf erreichbar</span><p>In dringenden Anliegen erreichen Sie uns rund um die Uhr.</p></div>
+      <div class="fakt"><b>3 Wochen</b><span>Frist für Kündigungsschutzklagen</span><p>Eine Kündigungsschutzklage muss innerhalb von drei Wochen nach Erhalt der schriftlichen Kündigung eingereicht werden.</p></div>
+    </aside>
   </div>
 </section>
 
 <div class="huelle band">
   <div class="band-rahmen">
-    <img class="band-bild" src="https://www.kanzleiwehner.de/wp-content/uploads/RA-Wehner_Header_Wehner_864x350px.jpg" alt="Kanzleiräume in der Münchner Innenstadt" loading="lazy" onerror="this.remove();">
+    <img class="band-bild" src="https://www.kanzleiwehner.de/wp-content/uploads/RA-Wehner_Header_Vertragsrecht_864x350px.jpg" alt="Vertragsrecht Beratung in München" loading="lazy" onerror="this.remove();">
   </div>
 </div>
 
@@ -350,15 +372,15 @@ p{margin:0}
     <div class="a-kopf">
       <span class="label">Rechtsgebiete</span>
       <h2>Rechtsgebiete</h2>
-      <p>Der Schwerpunkt der Kanzlei liegt im Arbeitsrecht, Verkehrsrecht und Strafrecht sowie im Vertrags- und Inkassorecht. Verkehrs- und Strafrecht übernimmt die Kanzlei auch grenzüberschreitend.</p>
+      <p>Ich unterstütze Sie schwerpunktmäßig im Arbeitsrecht, Verkehrsrecht und Strafrecht sowie im Vertrags- und Inkassorecht.</p>
     </div>
     <div class="liste">
-      <div class="posten"><span class="zahl">01</span><div><h3>Arbeitsrecht</h3><p>Vertretung von Arbeitnehmern und Arbeitgebern, etwa bei Kündigung, Abfindung, Aufhebungsvertrag, Arbeitsvertrag und Arbeitszeugnis.</p></div></div>
-      <div class="posten"><span class="zahl">02</span><div><h3>Verkehrsrecht</h3><p>Beratung zu Unfallregulierung, Schadensersatz, Schmerzensgeld, Bußgeldverfahren, Führerschein und Autokauf.</p></div></div>
-      <div class="posten"><span class="zahl">03</span><div><h3>Strafrecht</h3><p>Verteidigung unter anderem bei Drogendelikten, Körperverletzung, Verkehrsstrafsachen, Fahrerflucht und im Jugendstrafrecht.</p></div></div>
-      <div class="posten"><span class="zahl">04</span><div><h3>Vertragsrecht</h3><p>Prüfung und Gestaltung von Verträgen sowie Beratung zu AGB, Kaufvertrag, Gewährleistung und Garantie.</p></div></div>
-      <div class="posten"><span class="zahl">05</span><div><h3>Inkassorecht</h3><p>Beratung und Vertretung bei der Durchsetzung und Abwehr von Forderungen.</p></div></div>
-      <div class="posten"><span class="zahl">06</span><div><h3>Internationales Verkehrsrecht</h3><p>Vertretung bei Verkehrsfällen mit Auslandsbezug, etwa im europäischen Ausland.</p></div></div>
+      <div class="posten"><span class="zahl">01</span><div><h3>Arbeitsrecht</h3><p>Beratung und Vertretung von Arbeitnehmern, Führungskräften, Arbeitgebern und Betriebsräten, von der Vertragsprüfung bis zur Abfindung.</p></div></div>
+      <div class="posten"><span class="zahl">02</span><div><h3>Verkehrsrecht</h3><p>Unfallregulierung, Schadensersatz und Schmerzensgeld, Führerscheinfragen sowie Bußgeldverfahren, auch mit Auslandsbezug.</p></div></div>
+      <div class="posten"><span class="zahl">03</span><div><h3>Strafrecht</h3><p>Verteidigung unter anderem im Drogenstrafrecht, bei Körperverletzung, Betrug, Fahrerflucht und im Jugendstrafrecht.</p></div></div>
+      <div class="posten"><span class="zahl">04</span><div><h3>Vertragsrecht</h3><p>Rechtsfragen zu AGB, Kaufvertrag, Garantie und Gewährleistung sowie zu Streitigkeiten mit Kfz-Werkstätten.</p></div></div>
+      <div class="posten"><span class="zahl">05</span><div><h3>Inkassorecht</h3><p>Unterstützung bei der Durchsetzung von Forderungen und bei der Auseinandersetzung mit Inkassoforderungen.</p></div></div>
+      <div class="posten"><span class="zahl">06</span><div><h3>Kündigungsschutz</h3><p>Vertretung außergerichtlich und vor den Arbeitsgerichten, bundesweit.</p></div></div>
     </div>
   </div>
 </section>
@@ -367,14 +389,14 @@ p{margin:0}
   <div class="huelle">
     <div class="a-kopf">
       <span class="label">Vom Erstkontakt zum Mandat</span>
-      <h2>So läuft eine Anfrage ab</h2>
-      <p>Sie schildern Ihr Anliegen, die Kanzlei meldet sich zeitnah bei Ihnen. Über das weitere Vorgehen entscheiden Sie.</p>
+      <h2>So gehen wir vor</h2>
+      <p>Vom ersten Kontakt bis zur Vertretung bleibt der Ablauf übersichtlich.</p>
     </div>
     <div class="schritte">
-      <div class="schritt"><div class="nr">01</div><h3>Kontakt aufnehmen</h3><p>Rufen Sie die Info-Hotline an oder schildern Sie Ihr Rechtsproblem im Kontaktformular.</p></div>
+      <div class="schritt"><div class="nr">01</div><h3>Anfrage</h3><p>Sie schildern Ihr Rechtsproblem per Telefon oder über das Kontaktformular.</p></div>
       <div class="schritt"><div class="nr">02</div><h3>Erste Einschätzung</h3><p>Sie erhalten telefonisch oder per E-Mail eine erste Einschätzung des Sachverhalts und eine Abschätzung der voraussichtlichen Kosten.</p></div>
-      <div class="schritt"><div class="nr">03</div><h3>Beratungstermin</h3><p>Die Kanzlei vergibt Termine schnell, auch abends oder am Wochenende.</p></div>
-      <div class="schritt"><div class="nr">04</div><h3>Vertretung</h3><p>Die Kanzlei vertritt Ihre Interessen außergerichtlich und, wenn nötig, vor Gericht.</p></div>
+      <div class="schritt"><div class="nr">03</div><h3>Beratungstermin</h3><p>Wir vereinbaren zeitnah einen Termin, auch abends oder am Wochenende.</p></div>
+      <div class="schritt"><div class="nr">04</div><h3>Vertretung</h3><p>Wir vertreten Ihre Interessen außergerichtlich oder, wenn nötig, vor Gericht.</p></div>
     </div>
   </div>
 </section>
@@ -387,27 +409,27 @@ p{margin:0}
   <div class="huelle">
     <div class="a-kopf">
       <span class="label">Die Kanzlei</span>
-      <h2>Ansprechpartner</h2>
-      <p>Sie werden von Rechtsanwalt Florian Wehner persönlich beraten. Im Sekretariat erreichen Sie die Kanzlei telefonisch.</p>
+      <h2>Ihr Ansprechpartner</h2>
+      <p>Ihr Anliegen wird persönlich von Rechtsanwalt Florian Wehner betreut.</p>
     </div>
     <div class="team">
       <div class="person">
         <div class="monogramm" data-mono="Florian Wehner"><span></span></div>
-        <img class="kopfbild" src="https://www.kanzleiwehner.de/wp-content/uploads/RA-Wehner_Header_Drogenstrafrecht_864x350px-1.jpg" alt="Florian Wehner" loading="lazy" hidden onerror="this.remove();">
+        <img class="kopfbild" src="" alt="Florian Wehner" loading="lazy" hidden onerror="this.remove();">
         <h3>Florian Wehner</h3>
         <div class="rolle">Rechtsanwalt</div>
-        <p>Berät und vertritt Mandanten im Arbeits-, Verkehrs-, Straf-, Vertrags- und Inkassorecht und hält sich durch laufende Fortbildungen auf dem Stand.</p>
-      </div>
-      <div class="person">
-        <div class="monogramm" data-mono="Tanja Schaible"><span></span></div>
-        <img class="kopfbild" src="https://www.kanzleiwehner.de/wp-content/uploads/pic_blitzerfoto_864x350.jpg" alt="Tanja Schaible" loading="lazy" hidden onerror="this.remove();">
-        <h3>Tanja Schaible</h3>
-        <div class="rolle">Ansprechpartnerin Sekretariat</div>
-        <p>Ist Ansprechpartnerin für Bewerbungen und unter der Telefonnummer der Kanzlei erreichbar.</p>
+        <p>Rechtsanwalt in München mit Schwerpunkten im Arbeitsrecht, Verkehrsrecht und Strafrecht sowie im Vertrags- und Inkassorecht.</p>
       </div>
       <div class="person">
         <div class="monogramm" data-mono=""><span></span></div>
-        <img class="kopfbild" src="https://www.kanzleiwehner.de/wp-content/uploads/einspruch_bu%C3%9Fgeldbescheid_704891500.png" alt="" loading="lazy" hidden onerror="this.remove();">
+        <img class="kopfbild" src="" alt="" loading="lazy" hidden onerror="this.remove();">
+        <h3></h3>
+        <div class="rolle"></div>
+        <p></p>
+      </div>
+      <div class="person">
+        <div class="monogramm" data-mono=""><span></span></div>
+        <img class="kopfbild" src="" alt="" loading="lazy" hidden onerror="this.remove();">
         <h3></h3>
         <div class="rolle"></div>
         <p></p>
@@ -421,12 +443,12 @@ p{margin:0}
     <div class="a-kopf">
       <span class="label">Kosten und Ablauf</span>
       <h2>Anfahrt</h2>
-      <p>Die Kanzlei liegt zentral in der Münchner Innenstadt in der Herzog-Heinrich-Straße und ist mit öffentlichen Verkehrsmitteln sehr gut zu erreichen.</p>
+      <p>Die Kanzlei liegt in zentraler Innenstadtlage an der Theresienwiese.</p>
     </div>
     <div class="wege">
-      <div class="weg"><h3>Öffentlich</h3><p>Die Kanzleiräume sind mit den öffentlichen Verkehrsmitteln sehr gut zu erreichen.</p></div>
-      <div class="weg"><h3>Telefonisch</h3><p>Viele Anliegen lassen sich vorab am Telefon unter 089 / 226 617 klären.</p></div>
-      <div class="weg"><h3>Bundesweit</h3><p>Mandanten außerhalb Münchens betreut die Kanzlei deutschlandweit ohne Mehrkosten.</p></div>
+      <div class="weg"><h3>Lage</h3><p>Zentrale Innenstadtlage an der Theresienwiese in München.</p></div>
+      <div class="weg"><h3>Bundesweit</h3><p>Mandanten werden deutschlandweit ohne Mehrkosten betreut.</p></div>
+      <div class="weg"><h3>Aus der Ferne</h3><p>Eine Beratung ist auch telefonisch oder per E-Mail möglich.</p></div>
     </div>
   </div>
 </section>
@@ -438,8 +460,8 @@ p{margin:0}
       <h2 style="margin-top:.7rem">24h-Notruf</h2>
     </div>
     <div>
-      <p>In dringenden Anliegen erreichen Sie die Kanzlei rund um die Uhr unter 0172 / 95 37 229.</p>
-      <p class="klein">Auch außerhalb der Bürozeiten erreichen Sie uns in dringenden Fällen unter 0172 / 95 37 229.</p>
+      <p>In dringenden Anliegen erreichen Sie uns rund um die Uhr unter der Notrufnummer.</p>
+      <p class="klein">Außerhalb der üblichen Zeiten erreichen Sie uns unter 0172 / 95 37 229.</p>
       <div class="tasten" style="margin-top:1.5rem">
         <a class="knopf knopf-hell" href="tel:089226617">089 / 226 617</a>
       </div>
@@ -452,12 +474,25 @@ p{margin:0}
     <div>
       <span class="label">Kontakt</span>
       <h2 style="margin-top:.7rem">Kontakt</h2>
-      <p>Schildern Sie Ihr Anliegen über das Formular. Ihre Angaben unterliegen der anwaltlichen Schweigepflicht, ein Mandatsverhältnis kommt durch die Anfrage nicht zustande.</p>
+      <p>Schildern Sie uns Ihr Anliegen. Ihre Angaben unterliegen der anwaltlichen Schweigepflicht, ein Mandatsverhältnis kommt dadurch noch nicht zustande.</p>
       <a class="ruf" href="tel:089226617">089 / 226 617</a>
-      <p class="ruf-zeit">Kostenlose Info-Hotline 089 / 226 617. Termine auch abends und am Wochenende.</p>
+      <p class="ruf-zeit">Kostenlose Info-Hotline: 089 / 226 617</p>
       <div class="adresse">
         <div><span>Anschrift</span>Herzog-Heinrich-Str. 19<br>80336 München</div>
         <div><span>E-Mail</span><a href="mailto:info@kanzleiwehner.de">info@kanzleiwehner.de</a></div>
+      </div>
+      <div class="zeiten">
+        <span class="label">Bürozeiten</span>
+        <h2>Erreichbarkeit</h2>
+        <table>
+          <tr><td>Mo</td><td></td></tr>
+          <tr><td>Di</td><td></td></tr>
+          <tr><td>Mi</td><td></td></tr>
+          <tr><td>Do</td><td></td></tr>
+          <tr><td>Fr</td><td></td></tr>
+          <tr><td>Sa</td><td></td></tr>
+        </table>
+        <p class="zeiten-fuss">Termine vergeben wir auch abends oder am Wochenende; in dringenden Fällen erreichen Sie uns über den 24h-Notruf.</p>
       </div>
     </div>
     <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='In der Vorschau nicht aktiv';">
@@ -469,7 +504,7 @@ p{margin:0}
         <input id="f-mail" name="email" type="email" autocomplete="email">
         <span class="hinweis">Bitte keine vertraulichen Einzelheiten zu Ihrem Fall in dieses Feld.</span></div>
       <div class="feld"><label for="f-text">Ihr Anliegen</label>
-        <textarea id="f-text" name="nachricht" placeholder="Ich habe eine Kündigung erhalten und möchte wissen, welche Fristen jetzt gelten."></textarea></div>
+        <textarea id="f-text" name="nachricht" placeholder="Ich habe eine Kündigung erhalten und möchte wissen, wie ich vorgehen kann."></textarea></div>
       <button type="submit">Anfrage absenden</button>
       <p class="datenschutz">Mit dieser Anfrage kommt noch kein Mandatsverhältnis zustande. Wir prüfen zunächst, ob wir Sie vertreten dürfen, und melden uns zurück.</p>
     </form>
@@ -479,7 +514,7 @@ p{margin:0}
 <div class="huelle">
   <div class="schlusszeile">
     <b>Kosten</b>
-    <p>Zu Ihrer Anfrage erhalten Sie eine erste Einschätzung und eine Abschätzung der voraussichtlichen Kosten. Mandanten außerhalb Münchens werden ohne Mehrkosten betreut.</p>
+    <p>Auf Ihre Anfrage hin erhalten Sie eine Abschätzung der voraussichtlichen Kosten.</p>
   </div>
 </div>
 
@@ -488,7 +523,7 @@ p{margin:0}
     <div><b>Rechtsanwalt Florian Wehner</b><p>Rechtsanwalt Florian Wehner · Herzog-Heinrich-Str. 19 · 80336 München</p></div>
     <div><b style="font-size:.95rem">Anschrift</b>Herzog-Heinrich-Str. 19<br>80336 München<br>
       <a href="tel:089226617">089 / 226 617</a></div>
-    <div><b style="font-size:.95rem">Erreichbarkeit</b>Kostenlose Info-Hotline 089 / 226 617. Termine auch abends und am Wochenende.</div>
+    <div><b style="font-size:.95rem">Erreichbarkeit</b>Kostenlose Info-Hotline: 089 / 226 617</div>
   </div>
   <div class="zeile">
     <span>&copy; 2026 Rechtsanwalt Florian Wehner</span>
@@ -526,6 +561,47 @@ p{margin:0}
       var s = el.getAttribute('src');
       return !s || s === window.location.href || s === '#';
     };
+
+    /* Fakten: ein Platz ohne Inhalt verschwindet. Lieber zwei Fakten
+       als drei, von denen einer leer ist. */
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt'), function(f){
+      var b = f.querySelector('b'), sp = f.querySelector('span'), p = f.querySelector('p');
+      var leerB = !b || !b.textContent.trim();
+      var leerS = !sp || !sp.textContent.trim();
+      if (leerB && leerS) { f.remove(); return; }
+      if (leerB) b.remove();
+      if (leerS) sp.remove();
+      if (p && !p.textContent.trim()) p.remove();
+    });
+    var kasten = document.querySelector('.fakten');
+    if (kasten && !kasten.querySelector('.fakt')) kasten.remove();
+
+    /* Buehnen-Ueberschrift: ist kein Akzentteil da, faellt er weg */
+    var akz = document.querySelector('.buehne h1 em');
+    if (akz && !akz.textContent.trim()) akz.remove();
+
+    /* Sprechzeiten: stehen keine echten Zeiten drin, kommt die Tabelle weg
+       und an ihre Stelle ein sauberer Satz. Eine Tabelle mit sechsmal
+       "bitte telefonisch erfragen" sieht schlechter aus als gar keine. */
+    var karte = document.querySelector('.zeiten');
+    if (karte){
+      var werte = Array.prototype.map.call(
+        karte.querySelectorAll('table td:last-child'),
+        function(c){ return c.textContent.trim(); });
+      var echte = werte.filter(function(w){ return w && !/^[-–—.]*$/.test(w); });
+      if (echte.length === 0){
+        var tab = karte.querySelector('table');
+        if (tab){
+          var satz = document.createElement('p');
+          satz.className = 'zeiten-ersatz';
+          satz.textContent = 'Termine vergeben wir telefonisch — so finden wir gleich einen Tag, der Ihnen passt.';
+          tab.parentNode.replaceChild(satz, tab);
+        }
+        var fuss = karte.querySelector('.zeiten-fuss');
+        if (fuss) fuss.textContent = 'Rufen Sie uns an, wir stimmen den Termin direkt mit Ihnen ab.';
+      }
+    }
+
     /* Logo: traegt es, tritt es an die Stelle der gesetzten Wortmarke.
        Traegt es nicht, bleibt die Wortmarke stehen — nie beides, nie keines. */
     var platte = document.querySelector('.logo');
