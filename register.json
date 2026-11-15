@@ -1,5 +1,14 @@
 [
   {
+    "slug": "hoch-und-tiefbau-hohenmoelsen",
+    "firma": "Hoch- und Tiefbau GmbH Hohenmölsen",
+    "branche": "bau",
+    "gebaut": "2026-11-15",
+    "bis": "2026-12-15",
+    "adresse": "https://ht-hhm.de",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "elektro-dathe",
     "firma": "Elektro Dathe",
     "branche": "handwerk",
