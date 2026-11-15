@@ -1,5 +1,14 @@
 [
   {
+    "slug": "kanzlei-wehner",
+    "firma": "Rechtsanwalt Florian Wehner",
+    "branche": "kanzlei",
+    "gebaut": "2026-11-15",
+    "bis": "2026-12-15",
+    "adresse": "https://www.kanzleiwehner.de/",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "kardiologie-im-tal-21",
     "firma": "Kardiologie Zentrum München",
     "branche": "facharzt",
