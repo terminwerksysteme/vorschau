@@ -1,5 +1,14 @@
 [
   {
+    "slug": "schueler-gmbh",
+    "firma": "Schüler GmbH",
+    "branche": "galabau",
+    "gebaut": "2026-11-15",
+    "bis": "2026-12-15",
+    "adresse": "https://www.gartenbau-schueler.de/",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "kanzlei-wehner",
     "firma": "Rechtsanwalt Florian Wehner",
     "branche": "kanzlei",
