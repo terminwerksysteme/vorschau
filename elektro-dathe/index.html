@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Elektro Dathe — Elektroinstallation in Naumburg</title>
-<meta name="description" content="Elektro Dathe, Meisterbetrieb in Naumburg: Elektroinstallationen, Photovoltaik mit Speicher, Bustechnik, Brandschutz und Schaltschrankbau für private und gewerbliche Kunden.">
+<meta name="description" content="Elektro Dathe, Meisterbetrieb in Naumburg (Saale): Elektroinstallation, Photovoltaik mit Speicher, Gebäudeautomation, Brandschutz sowie Mess- und Regeltechnik für private und gewerbliche Kunden.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500;75..100,600;75..100,700;75..100,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -144,7 +144,12 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
 
 /* ———— Qualifikationen: Leiste statt Kacheln ———— */
 .koennen{background:var(--tief-2);color:#D8D2CB;border-top:1px solid var(--linie)}
-.koennen-in{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding-block:clamp(1.6rem,3vw,2.4rem)}
+.koennen-in{display:grid;grid-template-columns:repeat(var(--spalten,3),1fr);gap:0;
+  padding-block:clamp(1.6rem,3vw,2.4rem)}
+/* Ohne Zahlen traegt die Beschriftung die Zeile — dann darf sie groesser
+   sein, sonst steht der Text im Nichts. */
+.koennen[data-ohne-zahlen] .fakt span{font-size:.78rem;color:#fff;letter-spacing:.14em}
+.koennen[data-ohne-zahlen] .fakt p{margin-top:.45rem}
 .fakt{padding:.4rem clamp(1rem,2.4vw,2rem);border-left:1px solid var(--linie)}
 .fakt:first-child{border-left:0;padding-left:0}
 .fakt b{display:block;font-family:var(--kopf);font-size:clamp(1.4rem,1.1rem + 1.1vw,2rem);font-weight:800;
@@ -229,6 +234,16 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
 .ablauf{background:var(--tief);color:#D8D2CB;padding-block:clamp(3.2rem,7vw,5.4rem)}
 .ablauf .a-kopf h2{color:#fff}
 .ablauf .a-kopf p{color:#A7A099}
+/* Zwischen Laufband und Betrieb lagen rund 1800 Pixel reiner Text. Hier
+   steht jetzt ein Bild neben der Überschrift — das Auge bekommt im
+   Mittelteil etwas zu greifen, ohne dass die Zeitleiste enger wird. */
+.a-kopf{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(1.6rem,4vw,3.4rem);
+  align-items:end;margin-bottom:clamp(1.8rem,3.4vw,2.8rem)}
+.ablauf-bild{position:relative;aspect-ratio:16/9;border-radius:3px;overflow:hidden;
+  background:var(--tief-2) var(--foto-ablauf,none) center/cover no-repeat;
+  box-shadow:0 18px 44px rgba(0,0,0,.38)}
+.ablauf-bild::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(190deg,transparent 42%,rgba(20,18,16,.52))}
 .strahl{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1.2rem,2.6vw,2.2rem);position:relative;margin-top:.6rem}
 .strahl::before{content:"";position:absolute;left:0;right:0;top:19px;height:2px;background:var(--linie)}
 .schritt{position:relative;padding-top:0}
@@ -238,7 +253,14 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
 .schritt p{margin-top:.5rem;font-size:.9rem;line-height:1.58;color:#A7A099}
 
 /* ———— Einsatzgebiet: Farbfläche, groß gesetzt ———— */
-.gebiet{background:var(--akzent);color:#fff;padding-block:clamp(2.8rem,6vw,4.4rem)}
+/* Die Fläche trägt jetzt ein Foto darunter, mit der Hausfarbe multipliziert.
+   Das Band bleibt orange und ruhig, bekommt aber Tiefe statt flacher Farbe. */
+.gebiet{background-color:var(--akzent);color:#fff;padding-block:clamp(2.8rem,6vw,4.4rem);
+  background-image:var(--foto-gebiet,none);background-size:cover;background-position:center 62%;
+  background-blend-mode:multiply;position:relative}
+.gebiet::before{content:"";position:absolute;inset:0;background:var(--akzent);opacity:.5;
+  mix-blend-mode:color}
+.gebiet>*{position:relative;z-index:1}
 .gebiet-in{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
 .gebiet h2{font-size:clamp(1.8rem,1.4rem + 1.7vw,2.7rem);text-transform:uppercase}
 .gebiet .marke-label{color:rgba(255,255,255,.78)}
@@ -335,7 +357,7 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
     padding-inline:max(var(--rand),env(safe-area-inset-left,0px)) max(var(--rand),env(safe-area-inset-right,0px))}
   .buehne-seite{min-height:clamp(260px,52vw,380px);order:-1}
   .projektkarte{max-width:none}
-  .betrieb-in,.notdienst-in,.kontakt,.gebiet-in{grid-template-columns:1fr}
+  .betrieb-in,.notdienst-in,.kontakt,.gebiet-in,.a-kopf{grid-template-columns:1fr}
   .leiste{grid-template-columns:1fr}
   .leiste-buehne{display:none}
   .zeile p{max-height:none;opacity:1;margin-top:.5rem}
@@ -382,16 +404,16 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
       <a href="#gebiet">Einsatzgebiet</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <a class="knopf knopf-voll" href="tel:03445203307">Kontakt aufnehmen</a>
+    <a class="knopf knopf-voll" href="tel:03445203307">Anfrage stellen</a>
   </div>
 </header>
 
 <section class="buehne">
   <div class="buehne-text">
     <span class="balken"></span>
-    <span class="marke-label">Meisterbetrieb Naumburg</span>
-    <h1>Elektrik für Naumburg, <em>vom Wohnhaus bis zum Dom.</em></h1>
-    <p class="lede">Elektroinstallationen von der Planung über die Ausführung bis zur Wartung, für private und gewerbliche Kunden in Naumburg.</p>
+    <span class="marke-label">Meisterbetrieb in Naumburg</span>
+    <h1>Elektrik in Naumburg, <em>vom Wohnhaus bis zum Dom.</em></h1>
+    <p class="lede">Elektro Dathe plant, installiert und wartet Elektroanlagen für private und gewerbliche Kunden in Naumburg. Dazu gehören Photovoltaik mit Speicher, Gebäudeautomation, Brandschutz und Regeltechnik.</p>
     <div class="tasten">
       <a class="knopf knopf-voll" href="#kontakt">Anfrage senden</a>
       <a class="knopf knopf-rand" href="tel:03445203307">03445 203307</a>
@@ -399,13 +421,13 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
   </div>
   <div class="buehne-seite">
     <div class="buehne-foto">
-      <img class="band-bild" src="https://elektro-dathe.de/s3/a/wsw.website.5656/public/images/pages/folder.4/img-2313-neidschu-tzerstr67.webp" alt="Wohnhaus in der Neidschützerstraße" onerror="this.remove();">
+      <img class="band-bild" src="https://elektro-dathe.de/s3/a/wsw.website.5656/public/images/pages/folder.4/img-2313-neidschu-tzerstr67.webp" alt="Wohnkomplex in Naumburg" onerror="this.remove();">
     </div>
     <div class="projektkarte">
-      <span class="marke-label">Kostal Partner</span>
+      <span class="marke-label">Referenz</span>
       <b>Elektroinstallation</b>
-      <p>Photovoltaik mit Speicheranlagen</p>
-      <span class="chip" data-chip>mehr als 20 Jahre am Markt</span>
+      <p>Unter anderem Beleuchtung für den Naumburger Dom</p>
+      <span class="chip" data-chip> Meisterbetrieb</span>
     </div>
   </div>
 </section>
@@ -413,23 +435,23 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
 <div class="stoerung">
   <div class="huelle stoerung-in">
     <b>Störung</b>
-    <p>Rufen Sie uns an: 03445 203307</p>
+    <p>Bei Störungen erreichen Sie uns telefonisch zu den Bürozeiten.</p>
     <a class="nummer" href="tel:03445203307">03445 203307</a>
   </div>
 </div>
 
 <div class="laufband" aria-hidden="true">
   <div class="laufband-spur" data-laufband>
-    <span>Elektroinstallation</span><span>Photovoltaik</span><span>EIB und Bustechnik</span>
-    <span>Beleuchtungsanlagen</span><span>Brandschutz</span><span>Schaltschrankbau</span>
+    <span>Elektroinstallation</span><span>Photovoltaik</span><span>Gebäudeautomation</span>
+    <span>Mess- und Regeltechnik</span><span>Brandschutz</span><span>Schaltschrankbau</span>
   </div>
 </div>
 
 <section class="koennen">
   <div class="huelle koennen-in">
-    <div class="fakt"><b>mehr als 20</b><span>Jahre am Markt</span><p>Elektro Dathe steht nach eigenen Angaben seit mehr als 20 Jahren für Qualität und umfassenden Kundenservice.</p></div>
-    <div class="fakt"><b></b><span>Private und gewerbliche Kunden</span><p>Zu den Referenzen zählen Wohnkomplexe, ein Ärztehaus, die Stadtbibliothek und die Beleuchtung am Dom.</p></div>
-    <div class="fakt"><b></b><span>Kostal Partnerbetrieb</span><p>Ansprechpartner für erneuerbare Energien, etwa Photovoltaik mit Speicheranlagen.</p></div>
+    <div class="fakt"><b></b><span>Meisterbetrieb</span><p>Elektro Dathe ist Mitglied der Elektroinnung Sachsen-Anhalt Süd.</p></div>
+    <div class="fakt"><b></b><span>Kostal Partnerbetrieb</span><p>Ansprechpartner für Photovoltaik und erneuerbare Energien.</p></div>
+    <div class="fakt"><b></b><span>Von Planung bis Wartung</span><p>Ein Betrieb begleitet Ihre Anlage von der Planung über die Ausführung bis zur Wartung.</p></div>
   </div>
 </section>
 
@@ -438,34 +460,34 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
     <div class="a-kopf">
       <span class="marke-label">Gewerke</span>
       <h2>Unsere Leistungen</h2>
-      <p>Wir planen, installieren und warten elektrische Anlagen für Wohnungsbau, Gewerbe und Industrie.</p>
+      <p>Wir führen Elektroarbeiten für Wohnhäuser, Gewerbe und öffentliche Gebäude aus, von der Planung bis zur Wartung.</p>
     </div>
 
     <div class="leiste">
       <ul class="leiste-liste">
         <li class="zeile" data-zeile data-bild="" data-nr="01">
           <span class="nr">01</span><h3>Elektroinstallation</h3><span class="pfeil">→</span>
-          <p>Elektroinstallationsanlagen aller Art, vom Wohnungsbau und Baustrom bis zur Nachtspeicheranlage.</p>
+          <p>Elektroinstallationsanlagen aller Art, auch im Wohnungsbau, sowie Baustrom und Nachtspeicheranlagen.</p>
         </li>
         <li class="zeile" data-zeile data-bild="" data-nr="02">
           <span class="nr">02</span><h3>Photovoltaik</h3><span class="pfeil">→</span>
-          <p>Photovoltaikanlagen mit Speicheranlagen, wir sind Kostal Partnerbetrieb.</p>
+          <p>Photovoltaikanlagen mit Speicher, als Kostal Partnerbetrieb ausgeführt.</p>
         </li>
         <li class="zeile" data-zeile data-bild="" data-nr="03">
-          <span class="nr">03</span><h3>EIB und Bustechnik</h3><span class="pfeil">→</span>
-          <p>Gebäudeautomation mit EIB und Bustechnik sowie Netzwerktechnik.</p>
+          <span class="nr">03</span><h3>Gebäudeautomation</h3><span class="pfeil">→</span>
+          <p>EIB- und Bustechnik sowie Gebäudeautomatisierung.</p>
         </li>
         <li class="zeile" data-zeile data-bild="" data-nr="04">
-          <span class="nr">04</span><h3>Beleuchtungsanlagen</h3><span class="pfeil">→</span>
-          <p>Planung und Montage von Beleuchtungsanlagen.</p>
+          <span class="nr">04</span><h3>Mess- und Regeltechnik</h3><span class="pfeil">→</span>
+          <p>Mess- und Regeltechnik sowie Industrie- und Heiztechnik.</p>
         </li>
         <li class="zeile" data-zeile data-bild="" data-nr="05">
           <span class="nr">05</span><h3>Brandschutz</h3><span class="pfeil">→</span>
-          <p>Rauchwarnanlagen und Brandschutztechnik, dazu die Montage von Rauchwarnmeldern.</p>
+          <p>Montage von Rauchwarnmeldern, Rauchwarnanlagen und Brandschutztechnik.</p>
         </li>
         <li class="zeile" data-zeile data-bild="" data-nr="06">
           <span class="nr">06</span><h3>Schaltschrankbau</h3><span class="pfeil">→</span>
-          <p>Schaltschrankbau sowie Mess- und Regeltechnik für Industrie und Heiztechnik.</p>
+          <p>Bau von Schaltschränken für Gebäude und Anlagen.</p>
         </li>
       </ul>
       <div class="leiste-buehne" aria-hidden="true">
@@ -479,15 +501,18 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
 <section class="ablauf" id="ablauf">
   <div class="huelle">
     <div class="a-kopf">
-      <span class="marke-label">Ablauf</span>
-      <h2>So arbeiten wir</h2>
-      <p>Von der ersten Anfrage bis zur Wartung begleiten wir Ihre Anlage.</p>
+      <div>
+        <span class="marke-label">Ablauf</span>
+        <h2>So arbeiten wir</h2>
+        <p>Von der ersten Anfrage bis zur Wartung bleibt der Ablauf übersichtlich.</p>
+      </div>
+      <div class="ablauf-bild" data-zeigen></div>
     </div>
     <div class="strahl">
-      <div class="schritt"><div class="nr">01</div><h3>Anfrage</h3><p>Sie schildern uns Ihr Anliegen per Telefon, E-Mail oder im Büro.</p></div>
-      <div class="schritt"><div class="nr">02</div><h3>Planung</h3><p>Wir planen die elektrische Anlage passend zu Ihrem Vorhaben.</p></div>
-      <div class="schritt"><div class="nr">03</div><h3>Ausführung</h3><p>Wir führen die Elektroinstallationsarbeiten fachgerecht aus.</p></div>
-      <div class="schritt"><div class="nr">04</div><h3>Wartung</h3><p>Auch nach der Fertigstellung bleiben wir Ihr Ansprechpartner, etwa für den E-CHECK.</p></div>
+      <div class="schritt"><div class="nr">01</div><h3>Anfrage</h3><p>Sie schildern uns Ihr Vorhaben per Telefon oder E-Mail.</p></div>
+      <div class="schritt"><div class="nr">02</div><h3>Planung</h3><p>Wir planen die elektrische Anlage und besprechen den Umfang mit Ihnen.</p></div>
+      <div class="schritt"><div class="nr">03</div><h3>Ausführung</h3><p>Wir führen die Installationsarbeiten fachgerecht aus.</p></div>
+      <div class="schritt"><div class="nr">04</div><h3>Wartung</h3><p>Auf Wunsch warten und prüfen wir die Anlage, zum Beispiel mit dem E-CHECK.</p></div>
     </div>
   </div>
 </section>
@@ -496,13 +521,13 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
   <div class="huelle gebiet-in">
     <div>
       <span class="marke-label">Einsatzgebiet</span>
-      <h2 style="margin-top:.7rem">Besuchen Sie uns</h2>
+      <h2 style="margin-top:.7rem">So erreichen Sie uns</h2>
       <p style="margin-top:1rem;color:rgba(255,255,255,.9)">Sie finden uns in der Wilhelm-Franke-Straße in Naumburg (Saale).</p>
     </div>
     <div class="gebiet-liste">
-      <div class="weg"><h3>Telefon</h3><p>Rufen Sie uns zu den Öffnungszeiten an.</p></div>
-      <div class="weg"><h3>E-Mail</h3><p>Schreiben Sie uns Ihr Anliegen, wir melden uns bei Ihnen.</p></div>
-      <div class="weg"><h3>Vor Ort</h3><p>Besuchen Sie uns in der Wilhelm-Franke-Straße 9.</p></div>
+      <div class="weg"><h3>Besuch</h3><p>Wilhelm-Franke-Straße 9, 06618 Naumburg (Saale).</p></div>
+      <div class="weg"><h3>Telefon</h3><p>Rufen Sie uns montags bis freitags von 08:00 bis 17:00 Uhr an.</p></div>
+      <div class="weg"><h3>E-Mail</h3><p>Schreiben Sie uns an info@elektro-dathe.de.</p></div>
     </div>
   </div>
 </section>
@@ -510,25 +535,25 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
 <section class="betrieb">
   <div class="huelle betrieb-in">
     <div class="betrieb-bild">
-      <img class="band-bild" src="" alt="" loading="lazy" onerror="this.remove();">
+      <img class="band-bild" src="" alt="Referenzobjekt in Naumburg" loading="lazy" onerror="this.remove();">
     </div>
     <div>
       <span class="marke-label">Der Betrieb</span>
-      <h2>Zertifizierter Fachbetrieb</h2>
-      <p>Elektro Dathe ist Meisterbetrieb und Mitglied der Elektroinnung Sachsen-Anhalt Süd.</p>
+      <h2>Der Betrieb</h2>
+      <p>Elektro Dathe ist ein Meisterbetrieb in Naumburg und Mitglied der Elektroinnung Sachsen-Anhalt Süd. Wir arbeiten für private und gewerbliche Kunden.</p>
 
       <div class="zeiten">
         <span class="marke-label">Öffnungszeiten</span>
-        <h2>Wann Sie uns erreichen</h2>
+        <h2>Wann wir für Sie da sind</h2>
         <table>
-          <tr><td>Mo</td><td>8:00 – 17:00</td></tr>
-          <tr><td>Di</td><td>8:00 – 17:00</td></tr>
-          <tr><td>Mi</td><td>8:00 – 17:00</td></tr>
-          <tr><td>Do</td><td>8:00 – 17:00</td></tr>
-          <tr><td>Fr</td><td>8:00 – 17:00</td></tr>
+          <tr><td>Mo</td><td>08:00 – 17:00</td></tr>
+          <tr><td>Di</td><td>08:00 – 17:00</td></tr>
+          <tr><td>Mi</td><td>08:00 – 17:00</td></tr>
+          <tr><td>Do</td><td>08:00 – 17:00</td></tr>
+          <tr><td>Fr</td><td>08:00 – 17:00</td></tr>
           <tr><td>Sa</td><td>geschlossen</td></tr>
         </table>
-        <p class="zeiten-fuss">Außerhalb der Öffnungszeiten erreichen Sie uns per E-Mail.</p>
+        <p class="zeiten-fuss">Außerhalb dieser Zeiten erreichen Sie uns per E-Mail. Wir antworten am nächsten Werktag.</p>
       </div>
     </div>
   </div>
@@ -538,11 +563,11 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
   <div class="huelle notdienst-in">
     <div>
       <span class="marke-label">Störung</span>
-      <h2>Störung oder Ausfall</h2>
+      <h2>Bei Störungen</h2>
     </div>
     <div>
-      <p>Rufen Sie uns während der Öffnungszeiten an, wir besprechen das weitere Vorgehen.</p>
-      <p class="klein-text">Außerhalb der Öffnungszeiten schreiben Sie uns eine E-Mail.</p>
+      <p>Rufen Sie uns während der Bürozeiten an, dann klären wir das weitere Vorgehen.</p>
+      <p class="klein-text">Außerhalb der Bürozeiten schreiben Sie uns an info@elektro-dathe.de.</p>
       <div class="tasten" style="margin-top:1.4rem">
         <a class="knopf knopf-voll" href="tel:03445203307">03445 203307</a>
       </div>
@@ -554,15 +579,15 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
   <div class="huelle kontakt">
     <div>
       <span class="marke-label">Kontakt</span>
-      <h2>Kontakt</h2>
-      <p style="margin-top:1rem">Sie haben eine Frage oder ein Anliegen? Wir freuen uns auf Ihre Kontaktaufnahme.</p>
+      <h2>Kontakt aufnehmen</h2>
+      <p style="margin-top:1rem">Sie haben eine Frage oder ein Vorhaben? Schreiben Sie uns oder rufen Sie an.</p>
 
       <a class="ruf" href="tel:03445203307">03445 203307</a>
-      <p class="ruf-zeit">Montag bis Freitag, 8:00 – 17:00 Uhr</p>
+      <p class="ruf-zeit">Montag bis Freitag, 08:00 – 17:00 Uhr</p>
 
       <div class="adresse">
-        <div><span>Anschrift</span>Wilhelm-Franke-Straße 9<br>06618 Naumburg (Saale)</div>
-        <div><span>E-Mail</span><a href="mailto:info@elektro-dathe.de">info@elektro-dathe.de</a></div>
+        <div data-weg-wenn-leer><span>Anschrift</span>Wilhelm-Franke-Straße 9<br>06618 Naumburg (Saale)</div>
+        <div data-weg-wenn-leer><span>E-Mail</span><a href="mailto:info@elektro-dathe.de">info@elektro-dathe.de</a></div>
       </div>
     </div>
 
@@ -575,8 +600,8 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
         <input id="f-mail" name="email" type="email" autocomplete="email">
         <span class="hinweis">Bitte keine Zugangsdaten oder Zahlungsdaten in dieses Feld.</span></div>
       <div class="feld"><label for="f-text">Ihr Anliegen</label>
-        <textarea id="f-text" name="nachricht" placeholder="Ich möchte eine Photovoltaikanlage mit Speicher anfragen."></textarea></div>
-      <button type="submit">Nachricht senden</button>
+        <textarea id="f-text" name="nachricht" placeholder="Zum Beispiel: Neuinstallation im Altbau"></textarea></div>
+      <button type="submit">Anfrage senden</button>
       <p class="datenschutz">Wir verwenden Ihre Angaben ausschließlich, um Ihr Anliegen zu bearbeiten und Sie zurückzurufen. Eine Weitergabe an Dritte erfolgt nicht.</p>
     </form>
   </div>
@@ -585,10 +610,10 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
 <footer class="fuss">
   <div class="huelle">
     <div class="fuss-grid">
-      <div><b>Elektro Dathe</b><p>Elektro Dathe, Meisterbetrieb für Elektroinstallationen in Naumburg (Saale).</p></div>
+      <div><b>Elektro Dathe</b><p>Elektro Dathe – Meisterbetrieb in Naumburg (Saale)</p></div>
       <div><b style="font-size:.84rem">Anschrift</b>Wilhelm-Franke-Straße 9<br>06618 Naumburg (Saale)<br>
         <a href="tel:03445203307">03445 203307</a></div>
-      <div><b style="font-size:.84rem">Erreichbarkeit</b>Montag bis Freitag, 8:00 – 17:00 Uhr<br></div>
+      <div><b style="font-size:.84rem">Erreichbarkeit</b>Montag bis Freitag, 08:00 – 17:00 Uhr<br></div>
     </div>
     <div class="zeile">
       <span>&copy; 2026 Elektro Dathe</span>
@@ -612,7 +637,7 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
     <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
     <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
     <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
-    <span class="entwurf-detail">Entwurf gültig bis 15.12.2026</span>
+    <span class="entwurf-detail">Entwurf gültig bis 16.12.2026</span>
   </span>
 </div>
 
@@ -670,12 +695,37 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
       var leerB = !b || !b.textContent.trim();
       var leerS = !sp || !sp.textContent.trim();
       if (leerB && leerS) { f.remove(); return; }
-      if (leerB) b.remove();
-      if (leerS) sp.remove();
+      if (leerB && b) b.remove();
+      if (leerS && sp) sp.remove();
       if (p && !p.textContent.trim()) p.remove();
     });
+
+    /* Zahlen: alle oder keine. Einer von dreien liess die Leiste halbfertig
+       aussehen — links gross "5,0", daneben zweimal Text in der Luft. Fehlt
+       bei einem die Zahl, fallen sie ueberall weg; dann traegt die
+       Beschriftung die Zeile, und das sieht gewollt aus. */
+    var fakten = Array.prototype.slice.call(document.querySelectorAll('.fakt'));
+    var ohneZahl = fakten.filter(function(f){
+      var b = f.querySelector('b');
+      return !b || !b.textContent.trim();
+    });
+    if (fakten.length && ohneZahl.length && ohneZahl.length < fakten.length){
+      fakten.forEach(function(f){
+        var b = f.querySelector('b');
+        if (b) b.remove();
+      });
+      var band = fakten[0].closest('.koennen') || fakten[0].parentNode;
+      if (band && band.setAttribute) band.setAttribute('data-ohne-zahlen', '');
+    }
+    if (fakten.length){
+      var umschlag = fakten[0].parentNode;
+      if (umschlag && umschlag.style) umschlag.style.setProperty('--spalten', String(fakten.length));
+    }
+
     var kasten = document.querySelector('.fakten');
     if (kasten && !kasten.querySelector('.fakt')) kasten.remove();
+    var leisteLeer = document.querySelector('.koennen');
+    if (leisteLeer && !leisteLeer.querySelector('.fakt')) leisteLeer.remove();
 
     /* Buehnen-Ueberschrift: ist kein Akzentteil da, faellt er weg */
     var akz = document.querySelector('.buehne h1 em');
@@ -883,10 +933,10 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
     document.body.style.padding = "0";
   }
 
-  var bis = new Date("2026-12-15T23:59:59");
+  var bis = new Date("2026-12-16T23:59:59");
   if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
     hinweis("Dieser Entwurf ist abgelaufen.",
-      "Der unverbindliche Entwurf für Elektro Dathe stand bis zum 15.12.2026 zur Ansicht bereit.");
+      "Der unverbindliche Entwurf für Elektro Dathe stand bis zum 16.12.2026 zur Ansicht bereit.");
     return;
   }
   try{
@@ -943,9 +993,9 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
 
   var VORRAT = [
     /* Menschen bei der Arbeit — taugen fuer Buehne und Gewerk */
-    {id:'photo-1621905251189-08b45d6a269e', b:1, s:'elektro installation montage baustelle bohren wand allgemein'},
-    {id:'photo-1624397640148-949b1732bb0a', b:1, s:'photovoltaik solar pv dach montage modul speicher'},
-    {id:'photo-1661930941624-f4b43e3079f1', b:1, s:'photovoltaik solar pv dach montage modul'},
+    {id:'photo-1621905251189-08b45d6a269e', b:1, s:'elektro elektriker installation montage baustelle bohren'},
+    {id:'photo-1624397640148-949b1732bb0a', b:1, s:'photovoltaik solar pv montage modul speicher'},
+    {id:'photo-1661930941624-f4b43e3079f1', b:1, s:'dach steildach ziegel bedachung reparatur eindeckung'},
     {id:'photo-1635424824849-1b09bdcc55b1', b:1, s:'dach dachdecker steildach ziegel bedachung sturm'},
     {id:'photo-1635424709845-3a85ad5e1f5e', b:1, s:'dach dachdecker steildach ziegel bedachung'},
     {id:'photo-1628147529780-36964fbb8d54', b:1, s:'team mannschaft baustelle allgemein betrieb'},
@@ -961,8 +1011,8 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
     /* Gewerke */
     {id:'photo-1758101755915-462eddc23f57', s:'elektroinstallation installation steckdose leitung verteiler hausinstallation echeck baustrom'},
     {id:'photo-1682345262055-8f95f3c513ea', s:'elektroinstallation leitung kabel wand installation echeck'},
-    {id:'photo-1559302504-64aae6ca6b6d', s:'photovoltaik solar pv modul dach energie speicher'},
-    {id:'photo-1655300256335-beef51a914fe', s:'photovoltaik solar pv modul dach energie'},
+    {id:'photo-1559302504-64aae6ca6b6d', s:'photovoltaik solar pv modul energie speicher'},
+    {id:'photo-1655300256335-beef51a914fe', s:'photovoltaik solar pv modul energie anlage'},
     {id:'photo-1655300256486-4ec7251bf84e', s:'photovoltaik solar pv modul energie'},
     {id:'photo-1544197150-b99a580bb7a8', s:'netzwerk daten antenne bus eib bustechnik smart gebaeudeautomation kommunikation'},
     {id:'photo-1698668975271-2ba9a323be6b', s:'netzwerk daten bus eib server schrank'},
@@ -987,7 +1037,6 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
     {id:'photo-1605450099279-533bd3ce379a', s:'dach steildach ziegel eindeckung bedachung'},
     {id:'photo-1640476750068-72c645e653cd', s:'flachdach abdichtung daemmung dach bitumen'},
     {id:'photo-1771236665755-a178f7ecad0f', s:'flachdach dach abdichtung technik aufbau'},
-    {id:'photo-1635359800970-90b35af94a4a', s:'dachrinne fallrohr rinne entwaesserung regen blech'},
     {id:'photo-1779755376652-22ca6eba86b8', s:'dachrinne rinne entwaesserung regen blech klempner'},
 
     /* Sanitaer, Heizung, Bad */
@@ -996,7 +1045,57 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
     {id:'photo-1631048499052-e6d9f305d2c0', s:'bad badsanierung sanitaer wanne dusche'},
     {id:'photo-1776860150305-108ed577d7d4', s:'waermepumpe heizung aussengeraet energie klima'},
     {id:'photo-1710829558360-6f8f5e49fedd', s:'waermepumpe heizung aussengeraet klima lueftung'},
-    {id:'photo-1580401410158-1f0b0a406762', s:'sanitaer rohr armatur werkzeug zange installation wasser klempner'}
+    {id:'photo-1580401410158-1f0b0a406762', s:'sanitaer rohr armatur werkzeug zange installation wasser klempner'},
+
+    /* --- Nachtrag: je Gewerk mehrere Motive, damit zwei Betriebe
+           derselben Branche nie dieselbe Seite bekommen. Jede Kennung
+           ist einzeln im Raster angesehen worden. --- */
+
+    /* Dach */
+    {id:'photo-1763665814538-8ba04597286c', b:1, s:'dach dachdecker steildach ziegel eindeckung bedachung neubau'},
+    {id:'photo-1763665814965-b5c4b3547908', s:'dach dachdecker steildach ziegel eindeckung bedachung verlegen'},
+    {id:'photo-1635424709961-f3a150459ad4', b:1, s:'dach dachdecker steildach sturm sicherung bedachung reparatur'},
+    {id:'photo-1635424824800-692767998d07', b:1, s:'dach dachdecker steildach bedachung montage'},
+    {id:'photo-1635424710928-0544e8512eae', b:1, s:'dach dachdecker steildach sturm sicherung bedachung'},
+    {id:'photo-1635424709870-cdc6e64f0e20', b:1, s:'dach dachdecker team steildach bedachung'},
+    {id:'photo-1632759145351-1d592919f522', b:1, s:'dach dachdecker haus steildach leiter bedachung'},
+    {id:'photo-1643225523483-e2c434191bba', s:'dach dachdecker schindel bedachung material steildach'},
+    {id:'photo-1633759593085-1eaeb724fc88', s:'dachreparatur reparatur sanierung schindel undicht steildach dach'},
+    {id:'photo-1786295866839-d17f879c65cd', s:'blech klempner spengler fassade verkleidung anschluss dach'},
+    {id:'photo-1780445392484-5fb7d5610708', s:'dachrinne rinne fallrohr entwaesserung blech klempner metalldach'},
+
+    /* Sanitaer und Heizung */
+    {id:'photo-1749532125405-70950966b0e5', b:1, s:'sanitaer bad installation rohr wasser klempner heizung'},
+    {id:'photo-1676210134188-4c05dd172f89', s:'sanitaer rohr leitung wasser waschtisch abfluss klempner installation'},
+    {id:'photo-1676210133055-eab6ef033ce3', b:1, s:'heizung sanitaer rohr leitung technik wartung installation'},
+    {id:'photo-1761758674188-2b8e4c89c5e2', s:'heizung ventil manometer kessel therme technik wartung'},
+    {id:'photo-1768321918210-a775e4c88f08', s:'rohbau neubau installation rohr leitung sanitaer elektro'},
+
+    /* Maler, Putz, Trockenbau */
+    {id:'photo-1652829069834-2c05031199c5', b:1, s:'maler malerarbeiten anstrich streichen wand farbe lackieren'},
+    {id:'photo-1688372199140-cade7ae820fe', b:1, s:'maler anstrich streichen wand farbe innen renovierung'},
+    {id:'photo-1574359411659-15573a27fd0c', b:1, s:'maler fassade anstrich aussen streichen haus leiter'},
+    {id:'photo-1768839725085-829e6ac7ac26', s:'putz verputzen spachtel stuck glaetten wand trockenbau'},
+
+    /* Tischler und Schreiner */
+    {id:'photo-1683115099089-363badefcc25', b:1, s:'tischler schreiner holz saege zuschnitt moebel innenausbau'},
+    {id:'photo-1683115099860-5379ac101bce', s:'tischler schreiner holz werkstatt zuschnitt moebel innenausbau'},
+
+    /* Elektro */
+    {id:'photo-1660330589693-99889d60181e', b:1, s:'elektro elektriker verteiler schaltkasten installation pruefung echeck'},
+    {id:'photo-1555963966-b7ae5404b6ed', s:'freileitung mast netz strom elektro aussenanlage'},
+
+    /* Betrieb und Werkstatt */
+    {id:'photo-1426927308491-6380b6a9936f', t:1, s:'werkstatt werkzeug regal betrieb allgemein'},
+    {id:'photo-1683115099191-51e617fc5ff1', t:1, s:'werkstatt werkzeug wand betrieb allgemein'},
+    {id:'photo-1631396326646-c06a935ff3a6', t:1, s:'werkstatt betrieb handwerk tischler allgemein'},
+    {id:'photo-1511306162219-1c5a469ab86c', t:1, s:'werkstatt betrieb meister handwerk allgemein'},
+    {id:'photo-1628146023674-ede6049609b1', t:1, s:'team mannschaft betrieb baustelle allgemein'},
+
+    /* Neutral — wenn nichts inhaltlich passt */
+    {id:'photo-1683295083329-4d4738291f3a', n:1, s:'werkzeug handschuh arbeit sicherheit allgemein'},
+    {id:'photo-1622612023350-b15f063eabe6', n:1, s:'baustelle helm sicherheit allgemein'},
+    {id:'photo-1622612063021-116cc3407145', n:1, s:'baustelle team helm sicherheit allgemein'}
   ];
 
   var samen = (function(t){ var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h; })("elektro-dathe" || "x");
@@ -1016,34 +1115,110 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
   }
 
   var vergeben = {};
+  /* Buehne und Betrieb haben eigene Anforderungen: die Buehne braucht ein
+     grosses Motiv mit Menschen bei der Arbeit, der Betriebskasten eine
+     Werkstatt oder ein Gebaeude. Eine Leistungszeile dagegen darf jedes
+     Motiv nehmen. Frueher war das eine harte Wand — mit der Folge, dass
+     "Malerarbeiten" die beiden treffenden Malerbilder nicht sehen durfte
+     und stattdessen bei einem Badezimmer landete. Buehne und Betrieb
+     werden zuerst vergeben, die Zeilen nehmen danach vom Rest. */
   function inFrage(e, rolle){
     if (rolle === 'b') return !!e.b;
     if (rolle === 't') return !!e.t;
-    return !(e.b || e.t);
+    return true;
+  }
+  /* Streuung je Platz. Ein blosses samen + versatz * 13 reichte nicht:
+     bei kleinen Auswahlmengen landeten zwei verschiedene Kunden immer
+     wieder auf demselben Platz, und zwei Seiten glichen sich zu sieben
+     Achteln. Hier wird der Kundenschluessel fuer jeden Platz neu
+     durchgeruehrt, damit benachbarte Schluessel weit auseinanderfallen. */
+  function streuung(versatz){
+    var x = (samen ^ (((versatz || 0) + 1) * 2654435761)) >>> 0;
+    x = (x ^ (x >>> 15)) >>> 0;
+    x = Math.imul(x, 2246822519) >>> 0;
+    x = (x ^ (x >>> 13)) >>> 0;
+    return x;
   }
   function waehle(text, nurRolle, versatz){
-    var beste = null, bestePunkte = -1, besteGesamt = -1;
+    var beste = null, bestePunkte = -1;
+    var kandidaten = [];
     VORRAT.forEach(function(e, i){
       if (!inFrage(e, nurRolle) || vergeben[e.id]) return;
       var inhalt = passt(text, e.s);
-      var gesamt = inhalt * 100 + ((samen + i * 7 + (versatz || 0)) % 97);
-      if (gesamt > besteGesamt){ besteGesamt = gesamt; bestePunkte = inhalt; beste = e; }
+      if (inhalt > bestePunkte) bestePunkte = inhalt;
+      kandidaten.push({ e: e, punkte: inhalt });
     });
+
+    /* Frueher gewann immer der eine hoechste Treffer. Folge: zwei
+       Dachdecker bekamen Bild fuer Bild dieselbe Seite, weil derselbe
+       Text dieselbe Rechnung ergibt. Jetzt gilt alles als gleichwertig,
+       was hoechstens ein Schlagwort unter dem Besten liegt — und welches
+       davon genommen wird, entscheidet der Kundenschluessel. Inhaltlich
+       bleibt es richtig, sichtbar wird es verschieden. */
+    if (bestePunkte >= 10){
+      /* Nur wer selbst inhaltlich trifft, kommt ueberhaupt in Frage —
+         sonst galt bei einem schwachen Besten von 10 Punkten auch jedes
+         Bild mit null Punkten als gleichwertig, und beim Sturmschaden
+         landete ein Schaltkasten. Die Spanne ist zusaetzlich nach unten
+         begrenzt, damit ein starker Treffer nicht gegen einen schwachen
+         ausgetauscht wird. */
+      /* Die Spanne ist anteilig, nicht fest. Fest hiess: bei einem Besten
+         von 20 Punkten galt auch ein Bild mit 10 noch als gleichwertig —
+         so bekam "Badsanierung" ein Dachfoto, weil beide das Wort
+         "Sanierung" tragen. Anteilig muss ein Mitbewerber mindestens
+         sieben Zehntel des besten Treffers erreichen. */
+      var schwelle = Math.max(10, Math.ceil(bestePunkte * 0.7));
+      var gleichwertig = kandidaten.filter(function(k){ return k.punkte >= schwelle; });
+
+      /* Das Betriebsbild steht neben den Oeffnungszeiten und behauptet
+         nichts Fachliches. Dort zaehlen zusaetzlich alle allgemeinen
+         Motive — Werkstatt, Werkzeugwand, Mannschaft —, sonst bekommen
+         alle Dachdecker dieselbe Aufnahme. Fachfremdes bleibt draussen:
+         ein Heizungskeller ist beim Dachdecker nach wie vor falsch. */
+      if (nurRolle === 't'){
+        var allgemein = kandidaten.filter(function(k){
+          return k.punkte < schwelle && k.e.s.indexOf('allgemein') >= 0;
+        });
+        gleichwertig = gleichwertig.concat(allgemein);
+      }
+      beste = gleichwertig[streuung(versatz) % gleichwertig.length].e;
+    }
 
     /* Kein inhaltlicher Treffer? Dann ein neutrales Motiv — Werkzeug,
        Werkstatt, Baustelle. Ein neutrales Bild neben "Dachrinnen" ist in
        Ordnung; ein Patchfeld neben "Trinkwasser" ist schlicht falsch. */
     if (!beste || bestePunkte < 10){
       var neutral = VORRAT.filter(function(e){ return e.n && inFrage(e, nurRolle) && !vergeben[e.id]; });
-      if (neutral.length) beste = neutral[(samen + (versatz || 0)) % neutral.length];
+      if (neutral.length) beste = neutral[streuung(versatz) % neutral.length];
     }
     if (!beste){                       /* alles vergeben: Sperre loesen */
       var frei = VORRAT.filter(function(e){ return inFrage(e, nurRolle); });
-      beste = frei[(samen + (versatz || 0)) % frei.length];
+      beste = frei[streuung(versatz) % frei.length];
     }
     vergeben[beste.id] = 1;
     return A + beste.id;
   }
+  /* Die Zahlenleiste raeumt der gemeinsame Kern auf (_kern.js) — hier stand
+     einmal eine zweite Fassung derselben Regel. Die beiden sind sich in die
+     Quere gekommen: meine entfernte die Zahlen, die andere stolperte danach
+     ueber das, was nicht mehr da war, und riss die Bewegungseffekte mit.
+     Eine Regel, eine Stelle. */
+
+  /* Felder, die der Betrieb nicht hat, verschwinden samt Beschriftung.
+     Vorher blieb bei einem Betrieb ohne E-Mail-Adresse die Ueberschrift
+     "E-Mail" stehen und darunter klaffte eine Luecke — das sieht nach
+     halbfertig aus, und ein Entwurf darf nie halbfertig aussehen. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-weg-wenn-leer]'), function(d){
+    var beschriftung = d.querySelector('span');
+    var rest = d.textContent.replace(beschriftung ? beschriftung.textContent : '', '').trim();
+    if (!rest) d.remove();
+  });
+  /* Bleibt nur noch ein Eintrag uebrig, soll er die Breite nutzen. */
+  Array.prototype.forEach.call(document.querySelectorAll('.adresse'), function(a){
+    if (a.children.length === 1) a.style.gridTemplateColumns = '1fr';
+    if (a.children.length === 0) a.remove();
+  });
+
   /* Leistungsliste: die aktive Zeile bestimmt das Bild daneben.
      Hat der Kunde kein eigenes Foto, kommt eines aus dem Vorrat. */
   var zeilen = Array.prototype.slice.call(document.querySelectorAll('[data-zeile]'));
@@ -1070,6 +1245,13 @@ h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;lette
     var text = (h ? h.textContent : '') + ' ' + (p ? p.textContent : '');
     z.setAttribute('data-bild', waehle(text, 'g', i) + MITTE);
   });
+
+  /* Zwei Bilder fuer den Mittelteil — Ablauf und Einsatzgebiet. Sie werden
+     ZULETZT vergeben: die Leistungszeilen tragen eine Beschriftung und
+     muessen deshalb zuerst das inhaltlich beste Bild bekommen. Hier zaehlt
+     nur noch, dass es zum Gewerk gehoert. */
+  wurzel.style.setProperty('--foto-ablauf', 'url("' + waehle(fach, 'g', 41) + MITTE + '")');
+  wurzel.style.setProperty('--foto-gebiet', 'url("' + waehle(fach, 'g', 67) + GROSS + '")');
   var bild   = document.querySelector('[data-leiste-bild]');
   var platte = document.querySelector('[data-leiste-platte]');
 
