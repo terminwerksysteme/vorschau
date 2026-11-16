@@ -1,5 +1,14 @@
 [
   {
+    "slug": "etl-advision",
+    "firma": "ETL ADVISION Hamburg GmbH Steuerberatungsgesellschaft",
+    "branche": "steuer",
+    "gebaut": "2026-11-16",
+    "bis": "2026-12-16",
+    "adresse": "https://www.advision-hamburg.de/",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "codex-v",
     "firma": "Steuerberatungskanzlei Codex V",
     "branche": "kanzlei",
