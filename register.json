@@ -1,5 +1,14 @@
 [
   {
+    "slug": "juergen-martens-2",
+    "firma": "Jürgen Martens GmbH & Co. KG",
+    "branche": "bau",
+    "gebaut": "2026-11-16",
+    "bis": "2026-12-16",
+    "adresse": "https://www.juema-hamburg.de/index.html",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "jens-frauen",
     "firma": "Dachdeckerei Jens Frauen",
     "branche": "handwerk",
