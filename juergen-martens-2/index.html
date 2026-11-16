@@ -1,0 +1,1253 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Jürgen Martens GmbH & Co. KG — Ingenieurbau und Bauwerksinstandsetzung in Hamburg</title>
+<meta name="description" content="Jürgen Martens GmbH & Co. KG, Bauunternehmung in Hamburg seit 1953: Ingenieurbau, Brückenbau, Hochbau, Tiefbau und Bauwerksinstandsetzung.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ——————————————————————————————————————————————————————————
+   BAUUNTERNEHMEN — Hoch- und Tiefbau
+   Eigener Aufbau, kein gemeinsamer Kern.
+
+   Bewusst anders als Handwerk, und zwar nicht nur in der Farbe:
+   Handwerk hat ein Foto NEBEN dem Text, hier liegt es dahinter ueber
+   die volle Breite. Handwerk hat eine Leistungsliste mit wechselndem
+   Bild, hier sind es grosse Kacheln, die alle gleichzeitig zu sehen
+   sind. Handwerk hat einen waagerechten Zeitstrahl, hier laeuft der
+   Ablauf senkrecht an einer Linie. Handwerk hat kein Personenraster,
+   hier gibt es eins — beim Bau will der Bauherr wissen, wer die
+   Baustelle fuehrt.
+
+   Wer ein Bauunternehmen beauftragt, entscheidet ueber viel Geld und
+   lange Zeitraeume. Die Seite beantwortet deshalb in dieser
+   Reihenfolge: Was baut ihr? Wie lange gibt es euch? Wie laeuft das
+   ab? Wer ist mein Ansprechpartner?
+   —————————————————————————————————————————————————————————— */
+:root{
+  --akzent:#c2511a;
+  --akzent-d:#9f4215;
+  --akzent-hell:color-mix(in srgb,var(--akzent) 70%,white);
+
+  --tief:#15181A;          /* kuehles Beton-Anthrazit, nicht warm wie Handwerk */
+  --tief-2:#1E2225;
+  --tief-3:#2A2F33;
+  --stahl:#8C9397;
+  --papier:#F2F3F2;
+  --papier-2:#E6E8E6;
+  --linie:rgba(255,255,255,.14);
+  --linie-d:rgba(21,24,26,.14);
+  --kopf:"Barlow Semi Condensed",system-ui,sans-serif;
+  --text:"IBM Plex Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--papier);color:var(--tief);font-family:var(--text);
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:800;line-height:1.02;
+  letter-spacing:-.005em;text-transform:uppercase}
+p{margin:0}
+a{color:inherit}
+.huelle{width:min(1220px,100%);margin-inline:auto;
+  padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.marke-label{display:block;font-family:var(--kopf);font-size:.82rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--akzent)}
+
+/* ———— Kopf ———— */
+.kopf{position:sticky;top:0;z-index:40;background:rgba(21,24,26,.93);
+  backdrop-filter:saturate(1.5) blur(9px);border-bottom:1px solid var(--linie)}
+.kopf-in{display:flex;align-items:center;gap:1.4rem;padding-block:.7rem}
+.logo{display:flex;align-items:center;gap:.7rem;min-width:0}
+.logo-platte{background:#fff;border-radius:3px;padding:.32rem .5rem;display:grid;place-items:center;flex:none}
+.logo-platte img{max-height:42px;width:auto;mix-blend-mode:multiply}
+.wortmarke{min-width:0}
+.wortmarke b{display:block;font-family:var(--kopf);font-size:1.12rem;font-weight:800;
+  color:#fff;letter-spacing:.01em;text-transform:uppercase;white-space:nowrap;
+  overflow:hidden;text-overflow:ellipsis}
+.wortmarke span{display:block;font-size:.66rem;letter-spacing:.17em;text-transform:uppercase;color:var(--stahl)}
+.kopf nav{margin-left:auto;display:flex;gap:1.5rem;align-items:center}
+.kopf nav a{font-family:var(--kopf);font-size:.86rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:#C8CDD0;text-decoration:none}
+.kopf nav a:hover{color:#fff}
+.taste{display:inline-flex;align-items:center;gap:.5rem;background:var(--akzent);color:#fff;
+  font-family:var(--kopf);font-size:.88rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
+  padding:.72rem 1.3rem;text-decoration:none;border:0;cursor:pointer;transition:background .18s}
+.taste:hover{background:var(--akzent-d)}
+.taste--hell{background:#fff;color:var(--tief)}
+.taste--hell:hover{background:var(--papier-2)}
+.taste--rand{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.4)}
+.taste--rand:hover{background:rgba(255,255,255,.1)}
+@media(max-width:900px){.kopf nav a:not(.taste){display:none}}
+
+/* ———— Bühne: Foto über die volle Breite, Text darüber ————
+   Genau andersherum als bei Handwerk, wo das Foto NEBEN dem Text
+   sitzt. Damit sehen die beiden Branchen schon im ersten Bildschirm
+   nicht mehr verwandt aus. */
+.buehne{position:relative;isolation:isolate;background:var(--tief);overflow:hidden}
+.buehne-foto{position:absolute;inset:0;background:var(--tief-2) var(--foto-buehne,none) center 42%/cover no-repeat;
+  z-index:0}
+.buehne::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(104deg,rgba(21,24,26,.94) 0%,rgba(21,24,26,.84) 42%,rgba(21,24,26,.42) 72%,rgba(21,24,26,.62) 100%)}
+.buehne-in{position:relative;z-index:2;padding-block:clamp(4rem,11vw,8.4rem)}
+.buehne-text{max-width:46rem}
+.buehne h1{font-size:clamp(2.5rem,1.5rem + 4.6vw,5.2rem);color:#fff;margin-top:1rem;
+  text-wrap:balance}
+.buehne h1 em{font-style:normal;color:var(--akzent-hell);display:block}
+.buehne-lede{margin-top:1.4rem;font-size:clamp(1rem,.96rem + .25vw,1.16rem);color:#D2D6D8;max-width:36rem}
+.buehne-tasten{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}
+
+/* ———— Zahlenband ———— */
+.koennen{background:var(--tief-2);color:#D7DBDD;border-bottom:4px solid var(--akzent)}
+.koennen-in{display:grid;grid-template-columns:repeat(var(--spalten,3),1fr);
+  gap:0;padding-block:clamp(1.8rem,3.4vw,2.8rem)}
+.fakt{padding:.2rem clamp(1rem,2.6vw,2.2rem);border-left:1px solid var(--linie)}
+.fakt:first-child{border-left:0;padding-left:0}
+.fakt b{display:block;font-family:var(--kopf);font-size:clamp(2rem,1.4rem + 2vw,3.2rem);
+  font-weight:800;color:#fff;line-height:1}
+.fakt span{display:block;margin-top:.35rem;font-family:var(--kopf);font-size:.8rem;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--akzent-hell)}
+.fakt p{margin-top:.5rem;font-size:.9rem;line-height:1.56;color:#A3AAAE}
+.koennen[data-ohne-zahlen] .fakt span{font-size:.92rem;color:#fff;letter-spacing:.1em}
+/* Auf dem Telefon untereinander. Dreispaltig passte die Leiste nicht
+   mehr ins Fenster und hat die ganze Seite quer aufgeschoben — auf
+   einem Entwurf, den der Unternehmer meistens zuerst am Handy oeffnet,
+   ist das der erste Eindruck. */
+@media(max-width:700px){
+  .koennen-in{grid-template-columns:1fr;gap:1.4rem}
+  .fakt{border-left:0;border-top:1px solid var(--linie);padding:1rem 0 0}
+  .fakt:first-child{border-top:0;padding-top:0}
+  .adresse{grid-template-columns:1fr}
+}
+
+/* ———— Was wir bauen: große Kacheln, alle gleichzeitig sichtbar ————
+   Handwerk hat dort eine Liste, bei der immer nur ein Bild zu sehen
+   ist. Ein Bauherr vergleicht lieber nebeneinander. */
+.bauen{padding-block:clamp(3.4rem,7vw,6rem)}
+.abschnitt-kopf{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.4rem,4vw,3.4rem);
+  align-items:end;margin-bottom:clamp(2rem,4vw,3rem)}
+.abschnitt-kopf h2{font-size:clamp(2rem,1.4rem + 2.4vw,3.4rem);margin-top:.7rem}
+.abschnitt-kopf p{color:#4D5457;font-size:1.02rem}
+.kacheln{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(.9rem,1.8vw,1.4rem)}
+.kachel{position:relative;isolation:isolate;overflow:hidden;background:var(--tief-2);
+  min-height:clamp(15rem,24vw,21rem);display:flex;align-items:flex-end;
+  text-decoration:none;color:#fff}
+.kachel-foto{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;
+  transition:transform .7s cubic-bezier(.22,.61,.36,1)}
+.kachel:hover .kachel-foto{transform:scale(1.05)}
+.kachel::after{content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(21,24,26,.93) 4%,rgba(21,24,26,.52) 44%,rgba(21,24,26,.12) 100%)}
+.kachel-text{position:relative;z-index:2;padding:clamp(1.2rem,2.4vw,1.9rem)}
+.kachel-nr{font-family:var(--kopf);font-size:.78rem;font-weight:700;letter-spacing:.2em;
+  color:var(--akzent-hell)}
+.kachel h3{font-size:clamp(1.3rem,1.1rem + .8vw,1.9rem);margin-top:.35rem}
+.kachel p{margin-top:.55rem;font-size:.94rem;line-height:1.56;color:#CBD0D2;max-width:32rem}
+@media(max-width:760px){.kacheln{grid-template-columns:1fr}.abschnitt-kopf{grid-template-columns:1fr}}
+
+/* ———— Referenzen: nur, wenn der Betrieb wirklich welche angegeben hat ———— */
+.referenz{background:var(--tief);color:#D7DBDD;padding-block:clamp(3.2rem,6.5vw,5.4rem)}
+.referenz h2{color:#fff}
+.referenz .abschnitt-kopf p{color:#A3AAAE}
+.posten-reihe{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.4vw,2rem)}
+.posten{border-top:3px solid var(--akzent);padding-top:1.1rem}
+.posten b{display:block;font-family:var(--kopf);font-size:1.22rem;font-weight:800;
+  text-transform:uppercase;color:#fff;line-height:1.1}
+.posten .ort{display:block;margin-top:.3rem;font-size:.82rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--akzent-hell)}
+.posten p{margin-top:.7rem;font-size:.94rem;line-height:1.6;color:#A3AAAE}
+@media(max-width:760px){.posten-reihe{grid-template-columns:1fr}}
+
+/* ———— Ablauf: senkrecht an einer Linie ————
+   Handwerk hat das waagerecht. Beim Bau sind die Schritte laenger
+   beschrieben, da traegt die Senkrechte besser. */
+.ablauf{padding-block:clamp(3.4rem,7vw,6rem);background:var(--papier-2)}
+.strahl{position:relative;margin-top:.5rem;padding-left:clamp(2.6rem,5vw,4rem)}
+.strahl::before{content:"";position:absolute;left:clamp(1.05rem,2.1vw,1.6rem);top:.6rem;bottom:.6rem;
+  width:2px;background:rgba(21,24,26,.16)}
+.schritt{position:relative;padding-bottom:clamp(1.6rem,3vw,2.4rem)}
+.schritt:last-child{padding-bottom:0}
+.schritt .nr{position:absolute;left:calc(-1 * clamp(2.6rem,5vw,4rem));top:0;
+  width:clamp(2.1rem,4.2vw,3.2rem);height:clamp(2.1rem,4.2vw,3.2rem);
+  background:var(--akzent);color:#fff;display:grid;place-items:center;
+  font-family:var(--kopf);font-weight:800;font-size:.98rem}
+.schritt h3{font-size:clamp(1.15rem,1rem + .7vw,1.6rem)}
+.schritt p{margin-top:.45rem;font-size:.97rem;color:#4D5457;max-width:46rem}
+
+/* ———— Einsatzgebiet ———— */
+.gebiet{background:var(--akzent);color:#fff;padding-block:clamp(2.8rem,5.5vw,4.4rem);
+  background-image:var(--foto-gebiet,none);background-size:cover;background-position:center 60%;
+  background-blend-mode:multiply;position:relative}
+.gebiet::before{content:"";position:absolute;inset:0;background:var(--akzent);opacity:.52;mix-blend-mode:color}
+.gebiet>*{position:relative;z-index:1}
+.gebiet-in{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.gebiet h2{font-size:clamp(1.9rem,1.4rem + 1.9vw,3rem)}
+.gebiet .marke-label{color:rgba(255,255,255,.8)}
+.gebiet-liste{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem 1.7rem}
+.weg{border-top:2px solid rgba(255,255,255,.4);padding-top:.85rem}
+.weg h3{font-size:1.04rem}
+.weg p{margin-top:.35rem;font-size:.9rem;line-height:1.55;color:rgba(255,255,255,.88)}
+@media(max-width:860px){.gebiet-in{grid-template-columns:1fr}.gebiet-liste{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.gebiet-liste{grid-template-columns:1fr}}
+
+/* ———— Betrieb und Zeiten ———— */
+.betrieb{padding-block:clamp(3.4rem,7vw,6rem)}
+.betrieb-in{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.betrieb-bild{position:relative;aspect-ratio:4/3;overflow:hidden;
+  background:var(--papier-2) var(--foto-betrieb,none) center/cover no-repeat}
+.betrieb h2{font-size:clamp(1.9rem,1.4rem + 1.9vw,3rem);margin-top:.7rem}
+.betrieb-text{margin-top:1.1rem;color:#4D5457;max-width:34rem}
+.zeiten{margin-top:1.6rem;background:#fff;border-left:4px solid var(--akzent);padding:1.2rem 1.4rem}
+.zeiten b{display:block;font-family:var(--kopf);font-size:1.08rem;text-transform:uppercase}
+.zeiten .marke-label{font-size:.74rem}
+.zeiten table{width:100%;border-collapse:collapse;margin-top:.8rem;font-size:.95rem}
+.zeiten td{padding:.42rem 0;border-bottom:1px solid var(--linie-d)}
+.zeiten tr:last-child td{border-bottom:0}
+.zeiten td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.zeiten-fuss{margin-top:.8rem;font-size:.87rem;color:#5B6265}
+@media(max-width:860px){.betrieb-in{grid-template-columns:1fr}}
+
+/* ———— Bauleitung: Personen ————
+   Handwerk hat kein Personenraster. Beim Bau schon: Wer ein Haus
+   bauen laesst, will wissen, wer auf der Baustelle das Sagen hat. */
+.team{padding-block:clamp(3.2rem,6.5vw,5.4rem);background:var(--tief);color:#D7DBDD}
+.team h2{color:#fff}
+.team .abschnitt-kopf p{color:#A3AAAE}
+.personen{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2.4vw,2rem)}
+.person{background:var(--tief-2);padding:1.4rem}
+.person .kopfbild-huelle{position:relative;aspect-ratio:1/1;overflow:hidden;margin-bottom:1rem;background:var(--tief-3)}
+.person img.kopfbild{width:100%;height:100%;object-fit:cover}
+.person .monogramm{position:absolute;inset:0;display:grid;place-items:center;background:var(--tief-3)}
+.person .monogramm span{font-family:var(--kopf);font-size:2.8rem;font-weight:800;color:var(--akzent-hell)}
+.person h3{font-size:1.2rem;color:#fff}
+.person .rolle{display:block;margin-top:.25rem;font-size:.8rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--akzent-hell)}
+.person p{margin-top:.7rem;font-size:.92rem;line-height:1.6;color:#A3AAAE}
+@media(max-width:860px){.personen{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.personen{grid-template-columns:1fr}}
+
+/* ———— Kontakt ———— */
+.kontakt-flaeche{padding-block:clamp(3.4rem,7vw,6rem);background:var(--papier-2)}
+.kontakt{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.kontakt h2{font-size:clamp(1.9rem,1.4rem + 1.9vw,3rem);margin-top:.7rem}
+.ruf{display:inline-block;margin-top:1.6rem;font-family:var(--kopf);font-weight:800;
+  font-size:clamp(1.7rem,1.3rem + 1.6vw,2.6rem);color:var(--tief);text-decoration:none;letter-spacing:-.01em}
+.ruf-zeit{margin-top:.3rem;font-size:.9rem;color:#5B6265}
+.adresse{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.8rem;
+  border-top:1px solid var(--linie-d);padding-top:1.2rem}
+.adresse span{display:block;font-family:var(--kopf);font-size:.78rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--akzent);margin-bottom:.25rem}
+.form{background:#fff;padding:clamp(1.3rem,2.6vw,1.9rem)}
+.feld{margin-bottom:.9rem}
+.feld label{display:block;font-family:var(--kopf);font-size:.8rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem}
+.feld input,.feld textarea{width:100%;font-family:var(--text);font-size:.97rem;color:var(--tief);
+  background:var(--papier);border:1px solid rgba(21,24,26,.16);padding:.68rem .8rem}
+.feld textarea{min-height:7rem;resize:vertical;line-height:1.55}
+.feld input:focus,.feld textarea:focus{outline:2px solid var(--akzent);outline-offset:1px}
+.form .taste{width:100%;justify-content:center;margin-top:.3rem}
+.form-hinweis{margin-top:.8rem;font-size:.82rem;color:#5B6265}
+@media(max-width:860px){.kontakt{grid-template-columns:1fr}}
+
+/* ———— Fuß ———— */
+.fuss{background:var(--tief);color:#9BA2A6;padding-block:clamp(2.4rem,4.6vw,3.6rem);font-size:.92rem}
+.fuss-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1.6rem}
+.fuss b{display:block;font-family:var(--kopf);font-size:1.02rem;color:#fff;text-transform:uppercase;margin-bottom:.4rem}
+.fuss a{color:#C8CDD0}
+.fuss .zeile{margin-top:2rem;padding-top:1.1rem;border-top:1px solid var(--linie);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem}
+@media(max-width:760px){.fuss-grid{grid-template-columns:1fr}}
+
+/* ———— Entwurfs-Kennzeichnung ———— */
+.vorschaumarke{position:fixed;top:calc(68px + env(safe-area-inset-top,0px));
+  right:max(14px,env(safe-area-inset-right,0px));z-index:50;
+  background:rgba(21,24,26,.9);color:#fff;padding:.4rem .7rem;text-align:right;pointer-events:none}
+.vorschaumarke b{display:block;font-family:var(--kopf);font-size:.74rem;letter-spacing:.17em}
+.vorschaumarke span{display:block;font-size:.62rem;color:#B9BFC2}
+.entwurf{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--tief);color:#C8CDD0;
+  border-top:3px solid var(--akzent);font-size:.8rem;text-align:center;
+  padding:.6rem max(14px,env(safe-area-inset-left,0px)) calc(.6rem + env(safe-area-inset-bottom,0px))}
+.entwurf-haupt{display:block;color:#fff;font-weight:600}
+.entwurf-rest{display:flex;justify-content:center;flex-wrap:wrap;gap:.3rem 1rem;margin-top:.2rem}
+.entwurf a{color:#C8CDD0}
+body{padding-bottom:5.4rem}
+@media(max-width:700px){.entwurf-detail{display:none}.nur-breit{display:none}}
+@media(min-width:701px){.nur-schmal{display:none}}
+/* ——————————————————————————————————————————————————————————
+   Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+   Die Farben kommen aus der Marke TerminWerk (#132F38 und #44B370)
+   und NICHT aus der Akzentfarbe des Kunden: Die Kennzeichnung gehoert
+   uns, nicht seinem Betrieb, und soll sich sichtbar davon absetzen.
+   —————————————————————————————————————————————————————————— */
+body{padding-bottom:3.5rem}
+@media(max-width:700px){body{padding-bottom:3.1rem}}
+
+:root{
+  --tw-tief:#101F26;
+  --tw-gruen:#44B370;
+  --tw-hell:#DCE5E2;
+}
+
+/* ———— Marke oben rechts ———— */
+.vorschaumarke{
+  position:fixed;
+  top:calc(84px + env(safe-area-inset-top,0px));
+  right:max(16px,env(safe-area-inset-right,0px));
+  z-index:95;pointer-events:none;
+  display:flex;align-items:center;gap:.62rem;
+  padding:.6rem .95rem .6rem .7rem;
+  background:rgba(16,31,38,.93);
+  backdrop-filter:saturate(1.4) blur(8px);
+  border-left:4px solid var(--tw-gruen);
+  border-radius:4px;
+  box-shadow:0 10px 30px rgba(8,16,20,.4),0 2px 6px rgba(8,16,20,.3);
+  animation:vm-auf .5s cubic-bezier(.22,.61,.36,1) .35s both;
+}
+@keyframes vm-auf{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.vorschaumarke{animation:none}}
+.vm-zeichen{display:block;flex:none}
+.vm-zeichen svg{width:30px;height:30px;display:block}
+.vm-text{display:block;line-height:1.15}
+.vorschaumarke b{
+  display:block;font-size:.84rem;font-weight:800;letter-spacing:.17em;
+  text-transform:uppercase;color:#fff;
+}
+.vorschaumarke .vm-text span{
+  display:block;margin-top:.1rem;font-size:.7rem;font-weight:500;
+  letter-spacing:.04em;color:var(--tw-gruen);
+}
+@media (max-width:560px){
+  .vorschaumarke{top:calc(68px + env(safe-area-inset-top,0px));padding:.45rem .7rem .45rem .52rem;gap:.45rem}
+  .vm-zeichen svg{width:24px;height:24px}
+  .vorschaumarke b{font-size:.72rem}
+  .vorschaumarke .vm-text span{font-size:.62rem}
+}
+
+/* ———— Schmale Leiste unten ————
+   Eine Zeile statt zwei. Vorher nahm sie fast 80 Pixel Hoehe weg und
+   wirkte wie ein Cookie-Banner; jetzt ist sie eine ruhige Fusszeile,
+   die trotzdem klar sagt, was die Seite ist. */
+.entwurf{
+  position:fixed;left:0;right:0;bottom:0;z-index:96;
+  background:linear-gradient(to right,var(--tw-tief),#16313B 58%,var(--tw-tief));
+  color:var(--tw-hell);
+  border-top:2px solid var(--tw-gruen);
+  font-size:.79rem;line-height:1.3;
+  padding:.42rem max(16px,env(safe-area-inset-left,0px)) calc(.5rem + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -6px 22px rgba(8,16,20,.22);
+}
+.entwurf-in{
+  width:min(1220px,100%);margin-inline:auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:.3rem .72rem;flex-wrap:wrap;
+}
+.entwurf-punkt{
+  width:7px;height:7px;border-radius:50%;background:var(--tw-gruen);flex:none;
+  box-shadow:0 0 0 3px rgba(68,179,112,.22);
+}
+.entwurf-haupt{font-weight:600;color:#fff}
+.entwurf-trenner{width:1px;height:14px;background:rgba(255,255,255,.2);flex:none}
+.entwurf-detail{color:#93A5AC}
+.entwurf-links{display:flex;gap:.3rem .72rem}
+.entwurf a{color:var(--tw-gruen);text-decoration:none;border-bottom:1px solid rgba(68,179,112,.4)}
+.entwurf a:hover{color:#fff;border-bottom-color:#fff}
+
+@media (min-width:701px){.entwurf-in{white-space:nowrap}}
+@media (max-width:1180px){.entwurf-frist{display:none}}
+@media (max-width:980px){.entwurf-trenner,.entwurf-detail{display:none}}
+@media (max-width:700px){
+  .entwurf{font-size:.74rem}
+  .entwurf-detail{display:none}
+  .nur-breit{display:none}
+}
+@media (min-width:701px){.nur-schmal{display:none}}
+
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="huelle kopf-in">
+    <a class="logo" href="#oben">
+      <span class="logo-platte"><img src="https://www.juema-hamburg.de/img/logo-jm.png" alt="Jürgen Martens GmbH & Co. KG" onerror="this.remove();"></span>
+      <span class="wortmarke"><b>Jürgen Martens</b><span>Hamburg seit 1953</span></span>
+    </a>
+    <nav>
+      <a href="#bauen">Leistungen</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#gebiet">Einsatzgebiet</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="taste" href="#kontakt">Angebot anfordern</a>
+    </nav>
+  </div>
+</header>
+
+<section class="buehne" id="oben">
+  <div class="buehne-foto"></div>
+  <div class="huelle buehne-in">
+    <div class="buehne-text">
+      <span class="marke-label">Bauunternehmung seit 1953</span>
+      <h1>Gebaut wird, während <em>alles weiterläuft.</em></h1>
+      <p class="buehne-lede">Wir bauen Brücken, Ingenieurbauwerke und Hochbauten und setzen Bauwerke instand, mit eigenem Personal, eigenem Gerätepark und eigenem Technischen Büro.</p>
+      <div class="buehne-tasten">
+        <a class="taste" href="#kontakt">Projekte ansehen</a>
+        <a class="taste taste--rand" href="tel:0402270230">040 227023-0</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="koennen">
+  <div class="huelle koennen-in">
+    <div class="fakt"><b data-zaehlen>1953</b><span>Hamburg seit</span><p>Das Unternehmen ist seit 1953 als Bauunternehmung in Hamburg tätig.</p></div>
+    <div class="fakt"><b data-zaehlen>2019</b><span>Neue Betriebsstätte</span><p>Seit 2019 unterstützt eine Betriebsstätte in Neubrandenburg die Projekte in Mecklenburg-Vorpommern.</p></div>
+    <div class="fakt"><b data-zaehlen>1991</b><span>Zweites Unternehmen</span><p>Die Jürgen Martens GmbH in Wittenförden wickelt Projekte in Mecklenburg-Vorpommern ab.</p></div>
+  </div>
+</section>
+
+<section class="bauen" id="bauen">
+  <div class="huelle">
+    <div class="abschnitt-kopf">
+      <div>
+        <span class="marke-label">Leistungen</span>
+        <h2>Leistungsbereiche</h2>
+      </div>
+      <p>Vom konstruktiven Ingenieurbau bis zur Instandsetzung bestehender Bauwerke: Viele Arbeiten führen wir mit eigenem Personal und eigenen Geräten aus.</p>
+    </div>
+    <div class="kacheln">
+      <div class="kachel" data-kachel>
+        <div class="kachel-foto"></div>
+        <div class="kachel-text"><span class="kachel-nr">01</span>
+          <h3>Ingenieurbau</h3><p>Technisches Büro und Bauleiter vor Ort setzen anspruchsvolle Bauaufgaben um, auch im Bahnbau unter kurzen Sperrpausen.</p></div>
+      </div>
+      <div class="kachel" data-kachel>
+        <div class="kachel-foto"></div>
+        <div class="kachel-text"><span class="kachel-nr">02</span>
+          <h3>Brückenbau</h3><p>Vorgespannte und schlaff bewehrte Brückentragwerke sowie Stahlverbund-Konstruktionen, auch unter fließendem Verkehr.</p></div>
+      </div>
+      <div class="kachel" data-kachel>
+        <div class="kachel-foto"></div>
+        <div class="kachel-text"><span class="kachel-nr">03</span>
+          <h3>Hochbau</h3><p>Hoch- und Industriebau, aufbauend auf den Erfahrungen aus Ingenieur- und Brückenbau.</p></div>
+      </div>
+      <div class="kachel" data-kachel>
+        <div class="kachel-foto"></div>
+        <div class="kachel-text"><span class="kachel-nr">04</span>
+          <h3>Tiefbau</h3><p>Erd- und Tiefbau mit eigenem Gerät und Personal, dazu Baugrubensicherungen und Gründungen im kleineren Umfang.</p></div>
+      </div>
+      <div class="kachel" data-kachel>
+        <div class="kachel-foto"></div>
+        <div class="kachel-text"><span class="kachel-nr">05</span>
+          <h3>Instandsetzung</h3><p>Bauwerkserhaltung vom kleinen Bauteil bis zur Komplettinstandsetzung, auch denkmalgerechte Mauerwerkssanierung.</p></div>
+      </div>
+      <div class="kachel" data-kachel>
+        <div class="kachel-foto"></div>
+        <div class="kachel-text"><span class="kachel-nr">06</span>
+          <h3>Stahlbau</h3><p>Betriebshof in Norderstedt mit Werkstatthalle für den Stahlbau, dazu Platz für große und kleine Baugeräte.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Referenzen stehen nur dort, wo der Betrieb wirklich welche genannt
+     hat. Sind die Felder leer, nimmt das Skript den ganzen Abschnitt
+     heraus — erfundene Bauvorhaben auf einer Verkaufsvorschau waeren
+     ein Eigentor, das beim ersten Rueckfragen auffliegt. -->
+<section class="referenz" id="referenzen" data-weg-wenn-leer-abschnitt>
+  <div class="huelle">
+    <div class="abschnitt-kopf">
+      <div>
+        <span class="marke-label">Referenzen</span>
+        <h2>Ausgewählte Projekte</h2>
+      </div>
+      <p>Drei Bauvorhaben aus Hamburg und Umgebung, bei denen der Betrieb weiterlaufen musste.</p>
+    </div>
+    <div class="posten-reihe">
+      <div class="posten"><b>Umbau Klärwerk</b><span class="ort">Hetlingen</span><p>Neuer Sandfang mit Containerhalle, errichtet unter laufendem Betrieb der Anlage. Bauherr war der AZV Südholstein.</p></div>
+      <div class="posten"><b>Erweiterung Feuerwehrwache</b><span class="ort">Flughafen Hamburg</span><p>Betonbau im Sicherheitsbereich des Flughafens, während die Feuerwehr im Bestandsgebäude einsatzbereit blieb.</p></div>
+      <div class="posten"><b>Ersatzneubau Brücke</b><span class="ort">Hetlinger Binnenelbe</span><p>Abbruch der alten Brücke und Neubau mit Halbfertigteilen aus Stahlbeton. Bauherr war die Stadt Wedel.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ablauf" id="ablauf">
+  <div class="huelle">
+    <div class="abschnitt-kopf a-kopf">
+      <div>
+        <span class="marke-label">Ablauf</span>
+        <h2>So arbeiten wir</h2>
+      </div>
+      <p>Von der Anfrage bis zur Abnahme bleibt die Abwicklung in einer Hand, mit festen Ansprechpartnern im Technischen Büro und auf der Baustelle.</p>
+    </div>
+    <div class="strahl">
+      <div class="schritt"><div class="nr">01</div><h3>Anfrage</h3><p>Sie schildern uns die Bauaufgabe und stellen die Unterlagen bereit.</p></div>
+      <div class="schritt"><div class="nr">02</div><h3>Planung und Kalkulation</h3><p>Das Technische Büro kalkuliert und erarbeitet bei Bedarf Sondervorschläge.</p></div>
+      <div class="schritt"><div class="nr">03</div><h3>Ausführung</h3><p>Bauleiter und Poliere koordinieren die Arbeiten auf der Baustelle.</p></div>
+      <div class="schritt"><div class="nr">04</div><h3>Abnahme</h3><p>Wir übergeben die Bauleistung und erstellen die Abrechnungsunterlagen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gebiet" id="gebiet">
+  <div class="huelle gebiet-in">
+    <div>
+      <span class="marke-label">Einsatzgebiet</span>
+      <h2 style="margin-top:.7rem">Standorte</h2>
+      <p style="margin-top:1rem;color:rgba(255,255,255,.92)">Verwaltung in Hamburg-Uhlenhorst, Betriebshof in Norderstedt und ein verbundenes Unternehmen bei Schwerin.</p>
+    </div>
+    <div class="gebiet-liste">
+      <div class="weg"><h3>Verwaltung</h3><p>Hans-Henny-Jahnn-Weg 25, 22085 Hamburg-Uhlenhorst.</p></div>
+      <div class="weg"><h3>Betriebshof</h3><p>Robert-Koch-Straße 21, 22851 Norderstedt, mit Werkstatthalle für den Stahlbau.</p></div>
+      <div class="weg"><h3>Wittenförden</h3><p>Jürgen Martens GmbH, Nordring 17, 19073 Wittenförden bei Schwerin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="betrieb">
+  <div class="huelle betrieb-in">
+    <div class="betrieb-bild">
+      <img class="band-bild" src="https://www.juema-hamburg.de/img/projekte/19074/slide2.jpg" alt="Brücke über die Hetlinger Binnenelbe" loading="lazy" onerror="this.remove();"
+        style="width:100%;height:100%;object-fit:cover">
+    </div>
+    <div>
+      <span class="marke-label">Der Betrieb</span>
+      <h2>Bauen in der Region</h2>
+      <p class="betrieb-text">Als mittelständisches Unternehmen bauen wir mit Fachkräften aus der Region in der Region. Wir bilden Nachwuchs aus und unsere Fachkräfte weiter.</p>
+      <div class="zeiten">
+        <span class="marke-label">Bürozeiten</span>
+        <b>Erreichbarkeit</b>
+        <table>
+          <tr><td>Mo</td><td></td></tr>
+          <tr><td>Di</td><td></td></tr>
+          <tr><td>Mi</td><td></td></tr>
+          <tr><td>Do</td><td></td></tr>
+          <tr><td>Fr</td><td></td></tr>
+          <tr><td>Sa</td><td></td></tr>
+        </table>
+        <p class="zeiten-fuss">Rufen Sie uns an oder schreiben Sie an info@juema-hamburg.de, wir melden uns bei Ihnen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="huelle">
+    <div class="abschnitt-kopf">
+      <div>
+        <span class="marke-label">Bauleitung</span>
+        <h2>Technisches Büro, Bauleitung, Betriebshof</h2>
+      </div>
+      <p>Bauleiter, Poliere, Technisches Büro und Betriebshof arbeiten bei jedem Projekt eng zusammen.</p>
+    </div>
+    <div class="personen">
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono=""><span></span></div>
+        </div>
+        <h3></h3><span class="rolle"></span><p></p>
+      </div>
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono=""><span></span></div>
+        </div>
+        <h3></h3><span class="rolle"></span><p></p>
+      </div>
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono=""><span></span></div>
+        </div>
+        <h3></h3><span class="rolle"></span><p></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt-flaeche" id="kontakt">
+  <div class="huelle kontakt">
+    <div>
+      <span class="marke-label">Kontakt</span>
+      <h2>Anfrage an die Verwaltung</h2>
+      <p style="margin-top:1rem;color:#4D5457">Schildern Sie uns kurz Ihr Bauvorhaben, wir melden uns mit einer Rückfrage oder einem Gesprächstermin.</p>
+      <a class="ruf" href="tel:0402270230">040 227023-0</a>
+      <p class="ruf-zeit">Telefonisch unter 040 227023-0 oder per E-Mail.</p>
+      <div class="adresse">
+        <div data-weg-wenn-leer><span>Anschrift</span>Hans-Henny-Jahnn-Weg 25<br>22085 Hamburg</div>
+        <div data-weg-wenn-leer><span>E-Mail</span><a href="mailto:info@juema-hamburg.de">info@juema-hamburg.de</a></div>
+      </div>
+    </div>
+    <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='In der Vorschau nicht aktiv';">
+      <div class="feld"><label for="f-name">Ihr Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="feld"><label for="f-tel">Telefon</label>
+        <input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+      <div class="feld"><label for="f-mail">E-Mail <span style="text-transform:none;letter-spacing:0;font-weight:400;color:#5B6265">(freiwillig)</span></label>
+        <input id="f-mail" name="email" type="email" autocomplete="email">
+        <p class="form-hinweis">Bitte keine Zugangsdaten oder Zahlungsdaten in dieses Feld.</p></div>
+      <div class="feld"><label for="f-text">Ihr Vorhaben</label>
+        <textarea id="f-text" name="text" placeholder="z. B. Instandsetzung einer Brücke oder Neubau einer Halle"></textarea></div>
+      <button class="taste" type="submit">Anfrage senden</button>
+      <p class="form-hinweis">Wir verwenden Ihre Angaben ausschließlich, um Ihr Anliegen zu bearbeiten
+        und Sie zurückzurufen. Eine Weitergabe an Dritte erfolgt nicht.</p>
+    </form>
+  </div>
+</section>
+
+<footer class="fuss">
+  <div class="huelle">
+    <div class="fuss-grid">
+      <div><b>Jürgen Martens GmbH & Co. KG</b><p>Jürgen Martens GmbH & Co. KG · Hamburg · Bauunternehmung seit 1953</p></div>
+      <div><b style="font-size:.84rem">Anschrift</b>Hans-Henny-Jahnn-Weg 25<br>22085 Hamburg<br>
+        <a href="tel:0402270230">040 227023-0</a></div>
+      <div><b style="font-size:.84rem">Erreichbarkeit</b>Telefonisch unter 040 227023-0 oder per E-Mail.<br></div>
+    </div>
+    <div class="zeile">
+      <span>&copy; 2026 Jürgen Martens GmbH & Co. KG</span>
+      <span>Entwurf — Impressum und Datenschutzerklärung folgen mit der Veröffentlichung.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ——————————————————————————————————————————————————————————
+     Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+
+     Zweck: Wer diesen Link bekommt, soll in der ersten Sekunde
+     begreifen, dass das ein Entwurf ist und nicht die veroeffentlichte
+     Seite seines Betriebs. Bei Aerzten, Kanzleien und Krankenhaeusern
+     ist das keine Hoeflichkeit, sondern notwendig — dort reagiert man
+     empfindlich auf alles, was wie eine echte Veroeffentlichung
+     aussieht.
+
+     Bewusst KEIN seitenfuellendes Wasserzeichen quer ueber die Seite:
+     Der Entwurf muss gleichzeitig so gut aussehen, dass der Unternehmer
+     ihn kaufen will. Ein Raster aus "ENTWURF" ueber dem ganzen Bild
+     nimmt genau das kaputt. Stattdessen eine kraeftige Marke oben
+     rechts mit dem TerminWerk-Zeichen und eine schmale Leiste unten.
+     —————————————————————————————————————————————————————————— -->
+<div class="vorschaumarke" aria-label="Diese Seite ist ein unverbindlicher Entwurf">
+  <span class="vm-zeichen" aria-hidden="true">
+    <svg viewBox="0 0 34 34" focusable="false">
+      <rect width="34" height="34" rx="9.5" fill="#132F38"/>
+      <rect x="9.1" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="18.3" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="6.4" y="9.1" width="17.2" height="16" rx="2.8" fill="#fff"/>
+      <g fill="#132F38">
+        <rect x="8.9" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="18.1" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="8.9" y="19.4" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="19.4" width="2.5" height="2.5" rx=".7"/>
+      </g>
+      <circle cx="23.8" cy="23.4" r="7.6" fill="#132F38"/>
+      <circle cx="23.8" cy="23.4" r="6.2" fill="#44B370"/>
+      <g fill="#fff">
+        <circle cx="21.2" cy="23.4" r="1.05"/><circle cx="23.8" cy="23.4" r="1.05"/><circle cx="26.4" cy="23.4" r="1.05"/>
+      </g>
+    </svg>
+  </span>
+  <span class="vm-text">
+    <b>Vorschau</b>
+    <span>nicht veröffentlicht</span>
+  </span>
+</div>
+
+<div class="entwurf">
+  <div class="entwurf-in">
+    <span class="entwurf-punkt" aria-hidden="true"></span>
+    <span class="entwurf-haupt">
+      <span class="nur-breit">Unverbindlicher Entwurf für Jürgen Martens GmbH & Co. KG</span>
+      <span class="nur-schmal">Unverbindlicher Entwurf</span>
+    </span>
+    <span class="entwurf-trenner" aria-hidden="true"></span>
+    <span class="entwurf-detail">nicht veröffentlicht · für Suchmaschinen gesperrt</span>
+    <span class="entwurf-links">
+      <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+      <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+      <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+    </span>
+    <span class="entwurf-detail entwurf-frist">gültig bis 16.12.2026</span>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  var SLUG = "juergen-martens-2";
+
+  /* Bilder: leere Platzhalter rauswerfen, damit nie ein kaputtes Bild steht.
+     Wo ein Kopfbild vorhanden ist, tritt es an die Stelle des Monogramms. */
+  function aufraeumen(){
+    var leer = function(el){
+      var s = el.getAttribute('src');
+      return !s || s === window.location.href || s === '#';
+    };
+
+    /* Ein Chip ohne Inhalt verschwindet. */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-chip]'), function(c){
+      if (!c.textContent.trim()) c.remove();
+    });
+
+    /* Personen: wer keinen Namen hat, existiert nicht. Eine Kanzlei mit
+       einem Anwalt bekommt eine Kachel, nicht drei. Bleibt nur eine
+       uebrig, rueckt sie auf die halbe Breite statt auf ein Drittel. */
+    Array.prototype.forEach.call(document.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = document.querySelectorAll('.team .person');
+    var raster = document.querySelector('.team');
+    if (raster){
+      if (leute.length === 0){
+        var ab = raster.closest('.abschnitt');
+        if (ab) ab.remove();
+      } else if (leute.length === 1){
+        raster.style.gridTemplateColumns = 'minmax(0,22rem)';
+      } else if (leute.length === 2){
+        raster.style.gridTemplateColumns = 'repeat(2,minmax(0,1fr))';
+        raster.style.maxWidth = '52rem';
+      }
+    }
+
+    /* Dasselbe fuer Leistungen, Schritte, Wege und Referenzen: leere
+       Eintraege verschwinden, statt als leere Kaestchen dazustehen. */
+    [['.posten','h3'],['.schritt','h3'],['.weg','h3']].forEach(function(paar){
+      Array.prototype.forEach.call(document.querySelectorAll(paar[0]), function(el){
+        var t = el.querySelector(paar[1]);
+        if (!t || !t.textContent.trim()) el.remove();
+      });
+    });
+
+    /* Fakten: ein Platz ohne Inhalt verschwindet. Lieber zwei Fakten
+       als drei, von denen einer leer ist. */
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt'), function(f){
+      var b = f.querySelector('b'), sp = f.querySelector('span'), p = f.querySelector('p');
+      var leerB = !b || !b.textContent.trim();
+      var leerS = !sp || !sp.textContent.trim();
+      if (leerB && leerS) { f.remove(); return; }
+      if (leerB && b) b.remove();
+      if (leerS && sp) sp.remove();
+      if (p && !p.textContent.trim()) p.remove();
+    });
+
+    /* Zahlen: alle oder keine. Einer von dreien liess die Leiste halbfertig
+       aussehen — links gross "5,0", daneben zweimal Text in der Luft. Fehlt
+       bei einem die Zahl, fallen sie ueberall weg; dann traegt die
+       Beschriftung die Zeile, und das sieht gewollt aus. */
+    var fakten = Array.prototype.slice.call(document.querySelectorAll('.fakt'));
+    var ohneZahl = fakten.filter(function(f){
+      var b = f.querySelector('b');
+      return !b || !b.textContent.trim();
+    });
+    if (fakten.length && ohneZahl.length && ohneZahl.length < fakten.length){
+      fakten.forEach(function(f){
+        var b = f.querySelector('b');
+        if (b) b.remove();
+      });
+      var band = fakten[0].closest('.koennen') || fakten[0].parentNode;
+      if (band && band.setAttribute) band.setAttribute('data-ohne-zahlen', '');
+    }
+    if (fakten.length){
+      var umschlag = fakten[0].parentNode;
+      if (umschlag && umschlag.style) umschlag.style.setProperty('--spalten', String(fakten.length));
+    }
+
+    var kasten = document.querySelector('.fakten');
+    if (kasten && !kasten.querySelector('.fakt')) kasten.remove();
+    var leisteLeer = document.querySelector('.koennen');
+    if (leisteLeer && !leisteLeer.querySelector('.fakt')) leisteLeer.remove();
+
+    /* Buehnen-Ueberschrift: ist kein Akzentteil da, faellt er weg */
+    var akz = document.querySelector('.buehne h1 em');
+    if (akz && !akz.textContent.trim()) akz.remove();
+
+    /* Sprechzeiten: stehen keine echten Zeiten drin, kommt die Tabelle weg
+       und an ihre Stelle ein sauberer Satz. Eine Tabelle mit sechsmal
+       "bitte telefonisch erfragen" sieht schlechter aus als gar keine. */
+    var karte = document.querySelector('.zeiten');
+    if (karte){
+      var werte = Array.prototype.map.call(
+        karte.querySelectorAll('table td:last-child'),
+        function(c){ return c.textContent.trim(); });
+      var echte = werte.filter(function(w){ return w && !/^[-–—.]*$/.test(w); });
+      if (echte.length === 0){
+        var tab = karte.querySelector('table');
+        if (tab){
+          var satz = document.createElement('p');
+          satz.className = 'zeiten-ersatz';
+          satz.textContent = 'Termine vergeben wir telefonisch — so finden wir gleich einen Tag, der Ihnen passt.';
+          tab.parentNode.replaceChild(satz, tab);
+        }
+        var fuss = karte.querySelector('.zeiten-fuss');
+        if (fuss) fuss.textContent = 'Rufen Sie uns an, wir stimmen den Termin direkt mit Ihnen ab.';
+      }
+    }
+
+    /* Logo: traegt es, tritt es an die Stelle der gesetzten Wortmarke.
+       Traegt es nicht, bleibt die Wortmarke stehen — nie beides, nie keines. */
+    var platte = document.querySelector('.logo');
+    if (platte){
+      var bild = platte.querySelector('img');
+      if (!bild || leer(bild)) {
+        platte.remove();
+      } else {
+        var zeigen = function(){
+          if (!bild.naturalWidth) { platte.remove(); return; }
+          platte.style.display = 'flex';
+          var w = document.querySelector('.wortmarke');
+          if (w) w.remove();
+        };
+        if (bild.complete) zeigen(); else {
+          bild.addEventListener('load', zeigen);
+          bild.addEventListener('error', function(){ platte.remove(); });
+        }
+      }
+    }
+
+    /* Ohne eigenes Foto bleibt die hinterlegte Aufnahme des Rahmens stehen. */
+    Array.prototype.forEach.call(document.querySelectorAll('img.band-bild'), function(b){
+      if (leer(b)) b.remove();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('img.kopfbild'), function(k){
+      if (leer(k)) { k.remove(); return; }
+      k.hidden = false;
+      var mono = k.parentNode.querySelector('.monogramm');
+      if (mono) mono.remove();
+      /* Ist das Foto quer — etwa ein Kopfbereich der alten Seite —,
+         bekommt die Kachel Querformat statt eines engen Beschnitts. */
+      var passe = function(){
+        if (!k.naturalWidth || !k.naturalHeight) return;
+        var v = k.naturalWidth / k.naturalHeight;
+        if (v > 1.3){ k.style.aspectRatio = '16/9'; k.style.objectPosition = 'center 28%'; }
+        else if (v > 1.05){ k.style.aspectRatio = '4/3'; }
+      };
+      if (k.complete) passe(); else k.addEventListener('load', passe);
+    });
+    /* Monogramm aus den Initialen des Namens, Titel werden übersprungen */
+    Array.prototype.forEach.call(document.querySelectorAll('.monogramm'), function(m){
+      var name = (m.getAttribute('data-mono') || '').trim();
+      var teile = name.split(/\s+/).filter(function(w){
+        return w.length > 1 && !/^(dr|med|dent|prof|dipl|m\.?sc|ba|ma)\.?$/i.test(w.replace(/\./g,''));
+      });
+      var ini = teile.slice(0, 2).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
+      var s = m.querySelector('span');
+      if (s) s.textContent = ini || '·';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aufraeumen);
+  } else { aufraeumen(); }
+
+  /* Zahlen zaehlen hoch, sobald sie ins Bild kommen. Nur echte Zahlen —
+     "Kostal Partnerbetrieb" bleibt stehen wie es ist. */
+  function zaehlwerk(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+    var felder = [];
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt b, [data-zaehlen]'), function(el){
+      var roh = el.textContent.trim();
+      var t = roh.match(/^(\D*?)(\d[\d.]*)(\D*)$/);
+      if (!t) return;
+      var ziel = parseInt(t[2].replace(/\./g, ''), 10);
+      if (!ziel || ziel > 100000) return;
+      el.dataset.vor = t[1]; el.dataset.nach = t[3]; el.dataset.ziel = String(ziel);
+      el.textContent = t[1] + '0' + t[3];
+      felder.push(el);
+    });
+    if (!felder.length) return;
+    var auge = new IntersectionObserver(function(e){
+      e.forEach(function(x){
+        if (!x.isIntersecting) return;
+        var el = x.target, ziel = +el.dataset.ziel, start = performance.now(), dauer = 1100;
+        (function lauf(jetzt){
+          var p = Math.min((jetzt - start) / dauer, 1);
+          var w = Math.round(ziel * (1 - Math.pow(1 - p, 3)));
+          el.textContent = el.dataset.vor + w + el.dataset.nach;
+          if (p < 1) requestAnimationFrame(lauf);
+        })(start);
+        auge.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    felder.forEach(function(el){ auge.observe(el); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', zaehlwerk);
+  else zaehlwerk();
+
+  /* Bewegung beim Scrollen. Zurueckhaltend: einblenden und ein Stueck
+     nach oben, gestaffelt innerhalb einer Gruppe. Wer im Betriebssystem
+     weniger Bewegung eingestellt hat, bekommt gar keine. */
+  function bewegung(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+
+    var gruppen = ['.a-kopf','.kachel','.posten','.schritt','.weg','.fakt','.person',
+                   '.betrieb-bild','.zeiten','.form','.stoerung-in','.buehne-text > *',
+                   '.gebiet-in > *','.notdienst-in > *','.kontakt > div'];
+    var teile = [];
+    gruppen.forEach(function(w){
+      var n = document.querySelectorAll(w);
+      Array.prototype.forEach.call(n, function(el, i){
+        if (el.dataset.auf) return;
+        el.dataset.auf = '1';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms, ' +
+                              'transform .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms';
+        teile.push(el);
+      });
+    });
+    if (!teile.length) return;
+
+    var zeigen = function(el){
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    };
+
+    /* Was beim Laden schon im Bild steht, wird sofort gezeigt — sonst
+       startet die Seite mit einem Loch, bis der Beobachter anspringt. */
+    var sofort = [];
+    teile.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) sofort.push(el);
+    });
+    requestAnimationFrame(function(){ sofort.forEach(zeigen); });
+
+    var auge = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if (!e.isIntersecting) return;
+        zeigen(e.target);
+        auge.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    teile.forEach(function(el){ auge.observe(el); });
+
+    /* Sicherheitsnetz: was nach zwei Sekunden noch unsichtbar ist, wird
+       sichtbar. Lieber ohne Effekt als eine leere Seite. */
+    setTimeout(function(){
+      teile.forEach(function(el){ if (el.style.opacity === '0'){ el.style.opacity='1'; el.style.transform='none'; } });
+    }, 2600);
+
+    /* Das Buehnenfoto faehrt beim Scrollen langsam mit. */
+    var foto = document.querySelector('.buehne-foto');
+    if (foto){
+      var laeuft = false;
+      window.addEventListener('scroll', function(){
+        if (laeuft) return;
+        laeuft = true;
+        requestAnimationFrame(function(){
+          var y = Math.min(window.scrollY, 700);
+          foto.style.transform = 'translate3d(0,' + (y * 0.12) + 'px,0) scale(1.06)';
+          laeuft = false;
+        });
+      }, { passive: true });
+      foto.style.transform = 'scale(1.06)';
+      foto.style.willChange = 'transform';
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bewegung);
+  else bewegung();
+
+  function hinweis(titel, satz){
+    document.title = titel;
+    document.body.innerHTML =
+      '<div style="min-height:100vh;display:grid;place-items:center;padding:2rem;'
+      + 'background:#16211E;color:#AEBCB7;text-align:center;font-family:' + "'Inter'" + ',system-ui,sans-serif">'
+      + '<div style="max-width:46ch">'
+      + '<p style="font-family:' + "'Newsreader'" + ',Georgia,serif;font-size:1.7rem;color:#fff;margin:0 0 .9rem">' + titel + '</p>'
+      + '<p style="margin:0 0 1.4rem;line-height:1.6">' + satz + ' Veröffentlicht war er zu keiner Zeit.</p>'
+      + '<p style="margin:0 0 1.6rem;line-height:1.6">Wenn Sie ihn noch einmal sehen möchten, melden wir ihn gern erneut frei.</p>'
+      + '<p style="margin:0"><a href="https://terminwerk-systeme.de/kontakt/" style="color:#8FC9BC">TerminWerk Systeme</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/impressum/" style="color:#8FC9BC">Impressum</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/datenschutz/" style="color:#8FC9BC">Datenschutz</a></p>'
+      + '</div></div>';
+    document.body.style.padding = "0";
+  }
+
+  var bis = new Date("2026-12-16T23:59:59");
+  if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
+    hinweis("Dieser Entwurf ist abgelaufen.",
+      "Der unverbindliche Entwurf für Jürgen Martens GmbH & Co. KG stand bis zum 16.12.2026 zur Ansicht bereit.");
+    return;
+  }
+  try{
+    fetch("../status.json", { cache: "no-store" })
+      .then(function(a){ return a.ok ? a.json() : null; })
+      .then(function(s){
+        if (s && s[SLUG] === "aus") {
+          hinweis("Dieser Entwurf wurde zurückgezogen.",
+            "Der unverbindliche Entwurf für Jürgen Martens GmbH & Co. KG steht nicht mehr zur Ansicht bereit.");
+        }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ——— Bildvorrat Bauunternehmen ———
+     Jede Kennung ist einzeln im Raster angesehen worden, zweimal: einmal
+     darauf, ob sie ueberhaupt laedt — von rund sechzig Kandidaten war ein
+     Drittel tot —, und einmal darauf, ob man das Bild einem Bauherrn
+     zeigen kann. Die Marke w traegt, was vorzeigbar ist: weit genug,
+     sofort lesbar, nichts Duesteres und nichts Unaufgeraeumtes. Was diese
+     Marke nicht hat, ist eine Detailaufnahme und kommt erst dran, wenn
+     nichts Besseres inhaltlich passt.
+     b = Buehne, t = Betriebsbild, n = neutral, ohne = Leistungskachel. */
+  var A = 'https://images.unsplash.com/';
+  var GROSS = '?auto=format&fit=crop&w=2000&q=76';
+  var MITTE = '?auto=format&fit=crop&w=1400&q=74';
+
+  var VORRAT = [
+    /* Hochbau, Rohbau, Kran */
+    {id:'photo-1768926968986-a88590ce5025', b:1, w:1, s:'hochbau rohbau baustelle mannschaft team allgemein'},
+    {id:'photo-1644221150186-5d785a471f44', b:1, w:1, s:'hochbau rohbau neubau schluesselfertig kran gebaeude geschosswohnungsbau'},
+    {id:'photo-1644221150141-24f57d9a468b', w:1, s:'hochbau rohbau neubau kran gebaeude geschosswohnungsbau'},
+    {id:'photo-1599707254554-027aeb4deacd', w:1, s:'kran hochbau neubau hebezeug'},
+    {id:'photo-1677354371002-7a6c38c992e6', w:1, s:'kran hochbau neubau hebezeug gebaeude'},
+    {id:'photo-1664662568348-24b1482b6354', b:1, w:1, s:'rohbau geruest neubau schluesselfertig hochbau fassade gebaeude'},
+    {id:'photo-1602757115429-b4190ae087be', w:1, s:'rohbau hochbau neubau schluesselfertig wohnungsbau gebaeude'},
+    {id:'photo-1527335988388-b40ee248d80c', w:1, s:'stahlbau geruest traeger konstruktion halle gewerbebau'},
+    {id:'photo-1673978484281-e9370ac3b81c', w:1, s:'innenausbau geruest sanierung umbau rohbau'},
+    {id:'photo-1718715391199-5fc33b8cf78b', s:'stahlbau decke konstruktion halle gewerbebau'},
+
+    /* Beton, Bewehrung, Fundament */
+    {id:'photo-1694521787162-5373b598945c', b:1, w:1, s:'beton stahlbeton decke stuetze rohbau geschossdecke'},
+    {id:'photo-1712711649566-16c7cfcf341c', w:1, s:'beton stahlbeton decke rohbau schalung geschossdecke'},
+    {id:'photo-1621463678002-1a7d3c9224f7', b:1, w:1, s:'bewehrung stahl beton armierung fundament stahlbeton'},
+    {id:'photo-1531834685032-c34bf0d84c77', w:1, s:'bewehrung stahl armierung beton fundament stahlbeton'},
+    {id:'photo-1673978484192-c84033539240', w:1, s:'bewehrung stahl armierung beton bodenplatte fundament'},
+    {id:'photo-1582540730843-f4418d96ccbe', s:'bewehrung beton fundament bodenplatte armierung'},
+    {id:'photo-1673978483810-ad14e573eece', w:1, s:'beton bodenplatte fundament estrich'},
+    {id:'photo-1591645321243-3adc1e75cfdc', w:1, s:'beton decke schalung rohbau geschossdecke'},
+    {id:'photo-1610164989165-0c4701bc4ce2', w:1, s:'fundament bodenplatte baugrube gruendung erdarbeiten tiefbau'},
+
+    /* Erdarbeiten, Abbruch, Tiefbau */
+    {id:'photo-1763624578810-5ac518e4fd4c', b:1, w:1, s:'erdarbeiten bagger tiefbau aushub baugrube erdbau'},
+    {id:'photo-1622082679766-c5912d9416eb', w:1, s:'erdarbeiten bagger aushub erdbau abbruch tiefbau'},
+    {id:'photo-1748848436533-f7583dce22b6', w:1, s:'erdarbeiten bagger aushub erdbau tiefbau'},
+    {id:'photo-1768085091650-e8e89ef57b76', w:1, s:'erdarbeiten bagger aushub erdbau tiefbau'},
+    {id:'photo-1784058018200-f1eb0c6fcfcf', w:1, s:'erdarbeiten bagger erdbau aushub tiefbau'},
+    {id:'photo-1783753445188-e2a27319e408', w:1, s:'erdarbeiten bagger baugrube aushub abbruch tiefbau'},
+    {id:'photo-1788512287800-fb174b1c79aa', t:1, w:1, s:'maschine bagger fuhrpark maschinenpark geraet allgemein'},
+    {id:'photo-1787840983042-9d0791e53c9d', s:'abbruch rueckbau bagger maschine erdarbeiten'},
+
+    /* Pflaster, Strasse, Aussenanlagen */
+    {id:'photo-1793286528958-f11858e55856', b:1, w:1, s:'pflaster pflasterarbeiten strassenbau aussenanlagen hof'},
+    {id:'photo-1551394846-d03c5a4bc4bc', w:1, s:'pflaster aussenanlagen hof einfahrt weg'},
+    {id:'photo-1743802969597-cded1a7356bd', w:1, s:'pflaster kopfsteinpflaster strassenbau weg hof'},
+    {id:'photo-1772852327572-d6344152e6ba', w:1, s:'strassenbau asphalt walze verkehrsflaeche tiefbau'},
+
+    /* Mauerwerk */
+    {id:'photo-1592853598064-5a7fa150592c', w:1, s:'mauerwerk maurer ziegel klinker mauern'},
+    {id:'photo-1525193792470-66955780542b', w:1, s:'mauerwerk ziegel klinker mauern fassade'},
+    {id:'photo-1531481517150-2228446fb6b0', w:1, s:'mauerwerk ziegel klinker mauern sichtmauerwerk'},
+
+    /* Planung und Bauleitung */
+    {id:'photo-1603901622056-0a5bee231395', w:1, s:'planung bauplan zeichnung statik entwurf architekt'},
+    {id:'photo-1589233361468-0128345570e8', w:1, s:'planung bauplan bauleitung aufmass zeichnung'},
+    {id:'photo-1774600166834-175d06febcd4', b:1, w:1, s:'bauleitung beratung planung besprechung allgemein'},
+
+    /* Betrieb */
+    {id:'photo-1426927308491-6380b6a9936f', t:1, w:1, s:'bauhof werkstatt lager betrieb allgemein'},
+    {id:'photo-1683115099191-51e617fc5ff1', t:1, w:1, s:'bauhof werkstatt lager betrieb allgemein'},
+    {id:'photo-1731694411560-050e5b91e943', t:1, w:1, s:'bauhof werkstatt lager betrieb allgemein'},
+
+    /* Ingenieur- und Brueckenbau.
+       Nachgelegt, weil auf der ersten echten Bauseite (Juergen Martens)
+       "Ingenieurbau" und "Brueckenbau" KEIN einziges Bild im Vorrat
+       fanden und auf Bauhelme zurueckfielen. Zwei von sechs Kacheln
+       zeigten damit Warnwesten statt Bauwerk. */
+    {id:'photo-1763113349178-05cded58108e', b:1, w:1, s:'brueckenbau bruecke ingenieurbau kran spannbeton'},
+    {id:'photo-1759849556341-f4767cb26ae0', w:1, s:'brueckenbau bruecke ingenieurbau kran segment'},
+    {id:'photo-1708786910201-eb908f463782', w:1, s:'brueckenbau bruecke ingenieurbau kran gleis verkehrsbau'},
+    {id:'photo-1691149210746-c6bbb40f4bf6', w:1, s:'brueckenbau bruecke ingenieurbau pfeiler wasserbau'},
+    {id:'photo-1673978481178-b4d72cfd2fb9', w:1, s:'ingenieurbau kran traeger montage grossbaustelle'},
+    {id:'photo-1785257272547-f8dd0b6aa3f5', w:1, s:'stahlbau traeger tragwerk konstruktion halle ingenieurbau'},
+
+    /* Geruest, Fassade, Sanierung und Instandsetzung */
+    {id:'photo-1693183040602-b8f29c4ca4ac', w:1, s:'geruest geruestbau fassade sanierung instandsetzung altbau'},
+    {id:'photo-1562316120-0f581a35b9d1', b:1, w:1, s:'geruest geruestbau fassade sanierung instandsetzung modernisierung'},
+    {id:'photo-1542350880924-09225f70e026', w:1, s:'geruest geruestbau fassade sanierung arbeiten'},
+    {id:'photo-1653837105223-63912447c7a0', w:1, s:'sanierung instandsetzung altbau fassade geruest modernisierung'},
+
+    /* Abbruch und Rueckbau */
+    {id:'photo-1711618732595-0c517e08d40c', b:1, w:1, s:'abbruch rueckbau abriss bagger entkernung'},
+    {id:'photo-1677588508537-5106322c2d40', w:1, s:'abbruch rueckbau abriss bagger gebaeude'},
+    {id:'photo-1599732596061-1f381074f115', w:1, s:'abbruch rueckbau abriss bagger altbau'},
+    {id:'photo-1710765540315-096c7ac61007', w:1, s:'abbruch rueckbau abriss greifer bagger'},
+
+    /* Kanal- und Leitungsbau */
+    {id:'photo-1645070029556-809b2517151e', b:1, w:1, s:'kanalbau leitungsbau graben rohr tiefbau erdarbeiten'},
+    {id:'photo-1565364507085-325347bae748', w:1, s:'kanalbau leitungsbau rohr graben tiefbau'},
+
+    /* Neutral */
+    {id:'photo-1662309376159-b95fb193d96b', n:1, w:1, s:'baustelle sicherheit allgemein'},
+    {id:'photo-1622612023350-b15f063eabe6', n:1, w:1, s:'baustelle sicherheit allgemein'},
+    {id:'photo-1509453721491-c3af5961df76', n:1, w:1, s:'baustelle sicherheit planung allgemein'}
+  ];
+
+  var samen = (function(t){ var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h; })("juergen-martens-2" || "x");
+
+  function passt(text, schlag){
+    /* Umlaute angleichen. Die Schlagwoerter sind in ue/oe/ae geschrieben,
+       die Leistungen auf den Seiten tragen echte Umlaute — "Brueckenbau"
+       trifft "Brückenbau" sonst nie, und genau das ist passiert:
+       Brueckenbau, Geruestbau und Dachdaemmung fanden NULL Bilder und
+       fielen auf Bauhelme zurueck. */
+    var t = ' ' + (text || '').toLowerCase()
+      .replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss')
+      .replace(/[^a-z]+/g, ' ').trim() + ' ';
+    var punkte = 0;
+    schlag.split(' ').forEach(function(w){
+      if (!w) return;
+      if (w === 'allgemein'){ if (t.indexOf(' allgemein ') >= 0) punkte += 1; return; }
+      if (t.indexOf(' ' + w + ' ') >= 0) punkte += 12;
+      else if (t.indexOf(w) >= 0) punkte += 6;
+      else if (w.length > 5 && t.split(' ').some(function(x){ return x.length > 4 && w.indexOf(x) >= 0; })) punkte += 4;
+    });
+    return punkte;
+  }
+
+  var vergeben = {};
+  function inFrage(e, rolle){
+    if (rolle === 'b') return !!e.b;
+    if (rolle === 't') return !!e.t;
+    return true;
+  }
+  function streuung(versatz){
+    var x = (samen ^ (((versatz || 0) + 1) * 2654435761)) >>> 0;
+    x = (x ^ (x >>> 15)) >>> 0;
+    x = Math.imul(x, 2246822519) >>> 0;
+    x = (x ^ (x >>> 13)) >>> 0;
+    return x;
+  }
+  function waehle(text, nurRolle, versatz, neben){
+    var beste = null, bestePunkte = -1, kandidaten = [];
+    VORRAT.forEach(function(e){
+      if (!inFrage(e, nurRolle) || vergeben[e.id]) return;
+      var inhalt = passt(text, e.s) * 3 + (neben ? passt(neben, e.s) : 0);
+      if (inhalt > bestePunkte) bestePunkte = inhalt;
+      kandidaten.push({ e: e, punkte: inhalt });
+    });
+    if (bestePunkte >= 10){
+      var anteil = (nurRolle === 'b' || nurRolle === 't') ? 0.6 : 0.85;
+      var schwelle = Math.max(10, Math.ceil(bestePunkte * anteil));
+      var gleichwertig = kandidaten.filter(function(k){ return k.punkte >= schwelle; });
+      if (nurRolle === 't'){
+        gleichwertig = gleichwertig.concat(kandidaten.filter(function(k){
+          return k.punkte < schwelle && k.e.s.indexOf('allgemein') >= 0;
+        }));
+      }
+      var vorzeigbar = gleichwertig.filter(function(k){ return k.e.w; });
+      if (vorzeigbar.length) gleichwertig = vorzeigbar;
+      beste = gleichwertig[streuung(versatz) % gleichwertig.length].e;
+    }
+    if (!beste){
+      var neutral = VORRAT.filter(function(e){ return e.n && inFrage(e, nurRolle) && !vergeben[e.id]; });
+      if (neutral.length) beste = neutral[streuung(versatz) % neutral.length];
+    }
+    if (!beste){
+      var frei = VORRAT.filter(function(e){ return inFrage(e, nurRolle); });
+      beste = frei[streuung(versatz) % frei.length];
+    }
+    vergeben[beste.id] = 1;
+    return A + beste.id;
+  }
+
+  /* ——— Leere Felder raeumen ——— */
+
+  /* Leistungskacheln ohne Ueberschrift verschwinden. Bleibt eine
+     ungerade Zahl uebrig, darf die letzte die ganze Breite nehmen,
+     damit unten rechts kein Loch steht. */
+  var kacheln = Array.prototype.slice.call(document.querySelectorAll('[data-kachel]'));
+  kacheln = kacheln.filter(function(k){
+    var h = k.querySelector('h3');
+    if (!h || !h.textContent.trim()){ k.remove(); return false; }
+    return true;
+  });
+  if (kacheln.length % 2 === 1) kacheln[kacheln.length - 1].style.gridColumn = '1 / -1';
+
+  /* Referenzen: nur zeigen, was wirklich dasteht. */
+  var posten = Array.prototype.slice.call(document.querySelectorAll('.posten'));
+  posten = posten.filter(function(p){
+    var b = p.querySelector('b');
+    if (!b || !b.textContent.trim()){ p.remove(); return false; }
+    var ort = p.querySelector('.ort');
+    if (ort && !ort.textContent.trim()) ort.remove();
+    return true;
+  });
+  var refAbschnitt = document.querySelector('[data-weg-wenn-leer-abschnitt]');
+  if (refAbschnitt && !posten.length) refAbschnitt.remove();
+  else if (posten.length && posten.length < 3){
+    var reihe = posten[0].parentNode;
+    if (reihe) reihe.style.gridTemplateColumns = 'repeat(' + posten.length + ',1fr)';
+  }
+
+  /* Bauleitung: steht keine einzige Person da, faellt der ganze
+     Abschnitt weg. Der gemeinsame Kern raeumt zwar leere Personen auf,
+     sucht den Abschnitt darueber aber unter einem anderen Klassennamen
+     und findet ihn hier nicht — mit der Folge, dass bei Juergen Martens
+     eine Ueberschrift "Bauleitung" ueber 364 Pixeln Nichts stand. */
+  (function(){
+    var raster = document.querySelector('.personen');
+    if (!raster) return;
+    Array.prototype.forEach.call(raster.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = raster.querySelectorAll('.person');
+    var abschnitt = raster.closest('.team');
+    if (!leute.length){ if (abschnitt) abschnitt.remove(); return; }
+    if (leute.length < 3) raster.style.gridTemplateColumns = 'repeat(' + leute.length + ',minmax(0,24rem))';
+  })();
+
+  /* Felder ohne Inhalt verschwinden samt Beschriftung. */
+  Array.prototype.forEach.call(document.querySelectorAll('[data-weg-wenn-leer]'), function(d){
+    var beschriftung = d.querySelector('span');
+    var rest = d.textContent.replace(beschriftung ? beschriftung.textContent : '', '').trim();
+    if (!rest) d.remove();
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.adresse'), function(a){
+    if (a.children.length === 1) a.style.gridTemplateColumns = '1fr';
+    if (a.children.length === 0) a.remove();
+  });
+
+  /* ——— Bilder verteilen ———
+     Erst Buehne und Betrieb, dann die Kacheln: die tragen eine
+     Beschriftung und muessen inhaltlich sitzen, deshalb bekommen sie
+     den strengen Massstab. Das Einsatzgebiet wird ZULETZT bedient,
+     weil es nur eine Flaeche hinterlegt. */
+  var fach = kacheln.map(function(k){
+    var h = k.querySelector('h3'), p = k.querySelector('p');
+    return (h ? h.textContent : '') + ' ' + (p ? p.textContent : '');
+  }).join(' ') + ' ' + (document.querySelector('.buehne h1') ? document.querySelector('.buehne h1').textContent : '');
+
+  var wurzel = document.documentElement;
+  wurzel.style.setProperty('--foto-buehne', 'url("' + waehle(fach, 'b', 0) + GROSS + '")');
+  wurzel.style.setProperty('--foto-betrieb', 'url("' + waehle(fach, 't', 3) + GROSS + '")');
+
+  kacheln.forEach(function(k, i){
+    var h = k.querySelector('h3'), p = k.querySelector('p');
+    var bild = k.querySelector('.kachel-foto');
+    if (!bild) return;
+    bild.style.backgroundImage = 'url("' +
+      waehle(h ? h.textContent : '', 'g', i, p ? p.textContent : '') + MITTE + '")';
+  });
+
+  wurzel.style.setProperty('--foto-gebiet', 'url("' + waehle(fach, 'g', 61) + GROSS + '")');
+
+  /* Hat der Betrieb ein eigenes Foto geliefert, liegt es als <img> im
+     Betriebskasten und deckt das Vorratsbild ab. Fehlt es, hat das
+     onerror-Attribut es entfernt und die Flaeche darunter traegt. */
+})();
+</script>
+</body>
+</html>
