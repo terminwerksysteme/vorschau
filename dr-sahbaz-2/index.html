@@ -1,0 +1,1215 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Zahnarztpraxis Dr. Cebrail Sahbaz — Zahnarztpraxis am Steindamm in Hamburg</title>
+<meta name="description" content="Zahnarztpraxis Dr. Cebrail Sahbaz am Steindamm 3 in 20099 Hamburg. Untersuchung, Vorsorge und Behandlung. Termine telefonisch unter +49 40 409841.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Public+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ——————————————————————————————————————————————————————————
+   ZAHNARZTPRAXIS
+   Eigener Aufbau, kein gemeinsamer Kern — die vierte eigenstaendige
+   Vorlage nach Handwerk, Bau und GaLaBau.
+
+   Warum sie anders gebaut ist:
+     Handwerk — Foto neben dem Text, Leistungsliste mit Wechselbild.
+     Bau      — Foto ueber die volle Breite dahinter, strenges Raster.
+     GaLaBau  — grosses Foto mit schwebender Karte, Bildmosaik.
+     Zahnarzt — ZENTRIERT gesetzte Buehne ohne Bild dahinter, Leistungen
+                als ruhige Textliste statt Fotokacheln, das Team als
+                Mittelpunkt.
+
+   Der Grund ist nicht Abwechslung, sondern die Branche:
+   1. Eine Praxis wird nicht nach dem Bild ausgesucht, sondern nach
+      Vertrauen. Das entsteht ueber Gesichter und ueber Klarheit —
+      wann habt ihr offen, wie komme ich hin, was kostet mich das.
+   2. Freie Zahnarztfotos sind durchweg unangenehm: offene Muender,
+      Bohrer, Masken aus Nahaufnahme. So etwas verkauft keine Praxis,
+      es schreckt ab. Deshalb traegt diese Seite bewusst wenige Bilder
+      und dafuer eine sehr saubere Typografie.
+   3. Das Heilmittelwerbegesetz verbietet Heilversprechen,
+      Vorher-Nachher-Bilder und Werbung mit Patientenstimmen. Die
+      Vorlage hat deshalb gar keinen Platz fuer so etwas — was es
+      nicht gibt, kann auch nicht versehentlich gefuellt werden.
+   —————————————————————————————————————————————————————————— */
+:root{
+  --akzent:#2e7f8c;
+  --akzent-d:#266873;
+  --akzent-hell:color-mix(in srgb,var(--akzent) 55%,white);
+  --akzent-blass:color-mix(in srgb,var(--akzent) 9%,white);
+
+  --tief:#17262B;
+  --tief-2:#1F333A;
+  --grau:#5C6B70;
+  --grau-hell:#8A979B;
+  --papier:#FBFBFA;
+  --papier-2:#F2F4F4;
+  --linie:rgba(23,38,43,.11);
+  --kopf:"Instrument Sans",system-ui,sans-serif;
+  --text:"Public Sans",system-ui,sans-serif;
+  --rund:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--papier);color:var(--tief);font-family:var(--text);
+  font-size:16.5px;line-height:1.68;font-weight:400;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-family:var(--kopf);font-weight:600;line-height:1.13;letter-spacing:-.022em}
+p{margin:0}
+a{color:inherit}
+.huelle{width:min(1160px,100%);margin-inline:auto;
+  padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.eng{width:min(760px,100%);margin-inline:auto}
+.marke-label{display:block;font-size:.76rem;font-weight:600;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--akzent)}
+
+/* ———— Kopf ———— */
+.kopf{position:sticky;top:0;z-index:40;background:rgba(251,251,250,.92);
+  backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--linie)}
+.kopf-in{display:flex;align-items:center;gap:1.3rem;padding-block:.7rem}
+.marke-link{display:flex;align-items:center;gap:.7rem;min-width:0;text-decoration:none;color:inherit}
+.logo-platte{background:#fff;border-radius:10px;padding:.3rem .5rem;display:grid;place-items:center;flex:none;
+  box-shadow:0 1px 3px rgba(23,38,43,.1)}
+.logo-platte img{max-height:40px;width:auto;mix-blend-mode:multiply}
+.wortmarke{min-width:0}
+.wortmarke b{display:block;font-family:var(--kopf);font-size:1.1rem;font-weight:600;letter-spacing:-.022em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wortmarke span{display:block;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--grau-hell)}
+.kopf nav{margin-left:auto;display:flex;gap:1.5rem;align-items:center}
+.kopf nav a:not(.taste){font-size:.9rem;color:var(--grau);text-decoration:none;transition:color .2s}
+.kopf nav a:not(.taste):hover{color:var(--tief)}
+.taste{display:inline-flex;align-items:center;gap:.45rem;background:var(--akzent);color:#fff;
+  font-family:var(--kopf);font-size:.92rem;font-weight:500;padding:.68rem 1.3rem;border-radius:999px;
+  text-decoration:none;border:0;cursor:pointer;
+  transition:background .2s,transform .2s,box-shadow .2s;
+  box-shadow:0 2px 10px color-mix(in srgb,var(--akzent) 30%,transparent)}
+.taste:hover{background:var(--akzent-d);transform:translateY(-1px);
+  box-shadow:0 7px 20px color-mix(in srgb,var(--akzent) 36%,transparent)}
+.kopf .taste{color:#fff}
+.taste span{transition:transform .26s cubic-bezier(.22,.61,.36,1)}
+.taste:hover span{transform:translateX(3px)}
+.taste--rand{background:transparent;color:var(--tief);box-shadow:inset 0 0 0 1.5px var(--linie)}
+.taste--rand:hover{background:#fff;color:var(--tief);box-shadow:inset 0 0 0 1.5px var(--akzent)}
+@media(max-width:900px){.kopf nav a:not(.taste){display:none}}
+
+/* ———— Bühne: mittig gesetzt, Bild darunter ————
+   Kein Foto hinter dem Text. Die Praxis sagt zuerst, wer sie ist und
+   wie man einen Termin bekommt; das Bild bestaetigt es danach. */
+.buehne{padding-block:clamp(3rem,7vw,5.6rem) 0;text-align:center;
+  background:linear-gradient(to bottom,var(--akzent-blass),var(--papier) 70%)}
+.buehne h1{font-size:clamp(2.1rem,1.5rem + 2.6vw,3.6rem);margin-top:1rem;text-wrap:balance}
+.buehne h1 em{font-style:normal;color:var(--akzent)}
+.buehne-lede{margin:1.2rem auto 0;font-size:clamp(1.02rem,.98rem + .22vw,1.16rem);color:var(--grau);
+  max-width:38rem}
+.buehne-tasten{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;margin-top:1.8rem}
+.buehne-bild{margin-top:clamp(2.2rem,4.5vw,3.4rem);border-radius:var(--rund);overflow:hidden;
+  aspect-ratio:21/9;background:var(--papier-2) var(--foto-buehne,none) center 52%/cover no-repeat;
+  box-shadow:0 24px 60px rgba(23,38,43,.16)}
+@media(max-width:700px){.buehne-bild{aspect-ratio:16/10}}
+
+/* ———— Terminleiste: das, was Patienten wirklich suchen ———— */
+.termin{margin-top:clamp(-3rem,-4vw,-2rem);position:relative;z-index:2}
+.termin-in{background:#fff;border-radius:var(--rund);box-shadow:0 10px 36px rgba(23,38,43,.12);
+  display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:0;overflow:hidden}
+.termin-feld{padding:clamp(1.1rem,2.2vw,1.6rem);border-left:1px solid var(--linie)}
+.termin-feld:first-child{border-left:0}
+.termin-feld .marke-label{font-size:.7rem}
+.termin-feld b{display:block;font-family:var(--kopf);font-size:1.12rem;font-weight:600;margin-top:.4rem}
+.termin-feld p{margin-top:.25rem;font-size:.9rem;color:var(--grau)}
+.termin-feld a{color:var(--akzent);text-decoration:none;font-weight:500}
+@media(max-width:820px){.termin-in{grid-template-columns:1fr}
+  .termin-feld{border-left:0;border-top:1px solid var(--linie)}
+  .termin-feld:first-child{border-top:0}}
+
+/* ———— Zahlen ———— */
+.koennen{padding-block:clamp(2.6rem,5vw,4rem)}
+.koennen-in{display:grid;grid-template-columns:repeat(var(--spalten,3),1fr);gap:clamp(1.4rem,3vw,2.6rem)}
+.fakt{text-align:center}
+.fakt b{display:block;font-family:var(--kopf);font-size:clamp(1.9rem,1.4rem + 1.8vw,2.9rem);
+  font-weight:600;color:var(--akzent)}
+.fakt span{display:block;margin-top:.3rem;font-size:.76rem;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--tief)}
+.fakt p{margin-top:.5rem;font-size:.92rem;color:var(--grau)}
+.koennen[data-ohne-zahlen] .fakt span{font-size:1.06rem;letter-spacing:0;text-transform:none;
+  font-family:var(--kopf);font-weight:600}
+@media(max-width:700px){.koennen-in{grid-template-columns:1fr}}
+
+/* ———— Leistungen: ruhige Textliste statt Fotokacheln ————
+   Bau hat Kacheln, GaLaBau ein Mosaik. Hier waere beides falsch: Die
+   freien Zahnarztfotos zeigen offene Muender und Bohrer. Eine saubere
+   Liste wirkt ruhiger und ist fuer den Patienten auch nuetzlicher. */
+.leistungen{padding-block:clamp(2.6rem,5.5vw,4.4rem);background:var(--papier-2)}
+.a-kopf{text-align:center;max-width:44rem;margin:0 auto clamp(2rem,4vw,3rem)}
+.a-kopf h2{font-size:clamp(1.8rem,1.4rem + 1.7vw,2.7rem);margin-top:.8rem}
+.a-kopf p{margin-top:.9rem;color:var(--grau)}
+.posten-reihe{display:grid;grid-template-columns:1fr 1fr;gap:0 clamp(2rem,4vw,3.6rem)}
+.posten{display:grid;grid-template-columns:auto 1fr;gap:0 1.1rem;align-items:start;
+  padding:clamp(1.1rem,2vw,1.5rem) 0;border-top:1px solid var(--linie)}
+.posten-nr{font-family:var(--kopf);font-size:.78rem;font-weight:600;color:var(--akzent);
+  padding-top:.28rem;font-variant-numeric:tabular-nums}
+.posten h3{font-family:var(--kopf);font-size:1.14rem;font-weight:600;letter-spacing:-.018em}
+.posten p{grid-column:2;margin-top:.3rem;font-size:.95rem;color:var(--grau)}
+@media(max-width:760px){.posten-reihe{grid-template-columns:1fr}}
+
+/* ———— Ihr erster Termin ———— */
+.ablauf{padding-block:clamp(2.8rem,5.5vw,4.6rem)}
+.strahl{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.2vw,2rem);margin-top:.5rem}
+.schritt{position:relative;padding-top:1.5rem;border-top:2px solid var(--akzent-blass)}
+.schritt::before{content:"";position:absolute;left:0;top:-2px;width:34%;height:2px;background:var(--akzent)}
+.schritt .nr{font-family:var(--kopf);font-size:.76rem;font-weight:600;letter-spacing:.14em;color:var(--akzent)}
+.schritt h3{font-size:1.12rem;margin-top:.45rem}
+.schritt p{margin-top:.4rem;font-size:.93rem;color:var(--grau)}
+@media(max-width:860px){.strahl{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.strahl{grid-template-columns:1fr}}
+
+/* ———— Team: der Kern einer Praxisseite ———— */
+.team{padding-block:clamp(2.8rem,5.5vw,4.6rem);background:var(--papier-2)}
+.personen{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,2.6vw,2.2rem)}
+.person{text-align:center}
+.kopfbild-huelle{position:relative;aspect-ratio:1/1;border-radius:50%;overflow:hidden;
+  width:min(100%,15rem);margin:0 auto 1.2rem;background:var(--akzent-blass);
+  box-shadow:0 12px 32px rgba(23,38,43,.12)}
+.person img.kopfbild{width:100%;height:100%;object-fit:cover}
+.person .monogramm{position:absolute;inset:0;display:grid;place-items:center;background:var(--akzent-blass)}
+.person .monogramm span{font-family:var(--kopf);font-size:2.9rem;font-weight:600;color:var(--akzent)}
+.person h3{font-size:1.2rem}
+.person .rolle{display:block;margin-top:.25rem;font-size:.8rem;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--akzent)}
+.person p{margin-top:.7rem;font-size:.93rem;color:var(--grau);max-width:22rem;margin-inline:auto}
+@media(max-width:860px){.personen{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.personen{grid-template-columns:1fr}}
+
+/* ———— Praxis, Zeiten, Anfahrt ———— */
+.praxis{padding-block:clamp(2.8rem,5.5vw,4.6rem)}
+.praxis-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4.5vw,3.6rem);align-items:start}
+.praxis-bild{aspect-ratio:4/3;border-radius:var(--rund);overflow:hidden;
+  background:var(--papier-2) var(--foto-betrieb,none) center/cover no-repeat;
+  box-shadow:0 16px 40px rgba(23,38,43,.14)}
+.zeiten{background:#fff;border-radius:var(--rund);padding:1.4rem 1.6rem;
+  box-shadow:0 4px 20px rgba(23,38,43,.08)}
+.zeiten b{display:block;font-family:var(--kopf);font-size:1.14rem;font-weight:600;margin-top:.2rem}
+.zeiten table{width:100%;border-collapse:collapse;margin-top:.9rem;font-size:.95rem}
+.zeiten td{padding:.46rem 0;border-bottom:1px solid var(--linie)}
+.zeiten tr:last-child td{border-bottom:0}
+.zeiten td:last-child{text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
+.zeiten-fuss{margin-top:.85rem;font-size:.88rem;color:var(--grau)}
+.wege{display:grid;gap:.9rem;margin-top:1.4rem}
+.weg{background:#fff;border-radius:var(--rund);padding:1rem 1.2rem;box-shadow:0 2px 12px rgba(23,38,43,.06)}
+.weg h3{font-size:1.02rem}
+.weg p{margin-top:.3rem;font-size:.91rem;color:var(--grau)}
+@media(max-width:860px){.praxis-in{grid-template-columns:1fr}}
+
+/* ———— Notdienst ———— */
+.notdienst{background:var(--tief);color:#D4DCDE;padding-block:clamp(2.4rem,4.6vw,3.6rem)}
+.notdienst-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.notdienst h2{color:#fff;font-size:clamp(1.6rem,1.3rem + 1.3vw,2.3rem);margin-top:.7rem}
+.notdienst p{margin-top:.9rem;color:#9FAFB3}
+.notdienst .ruf{display:inline-block;margin-top:1.2rem;font-family:var(--kopf);font-weight:600;
+  font-size:clamp(1.5rem,1.2rem + 1.3vw,2.2rem);color:#fff;text-decoration:none}
+@media(max-width:860px){.notdienst-in{grid-template-columns:1fr}}
+
+/* ———— Kontakt ———— */
+.kontakt-flaeche{padding-block:clamp(2.8rem,5.5vw,4.6rem);background:var(--papier-2)}
+.kontakt{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4.5vw,3.6rem);align-items:start}
+.kontakt h2{font-size:clamp(1.8rem,1.4rem + 1.7vw,2.7rem);margin-top:.8rem}
+.ruf{display:inline-block;margin-top:1.4rem;font-family:var(--kopf);font-weight:600;
+  font-size:clamp(1.6rem,1.3rem + 1.4vw,2.4rem);text-decoration:none;letter-spacing:-.025em}
+.ruf-zeit{margin-top:.3rem;font-size:.9rem;color:var(--grau)}
+.adresse{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.6rem;
+  border-top:1px solid var(--linie);padding-top:1.3rem}
+.adresse span{display:block;font-size:.74rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--akzent);margin-bottom:.3rem}
+.form{background:#fff;border-radius:var(--rund);padding:clamp(1.3rem,2.6vw,2rem);
+  box-shadow:0 4px 24px rgba(23,38,43,.09)}
+.feld{margin-bottom:.9rem}
+.feld label{display:block;font-size:.85rem;font-weight:500;margin-bottom:.33rem}
+.feld input,.feld textarea{width:100%;font-family:var(--text);font-size:.97rem;color:var(--tief);
+  background:var(--papier);border:1px solid var(--linie);border-radius:10px;padding:.7rem .85rem}
+.feld textarea{min-height:7rem;resize:vertical;line-height:1.55}
+.feld input:focus,.feld textarea:focus{outline:2px solid var(--akzent);outline-offset:1px}
+.form .taste{width:100%;justify-content:center;margin-top:.3rem}
+.form-hinweis{margin-top:.8rem;font-size:.84rem;color:var(--grau)}
+@media(max-width:860px){.kontakt{grid-template-columns:1fr}.adresse{grid-template-columns:1fr}}
+
+/* ———— Fuß ———— */
+.fuss{background:var(--tief);color:#9FAFB3;padding-block:clamp(2.4rem,4.4vw,3.4rem);font-size:.93rem}
+.fuss-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:1.6rem}
+.fuss b{display:block;font-family:var(--kopf);font-size:1.06rem;font-weight:600;color:#fff;margin-bottom:.45rem}
+.fuss a{color:#D4DCDE}
+.fuss .zeile{margin-top:2rem;padding-top:1.1rem;border-top:1px solid rgba(255,255,255,.14);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+@media(max-width:760px){.fuss-grid{grid-template-columns:1fr}}
+/* ——————————————————————————————————————————————————————————
+   Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+   Die Farben kommen aus der Marke TerminWerk (#132F38 und #44B370)
+   und NICHT aus der Akzentfarbe des Kunden: Die Kennzeichnung gehoert
+   uns, nicht seinem Betrieb, und soll sich sichtbar davon absetzen.
+   —————————————————————————————————————————————————————————— */
+body{padding-bottom:3.5rem}
+@media(max-width:700px){body{padding-bottom:3.1rem}}
+
+:root{
+  --tw-tief:#101F26;
+  --tw-gruen:#44B370;
+  --tw-hell:#DCE5E2;
+}
+
+/* ———— Marke oben rechts ———— */
+.vorschaumarke{
+  position:fixed;
+  /* --marke-oben misst der gemeinsame Kern aus der echten Kopfzeile.
+     Die 84 Pixel sind nur der Rueckfall, falls das Skript nicht laeuft. */
+  top:calc(var(--marke-oben,84px) + env(safe-area-inset-top,0px));
+  right:max(16px,env(safe-area-inset-right,0px));
+  z-index:95;pointer-events:none;
+  display:flex;align-items:center;gap:.62rem;
+  padding:.6rem .95rem .6rem .7rem;
+  background:rgba(16,31,38,.93);
+  backdrop-filter:saturate(1.4) blur(8px);
+  border-left:4px solid var(--tw-gruen);
+  border-radius:4px;
+  box-shadow:0 10px 30px rgba(8,16,20,.4),0 2px 6px rgba(8,16,20,.3);
+  animation:vm-auf .5s cubic-bezier(.22,.61,.36,1) .35s both;
+}
+@keyframes vm-auf{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.vorschaumarke{animation:none}}
+.vm-zeichen{display:block;flex:none}
+.vm-zeichen svg{width:30px;height:30px;display:block}
+.vm-text{display:block;line-height:1.15}
+.vorschaumarke b{
+  display:block;font-size:.84rem;font-weight:800;letter-spacing:.17em;
+  text-transform:uppercase;color:#fff;
+}
+.vorschaumarke .vm-text span{
+  display:block;margin-top:.1rem;font-size:.7rem;font-weight:500;
+  letter-spacing:.04em;color:var(--tw-gruen);
+}
+@media (max-width:560px){
+  .vorschaumarke{top:calc(var(--marke-oben,68px) + env(safe-area-inset-top,0px));
+    padding:.45rem .7rem .45rem .52rem;gap:.45rem}
+  .vm-zeichen svg{width:24px;height:24px}
+  .vorschaumarke b{font-size:.72rem}
+  .vorschaumarke .vm-text span{font-size:.62rem}
+}
+
+/* ———— Schmale Leiste unten ————
+   Eine Zeile statt zwei. Vorher nahm sie fast 80 Pixel Hoehe weg und
+   wirkte wie ein Cookie-Banner; jetzt ist sie eine ruhige Fusszeile,
+   die trotzdem klar sagt, was die Seite ist. */
+.entwurf{
+  position:fixed;left:0;right:0;bottom:0;z-index:96;
+  background:linear-gradient(to right,var(--tw-tief),#16313B 58%,var(--tw-tief));
+  color:var(--tw-hell);
+  border-top:2px solid var(--tw-gruen);
+  font-size:.79rem;line-height:1.3;
+  padding:.42rem max(16px,env(safe-area-inset-left,0px)) calc(.5rem + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -6px 22px rgba(8,16,20,.22);
+}
+.entwurf-in{
+  width:min(1220px,100%);margin-inline:auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:.3rem .72rem;flex-wrap:wrap;
+}
+.entwurf-punkt{
+  width:7px;height:7px;border-radius:50%;background:var(--tw-gruen);flex:none;
+  box-shadow:0 0 0 3px rgba(68,179,112,.22);
+}
+.entwurf-haupt{font-weight:600;color:#fff}
+.entwurf-trenner{width:1px;height:14px;background:rgba(255,255,255,.2);flex:none}
+.entwurf-detail{color:#93A5AC}
+.entwurf-links{display:flex;gap:.3rem .72rem}
+.entwurf a{color:var(--tw-gruen);text-decoration:none;border-bottom:1px solid rgba(68,179,112,.4)}
+.entwurf a:hover{color:#fff;border-bottom-color:#fff}
+
+@media (min-width:701px){.entwurf-in{white-space:nowrap}}
+@media (max-width:1180px){.entwurf-frist{display:none}}
+@media (max-width:980px){.entwurf-trenner,.entwurf-detail{display:none}}
+@media (max-width:700px){
+  .entwurf{font-size:.74rem}
+  .entwurf-detail{display:none}
+  .nur-breit{display:none}
+}
+@media (min-width:701px){.nur-schmal{display:none}}
+
+/* ———— "Wie es weitergeht" ————
+   Bewusst in den Farben von TerminWerk und nicht in der Akzentfarbe
+   des Betriebs: Dieser Abschnitt ist unser Wort an den Unternehmer,
+   nicht Teil seiner Seite. Er steht ueber seinem eigenen Fussbereich,
+   damit das Letzte, was der Betrieb liest, SEINE Anschrift ist und
+   nicht unsere Werbung. */
+/* Eigene Schrift und keine Erbschaft aus der Kundenvorlage: Sonst
+   stuende dieser Abschnitt bei Bau in Grossbuchstaben und bei GaLaBau
+   in einer Serife — unser Wort an den Unternehmer soll auf allen
+   sieben Branchen gleich aussehen. */
+.tw-schritte,.tw-schritte h2,.tw-schritte b,.tw-schritte p,.tw-schritte a,.tw-schritte span{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;text-transform:none;
+  font-style:normal;letter-spacing:normal}
+.tw-label,.tw-nr{letter-spacing:.18em !important;text-transform:uppercase !important}
+.tw-schritte{background:var(--tw-tief);color:#C6D3CF;
+  padding-block:clamp(2.8rem,5.5vw,4.4rem);
+  border-top:3px solid var(--tw-gruen)}
+.tw-in{width:min(1200px,100%);margin-inline:auto;
+  padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.tw-kopf{max-width:46rem}
+.tw-label{display:inline-flex;align-items:center;gap:.6rem;font-size:.76rem;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;color:#fff}
+.tw-label svg{width:26px;height:26px;display:block;flex:none}
+.tw-schritte h2{margin:1rem 0 0;color:#fff;font-size:clamp(1.6rem,1.25rem + 1.5vw,2.4rem);
+  line-height:1.14;letter-spacing:-.015em;font-weight:700}
+.tw-kopf > p{margin-top:.9rem;font-size:1.01rem;line-height:1.66;color:#A9BAB5;max-width:40rem}
+.tw-liste{list-style:none;margin:clamp(1.8rem,3.4vw,2.6rem) 0 0;padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2vw,1.8rem)}
+.tw-liste li{border-top:1px solid rgba(255,255,255,.17);padding-top:1rem}
+.tw-nr{display:block;font-size:.74rem;font-weight:700;letter-spacing:.14em;color:var(--tw-gruen)}
+.tw-liste b{display:block;margin-top:.45rem;color:#fff;font-size:1.06rem;font-weight:700;
+  letter-spacing:-.01em}
+.tw-liste p{margin-top:.45rem;font-size:.92rem;line-height:1.6;color:#A9BAB5}
+.tw-fuss{margin-top:clamp(1.8rem,3.4vw,2.6rem);padding-top:1.3rem;
+  border-top:1px solid rgba(255,255,255,.17);
+  display:flex;gap:1.2rem 2rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.tw-hinweis{font-size:.88rem;color:#8EA19C;max-width:42rem;margin:0}
+.tw-taste{display:inline-flex;align-items:center;gap:.5rem;background:var(--tw-gruen);color:#0B1A12;
+  font-size:.94rem;font-weight:700;padding:.72rem 1.4rem;border-radius:999px;text-decoration:none;
+  white-space:nowrap;transition:transform .2s,box-shadow .2s,background .2s;
+  box-shadow:0 4px 16px rgba(68,179,112,.28)}
+.tw-taste:hover{background:#56C681;transform:translateY(-1px);box-shadow:0 8px 22px rgba(68,179,112,.36)}
+.tw-taste span{transition:transform .26s cubic-bezier(.22,.61,.36,1)}
+.tw-taste:hover span{transform:translateX(3px)}
+@media (max-width:900px){.tw-liste{grid-template-columns:1fr 1fr}}
+@media (max-width:540px){.tw-liste{grid-template-columns:1fr}.tw-fuss{align-items:flex-start}}
+
+</style>
+</head>
+<body>
+
+<header class="kopf">
+  <div class="huelle kopf-in">
+    <a class="marke-link" href="#oben">
+      <span class="logo logo-platte"><img src="" alt="Zahnarztpraxis Dr. Cebrail Sahbaz" onerror="this.remove();"></span>
+      <span class="wortmarke"><b>Dr. Sahbaz</b><span>Zahnarztpraxis</span></span>
+    </a>
+    <nav>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#team">Praxisteam</a>
+      <a href="#praxis">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="taste" href="#kontakt">Termin vereinbaren<span aria-hidden="true">&rarr;</span></a>
+    </nav>
+  </div>
+</header>
+
+<section class="buehne" id="oben">
+  <div class="huelle">
+    <div class="eng buehne-text">
+      <span class="marke-label">Zahnarztpraxis Hamburg</span>
+      <h1>Zahnarzt am Steindamm, <em>5,0 Sterne aus 20 Rezensionen.</em></h1>
+      <p class="buehne-lede">Zahnärztliche Untersuchung, Vorsorge und Behandlung am Steindamm in Hamburg. Sie erreichen die Praxis von Dr. Cebrail Sahbaz telefonisch zur Terminvereinbarung.</p>
+      <div class="buehne-tasten">
+        <a class="taste" href="#kontakt">Termin vereinbaren<span aria-hidden="true">&rarr;</span></a>
+        <a class="taste taste--rand" href="tel:+4940409841">+49 40 409841</a>
+      </div>
+    </div>
+    <div class="buehne-bild"></div>
+  </div>
+</section>
+
+<section class="termin">
+  <div class="huelle">
+    <div class="termin-in">
+      <div class="termin-feld" data-weg-wenn-leer>
+        <span class="marke-label">Termin</span>
+        <b><a href="tel:+4940409841">+49 40 409841</a></b>
+        <p>Termine nach telefonischer Vereinbarung</p>
+      </div>
+      <div class="termin-feld" data-weg-wenn-leer>
+        <span class="marke-label">Anschrift</span>
+        <b>Steindamm 3</b>
+        <p>20099 Hamburg</p>
+      </div>
+      <div class="termin-feld" data-weg-wenn-leer>
+        <span class="marke-label">Abrechnung</span>
+        <b></b>
+        <p></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="koennen">
+  <div class="huelle koennen-in">
+    <div class="fakt"><b data-zaehlen></b><span>Standort in Hamburg</span><p>Sie finden die Praxis am Steindamm 3 in 20099 Hamburg.</p></div>
+    <div class="fakt"><b data-zaehlen></b><span>Termin per Telefon</span><p>Unter +49 40 409841 vereinbaren Sie Ihren Termin.</p></div>
+    <div class="fakt"><b data-zaehlen></b><span>Persönliches Gespräch</span><p>Das Vorgehen wird vor der Behandlung mit Ihnen besprochen.</p></div>
+  </div>
+</section>
+
+<section class="leistungen" id="leistungen">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="marke-label">Leistungen</span>
+      <h2>Leistungen der Praxis</h2>
+      <p>Die Praxis bietet zahnärztliche Versorgung für Ihre Mundgesundheit. Welche Behandlung für Sie infrage kommt, klären wir im Gespräch.</p>
+    </div>
+    <div class="posten-reihe">
+      <div class="posten"><span class="posten-nr">01</span><h3>Kontrolluntersuchung</h3><p>Regelmäßige Untersuchung von Zähnen, Zahnfleisch und Mundraum.</p></div>
+      <div class="posten"><span class="posten-nr">02</span><h3>Prophylaxe</h3><p>Vorsorge und Zahnreinigung zur Pflege Ihrer Zähne.</p></div>
+      <div class="posten"><span class="posten-nr">03</span><h3>Zahnerhaltung</h3><p>Behandlung von Zähnen mit dem Ziel, natürliche Zahnsubstanz zu bewahren.</p></div>
+      <div class="posten"><span class="posten-nr">04</span><h3>Zahnersatz</h3><p>Beratung und Versorgung, wenn Zähne ersetzt werden müssen.</p></div>
+      <div class="posten"><span class="posten-nr">05</span><h3>Akute Beschwerden</h3><p>Bei plötzlichen Zahnbeschwerden sprechen Sie uns bitte telefonisch an.</p></div>
+      <div class="posten"><span class="posten-nr">06</span><h3>Beratung</h3><p>Wir erklären Befunde und mögliche Behandlungswege verständlich.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="ablauf" id="ablauf">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="marke-label">Ihr erster Termin</span>
+      <h2>So läuft ein Besuch ab</h2>
+      <p>Der Ablauf ist überschaubar und wird mit Ihnen abgestimmt.</p>
+    </div>
+    <div class="strahl">
+      <div class="schritt"><span class="nr">SCHRITT 1</span><h3>Termin</h3><p>Sie rufen an und vereinbaren einen passenden Termin.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 2</span><h3>Gespräch</h3><p>Wir besprechen Ihr Anliegen und Ihre Vorgeschichte.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 3</span><h3>Untersuchung</h3><p>Der Zahnarzt untersucht und erklärt Ihnen den Befund.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 4</span><h3>Behandlung</h3><p>Das weitere Vorgehen legen wir gemeinsam mit Ihnen fest.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="huelle">
+    <div class="a-kopf">
+      <span class="marke-label">Praxisteam</span>
+      <h2>Ihr Zahnarzt</h2>
+      <p>Die Praxis am Steindamm wird von Dr. Cebrail Sahbaz geführt.</p>
+    </div>
+    <div class="personen">
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="Dr. Cebrail Sahbaz" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono="Dr. Cebrail Sahbaz"><span></span></div>
+        </div>
+        <h3>Dr. Cebrail Sahbaz</h3><span class="rolle">Zahnarzt</span><p>Zahnarzt und Namensgeber der Praxis am Steindamm in Hamburg.</p>
+      </div>
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono=""><span></span></div>
+        </div>
+        <h3></h3><span class="rolle"></span><p></p>
+      </div>
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono=""><span></span></div>
+        </div>
+        <h3></h3><span class="rolle"></span><p></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="praxis" id="praxis">
+  <div class="huelle praxis-in">
+    <div>
+      <div class="praxis-bild">
+        <img class="band-bild" src="" alt="Behandlungsraum einer Zahnarztpraxis" loading="lazy" onerror="this.remove();"
+          style="width:100%;height:100%;object-fit:cover">
+      </div>
+      <div class="wege">
+        <div class="weg"><h3>Anrufen</h3><p>Terminvereinbarung telefonisch unter +49 40 409841.</p></div>
+        <div class="weg"><h3>Anfahrt</h3><p>Die Praxis liegt am Steindamm 3 in Hamburg.</p></div>
+        <div class="weg"><h3>Nachricht</h3><p>Schreiben Sie uns, wir melden uns bei Ihnen.</p></div>
+      </div>
+    </div>
+    <div>
+      <span class="marke-label">Sprechzeiten</span>
+      <h2 style="font-size:clamp(1.8rem,1.4rem + 1.7vw,2.7rem);margin-top:.8rem">So finden Sie uns</h2>
+      <p style="margin-top:1rem;color:var(--grau)">Die Praxis befindet sich am Steindamm 3 in 20099 Hamburg.</p>
+      <div class="zeiten">
+        <span class="marke-label">Sprechzeiten</span>
+        <b>Sprechzeiten</b>
+        <table>
+          <tr><td>Mo</td><td></td></tr>
+          <tr><td>Di</td><td></td></tr>
+          <tr><td>Mi</td><td></td></tr>
+          <tr><td>Do</td><td></td></tr>
+          <tr><td>Fr</td><td></td></tr>
+          <tr><td>Sa</td><td></td></tr>
+        </table>
+        <p class="zeiten-fuss">Termine vereinbaren Sie bitte telefonisch unter +49 40 409841.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="notdienst">
+  <div class="huelle notdienst-in">
+    <div>
+      <span class="marke-label" style="color:var(--akzent-hell)">Akute Beschwerden</span>
+      <h2>Bei akuten Zahnbeschwerden</h2>
+    </div>
+    <div>
+      <p>Rufen Sie bitte in der Praxis an und schildern Sie kurz Ihr Anliegen.</p>
+      <a class="ruf" href="tel:+4940409841">+49 40 409841</a>
+      <p style="margin-top:.6rem;font-size:.9rem;color:#8A9A9E">Außerhalb der Praxiszeiten wenden Sie sich bitte an den zahnärztlichen Notdienst.</p>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt-flaeche" id="kontakt">
+  <div class="huelle kontakt">
+    <div>
+      <span class="marke-label">Kontakt</span>
+      <h2>Termin anfragen</h2>
+      <p style="margin-top:1rem;color:var(--grau)">Rufen Sie uns an oder schicken Sie uns eine kurze Nachricht, wir melden uns bei Ihnen.</p>
+      <a class="ruf" href="tel:+4940409841">+49 40 409841</a>
+      <p class="ruf-zeit">Termine nach telefonischer Vereinbarung</p>
+      <div class="adresse">
+        <div data-weg-wenn-leer><span>Anschrift</span>Steindamm 3<br>20099 Hamburg</div>
+        <div data-weg-wenn-leer><span>E-Mail</span><a href="mailto:"></a></div>
+      </div>
+    </div>
+    <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='In der Vorschau nicht aktiv';">
+      <div class="feld"><label for="f-name">Ihr Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="feld"><label for="f-tel">Telefon</label>
+        <input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+      <div class="feld"><label for="f-mail">E-Mail <span style="font-weight:400;color:var(--grau)">(freiwillig)</span></label>
+        <input id="f-mail" name="email" type="email">
+        <p class="form-hinweis">Bitte keine Angaben zu Beschwerden, Befunden oder Behandlungen
+          in dieses Formular — schildern Sie das lieber am Telefon.</p></div>
+      <div class="feld"><label for="f-text">Ihr Anliegen</label>
+        <textarea id="f-text" name="text" placeholder="z. B. Kontrolltermin oder Beratung"></textarea></div>
+      <button class="taste" type="submit">Nachricht senden</button>
+      <p class="form-hinweis">Wir verwenden Ihre Angaben ausschließlich, um Ihr Anliegen zu bearbeiten
+        und Sie zurückzurufen. Eine Weitergabe an Dritte erfolgt nicht.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ——————————————————————————————————————————————————————————
+     Wie es weitergeht — gemeinsam fuer alle Branchen.
+
+     Der Abschnitt loest ein Verkaufsproblem, kein Gestaltungsproblem:
+     Wer einen fertig aussehenden Entwurf bekommt, haelt ihn fuer ein
+     Angebot zum Annehmen oder Ablehnen. Dass er mitreden kann, dass
+     Unterseiten dazukommen, dass die Bilder noch getauscht werden —
+     das weiss er nicht, und fragen tut er meistens nicht, sondern er
+     meldet sich einfach nicht mehr.
+
+     Deshalb steht es hier, und zwar in UNSEREN Farben, deutlich
+     abgesetzt vom Betrieb. Es soll nicht so aussehen, als gehoere es
+     zu seiner Seite — es ist unser Wort an ihn.
+     —————————————————————————————————————————————————————————— -->
+<section class="tw-schritte" aria-label="Wie es mit diesem Entwurf weitergeht">
+  <div class="tw-in">
+    <div class="tw-kopf">
+      <span class="tw-label">
+        <svg viewBox="0 0 34 34" aria-hidden="true" focusable="false">
+          <rect width="34" height="34" rx="9.5" fill="#fff"/>
+          <rect x="9.1" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#132F38"/>
+          <rect x="18.3" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#132F38"/>
+          <rect x="6.4" y="9.1" width="17.2" height="16" rx="2.8" fill="#132F38"/>
+          <g fill="#fff">
+            <rect x="8.9" y="15.1" width="2.5" height="2.5" rx=".7"/>
+            <rect x="13.5" y="15.1" width="2.5" height="2.5" rx=".7"/>
+            <rect x="18.1" y="15.1" width="2.5" height="2.5" rx=".7"/>
+            <rect x="8.9" y="19.4" width="2.5" height="2.5" rx=".7"/>
+            <rect x="13.5" y="19.4" width="2.5" height="2.5" rx=".7"/>
+          </g>
+          <circle cx="23.8" cy="23.4" r="7.6" fill="#fff"/>
+          <circle cx="23.8" cy="23.4" r="6.2" fill="#44B370"/>
+          <g fill="#fff">
+            <circle cx="21.2" cy="23.4" r="1.05"/><circle cx="23.8" cy="23.4" r="1.05"/><circle cx="26.4" cy="23.4" r="1.05"/>
+          </g>
+        </svg>
+        TerminWerk Systeme
+      </span>
+      <h2>Das ist ein Entwurf.<br>Kein fertiges Angebot.</h2>
+      <p>Sie sehen eine Startseite, wie wir sie uns für Ihren Betrieb vorstellen —
+        gebaut aus dem, was öffentlich über Sie zu finden war. Festgelegt ist daran nichts.</p>
+    </div>
+
+    <ol class="tw-liste">
+      <li>
+        <span class="tw-nr">01</span>
+        <b>Gespräch</b>
+        <p>Sie sagen, was bleiben soll und was nicht: Farben, Schrift, Aufbau, Texte, Bilder.
+          Auch ein grundsätzlich anderer Entwurf ist möglich.</p>
+      </li>
+      <li>
+        <span class="tw-nr">02</span>
+        <b>Gestaltung</b>
+        <p>Wir arbeiten Ihre Wünsche ein und gestalten die Unterseiten dazu —
+          Leistungen, Team, Kontakt, Impressum und Datenschutz.</p>
+      </li>
+      <li>
+        <span class="tw-nr">03</span>
+        <b>Freigabe</b>
+        <p>Sie sehen jede Seite, bevor sie online geht. Änderungen sind bis dahin
+          eingeplant und nicht die Ausnahme.</p>
+      </li>
+      <li>
+        <span class="tw-nr">04</span>
+        <b>Veröffentlichung</b>
+        <p>Erst nach Ihrer Freigabe geht die Seite live — mit Ihren eigenen Fotos,
+          Impressum und Datenschutzerklärung.</p>
+      </li>
+    </ol>
+
+    <div class="tw-fuss">
+      <p class="tw-hinweis">Wo uns noch keine eigenen Aufnahmen vorliegen, stehen hier Bilder aus
+        einer Bildbibliothek. Sie werden durch Ihre eigenen ersetzt.</p>
+      <a class="tw-taste" href="https://terminwerk-systeme.de/kontakt/">
+        Gespräch vereinbaren <span aria-hidden="true">&rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<footer class="fuss">
+  <div class="huelle">
+    <div class="fuss-grid">
+      <div><b>Zahnarztpraxis Dr. Cebrail Sahbaz</b><p>Zahnarztpraxis Dr. Cebrail Sahbaz · Steindamm 3 · 20099 Hamburg</p></div>
+      <div><b style="font-size:.88rem">Anschrift</b>Steindamm 3<br>20099 Hamburg<br>
+        <a href="tel:+4940409841">+49 40 409841</a></div>
+      <div><b style="font-size:.88rem">Sprechzeiten</b>Termine nach telefonischer Vereinbarung</div>
+    </div>
+    <div class="zeile">
+      <span>&copy; 2026 Zahnarztpraxis Dr. Cebrail Sahbaz</span>
+      <span>Entwurf — Impressum und Datenschutzerklärung folgen mit der Veröffentlichung.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ——————————————————————————————————————————————————————————
+     Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+
+     Zweck: Wer diesen Link bekommt, soll in der ersten Sekunde
+     begreifen, dass das ein Entwurf ist und nicht die veroeffentlichte
+     Seite seines Betriebs. Bei Aerzten, Kanzleien und Krankenhaeusern
+     ist das keine Hoeflichkeit, sondern notwendig — dort reagiert man
+     empfindlich auf alles, was wie eine echte Veroeffentlichung
+     aussieht.
+
+     Bewusst KEIN seitenfuellendes Wasserzeichen quer ueber die Seite:
+     Der Entwurf muss gleichzeitig so gut aussehen, dass der Unternehmer
+     ihn kaufen will. Ein Raster aus "ENTWURF" ueber dem ganzen Bild
+     nimmt genau das kaputt. Stattdessen eine kraeftige Marke oben
+     rechts mit dem TerminWerk-Zeichen und eine schmale Leiste unten.
+     —————————————————————————————————————————————————————————— -->
+<div class="vorschaumarke" aria-label="Diese Seite ist ein unverbindlicher Entwurf">
+  <span class="vm-zeichen" aria-hidden="true">
+    <svg viewBox="0 0 34 34" focusable="false">
+      <rect width="34" height="34" rx="9.5" fill="#132F38"/>
+      <rect x="9.1" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="18.3" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="6.4" y="9.1" width="17.2" height="16" rx="2.8" fill="#fff"/>
+      <g fill="#132F38">
+        <rect x="8.9" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="18.1" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="8.9" y="19.4" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="19.4" width="2.5" height="2.5" rx=".7"/>
+      </g>
+      <circle cx="23.8" cy="23.4" r="7.6" fill="#132F38"/>
+      <circle cx="23.8" cy="23.4" r="6.2" fill="#44B370"/>
+      <g fill="#fff">
+        <circle cx="21.2" cy="23.4" r="1.05"/><circle cx="23.8" cy="23.4" r="1.05"/><circle cx="26.4" cy="23.4" r="1.05"/>
+      </g>
+    </svg>
+  </span>
+  <span class="vm-text">
+    <b>Vorschau</b>
+    <span>nicht veröffentlicht</span>
+  </span>
+</div>
+
+<div class="entwurf">
+  <div class="entwurf-in">
+    <span class="entwurf-punkt" aria-hidden="true"></span>
+    <span class="entwurf-haupt">
+      <span class="nur-breit">Unverbindlicher Entwurf für Zahnarztpraxis Dr. Cebrail Sahbaz</span>
+      <span class="nur-schmal">Unverbindlicher Entwurf</span>
+    </span>
+    <span class="entwurf-trenner" aria-hidden="true"></span>
+    <span class="entwurf-detail">nicht veröffentlicht · für Suchmaschinen gesperrt</span>
+    <span class="entwurf-links">
+      <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+      <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+      <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+    </span>
+    <span class="entwurf-detail entwurf-frist">gültig bis 16.12.2026</span>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  var SLUG = "dr-sahbaz-2";
+
+  /* Bilder: leere Platzhalter rauswerfen, damit nie ein kaputtes Bild steht.
+     Wo ein Kopfbild vorhanden ist, tritt es an die Stelle des Monogramms. */
+  function aufraeumen(){
+    var leer = function(el){
+      var s = el.getAttribute('src');
+      return !s || s === window.location.href || s === '#';
+    };
+
+    /* Ein Chip ohne Inhalt verschwindet. */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-chip]'), function(c){
+      if (!c.textContent.trim()) c.remove();
+    });
+
+    /* Personen: wer keinen Namen hat, existiert nicht. Eine Kanzlei mit
+       einem Anwalt bekommt eine Kachel, nicht drei. Bleibt nur eine
+       uebrig, rueckt sie auf die halbe Breite statt auf ein Drittel. */
+    Array.prototype.forEach.call(document.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = document.querySelectorAll('.team .person');
+    var raster = document.querySelector('.team');
+    if (raster){
+      if (leute.length === 0){
+        var ab = raster.closest('.abschnitt');
+        if (ab) ab.remove();
+      } else if (leute.length === 1){
+        raster.style.gridTemplateColumns = 'minmax(0,22rem)';
+      } else if (leute.length === 2){
+        raster.style.gridTemplateColumns = 'repeat(2,minmax(0,1fr))';
+        raster.style.maxWidth = '52rem';
+      }
+    }
+
+    /* Dasselbe fuer Leistungen, Schritte, Wege und Referenzen: leere
+       Eintraege verschwinden, statt als leere Kaestchen dazustehen. */
+    [['.posten','h3'],['.schritt','h3'],['.weg','h3']].forEach(function(paar){
+      Array.prototype.forEach.call(document.querySelectorAll(paar[0]), function(el){
+        var t = el.querySelector(paar[1]);
+        if (!t || !t.textContent.trim()) el.remove();
+      });
+    });
+
+    /* Fakten: ein Platz ohne Inhalt verschwindet. Lieber zwei Fakten
+       als drei, von denen einer leer ist. */
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt'), function(f){
+      var b = f.querySelector('b'), sp = f.querySelector('span'), p = f.querySelector('p');
+      var leerB = !b || !b.textContent.trim();
+      var leerS = !sp || !sp.textContent.trim();
+      if (leerB && leerS) { f.remove(); return; }
+      if (leerB && b) b.remove();
+      if (leerS && sp) sp.remove();
+      if (p && !p.textContent.trim()) p.remove();
+    });
+
+    /* Zahlen: alle oder keine. Einer von dreien liess die Leiste halbfertig
+       aussehen — links gross "5,0", daneben zweimal Text in der Luft. Fehlt
+       bei einem die Zahl, fallen sie ueberall weg; dann traegt die
+       Beschriftung die Zeile, und das sieht gewollt aus. */
+    var fakten = Array.prototype.slice.call(document.querySelectorAll('.fakt'));
+    var ohneZahl = fakten.filter(function(f){
+      var b = f.querySelector('b');
+      return !b || !b.textContent.trim();
+    });
+    if (fakten.length && ohneZahl.length && ohneZahl.length < fakten.length){
+      fakten.forEach(function(f){
+        var b = f.querySelector('b');
+        if (b) b.remove();
+      });
+      var band = fakten[0].closest('.koennen') || fakten[0].parentNode;
+      if (band && band.setAttribute) band.setAttribute('data-ohne-zahlen', '');
+    }
+    if (fakten.length){
+      var umschlag = fakten[0].parentNode;
+      if (umschlag && umschlag.style) umschlag.style.setProperty('--spalten', String(fakten.length));
+    }
+
+    var kasten = document.querySelector('.fakten');
+    if (kasten && !kasten.querySelector('.fakt')) kasten.remove();
+    var leisteLeer = document.querySelector('.koennen');
+    if (leisteLeer && !leisteLeer.querySelector('.fakt')) leisteLeer.remove();
+
+    /* Buehnen-Ueberschrift: ist kein Akzentteil da, faellt er weg */
+    var akz = document.querySelector('.buehne h1 em');
+    if (akz && !akz.textContent.trim()) akz.remove();
+
+    /* Sprechzeiten: stehen keine echten Zeiten drin, kommt die Tabelle weg
+       und an ihre Stelle ein sauberer Satz. Eine Tabelle mit sechsmal
+       "bitte telefonisch erfragen" sieht schlechter aus als gar keine. */
+    var karte = document.querySelector('.zeiten');
+    if (karte){
+      var werte = Array.prototype.map.call(
+        karte.querySelectorAll('table td:last-child'),
+        function(c){ return c.textContent.trim(); });
+      var echte = werte.filter(function(w){ return w && !/^[-–—.]*$/.test(w); });
+      if (echte.length === 0){
+        var tab = karte.querySelector('table');
+        if (tab){
+          var satz = document.createElement('p');
+          satz.className = 'zeiten-ersatz';
+          satz.textContent = 'Termine vergeben wir telefonisch — so finden wir gleich einen Tag, der Ihnen passt.';
+          tab.parentNode.replaceChild(satz, tab);
+        }
+        var fuss = karte.querySelector('.zeiten-fuss');
+        if (fuss) fuss.textContent = 'Rufen Sie uns an, wir stimmen den Termin direkt mit Ihnen ab.';
+      }
+    }
+
+    /* Logo: traegt es, tritt es an die Stelle der gesetzten Wortmarke.
+       Traegt es nicht, bleibt die Wortmarke stehen — nie beides, nie keines. */
+    var platte = document.querySelector('.logo');
+    if (platte){
+      var bild = platte.querySelector('img');
+      if (!bild || leer(bild)) {
+        platte.remove();
+      } else {
+        var zeigen = function(){
+          if (!bild.naturalWidth) { platte.remove(); return; }
+          platte.style.display = 'flex';
+          var w = document.querySelector('.wortmarke');
+          if (w) w.remove();
+        };
+        if (bild.complete) zeigen(); else {
+          bild.addEventListener('load', zeigen);
+          bild.addEventListener('error', function(){ platte.remove(); });
+        }
+      }
+    }
+
+    /* Ohne eigenes Foto bleibt die hinterlegte Aufnahme des Rahmens stehen. */
+    Array.prototype.forEach.call(document.querySelectorAll('img.band-bild'), function(b){
+      if (leer(b)) b.remove();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('img.kopfbild'), function(k){
+      if (leer(k)) { k.remove(); return; }
+      k.hidden = false;
+      var mono = k.parentNode.querySelector('.monogramm');
+      if (mono) mono.remove();
+      /* Ist das Foto quer — etwa ein Kopfbereich der alten Seite —,
+         bekommt die Kachel Querformat statt eines engen Beschnitts. */
+      var passe = function(){
+        if (!k.naturalWidth || !k.naturalHeight) return;
+        var v = k.naturalWidth / k.naturalHeight;
+        if (v > 1.3){ k.style.aspectRatio = '16/9'; k.style.objectPosition = 'center 28%'; }
+        else if (v > 1.05){ k.style.aspectRatio = '4/3'; }
+      };
+      if (k.complete) passe(); else k.addEventListener('load', passe);
+    });
+    /* Monogramm aus den Initialen des Namens, Titel werden übersprungen */
+    Array.prototype.forEach.call(document.querySelectorAll('.monogramm'), function(m){
+      var name = (m.getAttribute('data-mono') || '').trim();
+      var teile = name.split(/\s+/).filter(function(w){
+        return w.length > 1 && !/^(dr|med|dent|prof|dipl|m\.?sc|ba|ma)\.?$/i.test(w.replace(/\./g,''));
+      });
+      var ini = teile.slice(0, 2).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
+      var s = m.querySelector('span');
+      if (s) s.textContent = ini || '·';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aufraeumen);
+  } else { aufraeumen(); }
+
+  /* Zahlen zaehlen hoch, sobald sie ins Bild kommen. Nur echte Zahlen —
+     "Kostal Partnerbetrieb" bleibt stehen wie es ist. */
+  function zaehlwerk(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+    var felder = [];
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt b, [data-zaehlen]'), function(el){
+      var roh = el.textContent.trim();
+      var t = roh.match(/^(\D*?)(\d[\d.]*)(\D*)$/);
+      if (!t) return;
+      var ziel = parseInt(t[2].replace(/\./g, ''), 10);
+      if (!ziel || ziel > 100000) return;
+      el.dataset.vor = t[1]; el.dataset.nach = t[3]; el.dataset.ziel = String(ziel);
+      el.textContent = t[1] + '0' + t[3];
+      felder.push(el);
+    });
+    if (!felder.length) return;
+    var auge = new IntersectionObserver(function(e){
+      e.forEach(function(x){
+        if (!x.isIntersecting) return;
+        var el = x.target, ziel = +el.dataset.ziel, start = performance.now(), dauer = 1100;
+        (function lauf(jetzt){
+          var p = Math.min((jetzt - start) / dauer, 1);
+          var w = Math.round(ziel * (1 - Math.pow(1 - p, 3)));
+          el.textContent = el.dataset.vor + w + el.dataset.nach;
+          if (p < 1) requestAnimationFrame(lauf);
+        })(start);
+        auge.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    felder.forEach(function(el){ auge.observe(el); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', zaehlwerk);
+  else zaehlwerk();
+
+  /* Bewegung beim Scrollen. Zurueckhaltend: einblenden und ein Stueck
+     nach oben, gestaffelt innerhalb einer Gruppe. Wer im Betriebssystem
+     weniger Bewegung eingestellt hat, bekommt gar keine. */
+  function bewegung(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+
+    var gruppen = ['.a-kopf','.kachel','.posten','.schritt','.weg','.fakt','.person',
+                   '.betrieb-bild','.zeiten','.form','.stoerung-in','.buehne-text > *',
+                   '.gebiet-in > *','.notdienst-in > *','.kontakt > div'];
+    var teile = [];
+    gruppen.forEach(function(w){
+      var n = document.querySelectorAll(w);
+      Array.prototype.forEach.call(n, function(el, i){
+        if (el.dataset.auf) return;
+        el.dataset.auf = '1';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms, ' +
+                              'transform .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms';
+        teile.push(el);
+      });
+    });
+    if (!teile.length) return;
+
+    var zeigen = function(el){
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    };
+
+    /* Was beim Laden schon im Bild steht, wird sofort gezeigt — sonst
+       startet die Seite mit einem Loch, bis der Beobachter anspringt. */
+    var sofort = [];
+    teile.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) sofort.push(el);
+    });
+    requestAnimationFrame(function(){ sofort.forEach(zeigen); });
+
+    var auge = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if (!e.isIntersecting) return;
+        zeigen(e.target);
+        auge.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    teile.forEach(function(el){ auge.observe(el); });
+
+    /* Sicherheitsnetz: was nach zwei Sekunden noch unsichtbar ist, wird
+       sichtbar. Lieber ohne Effekt als eine leere Seite. */
+    setTimeout(function(){
+      teile.forEach(function(el){ if (el.style.opacity === '0'){ el.style.opacity='1'; el.style.transform='none'; } });
+    }, 2600);
+
+    /* Das Buehnenfoto faehrt beim Scrollen langsam mit. */
+    var foto = document.querySelector('.buehne-foto');
+    if (foto){
+      var laeuft = false;
+      window.addEventListener('scroll', function(){
+        if (laeuft) return;
+        laeuft = true;
+        requestAnimationFrame(function(){
+          var y = Math.min(window.scrollY, 700);
+          foto.style.transform = 'translate3d(0,' + (y * 0.12) + 'px,0) scale(1.06)';
+          laeuft = false;
+        });
+      }, { passive: true });
+      foto.style.transform = 'scale(1.06)';
+      foto.style.willChange = 'transform';
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bewegung);
+  else bewegung();
+
+  function hinweis(titel, satz){
+    document.title = titel;
+    document.body.innerHTML =
+      '<div style="min-height:100vh;display:grid;place-items:center;padding:2rem;'
+      + 'background:#16211E;color:#AEBCB7;text-align:center;font-family:' + "'Inter'" + ',system-ui,sans-serif">'
+      + '<div style="max-width:46ch">'
+      + '<p style="font-family:' + "'Newsreader'" + ',Georgia,serif;font-size:1.7rem;color:#fff;margin:0 0 .9rem">' + titel + '</p>'
+      + '<p style="margin:0 0 1.4rem;line-height:1.6">' + satz + ' Veröffentlicht war er zu keiner Zeit.</p>'
+      + '<p style="margin:0 0 1.6rem;line-height:1.6">Wenn Sie ihn noch einmal sehen möchten, melden wir ihn gern erneut frei.</p>'
+      + '<p style="margin:0"><a href="https://terminwerk-systeme.de/kontakt/" style="color:#8FC9BC">TerminWerk Systeme</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/impressum/" style="color:#8FC9BC">Impressum</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/datenschutz/" style="color:#8FC9BC">Datenschutz</a></p>'
+      + '</div></div>';
+    document.body.style.padding = "0";
+  }
+
+  /* ——— Die Vorschau-Marke unter die Kopfzeile setzen ———
+     Die Marke sitzt fest oben rechts. Ihr Abstand von oben stand bisher
+     als feste Zahl in _marke.css (84 Pixel, auf dem Telefon 68). Das
+     ging so lange gut, wie alle Kopfzeilen gleich hoch waren — auf dem
+     Telefon sind sie es nicht: Bau 92, Zahnarzt 95, GaLaBau 104 Pixel.
+     Die Marke lag dadurch bei sechs von sieben Branchen MITTEN IN DER
+     KOPFZEILE, und zwar genau die Kennzeichnung, die einem Arzt oder
+     einer Klinik zeigen soll, dass dies ein Entwurf ist.
+
+     Statt den Abstand in jeder Vorlage einzeln zu korrigieren, misst
+     die Seite die Kopfzeile jetzt selbst. Gemessen wird die ANFAENGLICHE
+     Hoehe: Kopfzeilen, die beim Scrollen schmaler werden, duerfen die
+     Marke nicht mitwandern lassen — eine springende Kennzeichnung
+     liest sich wie ein Fehler. */
+  (function(){
+    var setzen = function(){
+      var kopf = document.querySelector('.kopf');
+      if (!kopf) return;
+      var mass = kopf.getBoundingClientRect();
+      /* Nicht die Hoehe messen, sondern die UNTERKANTE — bei Kanzlei und
+         Steuer steht ueber der Kopfzeile noch ein Streifen, die Kopfzeile
+         beginnt dort erst bei 43 Pixeln. Mit der blossen Hoehe lag die
+         Marke dort weiterhin mitten drin.
+         Und zwar in beiden Zustaenden: oben auf der Seite steht die
+         Kopfzeile tiefer, nach dem Scrollen klebt sie an ihrem eigenen
+         Rand. Der groessere der beiden Werte gilt, damit die Marke in
+         keinem der beiden Faelle anstoesst. */
+      var kleben = parseFloat(getComputedStyle(kopf).top);
+      if (!isFinite(kleben) || kleben < 0) kleben = 0;
+      var unten = Math.round(Math.max(mass.bottom, kleben + mass.height));
+      if (unten < 30 || unten > 240) return;
+      document.documentElement.style.setProperty('--marke-oben', (unten + 12) + 'px');
+    };
+    setzen();
+    /* Noch einmal, sobald die Schriften geladen sind: vorher misst man
+       die Ersatzschrift, und die ist oft anders hoch. */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setzen);
+    setTimeout(setzen, 600);
+    var warten;
+    window.addEventListener('resize', function(){
+      clearTimeout(warten);
+      warten = setTimeout(function(){
+        document.documentElement.style.removeProperty('--marke-oben');
+        requestAnimationFrame(setzen);
+      }, 150);
+    });
+  })();
+
+  var bis = new Date("2026-12-16T23:59:59");
+  if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
+    hinweis("Dieser Entwurf ist abgelaufen.",
+      "Der unverbindliche Entwurf für Zahnarztpraxis Dr. Cebrail Sahbaz stand bis zum 16.12.2026 zur Ansicht bereit.");
+    return;
+  }
+  try{
+    fetch("../status.json", { cache: "no-store" })
+      .then(function(a){ return a.ok ? a.json() : null; })
+      .then(function(s){
+        if (s && s[SLUG] === "aus") {
+          hinweis("Dieser Entwurf wurde zurückgezogen.",
+            "Der unverbindliche Entwurf für Zahnarztpraxis Dr. Cebrail Sahbaz steht nicht mehr zur Ansicht bereit.");
+        }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ——— Bildvorrat Zahnarztpraxis ———
+     Elf Aufnahmen, und das ist Absicht. Von 37 Kandidaten haben nur 18
+     ueberhaupt geladen, und von denen taugte nur gut die Haelfte: Der
+     freie Bestand zu Zahnmedizin besteht ueberwiegend aus offenen
+     Muendern, Bohrern und Masken in Nahaufnahme. So etwas verkauft
+     keine Praxis, es schreckt ab.
+
+     Deshalb traegt diese Vorlage nur zwei Vorratsbilder — Buehne und
+     Praxisraum — und sonst Text und Gesichter. Was der Betrieb an
+     eigenen Fotos mitbringt, hat ohnehin Vorrang. */
+  var A = 'https://images.unsplash.com/';
+  var GROSS = '?auto=format&fit=crop&w=1800&q=76';
+
+  var VORRAT = [
+    {id:'photo-1776886099265-6366478b341b', b:1, w:1, s:'praxis behandlungszimmer raeume hell modern empfang allgemein'},
+    {id:'photo-1637665759389-41818b867562', b:1, w:1, s:'praxis wartebereich wartezimmer empfang raeume hell allgemein'},
+    {id:'photo-1777331903190-341a3dd0441b', b:1, w:1, s:'beratung gespraech aufklaerung behandlungszimmer praxis'},
+    {id:'photo-1663755787934-3742b0f5983a', b:1, w:1, s:'beratung gespraech aufklaerung befund roentgen praxis'},
+    {id:'photo-1787496994867-939269b4d323', t:1, w:1, s:'praxis raeume flur empfang hell allgemein'},
+    {id:'photo-1581982231900-6a1a46b744c9', t:1, w:1, s:'wartebereich wartezimmer praxis raeume allgemein'},
+    {id:'photo-1777125080264-152acad7697f', t:1, w:1, s:'wartebereich wartezimmer praxis raeume allgemein'},
+    {id:'photo-1762625570087-6d98fca29531', w:1, s:'roentgen diagnostik befund technik praxis'},
+    {id:'photo-1659989693409-5adc97274bed', w:1, s:'beratung aufklaerung praxis gespraech'},
+    {id:'photo-1736289158855-6df0bd42bba8', t:1, w:1, s:'team praxisteam mitarbeiter allgemein'},
+    {id:'photo-1736289162890-78f1ff4f8bd3', t:1, w:1, s:'team praxisteam mitarbeiter allgemein'}
+  ];
+
+  var samen = (function(t){ var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h; })("dr-sahbaz-2" || "x");
+  function streuung(versatz){
+    var x = (samen ^ (((versatz || 0) + 1) * 2654435761)) >>> 0;
+    x = (x ^ (x >>> 15)) >>> 0;
+    x = Math.imul(x, 2246822519) >>> 0;
+    return ((x ^ (x >>> 13)) >>> 0);
+  }
+  var vergeben = {};
+  function waehle(rolle, versatz){
+    var frei = VORRAT.filter(function(e){
+      return (rolle === 'b' ? e.b : e.t) && !vergeben[e.id];
+    });
+    if (!frei.length) frei = VORRAT.filter(function(e){ return !vergeben[e.id]; });
+    if (!frei.length) frei = VORRAT;
+    var g = frei[streuung(versatz) % frei.length];
+    vergeben[g.id] = 1;
+    return A + g.id;
+  }
+
+  /* ——— Leere Felder raeumen ——— */
+  /* Leere Leistungen raus. Die Ueberschrift muss ein h3 sein, nicht ein
+     b: der gemeinsame Kern raeumt .posten nach h3 auf und haette sonst
+     ALLE sechs entfernt, auch die gefuellten. Genau das ist passiert. */
+  Array.prototype.forEach.call(document.querySelectorAll('.posten'), function(p){
+    var h = p.querySelector('h3');
+    if (!h || !h.textContent.trim()) p.remove();
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-weg-wenn-leer]'), function(d){
+    var beschriftung = d.querySelector('span');
+    var rest = d.textContent.replace(beschriftung ? beschriftung.textContent : '', '').trim();
+    if (!rest) d.remove();
+  });
+  var leiste = document.querySelector('.termin-in');
+  if (leiste){
+    var felder = leiste.querySelectorAll('.termin-feld');
+    if (!felder.length) document.querySelector('.termin').remove();
+    else leiste.style.gridTemplateColumns = 'repeat(' + felder.length + ',1fr)';
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.adresse'), function(a){
+    if (a.children.length === 1) a.style.gridTemplateColumns = '1fr';
+    if (a.children.length === 0) a.remove();
+  });
+
+  /* Praxisteam: ohne Namen kein Abschnitt. */
+  (function(){
+    var raster = document.querySelector('.personen');
+    if (!raster) return;
+    Array.prototype.forEach.call(raster.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = raster.querySelectorAll('.person');
+    if (!leute.length){ var ab = raster.closest('.team'); if (ab) ab.remove(); return; }
+    if (leute.length < 3) raster.style.gridTemplateColumns = 'repeat(' + leute.length + ',minmax(0,20rem))';
+  })();
+
+  /* Wege ohne Inhalt verschwinden. */
+  Array.prototype.forEach.call(document.querySelectorAll('.weg'), function(w){
+    var h = w.querySelector('h3');
+    if (!h || !h.textContent.trim()) w.remove();
+  });
+
+  var wurzel = document.documentElement;
+  wurzel.style.setProperty('--foto-buehne', 'url("' + waehle('b', 0) + GROSS + '")');
+  wurzel.style.setProperty('--foto-betrieb', 'url("' + waehle('t', 5) + GROSS + '")');
+})();
+</script>
+</body>
+</html>
