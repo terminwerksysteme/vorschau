@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Jürgen Martens GmbH & Co. KG — Bauunternehmung in Hamburg seit 1953</title>
-<meta name="description" content="Jürgen Martens GmbH & Co. KG, Bauunternehmung in Hamburg seit 1953: Ingenieurbau, Brückenbau, Hochbau, Tiefbau und Bauwerksinstandsetzung.">
+<meta name="description" content="Jürgen Martens GmbH & Co. KG, Bauunternehmung in Hamburg: Ingenieurbau, Brückenbau, Hochbau, Tiefbau und Bauwerksinstandsetzung im Großraum Hamburg.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -114,6 +114,16 @@ a{color:inherit}
   letter-spacing:.17em;text-transform:uppercase;color:var(--akzent-hell)}
 .fakt p{margin-top:.5rem;font-size:.9rem;line-height:1.56;color:#A3AAAE}
 .koennen[data-ohne-zahlen] .fakt span{font-size:.92rem;color:#fff;letter-spacing:.1em}
+/* Auf dem Telefon untereinander. Dreispaltig passte die Leiste nicht
+   mehr ins Fenster und hat die ganze Seite quer aufgeschoben — auf
+   einem Entwurf, den der Unternehmer meistens zuerst am Handy oeffnet,
+   ist das der erste Eindruck. */
+@media(max-width:700px){
+  .koennen-in{grid-template-columns:1fr;gap:1.4rem}
+  .fakt{border-left:0;border-top:1px solid var(--linie);padding:1rem 0 0}
+  .fakt:first-child{border-top:0;padding-top:0}
+  .adresse{grid-template-columns:1fr}
+}
 
 /* ———— Was wir bauen: große Kacheln, alle gleichzeitig sichtbar ————
    Handwerk hat dort eine Liste, bei der immer nur ein Bild zu sehen
@@ -267,6 +277,95 @@ a{color:inherit}
 body{padding-bottom:5.4rem}
 @media(max-width:700px){.entwurf-detail{display:none}.nur-breit{display:none}}
 @media(min-width:701px){.nur-schmal{display:none}}
+/* ——————————————————————————————————————————————————————————
+   Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+   Die Farben kommen aus der Marke TerminWerk (#132F38 und #44B370)
+   und NICHT aus der Akzentfarbe des Kunden: Die Kennzeichnung gehoert
+   uns, nicht seinem Betrieb, und soll sich sichtbar davon absetzen.
+   —————————————————————————————————————————————————————————— */
+body{padding-bottom:3.5rem}
+@media(max-width:700px){body{padding-bottom:3.1rem}}
+
+:root{
+  --tw-tief:#101F26;
+  --tw-gruen:#44B370;
+  --tw-hell:#DCE5E2;
+}
+
+/* ———— Marke oben rechts ———— */
+.vorschaumarke{
+  position:fixed;
+  top:calc(84px + env(safe-area-inset-top,0px));
+  right:max(16px,env(safe-area-inset-right,0px));
+  z-index:95;pointer-events:none;
+  display:flex;align-items:center;gap:.62rem;
+  padding:.6rem .95rem .6rem .7rem;
+  background:rgba(16,31,38,.93);
+  backdrop-filter:saturate(1.4) blur(8px);
+  border-left:4px solid var(--tw-gruen);
+  border-radius:4px;
+  box-shadow:0 10px 30px rgba(8,16,20,.4),0 2px 6px rgba(8,16,20,.3);
+  animation:vm-auf .5s cubic-bezier(.22,.61,.36,1) .35s both;
+}
+@keyframes vm-auf{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.vorschaumarke{animation:none}}
+.vm-zeichen{display:block;flex:none}
+.vm-zeichen svg{width:30px;height:30px;display:block}
+.vm-text{display:block;line-height:1.15}
+.vorschaumarke b{
+  display:block;font-size:.84rem;font-weight:800;letter-spacing:.17em;
+  text-transform:uppercase;color:#fff;
+}
+.vorschaumarke .vm-text span{
+  display:block;margin-top:.1rem;font-size:.7rem;font-weight:500;
+  letter-spacing:.04em;color:var(--tw-gruen);
+}
+@media (max-width:560px){
+  .vorschaumarke{top:calc(68px + env(safe-area-inset-top,0px));padding:.45rem .7rem .45rem .52rem;gap:.45rem}
+  .vm-zeichen svg{width:24px;height:24px}
+  .vorschaumarke b{font-size:.72rem}
+  .vorschaumarke .vm-text span{font-size:.62rem}
+}
+
+/* ———— Schmale Leiste unten ————
+   Eine Zeile statt zwei. Vorher nahm sie fast 80 Pixel Hoehe weg und
+   wirkte wie ein Cookie-Banner; jetzt ist sie eine ruhige Fusszeile,
+   die trotzdem klar sagt, was die Seite ist. */
+.entwurf{
+  position:fixed;left:0;right:0;bottom:0;z-index:96;
+  background:linear-gradient(to right,var(--tw-tief),#16313B 58%,var(--tw-tief));
+  color:var(--tw-hell);
+  border-top:2px solid var(--tw-gruen);
+  font-size:.79rem;line-height:1.3;
+  padding:.42rem max(16px,env(safe-area-inset-left,0px)) calc(.5rem + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -6px 22px rgba(8,16,20,.22);
+}
+.entwurf-in{
+  width:min(1220px,100%);margin-inline:auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:.3rem .72rem;flex-wrap:wrap;
+}
+.entwurf-punkt{
+  width:7px;height:7px;border-radius:50%;background:var(--tw-gruen);flex:none;
+  box-shadow:0 0 0 3px rgba(68,179,112,.22);
+}
+.entwurf-haupt{font-weight:600;color:#fff}
+.entwurf-trenner{width:1px;height:14px;background:rgba(255,255,255,.2);flex:none}
+.entwurf-detail{color:#93A5AC}
+.entwurf-links{display:flex;gap:.3rem .72rem}
+.entwurf a{color:var(--tw-gruen);text-decoration:none;border-bottom:1px solid rgba(68,179,112,.4)}
+.entwurf a:hover{color:#fff;border-bottom-color:#fff}
+
+@media (min-width:701px){.entwurf-in{white-space:nowrap}}
+@media (max-width:1180px){.entwurf-frist{display:none}}
+@media (max-width:980px){.entwurf-trenner,.entwurf-detail{display:none}}
+@media (max-width:700px){
+  .entwurf{font-size:.74rem}
+  .entwurf-detail{display:none}
+  .nur-breit{display:none}
+}
+@media (min-width:701px){.nur-schmal{display:none}}
+
 </style>
 </head>
 <body>
@@ -275,7 +374,7 @@ body{padding-bottom:5.4rem}
   <div class="huelle kopf-in">
     <a class="logo" href="#oben">
       <span class="logo-platte"><img src="https://www.juema-hamburg.de/img/logo-jm.png" alt="Jürgen Martens GmbH & Co. KG" onerror="this.remove();"></span>
-      <span class="wortmarke"><b>Jürgen Martens</b><span>Bauunternehmung seit 1953</span></span>
+      <span class="wortmarke"><b>Jürgen Martens</b><span>Hamburg seit 1953</span></span>
     </a>
     <nav>
       <a href="#bauen">Leistungen</a>
@@ -291,11 +390,11 @@ body{padding-bottom:5.4rem}
   <div class="buehne-foto"></div>
   <div class="huelle buehne-in">
     <div class="buehne-text">
-      <span class="marke-label">Bauunternehmung · Hamburg</span>
-      <h1>Gebaut wird, <em>während alles weiterläuft.</em></h1>
-      <p class="buehne-lede">Die Jürgen Martens GmbH & Co. KG baut in und um Hamburg Brücken, Ingenieur- und Hochbauten und setzt Bauwerke instand. Zu den Auftraggebern zählen öffentliche Bauherren.</p>
+      <span class="marke-label">Bauunternehmung Hamburg</span>
+      <h1>Der Betrieb läuft weiter, <em>während wir bauen.</em></h1>
+      <p class="buehne-lede">Wir bauen und sanieren Brücken, Ingenieurbauwerke, Hoch- und Tiefbauten im Großraum Hamburg, auch unter laufendem Verkehr und Betrieb, mit eigenem Personal und eigenem Technischen Büro.</p>
       <div class="buehne-tasten">
-        <a class="taste" href="#kontakt">Anfrage stellen</a>
+        <a class="taste" href="#kontakt">Kontakt aufnehmen</a>
         <a class="taste taste--rand" href="tel:0402270230">040 227023-0</a>
       </div>
     </div>
@@ -304,9 +403,9 @@ body{padding-bottom:5.4rem}
 
 <section class="koennen">
   <div class="huelle koennen-in">
-    <div class="fakt"><b data-zaehlen>1953</b><span>Am Markt seit</span><p>Das Unternehmen baut seit 1953 in der Region Hamburg.</p></div>
-    <div class="fakt"><b data-zaehlen>1991</b><span>Zweites Unternehmen</span><p>Die Jürgen Martens GmbH in Wittenförden bearbeitet Projekte in Mecklenburg-Vorpommern.</p></div>
+    <div class="fakt"><b data-zaehlen>1953</b><span>Gegründet in Hamburg</span><p>Die Bauunternehmung arbeitet seit 1953 vor allem im Norden Deutschlands.</p></div>
     <div class="fakt"><b data-zaehlen>2019</b><span>Betriebsstätte Neubrandenburg</span><p>Seit 2019 unterstützt die Betriebsstätte in Neubrandenburg die Projekte in Mecklenburg-Vorpommern.</p></div>
+    <div class="fakt"><b data-zaehlen>1991</b><span>Zweites Unternehmen</span><p>Die Jürgen Martens GmbH in Wittenförden wickelt Projekte in Mecklenburg-Vorpommern ab.</p></div>
   </div>
 </section>
 
@@ -315,40 +414,40 @@ body{padding-bottom:5.4rem}
     <div class="abschnitt-kopf">
       <div>
         <span class="marke-label">Leistungen</span>
-        <h2>Leistungsbereiche</h2>
+        <h2>Was wir bauen und instand setzen</h2>
       </div>
-      <p>Vom Ingenieurbau bis zur Instandsetzung führen wir Bauleistungen mit eigenem Personal und eigenem Gerätepark aus.</p>
+      <p>Konstruktiver Ingenieurbau ist unsere Stärke. Neben dem Neubau sind wir besonders in der Bauwerksinstandsetzung aktiv.</p>
     </div>
     <div class="kacheln">
       <div class="kachel" data-kachel>
         <div class="kachel-foto"></div>
         <div class="kachel-text"><span class="kachel-nr">01</span>
-          <h3>Ingenieurbau</h3><p>Das Technische Büro arbeitet eng mit den Bauleitern vor Ort zusammen. Wir sind auch im Bahnbau tätig, etwa während kurzer Sperrpausen.</p></div>
+          <h3>Ingenieurbau</h3><p>Technisches Büro und Bauleiter erarbeiten Lösungen nach den Vorgaben des Auftraggebers, auch im Bahnbau unter dem rollenden Rad.</p></div>
       </div>
       <div class="kachel" data-kachel>
         <div class="kachel-foto"></div>
         <div class="kachel-text"><span class="kachel-nr">02</span>
-          <h3>Brückenbau</h3><p>Wir bauen vorgespannte und schlaff bewehrte Brückentragwerke sowie Stahlverbund-Konstruktionen, auch unter fließendem Verkehr.</p></div>
+          <h3>Brückenbau</h3><p>Vorgespannte und schlaff bewehrte Brückentragwerke sowie Stahlverbund-Konstruktionen, auch unter fließendem Verkehr.</p></div>
       </div>
       <div class="kachel" data-kachel>
         <div class="kachel-foto"></div>
         <div class="kachel-text"><span class="kachel-nr">03</span>
-          <h3>Hochbau</h3><p>Aus den Erfahrungen im Ingenieur- und Brückenbau heraus planen und führen wir Bauleistungen im Hoch- und Industriebau aus.</p></div>
+          <h3>Hochbau</h3><p>Aus dem Ingenieur- und Brückenbau heraus planen und führen wir auch Hoch- und Industriebauten aus.</p></div>
       </div>
       <div class="kachel" data-kachel>
         <div class="kachel-foto"></div>
         <div class="kachel-text"><span class="kachel-nr">04</span>
-          <h3>Tiefbau</h3><p>Erd- und Tiefbauleistungen führen wir oft mit eigenem Gerät und Personal aus, ebenso Baugrubensicherungen und kleinere Gründungen.</p></div>
+          <h3>Tiefbau</h3><p>Erd- und Tiefbauleistungen mit eigenem Gerät und Personal, dazu Baugrubensicherungen und kleinere Bauwerksgründungen.</p></div>
       </div>
       <div class="kachel" data-kachel>
         <div class="kachel-foto"></div>
         <div class="kachel-text"><span class="kachel-nr">05</span>
-          <h3>Bauwerksinstandsetzung</h3><p>Von kleinen Bauwerksteilen bis zur Komplettinstandsetzung, einschließlich denkmalgerechter Sanierung von Mauerwerk mit eigenem Personal.</p></div>
+          <h3>Instandsetzung</h3><p>Von kleinen Bauwerksteilen bis zur Komplettinstandsetzung, dazu denkmalgerechte Sanierung von Mauerwerk mit eigenem Personal.</p></div>
       </div>
       <div class="kachel" data-kachel>
         <div class="kachel-foto"></div>
         <div class="kachel-text"><span class="kachel-nr">06</span>
-          <h3>Stahlbau</h3><p>Der Betriebshof in Norderstedt verfügt über eine Werkstatthalle für den Stahlbau.</p></div>
+          <h3>Stahlbau</h3><p>Stahlkonstruktionen für unsere Bauwerke fertigen wir in der eigenen Werkstatthalle am Betriebshof in Norderstedt.</p></div>
       </div>
     </div>
   </div>
@@ -365,12 +464,12 @@ body{padding-bottom:5.4rem}
         <span class="marke-label">Referenzen</span>
         <h2>Ausgewählte Projekte</h2>
       </div>
-      <p>Drei Bauvorhaben aus unserer Projektübersicht.</p>
+      <p>Drei Bauvorhaben aus unserer Projektliste, bei denen der Bestand gesichert oder der Betrieb aufrechterhalten werden musste.</p>
     </div>
     <div class="posten-reihe">
-      <div class="posten"><b>Umbau Klärwerk</b><span class="ort">Hetlingen</span><p>Der Umbau erfolgte unter laufendem Betrieb, mit Sandfang, Containerhalle, Rohbau und Fassade. Bauherr war der AZV Südholstein.</p></div>
-      <div class="posten"><b>Erweiterung Feuerwehr</b><span class="ort">Flughafen Hamburg</span><p>Alle Arbeiten fanden im Sicherheitsbereich statt, während die Feuerwehr im Bestandsgebäude einsatzbereit blieb.</p></div>
-      <div class="posten"><b>Rathauserweiterung</b><span class="ort">Kaltenkirchen</span><p>Das Bestandsgebäude wurde unterfangen, danach entstanden Untergeschoss, Betonbau und Verblendfassade für die Stadt Kaltenkirchen.</p></div>
+      <div class="posten"><b>Rathauserweiterung</b><span class="ort">Kaltenkirchen</span><p>Das Bestandsgebäude wurde unterfangen, danach entstanden Untergeschoss als weiße Wanne, Betonbau und Verblendfassade.</p></div>
+      <div class="posten"><b>Umbau Klärwerk</b><span class="ort">Hetlingen</span><p>Rohbau, Gerinneabdeckung und Fassade entstanden bei laufendem Betrieb der Anlage; Bauherr war der AZV Südholstein.</p></div>
+      <div class="posten"><b>Erweiterung Feuerwehr</b><span class="ort">Flughafen Hamburg</span><p>Der Betonbau entstand im Sicherheitsbereich, während die Feuerwehr im Bestandsgebäude einsatzbereit blieb.</p></div>
     </div>
   </div>
 </section>
@@ -380,15 +479,15 @@ body{padding-bottom:5.4rem}
     <div class="abschnitt-kopf a-kopf">
       <div>
         <span class="marke-label">Ablauf</span>
-        <h2>Von der Anfrage bis zur Abnahme</h2>
+        <h2>So arbeiten wir</h2>
       </div>
-      <p>So läuft ein Bauvorhaben bei uns ab.</p>
+      <p>Von der Anfrage bis zur Abnahme begleiten Technisches Büro und Bauleitung Ihr Vorhaben.</p>
     </div>
     <div class="strahl">
-      <div class="schritt"><div class="nr">01</div><h3>Anfrage</h3><p>Sie schildern uns die Bauaufgabe und die Vorgaben Ihres Hauses.</p></div>
-      <div class="schritt"><div class="nr">02</div><h3>Kalkulation</h3><p>Das Technische Büro kalkuliert und erarbeitet bei Bedarf Sondervorschläge und Varianten.</p></div>
-      <div class="schritt"><div class="nr">03</div><h3>Ausführung</h3><p>Bauleiter und Poliere koordinieren die Bauabläufe und alle am Bau Beteiligten vor Ort.</p></div>
-      <div class="schritt"><div class="nr">04</div><h3>Abnahme</h3><p>Die Bauleistung wird abgenommen und abgerechnet.</p></div>
+      <div class="schritt"><div class="nr">01</div><h3>Anfrage</h3><p>Sie schildern uns die Bauaufgabe, wir klären gemeinsam die Rahmenbedingungen.</p></div>
+      <div class="schritt"><div class="nr">02</div><h3>Kalkulation</h3><p>Das Technische Büro kalkuliert und erarbeitet, wo sinnvoll, Sondervorschläge.</p></div>
+      <div class="schritt"><div class="nr">03</div><h3>Ausführung</h3><p>Bauleiter und Poliere koordinieren die Bauabläufe vor Ort mit allen Beteiligten.</p></div>
+      <div class="schritt"><div class="nr">04</div><h3>Abnahme</h3><p>Die Bauleistung wird abgenommen und anhand der Aufmaß- und Abrechnungsunterlagen abgerechnet.</p></div>
     </div>
   </div>
 </section>
@@ -397,13 +496,13 @@ body{padding-bottom:5.4rem}
   <div class="huelle gebiet-in">
     <div>
       <span class="marke-label">Einsatzgebiet</span>
-      <h2 style="margin-top:.7rem">Standorte</h2>
-      <p style="margin-top:1rem;color:rgba(255,255,255,.92)">Die Verwaltung sitzt in Hamburg-Uhlenhorst, der Betriebshof mit Stahlbau in Norderstedt.</p>
+      <h2 style="margin-top:.7rem">Unsere Standorte</h2>
+      <p style="margin-top:1rem;color:rgba(255,255,255,.92)">Verwaltung in Hamburg-Uhlenhorst, Betriebshof in Norderstedt, verbundenes Unternehmen bei Schwerin.</p>
     </div>
     <div class="gebiet-liste">
-      <div class="weg"><h3>Verwaltung Hamburg</h3><p>Hans-Henny-Jahnn-Weg 25, 22085 Hamburg.</p></div>
+      <div class="weg"><h3>Verwaltung Hamburg</h3><p>Hans-Henny-Jahnn-Weg 25, 22085 Hamburg-Uhlenhorst.</p></div>
       <div class="weg"><h3>Betriebshof Norderstedt</h3><p>Robert-Koch-Straße 21, 22851 Norderstedt, mit Werkstatthalle für den Stahlbau.</p></div>
-      <div class="weg"><h3>Wittenförden</h3><p>Die Jürgen Martens GmbH, Nordring 17, 19073 Wittenförden, wickelt Projekte in Mecklenburg-Vorpommern ab.</p></div>
+      <div class="weg"><h3>Wittenförden</h3><p>Jürgen Martens GmbH, Nordring 17, 19073 Wittenförden, Telefon 0385 64604-0.</p></div>
     </div>
   </div>
 </section>
@@ -411,13 +510,13 @@ body{padding-bottom:5.4rem}
 <section class="betrieb">
   <div class="huelle betrieb-in">
     <div class="betrieb-bild">
-      <img class="band-bild" src="https://www.juema-hamburg.de/img/projekte/19074/slide2.jpg" alt="Brückenneubau Hetlinger Binnenelbe" loading="lazy" onerror="this.remove();"
+      <img class="band-bild" src="https://www.juema-hamburg.de/img/projekte/19074/slide2.jpg" alt="Brücke über die Hetlinger Binnenelbe" loading="lazy" onerror="this.remove();"
         style="width:100%;height:100%;object-fit:cover">
     </div>
     <div>
       <span class="marke-label">Der Betrieb</span>
-      <h2>Mittelständisch, in Hamburg zu Hause</h2>
-      <p class="betrieb-text">Das Unternehmen baut seit 1953 mit Fachkräften aus der Region in der Region. Es bildet Nachwuchs aus und Fachkräfte weiter.</p>
+      <h2>Ein mittelständisches Bauunternehmen</h2>
+      <p class="betrieb-text">Wir bauen mit Fachkräften aus der Region in der Region, bilden Nachwuchs aus und unsere Fachkräfte weiter. Dazu kommen ein eigener Geräte- und Fuhrpark und ein hauseigenes Technisches Büro.</p>
       <div class="zeiten">
         <span class="marke-label">Bürozeiten</span>
         <b>Erreichbarkeit</b>
@@ -429,7 +528,7 @@ body{padding-bottom:5.4rem}
           <tr><td>Fr</td><td></td></tr>
           <tr><td>Sa</td><td></td></tr>
         </table>
-        <p class="zeiten-fuss">Rufen Sie in der Verwaltung an oder schreiben Sie uns, wir melden uns bei Ihnen.</p>
+        <p class="zeiten-fuss">Rufen Sie uns an oder schreiben Sie uns, wir melden uns bei Ihnen.</p>
       </div>
     </div>
   </div>
@@ -440,9 +539,9 @@ body{padding-bottom:5.4rem}
     <div class="abschnitt-kopf">
       <div>
         <span class="marke-label">Bauleitung</span>
-        <h2>Technisches Büro und Bauleitung</h2>
+        <h2>Die Menschen auf der Baustelle</h2>
       </div>
-      <p>Das Technische Büro arbeitet eng mit den Bauleitern vor Ort zusammen, damit Bauaufgaben termingerecht und einwandfrei ausgeführt werden.</p>
+      <p>Ihre Ansprechpartner sind das Technische Büro, die Bauleiter und die Poliere, die Ihr Vorhaben von der Arbeitsvorbereitung bis zur Abnahme begleiten.</p>
     </div>
     <div class="personen">
       <div class="person">
@@ -474,10 +573,10 @@ body{padding-bottom:5.4rem}
   <div class="huelle kontakt">
     <div>
       <span class="marke-label">Kontakt</span>
-      <h2>Sprechen Sie uns an</h2>
-      <p style="margin-top:1rem;color:#4D5457">Schildern Sie uns Ihr Vorhaben, wir melden uns bei Ihnen.</p>
+      <h2>Sprechen Sie mit uns über Ihr Bauvorhaben</h2>
+      <p style="margin-top:1rem;color:#4D5457">Schildern Sie uns kurz Ort, Art und gewünschten Zeitraum, wir melden uns bei Ihnen.</p>
       <a class="ruf" href="tel:0402270230">040 227023-0</a>
-      <p class="ruf-zeit">Verwaltung: 040 227023-0</p>
+      <p class="ruf-zeit">Zentrale Hamburg: 040 227023-0</p>
       <div class="adresse">
         <div data-weg-wenn-leer><span>Anschrift</span>Hans-Henny-Jahnn-Weg 25<br>22085 Hamburg</div>
         <div data-weg-wenn-leer><span>E-Mail</span><a href="mailto:info@juema-hamburg.de">info@juema-hamburg.de</a></div>
@@ -492,7 +591,7 @@ body{padding-bottom:5.4rem}
         <input id="f-mail" name="email" type="email" autocomplete="email">
         <p class="form-hinweis">Bitte keine Zugangsdaten oder Zahlungsdaten in dieses Feld.</p></div>
       <div class="feld"><label for="f-text">Ihr Vorhaben</label>
-        <textarea id="f-text" name="text" placeholder="Anfrage zur Instandsetzung einer Brücke"></textarea></div>
+        <textarea id="f-text" name="text" placeholder="Zum Beispiel: Instandsetzung einer Brücke, Baubeginn im Frühjahr."></textarea></div>
       <button class="taste" type="submit">Anfrage senden</button>
       <p class="form-hinweis">Wir verwenden Ihre Angaben ausschließlich, um Ihr Anliegen zu bearbeiten
         und Sie zurückzurufen. Eine Weitergabe an Dritte erfolgt nicht.</p>
@@ -503,10 +602,10 @@ body{padding-bottom:5.4rem}
 <footer class="fuss">
   <div class="huelle">
     <div class="fuss-grid">
-      <div><b>Jürgen Martens GmbH & Co. KG</b><p>Jürgen Martens GmbH & Co. KG · Hans-Henny-Jahnn-Weg 25 · 22085 Hamburg</p></div>
+      <div><b>Jürgen Martens GmbH & Co. KG</b><p>Jürgen Martens GmbH & Co. KG, Bauunternehmung in Hamburg seit 1953</p></div>
       <div><b style="font-size:.84rem">Anschrift</b>Hans-Henny-Jahnn-Weg 25<br>22085 Hamburg<br>
         <a href="tel:0402270230">040 227023-0</a></div>
-      <div><b style="font-size:.84rem">Erreichbarkeit</b>Verwaltung: 040 227023-0<br></div>
+      <div><b style="font-size:.84rem">Erreichbarkeit</b>Zentrale Hamburg: 040 227023-0<br></div>
     </div>
     <div class="zeile">
       <span>&copy; 2026 Jürgen Martens GmbH & Co. KG</span>
@@ -515,24 +614,67 @@ body{padding-bottom:5.4rem}
   </div>
 </footer>
 
-<div class="vorschaumarke" aria-hidden="true">
-  <b>VORSCHAU</b>
-  <span>nicht veröffentlicht</span>
+<!-- ——————————————————————————————————————————————————————————
+     Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+
+     Zweck: Wer diesen Link bekommt, soll in der ersten Sekunde
+     begreifen, dass das ein Entwurf ist und nicht die veroeffentlichte
+     Seite seines Betriebs. Bei Aerzten, Kanzleien und Krankenhaeusern
+     ist das keine Hoeflichkeit, sondern notwendig — dort reagiert man
+     empfindlich auf alles, was wie eine echte Veroeffentlichung
+     aussieht.
+
+     Bewusst KEIN seitenfuellendes Wasserzeichen quer ueber die Seite:
+     Der Entwurf muss gleichzeitig so gut aussehen, dass der Unternehmer
+     ihn kaufen will. Ein Raster aus "ENTWURF" ueber dem ganzen Bild
+     nimmt genau das kaputt. Stattdessen eine kraeftige Marke oben
+     rechts mit dem TerminWerk-Zeichen und eine schmale Leiste unten.
+     —————————————————————————————————————————————————————————— -->
+<div class="vorschaumarke" aria-label="Diese Seite ist ein unverbindlicher Entwurf">
+  <span class="vm-zeichen" aria-hidden="true">
+    <svg viewBox="0 0 34 34" focusable="false">
+      <rect width="34" height="34" rx="9.5" fill="#132F38"/>
+      <rect x="9.1" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="18.3" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="6.4" y="9.1" width="17.2" height="16" rx="2.8" fill="#fff"/>
+      <g fill="#132F38">
+        <rect x="8.9" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="18.1" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="8.9" y="19.4" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="19.4" width="2.5" height="2.5" rx=".7"/>
+      </g>
+      <circle cx="23.8" cy="23.4" r="7.6" fill="#132F38"/>
+      <circle cx="23.8" cy="23.4" r="6.2" fill="#44B370"/>
+      <g fill="#fff">
+        <circle cx="21.2" cy="23.4" r="1.05"/><circle cx="23.8" cy="23.4" r="1.05"/><circle cx="26.4" cy="23.4" r="1.05"/>
+      </g>
+    </svg>
+  </span>
+  <span class="vm-text">
+    <b>Vorschau</b>
+    <span>nicht veröffentlicht</span>
+  </span>
 </div>
 
 <div class="entwurf">
-  <span class="entwurf-haupt">
-    <span class="nur-breit">Unverbindlicher Entwurf für Jürgen Martens GmbH & Co. KG — diese Seite ist nicht veröffentlicht.</span>
-    <span class="nur-schmal">Unverbindlicher Entwurf — nicht veröffentlicht</span>
-  </span>
-  <span class="entwurf-rest">
-    <span class="entwurf-detail">Gestaltet von TerminWerk Systeme · für Suchmaschinen gesperrt · nur über diesen Link erreichbar</span>
-    <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
-    <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
-    <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
-    <span class="entwurf-detail">Entwurf gültig bis 16.12.2026</span>
-  </span>
+  <div class="entwurf-in">
+    <span class="entwurf-punkt" aria-hidden="true"></span>
+    <span class="entwurf-haupt">
+      <span class="nur-breit">Unverbindlicher Entwurf für Jürgen Martens GmbH & Co. KG</span>
+      <span class="nur-schmal">Unverbindlicher Entwurf</span>
+    </span>
+    <span class="entwurf-trenner" aria-hidden="true"></span>
+    <span class="entwurf-detail">nicht veröffentlicht · für Suchmaschinen gesperrt</span>
+    <span class="entwurf-links">
+      <a href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+      <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+      <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+    </span>
+    <span class="entwurf-detail entwurf-frist">gültig bis 16.12.2026</span>
+  </div>
 </div>
+
 
 <script>
 (function(){
@@ -866,12 +1008,12 @@ body{padding-bottom:5.4rem}
   var VORRAT = [
     /* Hochbau, Rohbau, Kran */
     {id:'photo-1768926968986-a88590ce5025', b:1, w:1, s:'hochbau rohbau baustelle mannschaft team allgemein'},
-    {id:'photo-1644221150186-5d785a471f44', b:1, w:1, s:'hochbau rohbau neubau kran gebaeude geschosswohnungsbau'},
+    {id:'photo-1644221150186-5d785a471f44', b:1, w:1, s:'hochbau rohbau neubau schluesselfertig kran gebaeude geschosswohnungsbau'},
     {id:'photo-1644221150141-24f57d9a468b', w:1, s:'hochbau rohbau neubau kran gebaeude geschosswohnungsbau'},
     {id:'photo-1599707254554-027aeb4deacd', w:1, s:'kran hochbau neubau hebezeug'},
     {id:'photo-1677354371002-7a6c38c992e6', w:1, s:'kran hochbau neubau hebezeug gebaeude'},
-    {id:'photo-1664662568348-24b1482b6354', b:1, w:1, s:'rohbau geruest neubau hochbau fassade gebaeude'},
-    {id:'photo-1602757115429-b4190ae087be', w:1, s:'rohbau hochbau neubau geschosswohnungsbau gebaeude'},
+    {id:'photo-1664662568348-24b1482b6354', b:1, w:1, s:'rohbau geruest neubau schluesselfertig hochbau fassade gebaeude'},
+    {id:'photo-1602757115429-b4190ae087be', w:1, s:'rohbau hochbau neubau schluesselfertig wohnungsbau gebaeude'},
     {id:'photo-1527335988388-b40ee248d80c', w:1, s:'stahlbau geruest traeger konstruktion halle gewerbebau'},
     {id:'photo-1673978484281-e9370ac3b81c', w:1, s:'innenausbau geruest sanierung umbau rohbau'},
     {id:'photo-1718715391199-5fc33b8cf78b', s:'stahlbau decke konstruktion halle gewerbebau'},
@@ -918,6 +1060,34 @@ body{padding-bottom:5.4rem}
     {id:'photo-1683115099191-51e617fc5ff1', t:1, w:1, s:'bauhof werkstatt lager betrieb allgemein'},
     {id:'photo-1731694411560-050e5b91e943', t:1, w:1, s:'bauhof werkstatt lager betrieb allgemein'},
 
+    /* Ingenieur- und Brueckenbau.
+       Nachgelegt, weil auf der ersten echten Bauseite (Juergen Martens)
+       "Ingenieurbau" und "Brueckenbau" KEIN einziges Bild im Vorrat
+       fanden und auf Bauhelme zurueckfielen. Zwei von sechs Kacheln
+       zeigten damit Warnwesten statt Bauwerk. */
+    {id:'photo-1763113349178-05cded58108e', b:1, w:1, s:'brueckenbau bruecke ingenieurbau kran spannbeton'},
+    {id:'photo-1759849556341-f4767cb26ae0', w:1, s:'brueckenbau bruecke ingenieurbau kran segment'},
+    {id:'photo-1708786910201-eb908f463782', w:1, s:'brueckenbau bruecke ingenieurbau kran gleis verkehrsbau'},
+    {id:'photo-1691149210746-c6bbb40f4bf6', w:1, s:'brueckenbau bruecke ingenieurbau pfeiler wasserbau'},
+    {id:'photo-1673978481178-b4d72cfd2fb9', w:1, s:'ingenieurbau kran traeger montage grossbaustelle'},
+    {id:'photo-1785257272547-f8dd0b6aa3f5', w:1, s:'stahlbau traeger tragwerk konstruktion halle ingenieurbau'},
+
+    /* Geruest, Fassade, Sanierung und Instandsetzung */
+    {id:'photo-1693183040602-b8f29c4ca4ac', w:1, s:'geruest geruestbau fassade sanierung instandsetzung altbau'},
+    {id:'photo-1562316120-0f581a35b9d1', b:1, w:1, s:'geruest geruestbau fassade sanierung instandsetzung modernisierung'},
+    {id:'photo-1542350880924-09225f70e026', w:1, s:'geruest geruestbau fassade sanierung arbeiten'},
+    {id:'photo-1653837105223-63912447c7a0', w:1, s:'sanierung instandsetzung altbau fassade geruest modernisierung'},
+
+    /* Abbruch und Rueckbau */
+    {id:'photo-1711618732595-0c517e08d40c', b:1, w:1, s:'abbruch rueckbau abriss bagger entkernung'},
+    {id:'photo-1677588508537-5106322c2d40', w:1, s:'abbruch rueckbau abriss bagger gebaeude'},
+    {id:'photo-1599732596061-1f381074f115', w:1, s:'abbruch rueckbau abriss bagger altbau'},
+    {id:'photo-1710765540315-096c7ac61007', w:1, s:'abbruch rueckbau abriss greifer bagger'},
+
+    /* Kanal- und Leitungsbau */
+    {id:'photo-1645070029556-809b2517151e', b:1, w:1, s:'kanalbau leitungsbau graben rohr tiefbau erdarbeiten'},
+    {id:'photo-1565364507085-325347bae748', w:1, s:'kanalbau leitungsbau rohr graben tiefbau'},
+
     /* Neutral */
     {id:'photo-1662309376159-b95fb193d96b', n:1, w:1, s:'baustelle sicherheit allgemein'},
     {id:'photo-1622612023350-b15f063eabe6', n:1, w:1, s:'baustelle sicherheit allgemein'},
@@ -927,7 +1097,14 @@ body{padding-bottom:5.4rem}
   var samen = (function(t){ var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h; })("juergen-martens" || "x");
 
   function passt(text, schlag){
-    var t = ' ' + (text || '').toLowerCase().replace(/[^a-zäöüß]+/g, ' ').trim() + ' ';
+    /* Umlaute angleichen. Die Schlagwoerter sind in ue/oe/ae geschrieben,
+       die Leistungen auf den Seiten tragen echte Umlaute — "Brueckenbau"
+       trifft "Brückenbau" sonst nie, und genau das ist passiert:
+       Brueckenbau, Geruestbau und Dachdaemmung fanden NULL Bilder und
+       fielen auf Bauhelme zurueck. */
+    var t = ' ' + (text || '').toLowerCase()
+      .replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss')
+      .replace(/[^a-z]+/g, ' ').trim() + ' ';
     var punkte = 0;
     schlag.split(' ').forEach(function(w){
       if (!w) return;
@@ -1013,6 +1190,24 @@ body{padding-bottom:5.4rem}
     var reihe = posten[0].parentNode;
     if (reihe) reihe.style.gridTemplateColumns = 'repeat(' + posten.length + ',1fr)';
   }
+
+  /* Bauleitung: steht keine einzige Person da, faellt der ganze
+     Abschnitt weg. Der gemeinsame Kern raeumt zwar leere Personen auf,
+     sucht den Abschnitt darueber aber unter einem anderen Klassennamen
+     und findet ihn hier nicht — mit der Folge, dass bei Juergen Martens
+     eine Ueberschrift "Bauleitung" ueber 364 Pixeln Nichts stand. */
+  (function(){
+    var raster = document.querySelector('.personen');
+    if (!raster) return;
+    Array.prototype.forEach.call(raster.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = raster.querySelectorAll('.person');
+    var abschnitt = raster.closest('.team');
+    if (!leute.length){ if (abschnitt) abschnitt.remove(); return; }
+    if (leute.length < 3) raster.style.gridTemplateColumns = 'repeat(' + leute.length + ',minmax(0,24rem))';
+  })();
 
   /* Felder ohne Inhalt verschwinden samt Beschriftung. */
   Array.prototype.forEach.call(document.querySelectorAll('[data-weg-wenn-leer]'), function(d){
