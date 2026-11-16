@@ -1,0 +1,1726 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Praxis Dr. Jakob — Zahnarzt und Oralchirurg am Neuen Wall in Hamburg</title>
+<meta name="description" content="Praxis Dr. Jakob am Neuen Wall 34 in Hamburg: Zahnerhaltung, Zahnersatz mit CEREC, Implantate, Prophylaxe und ästhetische Zahnmedizin. Alle Kassen und privat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ——————————————————————————————————————————————————————————
+   ZAHNARZTPRAXIS — zweite Fassung, komplett neu.
+
+   Die erste Fassung war zu brav: zentrierte Buehne ohne Bild, ein
+   Foto mittig unter der Telefonnummer, Leistungen als zweispaltige
+   Textliste, ein Menue wie 2015. Sachlich richtig, aber nichts daran
+   liess jemanden kaufen wollen.
+
+   Was diese Fassung anders macht:
+
+   1. WARM STATT KLINISCH. Zahnarztseiten sehen fast alle gleich aus:
+      Weiss, Hellblau, Stockfoto mit Zaehnen. Hier liegt ueber allem
+      ein warmes Papierweiss und ein Sandton; das Tuerkis der Praxis
+      setzt Akzente, statt die Seite zu beherrschen. Beim Zahnarzt
+      entscheidet das Gefuehl "hier habe ich keine Angst" — und das
+      traegt kein Reinweiss.
+
+   2. ANZEIGESCHRIFT MIT HALTUNG. Instrument Serif fuer die grossen
+      Zeilen, Plus Jakarta Sans fuer alles andere. Eine Serife wirkt
+      ruhiger und teurer als die uebliche Groteske.
+
+   3. DER LEISTUNGSTEIL BLEIBT STEHEN. Links klebt die Ueberschrift,
+      rechts laufen die Karten durch. Kein anderes der sieben
+      Gewerke macht das.
+
+   4. EFFEKTE, DIE EINEN ZWECK HABEN. Das Buehnenbild wandert beim
+      Scrollen leicht mit, die Ueberschrift laeuft zeilenweise ein,
+      die Zeitachse fuellt sich mit dem Scrollstand, die Kopfzeile
+      zieht sich zusammen. Nichts blinkt, nichts huepft.
+
+   Abgrenzung zu den anderen sechs:
+     Handwerk — Foto neben Text, Liste mit Wechselbild.
+     Bau      — Foto ueber die volle Breite dahinter, strenges Raster.
+     GaLaBau  — grosses Foto mit schwebender Karte, Bildmosaik.
+     Facharzt — Patientenkarte rechts, Karten zum Blaettern.
+     Zahnarzt — stehendes Bild mit Schein, klebende Leistungsspalte.
+   —————————————————————————————————————————————————————————— */
+:root{
+  --akzent:#2e7f8c;
+  --akzent-d:#266873;
+  --akzent-blass:color-mix(in srgb,var(--akzent) 10%,#FBF9F6);
+  --akzent-hell:color-mix(in srgb,var(--akzent) 55%,white);
+
+  --tief:#10262B;
+  --tief-2:#17353C;
+  --grau:#5B6D71;
+  --grau-hell:#92A2A5;
+  --papier:#FBF9F6;        /* warmes Papierweiss, kein Reinweiss */
+  --sand:#F2EBE2;          /* ruhiger Gegenton zum Tuerkis */
+  --linie:rgba(16,38,43,.1);
+  --anzeige:"Instrument Serif",Georgia,serif;
+  --text:"Plus Jakarta Sans",system-ui,sans-serif;
+  --rund:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--papier);color:var(--tief);font-family:var(--text);
+  font-size:16.5px;line-height:1.68;font-weight:300;-webkit-font-smoothing:antialiased;
+  overflow-x:clip}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.015em}
+h1,h2{font-family:var(--anzeige);font-weight:400}
+h3{font-family:var(--text);font-weight:600;line-height:1.25;letter-spacing:-.01em}
+p{margin:0}
+a{color:inherit}
+[id]{scroll-margin-top:6.5rem}
+.huelle{width:min(1200px,100%);margin-inline:auto;
+  padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--akzent)}
+
+/* ———— Kopf: schwebende Glasleiste, zieht sich beim Scrollen zusammen ———— */
+.kopf{position:sticky;top:0;z-index:50;padding-block:.9rem;transition:padding .35s cubic-bezier(.22,.61,.36,1)}
+.kopf[data-fest]{padding-block:.45rem}
+.kopf-glas{
+  width:min(1200px,100%);margin-inline:auto;
+  display:flex;align-items:center;gap:1.2rem;
+  padding:.5rem .6rem .5rem 1.1rem;border-radius:999px;
+  background:rgba(251,249,246,.78);
+  backdrop-filter:saturate(1.5) blur(14px);-webkit-backdrop-filter:saturate(1.5) blur(14px);
+  border:1px solid rgba(16,38,43,.08);
+  box-shadow:0 1px 2px rgba(16,38,43,.04);
+  transition:box-shadow .35s,background .35s,transform .35s cubic-bezier(.22,.61,.36,1);
+}
+.kopf[data-fest] .kopf-glas{
+  background:rgba(251,249,246,.93);
+  box-shadow:0 10px 34px rgba(16,38,43,.12);
+}
+.marke-link{display:flex;align-items:center;gap:.65rem;min-width:0;text-decoration:none;color:inherit}
+.logo-platte{background:#fff;border-radius:12px;padding:.26rem .46rem;display:grid;place-items:center;flex:none;
+  box-shadow:0 1px 4px rgba(16,38,43,.1)}
+.logo-platte img{max-height:38px;width:auto;mix-blend-mode:multiply;transition:max-height .35s}
+.kopf[data-fest] .logo-platte img{max-height:32px}
+.wortmarke{min-width:0}
+.wortmarke b{display:block;font-family:var(--anzeige);font-size:1.3rem;font-weight:400;letter-spacing:-.015em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.15}
+.wortmarke span{display:block;font-size:.63rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--grau-hell);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kopf nav{margin-left:auto;display:flex;gap:.3rem;align-items:center}
+.kopf nav a:not(.taste){
+  position:relative;font-size:.9rem;font-weight:500;color:var(--grau);text-decoration:none;
+  padding:.5rem .8rem;border-radius:999px;transition:color .22s,background .22s;
+}
+.kopf nav a:not(.taste):hover{color:var(--tief);background:rgba(16,38,43,.05)}
+.taste{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--akzent);color:#fff;
+  font-family:var(--text);font-size:.92rem;font-weight:600;
+  padding:.72rem 1.4rem;border-radius:999px;text-decoration:none;border:0;cursor:pointer;
+  transition:background .22s,transform .22s,box-shadow .22s;
+  box-shadow:0 3px 14px color-mix(in srgb,var(--akzent) 30%,transparent);
+}
+.taste:hover{background:var(--akzent-d);transform:translateY(-2px);
+  box-shadow:0 10px 26px color-mix(in srgb,var(--akzent) 38%,transparent)}
+.kopf .taste{color:#fff}
+.taste em{font-style:normal;transition:transform .28s cubic-bezier(.22,.61,.36,1)}
+.taste:hover em{transform:translateX(4px)}
+.taste--ruhig{background:transparent;color:var(--tief);box-shadow:inset 0 0 0 1.5px var(--linie)}
+.taste--ruhig:hover{background:#fff;box-shadow:inset 0 0 0 1.5px var(--akzent);color:var(--akzent)}
+@media(max-width:1000px){.kopf nav a:not(.taste){display:none}}
+/* Auf dem Telefon muss der Termin-Knopf in EINE Zeile passen. Brach er
+   um, wuchs die Glasleiste auf 190 Pixel, und die Vorschau-Marke, die
+   ihre Hoehe misst, landete mitten auf der ersten Textzeile. */
+@media(max-width:620px){
+  .kopf{padding-block:.55rem}
+  .kopf-glas{gap:.6rem;padding:.4rem .45rem .4rem .85rem}
+  .wortmarke b{font-size:1.08rem}
+  .wortmarke span{font-size:.56rem;letter-spacing:.12em}
+  .taste{font-size:.82rem;padding:.58rem .95rem;white-space:nowrap}
+  .kopf .taste em{display:none}
+  .logo-platte img{max-height:30px}
+  /* Platz fuer die Vorschau-Marke: Sie liegt fest oben rechts und
+     deckte sonst das Ende der ersten Textzeile zu. Der Wert ist
+     unabhaengig von der Kopfhoehe — die Marke sitzt immer 12
+     Pixel unter dem Kopf und ist rund 66 Pixel hoch. */
+}
+
+/* ———— Bühne ———— */
+.buehne{position:relative;padding-block:clamp(2rem,4vw,3.6rem) clamp(3rem,6vw,5.5rem);overflow:clip}
+/* Weicher Farbschein hinter dem Bild — gibt der Seite Tiefe, ohne ein
+   zweites Foto zu brauchen. */
+.buehne::before{
+  content:"";position:absolute;z-index:0;pointer-events:none;
+  width:min(70vw,780px);aspect-ratio:1;right:-14%;top:-12%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--akzent) 30%,transparent),transparent 68%);
+  filter:blur(26px);opacity:.75;
+}
+.buehne-in{position:relative;z-index:1;display:grid;grid-template-columns:1.04fr .96fr;
+  gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.buehne h1{font-size:clamp(2.4rem,1.6rem + 3vw,4.2rem);margin-top:1.1rem;text-wrap:balance}
+/* Nicht groesser: Bei 5rem brach der Satz in vier Zeilen und die
+   Buehne wurde zur Plakatwand. Drei Zeilen lesen sich wie ein Satz. */
+.buehne h1 i{font-style:italic;color:var(--akzent)}
+/* Zeilenweiser Einlauf: die Ueberschrift kommt in zwei Stufen, nicht
+   als ein Block. Das liest sich wie ein Satz, der gesprochen wird. */
+.zeile-auf{display:inline-block;opacity:0;transform:translateY(.5em);
+  animation:zeile .85s cubic-bezier(.22,.61,.36,1) forwards}
+.zeile-auf:nth-of-type(2){animation-delay:.14s}
+@keyframes zeile{to{opacity:1;transform:none}}
+.buehne-lede{margin-top:1.4rem;font-size:clamp(1.02rem,.98rem + .3vw,1.2rem);color:var(--grau);max-width:33rem}
+.buehne-tasten{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem;align-items:center}
+.ruf-klein{display:inline-flex;flex-direction:column;margin-left:.4rem}
+.ruf-klein span{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grau-hell)}
+.ruf-klein a{font-family:var(--anzeige);font-size:1.4rem;text-decoration:none;letter-spacing:-.01em}
+
+/* Stehendes Bild, kein Querformat: Ein Hochformat wirkt wie ein
+   Portrait der Praxis und nicht wie ein Bannerbild. */
+.buehne-bild{position:relative;border-radius:calc(var(--rund) + 8px);overflow:hidden;
+  aspect-ratio:4/5;background:var(--sand);
+  box-shadow:0 30px 70px rgba(16,38,43,.2);}
+.buehne-bild .foto{position:absolute;inset:-8% 0;background-size:cover;background-position:center;
+  will-change:transform}
+.buehne-bild::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(16,38,43,.4),transparent 46%)}
+
+/* Schwebende Karte an der unteren Kante des Bildes */
+.bild-karte{
+  position:absolute;z-index:2;left:clamp(.9rem,2vw,1.4rem);right:clamp(.9rem,2vw,1.4rem);
+  bottom:clamp(.9rem,2vw,1.4rem);
+  background:rgba(251,249,246,.93);backdrop-filter:blur(10px);
+  border-radius:var(--rund);padding:.95rem 1.15rem;
+  display:flex;align-items:center;gap:.9rem;
+  box-shadow:0 14px 36px rgba(16,38,43,.22);
+}
+.bild-karte-punkt{width:9px;height:9px;border-radius:50%;background:var(--akzent);flex:none;
+  box-shadow:0 0 0 4px color-mix(in srgb,var(--akzent) 22%,transparent)}
+.bild-karte b{display:block;font-size:.93rem;font-weight:600}
+.bild-karte span{display:block;font-size:.82rem;color:var(--grau)}
+@media(max-width:900px){
+  .buehne-in{grid-template-columns:1fr}
+  .buehne-bild{aspect-ratio:4/3;max-width:34rem}
+  .buehne::before{right:-30%;top:-6%}
+}
+
+/* ———— Vertrauensstreifen ———— */
+.vertrauen{border-block:1px solid var(--linie);background:rgba(242,235,226,.5)}
+.vertrauen-in{display:flex;flex-wrap:wrap;gap:.6rem 2.4rem;padding-block:1rem;align-items:center}
+.vertrauen-teil{display:flex;align-items:baseline;gap:.5rem;font-size:.92rem;color:var(--grau)}
+.vertrauen-teil b{font-weight:600;color:var(--tief)}
+
+/* ———— Zahlen ———— */
+.koennen{background:var(--tief);color:#BFD0D2}
+.koennen-in{display:grid;grid-template-columns:repeat(var(--spalten,3),1fr);
+  gap:clamp(1.2rem,2.6vw,2.6rem);padding-block:clamp(2.2rem,4vw,3.4rem)}
+.fakt b{display:block;font-family:var(--anzeige);font-weight:400;
+  font-size:clamp(2.2rem,1.6rem + 2.2vw,3.6rem);color:#fff;line-height:1}
+.fakt span{display:block;margin-top:.4rem;font-size:.73rem;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--akzent-hell)}
+.fakt p{margin-top:.5rem;font-size:.92rem;color:#8EA3A6}
+.koennen[data-ohne-zahlen] .fakt span{font-family:var(--anzeige);font-size:1.3rem;letter-spacing:0;
+  text-transform:none;color:#fff;font-weight:400}
+@media(max-width:700px){.koennen-in{grid-template-columns:1fr}}
+
+/* ———— Leistungen: linke Spalte klebt, rechts laufen die Karten ———— */
+.leistungen{padding-block:clamp(3rem,6vw,5.5rem)}
+.leistungen-in{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);
+  gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.leistungen-fest{position:sticky;top:7.5rem}
+.leistungen-fest h2{font-size:clamp(2rem,1.5rem + 2.2vw,3.2rem);margin-top:.9rem}
+.leistungen-fest p{margin-top:1.1rem;color:var(--grau)}
+.leistungen-fest .taste{margin-top:1.6rem}
+.posten-reihe{display:grid;gap:clamp(.8rem,1.6vw,1.1rem)}
+.posten{
+  position:relative;background:#fff;border-radius:var(--rund);
+  padding:clamp(1.2rem,2.2vw,1.7rem) clamp(1.3rem,2.4vw,1.9rem);
+  box-shadow:0 1px 3px rgba(16,38,43,.06);
+  display:grid;grid-template-columns:auto 1fr;gap:0 1.1rem;align-items:start;
+  transition:transform .32s cubic-bezier(.22,.61,.36,1),box-shadow .32s,background .32s;
+}
+.posten::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;
+  background:var(--akzent);transform:scaleY(0);transform-origin:top;transition:transform .32s;
+}
+.posten:hover{transform:translateX(5px);box-shadow:0 14px 34px rgba(16,38,43,.1)}
+.posten:hover::before{transform:scaleY(1)}
+.posten-nr{grid-row:span 2;font-family:var(--anzeige);font-size:1.5rem;color:var(--akzent);
+  line-height:1;padding-top:.1rem}
+.posten h3{font-size:1.18rem}
+.posten p{grid-column:2;margin-top:.45rem;font-size:.95rem;color:var(--grau)}
+@media(max-width:900px){
+  .leistungen-in{grid-template-columns:1fr}
+  .leistungen-fest{position:static}
+}
+
+/* ———— Ruhe: warmer Sandblock ———— */
+.ruhe{background:var(--sand);padding-block:clamp(3rem,6vw,5rem);position:relative;overflow:clip}
+.ruhe-in{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.ruhe h2{font-size:clamp(1.9rem,1.45rem + 2vw,3rem);margin-top:.9rem}
+.ruhe h2 i{font-style:italic;color:var(--akzent)}
+.ruhe p{margin-top:1.1rem;color:var(--grau);max-width:34rem}
+.ruhe-bild{border-radius:var(--rund);overflow:hidden;aspect-ratio:5/4;background:#fff;
+  box-shadow:0 22px 50px rgba(16,38,43,.16)}
+.ruhe-bild .foto{width:100%;height:100%;background-size:cover;background-position:center;
+  transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+.ruhe-bild:hover .foto{transform:scale(1.06)}
+@media(max-width:860px){.ruhe-in{grid-template-columns:1fr}}
+
+/* ———— Ablauf: Zeitachse, die sich mit dem Scrollstand fuellt ———— */
+.ablauf{padding-block:clamp(3rem,6vw,5rem)}
+.a-kopf{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.4rem,4vw,3.4rem);
+  align-items:end;margin-bottom:clamp(2rem,3.6vw,2.8rem)}
+.a-kopf h2{font-size:clamp(1.9rem,1.45rem + 2vw,3rem);margin-top:.9rem}
+.a-kopf p{color:var(--grau)}
+.strahl{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.4vw,2.2rem)}
+.strahl-gleis{position:absolute;left:0;right:0;top:11px;height:2px;background:var(--linie);border-radius:2px}
+.strahl-gleis i{display:block;height:100%;width:0;background:var(--akzent);border-radius:2px;
+  transition:width .25s linear}
+.schritt{position:relative;padding-top:2.6rem}
+.schritt::before{content:"";position:absolute;left:0;top:4px;width:16px;height:16px;border-radius:50%;
+  background:var(--papier);border:3px solid var(--linie);transition:border-color .3s,box-shadow .3s}
+.schritt[data-an]::before{border-color:var(--akzent);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--akzent) 16%,transparent)}
+.schritt .nr{font-size:.72rem;font-weight:700;letter-spacing:.15em;color:var(--akzent)}
+.schritt h3{font-size:1.14rem;margin-top:.4rem}
+.schritt p{margin-top:.45rem;font-size:.94rem;color:var(--grau)}
+@media(max-width:880px){.strahl{grid-template-columns:1fr 1fr}.strahl-gleis{display:none}}
+@media(max-width:540px){.strahl{grid-template-columns:1fr}}
+
+/* ———— Team ———— */
+.team{padding-block:clamp(3rem,6vw,5rem);background:var(--akzent-blass)}
+.personen{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.2rem,2.6vw,2rem)}
+.person{background:#fff;border-radius:var(--rund);overflow:hidden;
+  box-shadow:0 2px 14px rgba(16,38,43,.07);
+  transition:transform .35s cubic-bezier(.22,.61,.36,1),box-shadow .35s}
+.person:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(16,38,43,.14)}
+.kopfbild-huelle{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--sand)}
+.person img.kopfbild{width:100%;height:100%;object-fit:cover;
+  transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+.person:hover img.kopfbild{transform:scale(1.07)}
+.person .monogramm{position:absolute;inset:0;display:grid;place-items:center;background:var(--sand)}
+.person .monogramm span{font-family:var(--anzeige);font-size:3.2rem;color:var(--akzent)}
+.person-text{padding:1.2rem 1.4rem 1.5rem}
+.person h3{font-size:1.2rem}
+.person .rolle{display:block;margin-top:.25rem;font-size:.75rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--akzent)}
+.person p{margin-top:.65rem;font-size:.93rem;color:var(--grau)}
+@media(max-width:860px){.personen{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.personen{grid-template-columns:1fr}}
+
+/* ———— Praxis: Band mit mitwanderndem Bild ———— */
+.band{position:relative;min-height:clamp(22rem,42vw,30rem);display:grid;align-items:center;
+  overflow:clip;color:#fff}
+.band-foto{position:absolute;inset:-10% 0;background-size:cover;background-position:center;
+  will-change:transform}
+.band::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(16,38,43,.88),rgba(16,38,43,.6) 52%,rgba(16,38,43,.3))}
+.band-in{position:relative;z-index:1;padding-block:clamp(2.6rem,5vw,4rem)}
+.band h2{font-size:clamp(1.9rem,1.45rem + 2vw,3rem);margin-top:.9rem;color:#fff;max-width:22ch}
+.band p{margin-top:1rem;color:#C5D3D5;max-width:36rem}
+.band .label{color:var(--akzent-hell)}
+.wege{display:grid;grid-template-columns:repeat(3,minmax(0,16rem));gap:1rem;margin-top:2rem}
+.weg{background:rgba(255,255,255,.1);backdrop-filter:blur(6px);border-radius:14px;
+  padding:1rem 1.15rem;border:1px solid rgba(255,255,255,.14)}
+.weg h3{font-size:1rem;color:#fff}
+.weg p{margin-top:.3rem;font-size:.88rem;color:#B6C6C8}
+@media(max-width:760px){.wege{grid-template-columns:1fr}}
+
+/* ———— Sprechzeiten ———— */
+.zeiten-flaeche{padding-block:clamp(3rem,6vw,5rem)}
+.zeiten-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.zeiten{background:#fff;border-radius:var(--rund);padding:clamp(1.4rem,2.6vw,2rem);
+  box-shadow:0 2px 18px rgba(16,38,43,.08)}
+.zeiten table{width:100%;border-collapse:collapse;font-size:.97rem}
+.zeiten td{padding:.55rem 0;border-bottom:1px solid var(--linie)}
+.zeiten tr:last-child td{border-bottom:0}
+.zeiten td:last-child{text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
+.zeiten-fuss{margin-top:1rem;font-size:.88rem;color:var(--grau)}
+.zeiten-ersatz{font-size:.97rem;color:var(--grau)}
+.zeiten-text h2{font-size:clamp(1.9rem,1.45rem + 2vw,3rem);margin-top:.9rem}
+.zeiten-text p{margin-top:1.1rem;color:var(--grau)}
+.ruf-gross{display:inline-block;margin-top:1.4rem;font-family:var(--anzeige);
+  font-size:clamp(1.8rem,1.4rem + 1.6vw,2.8rem);text-decoration:none;letter-spacing:-.02em}
+.ruf-zeit{margin-top:.35rem;font-size:.9rem;color:var(--grau)}
+@media(max-width:860px){.zeiten-in{grid-template-columns:1fr}}
+
+/* ———— Notfall ———— */
+.notdienst{background:var(--tief-2);color:#C5D3D5;padding-block:clamp(2.4rem,4.6vw,3.6rem)}
+.notdienst-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.notdienst h2{color:#fff;font-size:clamp(1.6rem,1.3rem + 1.4vw,2.4rem);margin-top:.8rem}
+.notdienst p{margin-top:.9rem;color:#9DB0B3}
+.notdienst .ruf-gross{color:#fff}
+@media(max-width:860px){.notdienst-in{grid-template-columns:1fr}}
+
+/* ———— Kontakt ———— */
+.kontakt-flaeche{padding-block:clamp(3rem,6vw,5rem);background:var(--sand)}
+.kontakt{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.kontakt h2{font-size:clamp(1.9rem,1.45rem + 2vw,3rem);margin-top:.9rem}
+.kontakt > div > p{margin-top:1.1rem;color:var(--grau)}
+.adresse{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.8rem;
+  border-top:1px solid var(--linie);padding-top:1.4rem;font-size:.97rem}
+.adresse span{display:block;font-size:.72rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--akzent);margin-bottom:.35rem}
+.form{background:#fff;border-radius:var(--rund);padding:clamp(1.4rem,2.6vw,2.1rem);
+  box-shadow:0 4px 26px rgba(16,38,43,.1)}
+.feld{margin-bottom:1rem}
+.feld label{display:block;font-size:.85rem;font-weight:600;margin-bottom:.38rem}
+.feld input,.feld textarea{width:100%;font-family:var(--text);font-size:.97rem;color:var(--tief);
+  background:var(--papier);border:1px solid var(--linie);border-radius:11px;padding:.75rem .9rem;
+  transition:border-color .2s,box-shadow .2s}
+.feld textarea{min-height:7rem;resize:vertical;line-height:1.6}
+.feld input:focus,.feld textarea:focus{outline:none;border-color:var(--akzent);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--akzent) 16%,transparent)}
+.form .taste{width:100%;justify-content:center;margin-top:.3rem}
+.form-hinweis{margin-top:.8rem;font-size:.84rem;color:var(--grau)}
+@media(max-width:860px){.kontakt{grid-template-columns:1fr}.adresse{grid-template-columns:1fr}}
+
+/* ———— Fuß ———— */
+.fuss{background:var(--tief);color:#8EA3A6;padding-block:clamp(2.4rem,4.4vw,3.4rem);font-size:.93rem}
+.fuss-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1.8rem}
+.fuss b{display:block;font-family:var(--anzeige);font-weight:400;font-size:1.3rem;color:#fff;margin-bottom:.5rem}
+.fuss .klein{font-family:var(--text);font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.fuss a{color:#BFD0D2}
+.fuss .zeile{margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.12);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.84rem}
+@media(max-width:760px){.fuss-grid{grid-template-columns:1fr}}
+
+/* ———— Platz fuer die Vorschau-Marke ————
+   Sie liegt fest oben rechts, rund 12 Pixel unter der Kopfzeile und
+   etwa 66 Pixel hoch. Auf dem Telefon deckte sie sonst das Ende der
+   ersten Textzeile der Buehne zu — bei einer Praxis ausgerechnet die
+   Zeile mit Ort und Kassen.
+   Diese Regel steht bewusst ganz am Ende des Stylesheets: Weiter oben
+   wurde sie von der spaeteren padding-block-Angabe der Buehne wieder
+   ueberschrieben. */
+@media(max-width:620px){
+  .buehne{padding-top:5.8rem}
+}
+/* ——————————————————————————————————————————————————————————
+   Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+   Die Farben kommen aus der Marke TerminWerk (#132F38 und #44B370)
+   und NICHT aus der Akzentfarbe des Kunden: Die Kennzeichnung gehoert
+   uns, nicht seinem Betrieb, und soll sich sichtbar davon absetzen.
+   —————————————————————————————————————————————————————————— */
+/* Rueckfall, falls das Skript nicht laeuft. Den echten Wert setzt
+   _kern.js aus der gemessenen Hoehe der Leiste. */
+body{padding-bottom:5.5rem}
+@media(max-width:760px){body{padding-bottom:5rem}}
+
+:root{
+  --tw-tief:#101F26;
+  --tw-gruen:#44B370;
+  --tw-hell:#DCE5E2;
+}
+
+/* ———— Marke oben rechts ———— */
+.vorschaumarke{
+  position:fixed;
+  /* --marke-oben misst der gemeinsame Kern aus der echten Kopfzeile.
+     Die 84 Pixel sind nur der Rueckfall, falls das Skript nicht laeuft. */
+  top:calc(var(--marke-oben,84px) + env(safe-area-inset-top,0px));
+  right:max(16px,env(safe-area-inset-right,0px));
+  z-index:95;pointer-events:none;
+  display:flex;align-items:center;gap:.62rem;
+  padding:.6rem .95rem .6rem .7rem;
+  background:rgba(16,31,38,.93);
+  backdrop-filter:saturate(1.4) blur(8px);
+  border-left:4px solid var(--tw-gruen);
+  border-radius:4px;
+  box-shadow:0 10px 30px rgba(8,16,20,.4),0 2px 6px rgba(8,16,20,.3);
+  animation:vm-auf .5s cubic-bezier(.22,.61,.36,1) .35s both;
+}
+@keyframes vm-auf{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.vorschaumarke{animation:none}}
+.vm-zeichen{display:block;flex:none}
+.vm-zeichen svg{width:30px;height:30px;display:block}
+.vm-text{display:block;line-height:1.15}
+.vorschaumarke b{
+  display:block;font-size:.84rem;font-weight:800;letter-spacing:.17em;
+  text-transform:uppercase;color:#fff;
+}
+.vorschaumarke .vm-text span{
+  display:block;margin-top:.1rem;font-size:.7rem;font-weight:500;
+  letter-spacing:.04em;color:var(--tw-gruen);
+}
+@media (max-width:560px){
+  .vorschaumarke{top:calc(var(--marke-oben,68px) + env(safe-area-inset-top,0px));
+    padding:.45rem .7rem .45rem .52rem;gap:.45rem}
+  .vm-zeichen svg{width:24px;height:24px}
+  .vorschaumarke b{font-size:.72rem}
+  .vorschaumarke .vm-text span{font-size:.62rem}
+}
+
+/* ——————————————————————————————————————————————————————————
+   Die Entwurfsleiste unten.
+
+   Alles, was frueher der grosse Abschnitt "Das ist ein Entwurf" im
+   Seitenfluss enthielt, steckt jetzt hier: Ueberschrift, die vier
+   Schritte, die Taste, Impressum und Datenschutz. Zielhoehe rund
+   zwei Zentimeter, damit die Seite darueber ganz dem Betrieb gehoert.
+
+   Gebaut aus zwei Zeilen: oben die Hauptzeile, darunter ein duenner
+   Fuss mit den Rechtshinweisen. Die ausfuehrlichen Saetze liegen
+   dazwischen und klappen auf.
+
+   Eigene Schrift und keine Erbschaft aus der Kundenvorlage: Sonst
+   stuende die Leiste bei Bau in Grossbuchstaben und bei GaLaBau in
+   einer Serife — unser Wort an den Unternehmer sieht auf allen sieben
+   Branchen gleich aus.
+   —————————————————————————————————————————————————————————— */
+.entwurf,.entwurf *{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  text-transform:none;font-style:normal;letter-spacing:normal;
+  box-sizing:border-box;
+}
+.entwurf{
+  position:fixed;left:0;right:0;bottom:0;z-index:96;
+  background:linear-gradient(to right,var(--tw-tief),#16313B 58%,var(--tw-tief));
+  color:var(--tw-hell);
+  border-top:2px solid var(--tw-gruen);
+  box-shadow:0 -8px 28px rgba(8,16,20,.3);
+  max-height:84vh;overflow-y:auto;overscroll-behavior:contain;
+}
+.entwurf .entwurf-in{
+  width:min(1320px,100%);margin-inline:auto;
+  padding-inline:max(16px,env(safe-area-inset-left,0px));
+}
+
+/* ———— Hauptzeile ———— */
+.entwurf > .entwurf-in{
+  display:flex;align-items:center;gap:1.1rem;
+  padding-block:.6rem;
+}
+.entwurf-zeichen{flex:none;display:block}
+.entwurf-zeichen svg{width:28px;height:28px;display:block}
+
+.entwurf-wort{min-width:0;display:block;line-height:1.3}
+.entwurf-wort b{
+  display:block;font-size:.86rem;font-weight:700;color:#fff;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.entwurf-unter{
+  display:block;font-size:.76rem;color:#93A5AC;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* Die vier Schritte als knappe Kette — sichtbar bleibt, DASS es vier
+   gibt und wie sie heissen; die Saetze dazu stehen im Aufklappteil. */
+.entwurf-schritte{
+  list-style:none;margin:0 0 0 auto;padding:0;flex:none;
+  display:flex;align-items:center;gap:.5rem;
+}
+.entwurf-schritte li{
+  display:flex;align-items:center;gap:.34rem;
+  font-size:.76rem;font-weight:600;color:#C6D3CF;white-space:nowrap;
+  padding:.3rem .62rem;border-radius:999px;
+  background:rgba(255,255,255,.07);
+}
+.entwurf-schritte i{font-style:normal;font-size:.68rem;font-weight:700;color:var(--tw-gruen)}
+
+.entwurf-rechts{flex:none;display:flex;align-items:center;gap:.7rem}
+.entwurf-mehr-schalter{
+  display:inline-flex;align-items:center;gap:.38rem;
+  background:transparent;border:1px solid rgba(255,255,255,.22);
+  color:#C6D3CF;font-size:.78rem;font-weight:600;
+  padding:.42rem .78rem;border-radius:999px;cursor:pointer;
+  transition:border-color .2s,color .2s,background .2s;
+}
+.entwurf-mehr-schalter:hover{border-color:var(--tw-gruen);color:#fff;background:rgba(68,179,112,.14)}
+.entwurf-mehr-schalter svg{width:11px;height:8px;transition:transform .25s}
+.entwurf-mehr-schalter[aria-expanded="false"] svg{transform:rotate(180deg)}
+.entwurf-taste{
+  display:inline-flex;align-items:center;
+  background:var(--tw-gruen);color:#0B1A12;
+  font-size:.82rem;font-weight:700;padding:.48rem 1.05rem;border-radius:999px;
+  text-decoration:none;white-space:nowrap;
+  transition:background .2s,transform .2s,box-shadow .2s;
+  box-shadow:0 3px 14px rgba(68,179,112,.3);
+}
+.entwurf-taste:hover{background:#56C681;transform:translateY(-1px);box-shadow:0 6px 20px rgba(68,179,112,.4)}
+
+/* ———— Aufklappteil ———— */
+.entwurf-mehr{border-top:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.2)}
+.entwurf-mehr-in{padding-block:1.1rem 1.2rem}
+.entwurf-lang{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem 1.6rem;
+}
+.entwurf-lang li{border-top:1px solid rgba(255,255,255,.16);padding-top:.7rem}
+.entwurf-lang span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--tw-gruen)}
+.entwurf-lang b{display:block;margin-top:.3rem;color:#fff;font-size:.95rem;font-weight:700}
+.entwurf-lang p{margin:.3rem 0 0;font-size:.82rem;line-height:1.55;color:#A9BAB5}
+.entwurf-bildhinweis{margin:1rem 0 0;font-size:.8rem;color:#8EA19C;max-width:46rem}
+
+/* ———— Duenner Fuss ———— */
+.entwurf-fuss{border-top:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.26)}
+.entwurf-fuss-in{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;
+  padding-block:.32rem calc(.32rem + env(safe-area-inset-bottom,0px));
+  font-size:.72rem;color:#8EA19C;
+}
+.entwurf-fuss-links{display:flex;align-items:center;gap:.9rem}
+/* Nur die Verweise im Fuss und im Aufklappteil sind gruen.
+   Vorher galt die Regel fuer JEDEN Verweis in der Leiste — und damit
+   auch fuer die Taste, die selbst gruen ist: gruene Schrift auf
+   gruenem Grund, der Knopf sah leer aus. */
+.entwurf-fuss a,.entwurf-mehr a{color:var(--tw-gruen);text-decoration:none}
+.entwurf-fuss a{border-bottom:1px solid rgba(68,179,112,.35)}
+.entwurf-fuss a:hover{color:#fff;border-bottom-color:#fff}
+
+/* ———— Schmaler ————
+   Der Platz geht in dieser Reihenfolge weg: erst die Frist, dann die
+   Schrittkette, dann der Untertitel. Die Hauptzeile und die Taste
+   bleiben bis zuletzt, denn das sind die beiden Dinge, die der
+   Unternehmer sehen muss. */
+@media (max-width:1240px){.entwurf-schritte li:nth-child(n+4){display:none}}
+@media (max-width:1080px){.entwurf-schritte{display:none}}
+@media (max-width:860px){.entwurf-lang{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .entwurf-frist{display:none}
+  .nur-breit{display:none}
+  .entwurf-wort b{font-size:.8rem}
+  .entwurf-unter{font-size:.71rem}
+  .entwurf-mehr-wort{display:none}
+  .entwurf-mehr-schalter{padding:.4rem .5rem}
+  .entwurf-taste{font-size:.74rem;padding:.42rem .72rem}
+}
+@media (min-width:761px){.nur-schmal{display:none}}
+/* Auf dem Telefon bricht die Hauptzeile um, statt alles in eine Reihe
+   zu quetschen: In einer Reihe blieben dem Satz "Unverbindlicher
+   Entwurf" noch 120 Pixel, er stand also als "Unverbindliche..." da —
+   und genau dieser Satz ist der Grund, warum die Leiste existiert.
+   Jetzt: oben das Zeichen und der Satz, darunter Knopf und Verweise. */
+@media (max-width:560px){
+  .entwurf-lang{grid-template-columns:1fr}
+  .entwurf-unter{display:none}
+  .entwurf > .entwurf-in{flex-wrap:wrap;gap:.5rem .6rem;padding-block:.55rem}
+  .entwurf-zeichen svg{width:22px;height:22px}
+  .entwurf-wort{flex:1 1 0}
+  .entwurf-wort b{font-size:.84rem;white-space:normal}
+  .entwurf-rechts{flex:1 0 100%;justify-content:space-between;gap:.6rem}
+  .entwurf-taste{font-size:.8rem;padding:.5rem 1rem}
+  .entwurf-mehr-wort{display:inline}
+  .entwurf-mehr-schalter{padding:.46rem .8rem;font-size:.76rem}
+  /* Damit der Fuss in EINE Zeile passt und die Leiste unter drei
+     Zentimetern bleibt. Dass der Entwurf nicht veroeffentlicht ist,
+     steht weiter da — nur der Zusatz zu den Suchmaschinen faellt weg. */
+  .entwurf-sperr{display:none}
+  .entwurf-fuss-in{padding-block:.26rem calc(.26rem + env(safe-area-inset-bottom,0px));font-size:.69rem}
+  .entwurf-fuss-links{gap:.7rem}
+}
+
+</style>
+</head>
+<body>
+
+<header class="kopf" id="oben">
+  <div class="huelle kopf-glas">
+    <a class="marke-link" href="#oben">
+      <span class="logo logo-platte"><img src="" alt="Praxis Dr. Jakob" onerror="this.remove();"></span>
+      <span class="wortmarke"><b>Dr. Jakob</b><span>Zahnarzt und Oralchirurgie</span></span>
+    </a>
+    <nav>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#team">Praxisteam</a>
+      <a href="#zeiten">Sprechzeiten</a>
+      <a href="#kontakt">Kontakt</a>
+      <a class="taste" href="#kontakt">Termin online vereinbaren<em aria-hidden="true">&rarr;</em></a>
+    </nav>
+  </div>
+</header>
+
+<section class="buehne">
+  <div class="huelle buehne-in">
+    <div class="buehne-text">
+      <span class="label">Zahnarzt und Oralchirurg in Hamburg</span>
+      <h1><span class="zeile-auf">Zahnersatz noch am selben Tag,</span> <span class="zeile-auf"><i>ohne Abdruck und Provisorium.</i></span></h1>
+      <p class="buehne-lede">Zahnärztliche und oralchirurgische Praxis am Neuen Wall: Zahnerhaltung, Zahnersatz mit CEREC, Implantate, Prophylaxe und ästhetische Zahnmedizin für Kassen- und Privatpatienten.</p>
+      <div class="buehne-tasten">
+        <a class="taste" href="#kontakt">Termin online vereinbaren<em aria-hidden="true">&rarr;</em></a>
+        <span class="ruf-klein">
+          <span>Oder rufen Sie an</span>
+          <a href="tel:0404103661">040 410 36 61</a>
+        </span>
+      </div>
+    </div>
+
+    <div class="buehne-bild" data-buehne-bild>
+      <div class="foto" data-foto-buehne></div>
+      <div class="bild-karte">
+        <span class="bild-karte-punkt" aria-hidden="true"></span>
+        <span>
+          <b>Alle Kassen und privat</b>
+          <span>Die telefonische Erreichbarkeit weicht von den Öffnungszeiten ab.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="vertrauen">
+  <div class="huelle vertrauen-in">
+    <span class="vertrauen-teil" data-weg-wenn-leer><b>20354 Hamburg</b> · Neuer Wall 34</span>
+    <span class="vertrauen-teil" data-weg-wenn-leer>Behandlung für gesetzlich und privat Versicherte.</span>
+  </div>
+</div>
+
+<section class="koennen">
+  <div class="huelle koennen-in">
+    <div class="fakt"><b data-zaehlen>2003</b><span>Niederlassung in Hamburg</span><p>Dr. Jakob ließ sich 2003 zunächst in einer Gemeinschaftspraxis nieder.</p></div>
+    <div class="fakt"><b data-zaehlen>2017</b><span>Am Neuen Wall</span><p>Seit 2017 ist die Praxis in den Räumen am Neuen Wall 34.</p></div>
+    <div class="fakt"><b data-zaehlen>30</b><span>CEREC-Mentoren in Deutschland</span><p>Dr. Jakob ist einer von 30 CEREC-Mentoren in Deutschland.</p></div>
+  </div>
+</section>
+
+<section class="leistungen" id="leistungen">
+  <div class="huelle leistungen-in">
+    <div class="leistungen-fest">
+      <span class="label">Leistungen</span>
+      <h2>Behandlungsspektrum am Neuen Wall</h2>
+      <p>Von der Vorsorge über Zahnersatz bis zur Oralchirurgie: Die Praxis deckt die allgemeine Zahnmedizin ab und setzt darüber hinaus fachliche Schwerpunkte.</p>
+      <a class="taste taste--ruhig" href="#kontakt">Termin vereinbaren</a>
+    </div>
+    <div class="posten-reihe">
+      <article class="posten"><span class="posten-nr">01</span><h3>Zahnerhaltung</h3><p>Professionelle Zahnreinigung, Parodontitisbehandlung und Wurzelbehandlung zum Erhalt Ihrer eigenen Zähne.</p></article>
+      <article class="posten"><span class="posten-nr">02</span><h3>Zahnersatz</h3><p>Füllungen, Kronen, Brücken und Veneers, auf Wunsch mit CEREC in einer Sitzung gefertigt.</p></article>
+      <article class="posten"><span class="posten-nr">03</span><h3>Oralchirurgie</h3><p>Operative Eingriffe und Implantate durch Dr. Jakob, Fachzahnarzt für Oralchirurgie.</p></article>
+      <article class="posten"><span class="posten-nr">04</span><h3>Ästhetische Zahnmedizin</h3><p>Bleaching, Aligner-Behandlung mit Invisalign, Zahnumformung und Beratung zur Zahnfarbe.</p></article>
+      <article class="posten"><span class="posten-nr">05</span><h3>Biologische Zahnmedizin</h3><p>Ein ganzheitlicher Blick auf Zähne und Körper, unter anderem mit Keramikimplantaten.</p></article>
+      <article class="posten"><span class="posten-nr">06</span><h3>Kiefergelenk und Schmerz</h3><p>Untersuchung und Kiefervermessung bei Beschwerden im Bereich des Kiefergelenks (CMD).</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="ruhe">
+  <div class="huelle ruhe-in">
+    <div>
+      <span class="label">Die Praxis</span>
+      <h2>Eine Praxis im Zentrum Hamburgs</h2>
+      <p>Dr. Jakob führt die Praxis seit 2014 als Einzelpraxis, seit 2017 am Neuen Wall 34. Sie versteht sich als familiäre Praxis mit Teamgeist und Menschlichkeit.</p>
+    </div>
+    <div class="ruhe-bild"><div class="foto" data-foto-ruhe></div></div>
+  </div>
+</section>
+
+<section class="ablauf" id="ablauf">
+  <div class="huelle">
+    <div class="a-kopf">
+      <div>
+        <span class="label">Ihr Besuch</span>
+        <h2>So läuft ein Besuch ab</h2>
+      </div>
+      <p>Von der Terminbuchung bis zur Behandlung nehmen wir uns Zeit und erklären jeden Schritt.</p>
+    </div>
+    <div class="strahl" data-strahl>
+      <div class="strahl-gleis" aria-hidden="true"><i data-gleis></i></div>
+      <div class="schritt"><span class="nr">SCHRITT 1</span><h3>Termin buchen</h3><p>Online über die Terminbuchung der Praxis oder telefonisch unter 040 410 36 61.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 2</span><h3>Gespräch</h3><p>Wir lernen uns kennen und besprechen Ihr Anliegen in Ruhe.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 3</span><h3>Diagnostik und Planung</h3><p>Abdrücke entstehen digital per Scan, ganz ohne Abdruckmaterial.</p></div>
+      <div class="schritt"><span class="nr">SCHRITT 4</span><h3>Behandlung</h3><p>Wir erklären Ihnen die Behandlungsschritte, bevor wir sie durchführen.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="huelle">
+    <div class="a-kopf">
+      <div>
+        <span class="label">Praxisteam</span>
+        <h2>Die Menschen in der Praxis</h2>
+      </div>
+      <p>Zum Team gehören zwei Zahnärzte, die Praxisleitung, Prophylaxe- und Dentalassistenz sowie Empfang und Abrechnung.</p>
+    </div>
+    <div class="personen">
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="Dr. Michael Jakob" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono="Dr. Michael Jakob"><span></span></div>
+        </div>
+        <div class="person-text"><h3>Dr. Michael Jakob</h3><span class="rolle">Zahnarzt und Fachzahnarzt für Oralchirurgie, Praxisinhaber</span><p>Schwerpunkte sind Implantate, Oralchirurgie, Biologische Zahnmedizin, Parodontologie und Zahnästhetik.</p></div>
+      </div>
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="Leonhard Schellerhoff" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono="Leonhard Schellerhoff"><span></span></div>
+        </div>
+        <div class="person-text"><h3>Leonhard Schellerhoff</h3><span class="rolle">Angestellter Zahnarzt</span><p>Zahnarzt im Team der Praxis Dr. Jakob.</p></div>
+      </div>
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="Ilka-Kirsten Jakob" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono="Ilka-Kirsten Jakob"><span></span></div>
+        </div>
+        <div class="person-text"><h3>Ilka-Kirsten Jakob</h3><span class="rolle">Praxisleitung</span><p>Sie leitet die Abläufe der Praxis.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="anfahrt">
+  <div class="band-foto" data-foto-band></div>
+  <div class="huelle band-in">
+    <span class="label">So finden Sie uns</span>
+    <h2>So kommen Sie zu uns</h2>
+    <p>Die Praxis liegt am Neuen Wall, in fußläufiger Entfernung vom Hamburger Rathaus.</p>
+    <div class="wege">
+      <div class="weg"><h3>U-Bahn und Bus</h3><p>Die nächsten Haltestellen sind Rathausmarkt und Jungfernstieg.</p></div>
+      <div class="weg"><h3>Zu Fuß</h3><p>Vom Hamburger Rathaus aus erreichen Sie die Praxis in fußläufiger Entfernung.</p></div>
+      <div class="weg"><h3>Telefon</h3><p>Bei Fragen zur Anfahrt erreichen Sie uns unter 040 410 36 61.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="zeiten-flaeche" id="zeiten">
+  <div class="huelle zeiten-in">
+    <div class="zeiten-text">
+      <span class="label">Öffnungszeiten</span>
+      <h2>Wann wir für Sie da sind</h2>
+      <p>Freitags sind auch Termine nach Vereinbarung möglich.</p>
+      <a class="ruf-gross" href="tel:0404103661">040 410 36 61</a>
+      <p class="ruf-zeit">Die telefonische Erreichbarkeit weicht von den Öffnungszeiten ab.</p>
+    </div>
+    <div class="zeiten">
+      <table>
+        <tr><td>Montag</td><td>8:00 – 18:00</td></tr>
+        <tr><td>Dienstag</td><td>8:00 – 18:00</td></tr>
+        <tr><td>Mittwoch</td><td>8:00 – 19:30</td></tr>
+        <tr><td>Donnerstag</td><td>8:00 – 19:30</td></tr>
+        <tr><td>Freitag</td><td>8:00 – 13:00</td></tr>
+        <tr><td>Samstag</td><td>geschlossen</td></tr>
+      </table>
+      <p class="zeiten-fuss">Behandlung für gesetzlich und privat Versicherte.</p>
+    </div>
+  </div>
+</section>
+
+<section class="notdienst">
+  <div class="huelle notdienst-in">
+    <div>
+      <span class="label">Akute Beschwerden</span>
+      <h2>Akute Schmerzen</h2>
+    </div>
+    <div>
+      <p>Bei akuten Schmerzen rufen Sie uns an unter 040 410 36 61 oder vereinbaren online einen Termin.</p>
+      <a class="ruf-gross" href="tel:0404103661">040 410 36 61</a>
+      <p class="ruf-zeit" style="color:#8EA3A6">Außerhalb der Öffnungszeiten können Sie online einen Termin vereinbaren.</p>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt-flaeche" id="kontakt">
+  <div class="huelle kontakt">
+    <div>
+      <span class="label">Kontakt</span>
+      <h2>Termin vereinbaren</h2>
+      <p>Rufen Sie uns an, schreiben Sie uns oder vereinbaren Sie Ihren Termin online.</p>
+      <div class="adresse">
+        <div data-weg-wenn-leer><span>Anschrift</span>Neuer Wall 34<br>20354 Hamburg</div>
+        <div data-weg-wenn-leer><span>E-Mail</span><a href="mailto:"></a></div>
+      </div>
+    </div>
+    <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='In der Vorschau nicht aktiv';">
+      <div class="feld"><label for="f-name">Ihr Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="feld"><label for="f-tel">Telefon</label>
+        <input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+      <div class="feld"><label for="f-mail">E-Mail <span style="font-weight:400;color:var(--grau)">(freiwillig)</span></label>
+        <input id="f-mail" name="email" type="email"></div>
+      <div class="feld"><label for="f-text">Ihr Anliegen</label>
+        <textarea id="f-text" name="text" placeholder="z. B. Termin für eine Professionelle Zahnreinigung"></textarea>
+        <p class="form-hinweis">Bitte keine Angaben zu Beschwerden oder Befunden in dieses Formular —
+          das besprechen wir am Telefon oder vor Ort.</p></div>
+      <button class="taste" type="submit">Nachricht senden</button>
+      <p class="form-hinweis">Wir verwenden Ihre Angaben ausschließlich, um Ihr Anliegen zu bearbeiten
+        und Sie zurückzurufen. Eine Weitergabe an Dritte erfolgt nicht.</p>
+    </form>
+  </div>
+</section>
+
+<!-- Hier stand bis zum 16.11.2026 der Abschnitt "Das ist ein Entwurf.
+     Kein fertiges Angebot." mit den vier Schritten.
+
+     Der Inhalt ist nicht weg, er ist umgezogen: Er steckt jetzt in der
+     Leiste am unteren Bildrand (_marke.html, Klasse .entwurf). Grund:
+     Der Abschnitt schob sich im Seitenfluss zwischen die Seite des
+     Betriebs und dessen eigenen Fuss. Die ganze Seite soll aber dem
+     Betrieb gehoeren; unser Wort an ihn laeuft unten als Streifen mit.
+
+     Der Einsetzpunkt in den sieben Vorlagen bleibt bestehen, damit hier
+     wieder etwas hinein kann, ohne sieben Dateien anzufassen.
+
+     ACHTUNG, hier ist schon einmal etwas schiefgegangen: In diesen
+     Kommentar gehoert NIEMALS der Einsetzpunkt selbst als Text und auch
+     keine Reihe aus Minuszeichen. Ein HTML-Kommentar endet am ersten
+     Zeichenpaar aus zwei Minus und einer spitzen Klammer. Stand der
+     Einsetzpunkt hier drin, endete der Kommentar mittendrin, und der
+     Rest landete als sichtbarer Text im Seitenkoerper: eine lange,
+     nicht umbrechbare Zeichenkette, die alle sieben Branchen um gut
+     550 Pixel zur Seite schob. Gefunden hat das keine Element-Suche,
+     denn ein Textknoten ist kein Element. -->
+
+
+<footer class="fuss">
+  <div class="huelle">
+    <div class="fuss-grid">
+      <div><b>Praxis Dr. Jakob</b><p>Praxis Dr. Jakob · Neuer Wall 34 · 20354 Hamburg · Alle Kassen und privat</p></div>
+      <div><b class="klein">Anschrift</b>Neuer Wall 34<br>20354 Hamburg<br>
+        <a href="tel:0404103661">040 410 36 61</a></div>
+      <div><b class="klein">Sprechzeiten</b>Die telefonische Erreichbarkeit weicht von den Öffnungszeiten ab.</div>
+    </div>
+    <div class="zeile">
+      <span>&copy; 2026 Praxis Dr. Jakob</span>
+      <span>Entwurf — Impressum und Datenschutzerklärung folgen mit der Veröffentlichung.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ——————————————————————————————————————————————————————————
+     Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+
+     Zweck: Wer diesen Link bekommt, soll in der ersten Sekunde
+     begreifen, dass das ein Entwurf ist und nicht die veroeffentlichte
+     Seite seines Betriebs. Bei Aerzten, Kanzleien und Krankenhaeusern
+     ist das keine Hoeflichkeit, sondern notwendig — dort reagiert man
+     empfindlich auf alles, was wie eine echte Veroeffentlichung
+     aussieht.
+
+     Bewusst KEIN seitenfuellendes Wasserzeichen quer ueber die Seite:
+     Der Entwurf muss gleichzeitig so gut aussehen, dass der Unternehmer
+     ihn kaufen will. Ein Raster aus "ENTWURF" ueber dem ganzen Bild
+     nimmt genau das kaputt. Stattdessen eine kraeftige Marke oben
+     rechts mit dem TerminWerk-Zeichen und eine Leiste unten.
+     —————————————————————————————————————————————————————————— -->
+<div class="vorschaumarke" aria-label="Diese Seite ist ein unverbindlicher Entwurf">
+  <span class="vm-zeichen" aria-hidden="true">
+    <svg viewBox="0 0 34 34" focusable="false">
+      <rect width="34" height="34" rx="9.5" fill="#132F38"/>
+      <rect x="9.1" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="18.3" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="6.4" y="9.1" width="17.2" height="16" rx="2.8" fill="#fff"/>
+      <g fill="#132F38">
+        <rect x="8.9" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="18.1" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="8.9" y="19.4" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="19.4" width="2.5" height="2.5" rx=".7"/>
+      </g>
+      <circle cx="23.8" cy="23.4" r="7.6" fill="#132F38"/>
+      <circle cx="23.8" cy="23.4" r="6.2" fill="#44B370"/>
+      <g fill="#fff">
+        <circle cx="21.2" cy="23.4" r="1.05"/><circle cx="23.8" cy="23.4" r="1.05"/><circle cx="26.4" cy="23.4" r="1.05"/>
+      </g>
+    </svg>
+  </span>
+  <span class="vm-text">
+    <b>Vorschau</b>
+    <span>nicht veröffentlicht</span>
+  </span>
+</div>
+
+<!-- ——————————————————————————————————————————————————————————
+     Die Entwurfsleiste.
+
+     Hier stand frueher nur eine Zeile, und darueber im Seitenfluss ein
+     grosser dunkler Abschnitt "Das ist ein Entwurf. Kein fertiges
+     Angebot." mit vier Schritten. Der Inhalt war richtig — er loest
+     ein Verkaufsproblem: Wer einen fertig aussehenden Entwurf bekommt,
+     haelt ihn fuer ein Angebot zum Annehmen oder Ablehnen und meldet
+     sich dann einfach nicht mehr.
+
+     Nur war der Abschnitt zu gross. Er schob sich zwischen die Seite
+     des Betriebs und dessen eigenen Fuss und nahm dem Entwurf die
+     Wirkung. Jetzt steckt alles in dieser Leiste: Die ganze Seite
+     gehoert dem Betrieb, und unten laeuft unser schmaler Streifen mit.
+
+     Die ausfuehrlichen Saetze zu den vier Schritten sind nicht
+     geloescht, sondern stehen hinter "Mehr dazu" — sichtbar bleibt,
+     DASS es vier Schritte gibt und wie sie heissen.
+     —————————————————————————————————————————————————————————— -->
+<div class="entwurf" data-entwurf>
+  <div class="entwurf-in">
+
+    <span class="entwurf-zeichen" aria-hidden="true">
+      <svg viewBox="0 0 34 34" focusable="false">
+        <rect width="34" height="34" rx="9.5" fill="#fff"/>
+        <rect x="9.1" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#101F26"/>
+        <rect x="18.3" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#101F26"/>
+        <rect x="6.4" y="9.1" width="17.2" height="16" rx="2.8" fill="#101F26"/>
+        <g fill="#fff">
+          <rect x="8.9" y="15.1" width="2.5" height="2.5" rx=".7"/>
+          <rect x="13.5" y="15.1" width="2.5" height="2.5" rx=".7"/>
+          <rect x="18.1" y="15.1" width="2.5" height="2.5" rx=".7"/>
+          <rect x="8.9" y="19.4" width="2.5" height="2.5" rx=".7"/>
+          <rect x="13.5" y="19.4" width="2.5" height="2.5" rx=".7"/>
+        </g>
+        <circle cx="23.8" cy="23.4" r="7.6" fill="#fff"/>
+        <circle cx="23.8" cy="23.4" r="6.2" fill="#44B370"/>
+        <g fill="#fff">
+          <circle cx="21.2" cy="23.4" r="1.05"/><circle cx="23.8" cy="23.4" r="1.05"/><circle cx="26.4" cy="23.4" r="1.05"/>
+        </g>
+      </svg>
+    </span>
+
+    <span class="entwurf-wort">
+      <b><span class="nur-breit">Unverbindlicher Entwurf für Praxis Dr. Jakob</span><span class="nur-schmal">Unverbindlicher Entwurf</span></b>
+      <span class="entwurf-unter">Kein fertiges Angebot — Farben, Texte, Bilder und Unterseiten bestimmen Sie mit.</span>
+    </span>
+
+    <ol class="entwurf-schritte" aria-label="So geht es weiter">
+      <li><i>01</i>Gespräch</li>
+      <li><i>02</i>Gestaltung</li>
+      <li><i>03</i>Freigabe</li>
+      <li><i>04</i>Veröffentlichung</li>
+    </ol>
+
+    <span class="entwurf-rechts">
+      <button class="entwurf-mehr-schalter" type="button" aria-expanded="false" aria-controls="tw-mehr">
+        <span class="entwurf-mehr-wort">Mehr dazu</span>
+        <svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 6.2 6 1.6l5 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="entwurf-taste" href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+    </span>
+  </div>
+
+  <div class="entwurf-mehr" id="tw-mehr" hidden>
+    <div class="entwurf-in entwurf-mehr-in">
+      <ol class="entwurf-lang">
+        <li><span>01</span><b>Gespräch</b><p>Sie sagen, was bleiben soll und was nicht: Farben, Schrift,
+          Aufbau, Texte, Bilder. Auch ein grundsätzlich anderer Entwurf ist möglich.</p></li>
+        <li><span>02</span><b>Gestaltung</b><p>Wir arbeiten Ihre Wünsche ein und gestalten die Unterseiten
+          dazu — Leistungen, Team, Kontakt, Impressum und Datenschutz.</p></li>
+        <li><span>03</span><b>Freigabe</b><p>Sie sehen jede Seite, bevor sie online geht. Änderungen sind
+          bis dahin eingeplant und nicht die Ausnahme.</p></li>
+        <li><span>04</span><b>Veröffentlichung</b><p>Erst nach Ihrer Freigabe geht die Seite live — mit
+          Ihren eigenen Fotos, Impressum und Datenschutzerklärung.</p></li>
+      </ol>
+      <p class="entwurf-bildhinweis">Wo uns noch keine eigenen Aufnahmen vorliegen, stehen hier Bilder aus
+        einer Bildbibliothek. Sie werden durch Ihre eigenen ersetzt.</p>
+    </div>
+  </div>
+
+  <div class="entwurf-fuss">
+    <div class="entwurf-in entwurf-fuss-in">
+      <span>nicht veröffentlicht<span class="entwurf-sperr"> · für Suchmaschinen gesperrt</span></span>
+      <span class="entwurf-fuss-links">
+        <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+        <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+        <span class="entwurf-frist">gültig bis 16.12.2026</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  var SLUG = "dr-jakob";
+
+  /* Bilder: leere Platzhalter rauswerfen, damit nie ein kaputtes Bild steht.
+     Wo ein Kopfbild vorhanden ist, tritt es an die Stelle des Monogramms. */
+  function aufraeumen(){
+    var leer = function(el){
+      var s = el.getAttribute('src');
+      return !s || s === window.location.href || s === '#';
+    };
+
+    /* Ein Chip ohne Inhalt verschwindet. */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-chip]'), function(c){
+      if (!c.textContent.trim()) c.remove();
+    });
+
+    /* Personen: wer keinen Namen hat, existiert nicht. Eine Kanzlei mit
+       einem Anwalt bekommt eine Kachel, nicht drei. Bleibt nur eine
+       uebrig, rueckt sie auf die halbe Breite statt auf ein Drittel. */
+    Array.prototype.forEach.call(document.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = document.querySelectorAll('.team .person');
+    var raster = document.querySelector('.team');
+    if (raster){
+      if (leute.length === 0){
+        var ab = raster.closest('.abschnitt');
+        if (ab) ab.remove();
+      } else if (leute.length === 1){
+        raster.style.gridTemplateColumns = 'minmax(0,22rem)';
+      } else if (leute.length === 2){
+        raster.style.gridTemplateColumns = 'repeat(2,minmax(0,1fr))';
+        raster.style.maxWidth = '52rem';
+      }
+    }
+
+    /* Dasselbe fuer Leistungen, Schritte, Wege und Referenzen: leere
+       Eintraege verschwinden, statt als leere Kaestchen dazustehen. */
+    [['.posten','h3'],['.schritt','h3'],['.weg','h3']].forEach(function(paar){
+      Array.prototype.forEach.call(document.querySelectorAll(paar[0]), function(el){
+        var t = el.querySelector(paar[1]);
+        if (!t || !t.textContent.trim()) el.remove();
+      });
+    });
+
+    /* Fakten: ein Platz ohne Inhalt verschwindet. Lieber zwei Fakten
+       als drei, von denen einer leer ist. */
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt'), function(f){
+      var b = f.querySelector('b'), sp = f.querySelector('span'), p = f.querySelector('p');
+      var leerB = !b || !b.textContent.trim();
+      var leerS = !sp || !sp.textContent.trim();
+      if (leerB && leerS) { f.remove(); return; }
+      if (leerB && b) b.remove();
+      if (leerS && sp) sp.remove();
+      if (p && !p.textContent.trim()) p.remove();
+    });
+
+    /* Zahlen: alle oder keine. Einer von dreien liess die Leiste halbfertig
+       aussehen — links gross "5,0", daneben zweimal Text in der Luft. Fehlt
+       bei einem die Zahl, fallen sie ueberall weg; dann traegt die
+       Beschriftung die Zeile, und das sieht gewollt aus. */
+    var fakten = Array.prototype.slice.call(document.querySelectorAll('.fakt'));
+    var ohneZahl = fakten.filter(function(f){
+      var b = f.querySelector('b');
+      return !b || !b.textContent.trim();
+    });
+    if (fakten.length && ohneZahl.length && ohneZahl.length < fakten.length){
+      fakten.forEach(function(f){
+        var b = f.querySelector('b');
+        if (b) b.remove();
+      });
+      var band = fakten[0].closest('.koennen') || fakten[0].parentNode;
+      if (band && band.setAttribute) band.setAttribute('data-ohne-zahlen', '');
+    }
+    if (fakten.length){
+      var umschlag = fakten[0].parentNode;
+      if (umschlag && umschlag.style) umschlag.style.setProperty('--spalten', String(fakten.length));
+    }
+
+    var kasten = document.querySelector('.fakten');
+    if (kasten && !kasten.querySelector('.fakt')) kasten.remove();
+    var leisteLeer = document.querySelector('.koennen');
+    if (leisteLeer && !leisteLeer.querySelector('.fakt')) leisteLeer.remove();
+
+    /* Buehnen-Ueberschrift: ist kein Akzentteil da, faellt er weg */
+    var akz = document.querySelector('.buehne h1 em');
+    if (akz && !akz.textContent.trim()) akz.remove();
+
+    /* Sprechzeiten: stehen keine echten Zeiten drin, kommt die Tabelle weg
+       und an ihre Stelle ein sauberer Satz. Eine Tabelle mit sechsmal
+       "bitte telefonisch erfragen" sieht schlechter aus als gar keine. */
+    var karte = document.querySelector('.zeiten');
+    if (karte){
+      var werte = Array.prototype.map.call(
+        karte.querySelectorAll('table td:last-child'),
+        function(c){ return c.textContent.trim(); });
+      var echte = werte.filter(function(w){ return w && !/^[-–—.]*$/.test(w); });
+      if (echte.length === 0){
+        var tab = karte.querySelector('table');
+        if (tab){
+          var satz = document.createElement('p');
+          satz.className = 'zeiten-ersatz';
+          satz.textContent = 'Termine vergeben wir telefonisch — so finden wir gleich einen Tag, der Ihnen passt.';
+          tab.parentNode.replaceChild(satz, tab);
+        }
+        var fuss = karte.querySelector('.zeiten-fuss');
+        if (fuss) fuss.textContent = 'Rufen Sie uns an, wir stimmen den Termin direkt mit Ihnen ab.';
+      }
+    }
+
+    /* Logo: traegt es, tritt es an die Stelle der gesetzten Wortmarke.
+       Traegt es nicht, bleibt die Wortmarke stehen — nie beides, nie keines. */
+    var platte = document.querySelector('.logo');
+    if (platte){
+      var bild = platte.querySelector('img');
+      if (!bild || leer(bild)) {
+        platte.remove();
+      } else {
+        var zeigen = function(){
+          if (!bild.naturalWidth) { platte.remove(); return; }
+          platte.style.display = 'flex';
+          var w = document.querySelector('.wortmarke');
+          if (w) w.remove();
+        };
+        if (bild.complete) zeigen(); else {
+          bild.addEventListener('load', zeigen);
+          bild.addEventListener('error', function(){ platte.remove(); });
+        }
+      }
+    }
+
+    /* Ohne eigenes Foto bleibt die hinterlegte Aufnahme des Rahmens stehen. */
+    Array.prototype.forEach.call(document.querySelectorAll('img.band-bild'), function(b){
+      if (leer(b)) b.remove();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('img.kopfbild'), function(k){
+      if (leer(k)) { k.remove(); return; }
+      k.hidden = false;
+      var mono = k.parentNode.querySelector('.monogramm');
+      if (mono) mono.remove();
+      /* Ist das Foto quer — etwa ein Kopfbereich der alten Seite —,
+         bekommt die Kachel Querformat statt eines engen Beschnitts. */
+      var passe = function(){
+        if (!k.naturalWidth || !k.naturalHeight) return;
+        var v = k.naturalWidth / k.naturalHeight;
+        if (v > 1.3){ k.style.aspectRatio = '16/9'; k.style.objectPosition = 'center 28%'; }
+        else if (v > 1.05){ k.style.aspectRatio = '4/3'; }
+      };
+      if (k.complete) passe(); else k.addEventListener('load', passe);
+    });
+    /* Monogramm aus den Initialen des Namens, Titel werden übersprungen */
+    Array.prototype.forEach.call(document.querySelectorAll('.monogramm'), function(m){
+      var name = (m.getAttribute('data-mono') || '').trim();
+      var teile = name.split(/\s+/).filter(function(w){
+        return w.length > 1 && !/^(dr|med|dent|prof|dipl|m\.?sc|ba|ma)\.?$/i.test(w.replace(/\./g,''));
+      });
+      var ini = teile.slice(0, 2).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
+      var s = m.querySelector('span');
+      if (s) s.textContent = ini || '·';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aufraeumen);
+  } else { aufraeumen(); }
+
+  /* Zahlen zaehlen hoch, sobald sie ins Bild kommen. Nur echte Zahlen —
+     "Kostal Partnerbetrieb" bleibt stehen wie es ist. */
+  function zaehlwerk(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+    var felder = [];
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt b, [data-zaehlen]'), function(el){
+      var roh = el.textContent.trim();
+      var t = roh.match(/^(\D*?)(\d[\d.]*)(\D*)$/);
+      if (!t) return;
+      var ziel = parseInt(t[2].replace(/\./g, ''), 10);
+      if (!ziel || ziel > 100000) return;
+      el.dataset.vor = t[1]; el.dataset.nach = t[3]; el.dataset.ziel = String(ziel);
+      el.textContent = t[1] + '0' + t[3];
+      felder.push(el);
+    });
+    if (!felder.length) return;
+    var auge = new IntersectionObserver(function(e){
+      e.forEach(function(x){
+        if (!x.isIntersecting) return;
+        var el = x.target, ziel = +el.dataset.ziel, start = performance.now(), dauer = 1100;
+        (function lauf(jetzt){
+          var p = Math.min((jetzt - start) / dauer, 1);
+          var w = Math.round(ziel * (1 - Math.pow(1 - p, 3)));
+          el.textContent = el.dataset.vor + w + el.dataset.nach;
+          if (p < 1) requestAnimationFrame(lauf);
+        })(start);
+        auge.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    felder.forEach(function(el){ auge.observe(el); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', zaehlwerk);
+  else zaehlwerk();
+
+  /* Bewegung beim Scrollen. Zurueckhaltend: einblenden und ein Stueck
+     nach oben, gestaffelt innerhalb einer Gruppe. Wer im Betriebssystem
+     weniger Bewegung eingestellt hat, bekommt gar keine. */
+  function bewegung(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+
+    var gruppen = ['.a-kopf','.kachel','.posten','.schritt','.weg','.fakt','.person',
+                   '.betrieb-bild','.zeiten','.form','.stoerung-in','.buehne-text > *',
+                   '.gebiet-in > *','.notdienst-in > *','.kontakt > div'];
+    var teile = [];
+    gruppen.forEach(function(w){
+      var n = document.querySelectorAll(w);
+      Array.prototype.forEach.call(n, function(el, i){
+        if (el.dataset.auf) return;
+        el.dataset.auf = '1';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms, ' +
+                              'transform .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms';
+        teile.push(el);
+      });
+    });
+    if (!teile.length) return;
+
+    var zeigen = function(el){
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    };
+
+    /* Was beim Laden schon im Bild steht, wird sofort gezeigt — sonst
+       startet die Seite mit einem Loch, bis der Beobachter anspringt. */
+    var sofort = [];
+    teile.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) sofort.push(el);
+    });
+    requestAnimationFrame(function(){ sofort.forEach(zeigen); });
+
+    var auge = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if (!e.isIntersecting) return;
+        zeigen(e.target);
+        auge.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    teile.forEach(function(el){ auge.observe(el); });
+
+    /* Sicherheitsnetz: was nach zwei Sekunden noch unsichtbar ist, wird
+       sichtbar. Lieber ohne Effekt als eine leere Seite. */
+    setTimeout(function(){
+      teile.forEach(function(el){ if (el.style.opacity === '0'){ el.style.opacity='1'; el.style.transform='none'; } });
+    }, 2600);
+
+    /* Das Buehnenfoto faehrt beim Scrollen langsam mit. */
+    var foto = document.querySelector('.buehne-foto');
+    if (foto){
+      var laeuft = false;
+      window.addEventListener('scroll', function(){
+        if (laeuft) return;
+        laeuft = true;
+        requestAnimationFrame(function(){
+          var y = Math.min(window.scrollY, 700);
+          foto.style.transform = 'translate3d(0,' + (y * 0.12) + 'px,0) scale(1.06)';
+          laeuft = false;
+        });
+      }, { passive: true });
+      foto.style.transform = 'scale(1.06)';
+      foto.style.willChange = 'transform';
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bewegung);
+  else bewegung();
+
+  function hinweis(titel, satz){
+    document.title = titel;
+    document.body.innerHTML =
+      '<div style="min-height:100vh;display:grid;place-items:center;padding:2rem;'
+      + 'background:#16211E;color:#AEBCB7;text-align:center;font-family:' + "'Inter'" + ',system-ui,sans-serif">'
+      + '<div style="max-width:46ch">'
+      + '<p style="font-family:' + "'Newsreader'" + ',Georgia,serif;font-size:1.7rem;color:#fff;margin:0 0 .9rem">' + titel + '</p>'
+      + '<p style="margin:0 0 1.4rem;line-height:1.6">' + satz + ' Veröffentlicht war er zu keiner Zeit.</p>'
+      + '<p style="margin:0 0 1.6rem;line-height:1.6">Wenn Sie ihn noch einmal sehen möchten, melden wir ihn gern erneut frei.</p>'
+      + '<p style="margin:0"><a href="https://terminwerk-systeme.de/kontakt/" style="color:#8FC9BC">TerminWerk Systeme</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/impressum/" style="color:#8FC9BC">Impressum</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/datenschutz/" style="color:#8FC9BC">Datenschutz</a></p>'
+      + '</div></div>';
+    document.body.style.padding = "0";
+  }
+
+  /* ——— Die Vorschau-Marke unter die Kopfzeile setzen ———
+     Die Marke sitzt fest oben rechts. Ihr Abstand von oben stand bisher
+     als feste Zahl in _marke.css (84 Pixel, auf dem Telefon 68). Das
+     ging so lange gut, wie alle Kopfzeilen gleich hoch waren — auf dem
+     Telefon sind sie es nicht: Bau 92, Zahnarzt 95, GaLaBau 104 Pixel.
+     Die Marke lag dadurch bei sechs von sieben Branchen MITTEN IN DER
+     KOPFZEILE, und zwar genau die Kennzeichnung, die einem Arzt oder
+     einer Klinik zeigen soll, dass dies ein Entwurf ist.
+
+     Statt den Abstand in jeder Vorlage einzeln zu korrigieren, misst
+     die Seite die Kopfzeile jetzt selbst. Gemessen wird die ANFAENGLICHE
+     Hoehe: Kopfzeilen, die beim Scrollen schmaler werden, duerfen die
+     Marke nicht mitwandern lassen — eine springende Kennzeichnung
+     liest sich wie ein Fehler. */
+  (function(){
+    var setzen = function(){
+      var kopf = document.querySelector('.kopf');
+      if (!kopf) return;
+      var mass = kopf.getBoundingClientRect();
+      /* Nicht die Hoehe messen, sondern die UNTERKANTE — bei Kanzlei und
+         Steuer steht ueber der Kopfzeile noch ein Streifen, die Kopfzeile
+         beginnt dort erst bei 43 Pixeln. Mit der blossen Hoehe lag die
+         Marke dort weiterhin mitten drin.
+         Und zwar in beiden Zustaenden: oben auf der Seite steht die
+         Kopfzeile tiefer, nach dem Scrollen klebt sie an ihrem eigenen
+         Rand. Der groessere der beiden Werte gilt, damit die Marke in
+         keinem der beiden Faelle anstoesst. */
+      var kleben = parseFloat(getComputedStyle(kopf).top);
+      if (!isFinite(kleben) || kleben < 0) kleben = 0;
+      var unten = Math.round(Math.max(mass.bottom, kleben + mass.height));
+      if (unten < 30 || unten > 240) return;
+      document.documentElement.style.setProperty('--marke-oben', (unten + 12) + 'px');
+    };
+    setzen();
+    /* Noch einmal, sobald die Schriften geladen sind: vorher misst man
+       die Ersatzschrift, und die ist oft anders hoch. */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setzen);
+    setTimeout(setzen, 600);
+    var warten;
+    window.addEventListener('resize', function(){
+      clearTimeout(warten);
+      warten = setTimeout(function(){
+        document.documentElement.style.removeProperty('--marke-oben');
+        requestAnimationFrame(setzen);
+      }, 150);
+    });
+  })();
+
+  /* ——— Die Entwurfsleiste: Aufklappen und Platz freihalten ———
+     Die Leiste liegt fest am unteren Bildrand. Wie hoch sie ist, haengt
+     von der Breite ab — die Schrittkette faellt schmaler weg, der
+     Untertitel auch. Eine feste Zahl in der CSS waere also entweder zu
+     gross (Loch unter dem Fuss des Betriebs) oder zu klein (die Leiste
+     deckt dessen letzte Zeile zu). Darum misst die Seite selbst. */
+  (function(){
+    var leiste = document.querySelector('[data-entwurf]');
+    if (!leiste) return;
+    var schalter = leiste.querySelector('.entwurf-mehr-schalter');
+    var mehr = leiste.querySelector('.entwurf-mehr');
+
+    var abstand = function(){
+      /* Im aufgeklappten Zustand NICHT nachmessen: Sonst schoebe sich
+         die Seite beim Aufklappen unter einem weg. Die Leiste legt
+         sich dann einfach darueber, wie jedes Aufklappmenue. */
+      if (schalter && schalter.getAttribute('aria-expanded') === 'true') return;
+      var h = Math.round(leiste.getBoundingClientRect().height);
+      if (h > 10 && h < 400) document.body.style.paddingBottom = (h + 8) + 'px';
+    };
+    abstand();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(abstand);
+    setTimeout(abstand, 500);
+    var warten;
+    window.addEventListener('resize', function(){
+      clearTimeout(warten); warten = setTimeout(abstand, 150);
+    });
+
+    if (schalter && mehr){
+      schalter.addEventListener('click', function(){
+        var auf = schalter.getAttribute('aria-expanded') === 'true';
+        schalter.setAttribute('aria-expanded', auf ? 'false' : 'true');
+        mehr.hidden = auf;
+        var wort = schalter.querySelector('.entwurf-mehr-wort');
+        if (wort) wort.textContent = auf ? 'Mehr dazu' : 'Weniger';
+        if (auf) abstand();
+      });
+      /* Mit Escape wieder zu — die Leiste deckt aufgeklappt einen
+         guten Teil des Bildes ab. */
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && schalter.getAttribute('aria-expanded') === 'true') schalter.click();
+      });
+    }
+  })();
+
+  var bis = new Date("2026-12-16T23:59:59");
+  if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
+    hinweis("Dieser Entwurf ist abgelaufen.",
+      "Der unverbindliche Entwurf für Praxis Dr. Jakob stand bis zum 16.12.2026 zur Ansicht bereit.");
+    return;
+  }
+  try{
+    fetch("../status.json", { cache: "no-store" })
+      .then(function(a){ return a.ok ? a.json() : null; })
+      .then(function(s){
+        if (s && s[SLUG] === "aus") {
+          hinweis("Dieser Entwurf wurde zurückgezogen.",
+            "Der unverbindliche Entwurf für Praxis Dr. Jakob steht nicht mehr zur Ansicht bereit.");
+        }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var ruhig = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ——— Bildvorrat Zahnarztpraxis ———
+     26 Bilder, jedes im Browser auf Ladefaehigkeit gemessen und
+     danach von Hand durchgesehen. Aussortiert wurden dabei bewusst:
+     dunkle Nahaufnahmen von Behandlungen, Szenen mit OP-Hauben und
+     alles, wo ein Mund weit offen steht. Eine Zahnarztseite gewinnt
+     Patienten ueber Ruhe — wer Angst vorm Zahnarzt hat, klickt bei
+     einer Bohrernahaufnahme weg, und genau diese Leute sind die
+     Zielgruppe. */
+  var A = 'https://images.unsplash.com/';
+  var GROSS = '?auto=format&fit=crop&w=1800&q=76';
+  var HOCH  = '?auto=format&fit=crop&w=1100&h=1400&q=76';
+
+  var VORRAT = [
+    /* Beratung und Gespraech — fuer die Buehne (b) und als
+       unverfaengliche Fuellung (a) */
+    {id:'photo-1659989693409-5adc97274bed', b:1, a:1, w:1, s:'beratung gespraech aufklaerung modell prophylaxe allgemein'},
+    {id:'photo-1619691249147-c5689d88016b', b:1, a:1, w:1, s:'beratung aufklaerung befund roentgen gespraech allgemein'},
+    {id:'photo-1663755489920-5e09f66d011a', b:1, a:1, w:1, s:'beratung untersuchung kontrolle vorsorge gespraech'},
+    {id:'photo-1777331903190-341a3dd0441b', b:1, a:1, w:1, s:'beratung gespraech aufklaerung behandlungszimmer allgemein'},
+    {id:'photo-1663755787934-3742b0f5983a', b:1, a:1, w:1, s:'beratung gespraech aufklaerung praxis allgemein'},
+    {id:'photo-1667133295311-e6911e6e22db', a:1, w:1, s:'roentgen befund aufklaerung diagnostik bildschirm'},
+    {id:'photo-1762625570087-6d98fca29531', w:1, s:'roentgen diagnostik befund technik digital'},
+
+    /* Praxisraeume — hell und warm (b fuer die Buehne, t fuer das Band) */
+    {id:'photo-1629909613654-28e377c37b09', b:1, t:1, a:1, w:1, s:'praxis behandlungszimmer raeume hell modern allgemein'},
+    {id:'photo-1629909614456-6b1c5c94cecc', b:1, t:1, a:1, w:1, s:'wartebereich wartezimmer empfang raeume hell allgemein'},
+    {id:'photo-1643660527098-559f89e45a92', b:1, t:1, a:1, w:1, s:'praxis behandlungszimmer raeume hell modern allgemein'},
+    {id:'photo-1629909615957-be38d48fbbe6', b:1, t:1, a:1, w:1, s:'praxis behandlungszimmer raeume hell modern allgemein'},
+    {id:'photo-1629909615184-74f495363b67', t:1, a:1, w:1, s:'praxis raeume behandlungszimmer hell modern allgemein'},
+    {id:'photo-1609207825181-52d3214556dd', b:1, t:1, a:1, w:1, s:'praxis behandlungszimmer raeume warm allgemein'},
+    {id:'photo-1704455306251-b4634215d98f', t:1, a:1, w:1, s:'praxis behandlungszimmer raeume modern allgemein'},
+    {id:'photo-1598256989800-fe5f95da9787', t:1, a:1, w:1, s:'praxis behandlungszimmer raeume allgemein'},
+    {id:'photo-1776886099265-6366478b341b', b:1, t:1, a:1, w:1, s:'praxis behandlungszimmer raeume hell modern empfang allgemein'},
+    {id:'photo-1637665759389-41818b867562', b:1, t:1, a:1, w:1, s:'wartebereich wartezimmer empfang raeume hell allgemein'},
+    {id:'photo-1787496994867-939269b4d323', t:1, a:1, w:1, s:'praxis raeume flur empfang hell allgemein'},
+    {id:'photo-1581982231900-6a1a46b744c9', t:1, a:1, w:1, s:'wartebereich wartezimmer praxis raeume allgemein'},
+    {id:'photo-1777125080264-152acad7697f', t:1, a:1, w:1, s:'wartebereich wartezimmer praxis raeume allgemein'},
+
+    /* Technik und Ausstattung — nur bei echtem Stichworttreffer */
+    {id:'photo-1704455306925-1401c3012117', w:1, s:'technik ausstattung geraete behandlungseinheit'},
+    {id:'photo-1663755781620-b9b8fdbdead5', w:1, s:'technik ausstattung geraete behandlungseinheit'},
+
+    /* Behandlung — sachlich, ohne Nahaufnahme */
+    {id:'photo-1606811841689-23dfddce3e95', w:1, s:'behandlung fuellung zahnerhalt karies wurzel'},
+    {id:'photo-1606811842243-af7e16970c1f', w:1, s:'behandlung zahnerhalt fuellung prophylaxe reinigung'},
+
+    /* Team */
+    {id:'photo-1736289158855-6df0bd42bba8', t:1, a:1, w:1, s:'team praxisteam mitarbeiter allgemein'},
+    {id:'photo-1736289162890-78f1ff4f8bd3', t:1, a:1, w:1, s:'team praxisteam mitarbeiter allgemein'}
+  ];
+
+  var samen = (function(t){ var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h; })("dr-jakob" || "x");
+
+  function passt(text, schlag){
+    var t = ' ' + (text || '').toLowerCase()
+      .replace(/ä/g,'ae').replace(/ö/g,'oe').replace(/ü/g,'ue').replace(/ß/g,'ss')
+      .replace(/[^a-z]+/g, ' ').trim() + ' ';
+    var punkte = 0;
+    schlag.split(' ').forEach(function(w){
+      if (!w) return;
+      if (w === 'allgemein'){ if (t.indexOf(' allgemein ') >= 0) punkte += 1; return; }
+      if (t.indexOf(' ' + w + ' ') >= 0) punkte += 12;
+      else if (t.indexOf(w) >= 0) punkte += 6;
+      else if (w.length > 5 && t.split(' ').some(function(x){ return x.length > 4 && w.indexOf(x) >= 0; })) punkte += 4;
+    });
+    return punkte;
+  }
+
+  var vergeben = {};
+  function inFrage(e, rolle){
+    if (rolle === 'b') return !!e.b;
+    if (rolle === 't') return !!e.t;
+    return true;
+  }
+  function streuung(versatz){
+    var x = (samen ^ (((versatz || 0) + 1) * 2654435761)) >>> 0;
+    x = (x ^ (x >>> 15)) >>> 0;
+    x = Math.imul(x, 2246822519) >>> 0;
+    return ((x ^ (x >>> 13)) >>> 0);
+  }
+  function waehle(text, nurRolle, versatz, neben){
+    var beste = null, bestePunkte = -1, kandidaten = [];
+
+    /* Buehne und Band waehlen nach Streuung, nicht nach Stichwort.
+       Grund wie beim Facharzt: Der Text, den man ihnen gibt, ist die
+       Aneinanderreihung aller Leistungen; darin gewinnt irgendein
+       Zufallswort. Ein Praxisraum oder eine Beratungsszene passt immer,
+       und zwei Praxen im selben Ort bekommen verschiedene Bilder. */
+    if (nurRolle === 'b' || nurRolle === 't'){
+      var satz = VORRAT.filter(function(e){ return inFrage(e, nurRolle) && !vergeben[e.id]; });
+      if (!satz.length) satz = VORRAT.filter(function(e){ return inFrage(e, nurRolle); });
+      if (satz.length){
+        var gewaehlt = satz[streuung(versatz) % satz.length];
+        vergeben[gewaehlt.id] = 1;
+        return A + gewaehlt.id;
+      }
+    }
+
+    VORRAT.forEach(function(e){
+      if (!inFrage(e, nurRolle) || vergeben[e.id]) return;
+      var inhalt = passt(text, e.s) * 3 + (neben ? passt(neben, e.s) : 0);
+      if (inhalt > bestePunkte) bestePunkte = inhalt;
+      kandidaten.push({ e: e, punkte: inhalt });
+    });
+    if (bestePunkte >= 10){
+      var schwelle = Math.max(10, Math.ceil(bestePunkte * 0.85));
+      var gleichwertig = kandidaten.filter(function(k){ return k.punkte >= schwelle; });
+      var vorzeigbar = gleichwertig.filter(function(k){ return k.e.w; });
+      if (vorzeigbar.length) gleichwertig = vorzeigbar;
+      beste = gleichwertig[streuung(versatz) % gleichwertig.length].e;
+    }
+    if (!beste){
+      var frei = VORRAT.filter(function(e){ return inFrage(e, nurRolle) && !vergeben[e.id]; });
+      if (!frei.length) frei = VORRAT.filter(function(e){ return !vergeben[e.id]; });
+      if (!frei.length) frei = VORRAT;
+      var harmlos = frei.filter(function(e){ return e.a; });
+      if (harmlos.length) frei = harmlos;
+      beste = frei[streuung(versatz) % frei.length];
+    }
+    vergeben[beste.id] = 1;
+    return A + beste.id;
+  }
+
+  /* ——— Leere Felder raeumen ———
+     Die Ueberschriften sind h3, nicht b: Der gemeinsame Kern raeumt
+     .posten, .schritt und .weg nach h3 auf und wuerde sonst ALLE
+     entfernen, auch die gefuellten. */
+  var karten = Array.prototype.slice.call(document.querySelectorAll('.posten-reihe .posten'))
+    .filter(function(k){
+      var h = k.querySelector('h3');
+      if (!h || !h.textContent.trim()){ k.remove(); return false; }
+      return true;
+    });
+  if (!karten.length){
+    var ab = document.querySelector('.leistungen'); if (ab) ab.remove();
+  } else {
+    /* Nach dem Aufraeumen neu durchnummerieren — sonst stuende da
+       01 02 04 05. */
+    karten.forEach(function(k, i){
+      var nr = k.querySelector('.posten-nr');
+      if (nr) nr.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+    });
+  }
+
+  /* Ruheblock: ohne eigenen Text fiele hier eine leere Sandflaeche an. */
+  (function(){
+    var ab = document.querySelector('.ruhe');
+    if (!ab) return;
+    var h = ab.querySelector('h2'), p = ab.querySelector('p');
+    if ((!h || !h.textContent.trim()) && (!p || !p.textContent.trim())) ab.remove();
+    else { if (h && !h.textContent.trim()) h.remove(); if (p && !p.textContent.trim()) p.remove(); }
+  })();
+
+  /* Anfahrtsband: leere Wege raus, ohne Wege und ohne Text das Band. */
+  (function(){
+    var band = document.querySelector('.band');
+    if (!band) return;
+    var wege = Array.prototype.slice.call(band.querySelectorAll('.weg')).filter(function(w){
+      var h = w.querySelector('h3');
+      if (!h || !h.textContent.trim()){ w.remove(); return false; }
+      return true;
+    });
+    var h2 = band.querySelector('h2');
+    if (h2 && !h2.textContent.trim()) h2.remove();
+    var p = band.querySelector('.band-in > p');
+    if (p && !p.textContent.trim()) p.remove();
+    if (!wege.length && !band.querySelector('h2')) band.remove();
+    else if (wege.length < 3){
+      var r = band.querySelector('.wege');
+      if (r) r.style.gridTemplateColumns = 'repeat(' + wege.length + ',minmax(0,18rem))';
+    }
+  })();
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-weg-wenn-leer]'), function(d){
+    var beschriftung = d.querySelector('span');
+    var rest = d.textContent.replace(beschriftung ? beschriftung.textContent : '', '')
+      .replace(/[·\s]+/g, ' ').trim();
+    if (!rest) d.remove();
+  });
+  (function(){
+    var streifen = document.querySelector('.vertrauen');
+    if (streifen && !streifen.querySelector('.vertrauen-teil')) streifen.remove();
+    var a = document.querySelector('.adresse');
+    if (a){ if (a.children.length === 1) a.style.gridTemplateColumns = '1fr';
+            if (a.children.length === 0) a.remove(); }
+  })();
+
+  /* Praxisteam: ohne Namen kein Abschnitt. */
+  (function(){
+    var raster = document.querySelector('.personen');
+    if (!raster) return;
+    Array.prototype.forEach.call(raster.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = raster.querySelectorAll('.person');
+    if (!leute.length){ var ab2 = raster.closest('.team'); if (ab2) ab2.remove(); return; }
+    if (leute.length < 3) raster.style.gridTemplateColumns = 'repeat(' + leute.length + ',minmax(0,22rem))';
+  })();
+
+  /* ——— Bilder verteilen ——— */
+  var fach = karten.map(function(k){
+    var h = k.querySelector('h3'), p = k.querySelector('p');
+    return (h ? h.textContent : '') + ' ' + (p ? p.textContent : '');
+  }).join(' ');
+
+  function setzeFoto(sel, quelle, groesse){
+    var el = document.querySelector(sel);
+    if (el) el.style.backgroundImage = 'url("' + quelle + groesse + '")';
+  }
+  setzeFoto('[data-foto-buehne]', waehle(fach, 'b', 0), HOCH);
+  setzeFoto('[data-foto-band]',   waehle(fach, 't', 3), GROSS);
+  var ruheBild = document.querySelector('[data-foto-ruhe]');
+  if (ruheBild){
+    var h2r = document.querySelector('.ruhe h2'), pr = document.querySelector('.ruhe p');
+    ruheBild.style.backgroundImage = 'url("' +
+      waehle((h2r ? h2r.textContent : '') , 'g', 7, pr ? pr.textContent : '') + GROSS + '")';
+  }
+
+  /* ——— Kopfzeile zieht sich zusammen ——— */
+  (function(){
+    var kopf = document.querySelector('.kopf');
+    if (!kopf) return;
+    var laeuft = false;
+    var pruefe = function(){
+      laeuft = false;
+      if (window.scrollY > 24) kopf.setAttribute('data-fest', '');
+      else kopf.removeAttribute('data-fest');
+    };
+    window.addEventListener('scroll', function(){
+      if (!laeuft){ laeuft = true; requestAnimationFrame(pruefe); }
+    }, { passive: true });
+    pruefe();
+  })();
+
+  /* ——— Bilder wandern beim Scrollen leicht mit ———
+     Bewusst ueber transform und NICHT ueber background-position: Das
+     laeuft auf der Grafikkarte und ruckelt auf aelteren Telefonen
+     nicht. Der Weg ist klein — ein Bild, das sichtbar mitfaehrt, wirkt
+     billig; eines, das sich kaum ruehrt, gibt der Seite Tiefe. */
+  (function(){
+    if (ruhig) return;
+    var stuecke = [
+      { el: document.querySelector('[data-foto-buehne]'), weite: 26 },
+      { el: document.querySelector('[data-foto-band]'),   weite: 42 }
+    ].filter(function(s){ return s.el; });
+    if (!stuecke.length) return;
+    var laeuft = false;
+    var zeichne = function(){
+      laeuft = false;
+      var hoehe = window.innerHeight;
+      stuecke.forEach(function(s){
+        var m = s.el.parentNode.getBoundingClientRect();
+        if (m.bottom < -200 || m.top > hoehe + 200) return;
+        var mitte = (m.top + m.height / 2 - hoehe / 2) / hoehe;   /* -1 … 1 */
+        s.el.style.transform = 'translate3d(0,' + (mitte * s.weite).toFixed(1) + 'px,0)';
+      });
+    };
+    window.addEventListener('scroll', function(){
+      if (!laeuft){ laeuft = true; requestAnimationFrame(zeichne); }
+    }, { passive: true });
+    window.addEventListener('resize', zeichne);
+    zeichne();
+  })();
+
+  /* ——— Zeitachse fuellt sich mit dem Scrollstand ——— */
+  (function(){
+    var strahl = document.querySelector('[data-strahl]');
+    var gleis = document.querySelector('[data-gleis]');
+    if (!strahl || !gleis) return;
+    var schritte = Array.prototype.slice.call(strahl.querySelectorAll('.schritt'));
+    if (!schritte.length) return;
+    if (ruhig){ gleis.style.width = '100%'; schritte.forEach(function(s){ s.setAttribute('data-an',''); }); return; }
+    var laeuft = false;
+    var zeichne = function(){
+      laeuft = false;
+      var m = strahl.getBoundingClientRect();
+      var hoehe = window.innerHeight;
+      /* Von "Oberkante erreicht die untere Bildschirmhaelfte" bis
+         "Unterkante ist oben durch" — in dem Fenster fuellt sich die
+         Linie. */
+      var anteil = (hoehe * 0.72 - m.top) / Math.max(1, m.height + hoehe * 0.2);
+      anteil = Math.max(0, Math.min(1, anteil));
+      gleis.style.width = (anteil * 100).toFixed(1) + '%';
+      schritte.forEach(function(s, i){
+        var ziel = (i + 0.5) / schritte.length;
+        if (anteil >= ziel) s.setAttribute('data-an', '');
+        else s.removeAttribute('data-an');
+      });
+    };
+    window.addEventListener('scroll', function(){
+      if (!laeuft){ laeuft = true; requestAnimationFrame(zeichne); }
+    }, { passive: true });
+    window.addEventListener('resize', zeichne);
+    zeichne();
+  })();
+})();
+</script>
+</body>
+</html>
