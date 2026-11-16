@@ -1,5 +1,14 @@
 [
   {
+    "slug": "jens-frauen",
+    "firma": "Dachdeckerei Jens Frauen",
+    "branche": "handwerk",
+    "gebaut": "2026-11-16",
+    "bis": "2026-12-16",
+    "adresse": "https://jensfrauen.eu/",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "juergen-martens",
     "firma": "Jürgen Martens GmbH & Co. KG",
     "branche": "bau",
