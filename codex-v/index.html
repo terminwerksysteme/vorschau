@@ -1,0 +1,1648 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Steuerberatungskanzlei Codex V — Steuerberatung in Hamburg, auf Deutsch und Russisch</title>
+<meta name="description" content="Steuerberatungskanzlei Codex V in Hamburg: Steuerberatung, Buchhaltung, Lohnabrechnung und Jahresabschluss für Unternehmen, Freiberufler und Existenzgründer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ——————————————————————————————————————————————————————————
+   RECHTSANWALTSKANZLEI — neue Fassung.
+
+   Berufsrecht: keine Erfolgsversprechen, keine Mandantenstimmen,
+   keine Quoten gewonnener Verfahren (BORA, RVG). Das gilt auch
+   fuer die Zahlen in der Buehne — dort steht, wie schnell
+   zurueckgerufen wird, nicht wie oft gewonnen wurde.
+
+   Vorbild ist der Entwurf, den Nicolas auf terminwerk-systeme.de
+   zeigt. Uebernommen davon:
+
+   1. KEIN MENUEBALKEN. Wortmarke, Menuepunkte und Telefonnummer
+      liegen frei ueber dem Bild — keine Flaeche, keine Linie. Das
+      ist der Griff, der den Unterschied zwischen "Baukasten" und
+      "gestaltet" ausmacht. Erst wenn das Bild durchgescrollt ist,
+      faehrt eine schmale Leiste von oben ein, damit das Menue nicht
+      verloren geht.
+   2. DIE BUEHNE IST EINE KARTE mit runden Ecken, eingerueckt auf
+      dunklem Grund. Dadurch wirkt sie wie ein Bild in einem Rahmen
+      und nicht wie ein Banner.
+   3. ZAHLEN ALS NACKTER TEXT, getrennt durch duenne Linien — kein
+      Glaskasten. Ein Kasten auf dem Bild sieht nach Widget aus.
+   4. LEISTUNGSLEISTE UNTEN IM BILD: vier Gebiete in einer Reihe,
+      jedes mit kleiner hochgestellter Ziffer.
+   5. Kleine Versalien mit weiter Sperrung fuer alle Beschriftungen.
+
+   Effekte, jeder mit Zweck: das Buehnenbild zoomt ueber 40 Sekunden
+   kaum merklich, ein Fortschrittsfaden laeuft oben mit, die Leiste
+   faehrt ein, Menuepunkte ziehen beim Ueberfahren einen Strich,
+   Abschnitte laufen versetzt ein, Zahlen zaehlen hoch, die Zeitachse
+   fuellt sich mit dem Scrollstand, das Bandbild wandert mit.
+   —————————————————————————————————————————————————————————— */
+:root{
+  --akzent:#8c2f39;
+  --akzent-d:#73272f;
+  /* Auf dem dunklen Buehnenbild wird NICHT die Akzentfarbe selbst
+     verwendet. Eine Kanzlei waehlt meist ein dunkles Blau, und
+     dunkles Blau auf dunklem Foto ist unlesbar. Deshalb eine
+     stark aufgehellte Mischung — sie behaelt den Farbton, hat
+     aber Kontrast. */
+  --akzent-hell:color-mix(in srgb,var(--akzent) 28%,white);
+
+  --tief:#111419;
+  --tief-2:#1A1F26;
+  --papier:#FBFAF8;
+  --papier-2:#F2F0EC;
+  --tinte:#15181C;
+  --grau:#5A6168;
+  --grau-hell:#8D949B;
+  --linie:#E4E1DA;
+  --anzeige:"Instrument Sans",system-ui,sans-serif;
+  --text:"Hanken Grotesk",system-ui,sans-serif;
+  --rund:22px;
+  --rand:clamp(1rem,4.5vw,3.4rem);
+  --breite:1280px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--papier);color:var(--tinte);font-family:var(--text);
+  font-size:16.5px;line-height:1.66;font-weight:300;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{max-width:100%;display:block}
+h1,h2,h3{margin:0;font-family:var(--anzeige);font-weight:600;line-height:1.04;letter-spacing:-.035em}
+h3{font-size:1.12rem;line-height:1.25;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+[id]{scroll-margin-top:6rem}
+.huelle{width:min(var(--breite),100%);margin-inline:auto;
+  padding-inline:max(20px,env(safe-area-inset-left,0px))}
+.label{display:block;font-family:var(--text);font-size:.68rem;font-weight:600;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--akzent)}
+
+/* ———— Fortschrittsfaden ———— */
+.fortschritt{position:fixed;left:0;top:0;height:2px;width:0;z-index:120;
+  background:var(--akzent);transition:width .1s linear;pointer-events:none}
+
+/* ———— Buehne als Karte auf dunklem Grund ———— */
+.kopfzone{background:var(--tief);padding:clamp(10px,1.1vw,16px)}
+.buehne{position:relative;border-radius:var(--rund);overflow:clip;color:#fff;
+  min-height:min(90vh,880px);display:flex;flex-direction:column;justify-content:flex-end;
+  background:var(--tief-2)}
+.buehne-foto{position:absolute;inset:0;background-size:cover;background-position:center 44%;
+  animation:kenburns 40s ease-in-out infinite alternate;will-change:transform}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.11) translate3d(-1%,-1%,0)}}
+@media(prefers-reduced-motion:reduce){.buehne-foto{animation:none}}
+.buehne::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(104deg,rgba(17,20,25,.94) 0%,rgba(17,20,25,.86) 32%,rgba(17,20,25,.58) 62%,rgba(17,20,25,.40) 88%),
+    linear-gradient(to bottom,rgba(17,20,25,.6),transparent 24%)}
+
+/* ———— Kopf: liegt frei auf dem Bild, ohne Balken ———— */
+.kopf{position:absolute;z-index:3;top:0;left:0;right:0}
+.kopf-in{display:flex;align-items:center;gap:1.6rem;
+  padding-block:clamp(1.1rem,2.2vw,1.7rem)}
+.marke-link{display:flex;align-items:center;gap:.8rem;min-width:0;text-decoration:none;color:#fff;
+  margin-right:auto}
+.logo{display:grid;place-items:center;flex:none;background:#fff;border-radius:8px;padding:.26rem .46rem}
+.logo img{max-height:34px;width:auto;mix-blend-mode:multiply}
+.wortmarke{min-width:0;line-height:1.2}
+.wortmarke b{display:block;font-family:var(--anzeige);font-size:1.02rem;font-weight:600;
+  letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wortmarke span{display:block;font-size:.6rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(255,255,255,.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.kopf nav{display:flex;gap:clamp(1rem,2.2vw,2.1rem);align-items:center}
+.kopf nav a{position:relative;font-size:.68rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;
+  color:rgba(255,255,255,.76);text-decoration:none;padding-block:.3rem;transition:color .22s}
+.kopf nav a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;
+  transform:scaleX(0);transform-origin:right;transition:transform .34s cubic-bezier(.22,.61,.36,1)}
+.kopf nav a:hover{color:#fff}
+.kopf nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.kopf-ruf{font-size:.72rem;font-weight:600;letter-spacing:.14em;color:#fff;text-decoration:none;
+  white-space:nowrap;margin-left:clamp(1rem,2.2vw,2.1rem)}
+.kopf-ruf:hover{color:var(--akzent-hell)}
+@media(max-width:1080px){.kopf nav{display:none}}
+@media(max-width:620px){.kopf-ruf{display:none}}
+
+/* ———— Einfahrende Leiste nach der Buehne ———— */
+.leiste{position:fixed;top:0;left:0;right:0;z-index:100;
+  background:color-mix(in srgb,var(--tief) 92%,transparent);
+  backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+  transform:translateY(-104%);transition:transform .42s cubic-bezier(.22,.61,.36,1)}
+.leiste[data-da]{transform:none}
+.leiste-in{display:flex;align-items:center;gap:1.4rem;padding-block:.72rem}
+.leiste .wortmarke b{font-size:.92rem}
+.leiste nav{display:flex;gap:clamp(.9rem,2vw,1.9rem);align-items:center;margin-left:auto}
+.leiste nav a{font-size:.66rem;font-weight:600;letter-spacing:.19em;text-transform:uppercase;
+  color:rgba(255,255,255,.76);text-decoration:none}
+.leiste nav a:hover{color:#fff}
+@media(max-width:900px){.leiste nav{display:none}}
+
+/* ———— Buehneninhalt ———— */
+.buehne-in{position:relative;z-index:2;width:100%;
+  padding-block:clamp(7rem,14vw,10rem) clamp(1.4rem,2.6vw,2rem);
+  display:grid;grid-template-columns:1.32fr .68fr;gap:clamp(2rem,5vw,4.4rem);align-items:end}
+.buehne h1{font-size:clamp(2.4rem,1.3rem + 4.3vw,5rem);margin-top:1.2rem;color:#fff;
+  letter-spacing:-.042em;text-wrap:balance}
+.buehne h1 em{font-style:normal;color:var(--akzent-hell)}
+.buehne .label{color:rgba(255,255,255,.72)}
+.buehne-lede{margin-top:1.3rem;font-size:clamp(1rem,.96rem + .3vw,1.12rem);color:rgba(255,255,255,.76);
+  max-width:40ch;line-height:1.72}
+.tasten{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2.1rem}
+.knopf{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--text);
+  font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
+  padding:1rem 1.6rem;border-radius:4px;text-decoration:none;white-space:nowrap;
+  border:1px solid transparent;cursor:pointer;
+  transition:background .2s,color .2s,border-color .2s,transform .2s}
+.knopf em{font-style:normal;transition:transform .26s cubic-bezier(.22,.61,.36,1)}
+.knopf:hover em{transform:translateX(4px)}
+.knopf-voll{background:var(--akzent);color:#fff}
+.knopf-voll:hover{background:var(--akzent-d);transform:translateY(-2px)}
+.knopf-rand{border-color:rgba(255,255,255,.34);color:#fff}
+/* In der Buehne ist der Hauptknopf WEISS, nicht farbig: Ein
+   dunkelblauer Knopf auf einem dunklen Foto sieht aus wie ein
+   Loch. Auf den hellen Abschnitten bleibt er in der Akzentfarbe. */
+.buehne .knopf-voll{background:#fff;color:var(--tief)}
+.buehne .knopf-voll:hover{background:var(--akzent-hell)}
+.knopf-rand:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+.knopf-dunkel{background:var(--tinte);color:#fff}
+.knopf-dunkel:hover{background:var(--akzent)}
+.knopf-zart{border-color:var(--linie);color:var(--tinte)}
+.knopf-zart:hover{border-color:var(--akzent);color:var(--akzent)}
+
+/* Zahlen rechts: nackter Text mit duennen Linien, kein Kasten */
+.zahlen{display:grid;gap:0}
+.zahl{padding-block:clamp(.9rem,1.8vw,1.3rem);border-top:1px solid rgba(255,255,255,.2)}
+.zahl:first-child{border-top:0;padding-top:0}
+.zahl b{display:block;font-family:var(--anzeige);font-size:clamp(1.5rem,1.2rem + 1.1vw,2.1rem);
+  font-weight:600;letter-spacing:-.03em;color:#fff;line-height:1}
+.zahl span{display:block;margin-top:.4rem;font-size:.64rem;font-weight:700;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--akzent-hell)}
+.zahl p{margin-top:.35rem;font-size:.82rem;line-height:1.55;color:rgba(255,255,255,.58)}
+
+/* Leiste unten im Bild */
+.gebiete{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.17);
+  background:rgba(17,20,25,.42);backdrop-filter:blur(6px)}
+.gebiete-in{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.gebiet{padding:1.1rem clamp(.9rem,1.8vw,1.5rem);border-left:1px solid rgba(255,255,255,.14);
+  font-size:.84rem;font-weight:500;color:rgba(255,255,255,.88);
+  display:flex;gap:.45rem;align-items:flex-start;transition:background .25s}
+.gebiet:first-child{border-left:0}
+.gebiet:hover{background:rgba(255,255,255,.07)}
+.gebiet i{font-style:normal;font-size:.58rem;font-weight:700;color:var(--akzent-hell);
+  letter-spacing:.1em;padding-top:.15rem}
+@media(max-width:980px){
+  .buehne-in{grid-template-columns:1fr;align-items:start}
+  .zahlen{grid-template-columns:repeat(3,1fr);gap:0 1.4rem}
+  .zahl{border-top:0;border-left:1px solid rgba(255,255,255,.2);padding:0 0 0 1rem}
+  .zahl:first-child{border-left:0;padding-left:0}
+  .gebiete-in{grid-template-columns:1fr 1fr}
+  .gebiet:nth-child(3){border-left:0}
+  .gebiet:nth-child(n+3){border-top:1px solid rgba(255,255,255,.14)}
+}
+@media(max-width:620px){
+  .buehne{min-height:auto}
+  .zahlen{grid-template-columns:1fr;gap:0}
+  .zahl{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:.9rem 0 0}
+  .zahl:first-child{border-top:0;padding-top:0}
+  .gebiete-in{grid-template-columns:1fr}
+  .gebiet{border-left:0;border-top:1px solid rgba(255,255,255,.14)}
+  .gebiet:first-child{border-top:0}
+}
+
+/* ———— Versetztes Einlaufen in der Buehne ———— */
+.auf{opacity:0;transform:translateY(1.2rem);animation:auf .95s cubic-bezier(.22,.61,.36,1) forwards}
+.auf-1{animation-delay:.1s}.auf-2{animation-delay:.22s}.auf-3{animation-delay:.34s}
+.auf-4{animation-delay:.46s}.auf-5{animation-delay:.58s}
+@keyframes auf{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.auf{animation:none;opacity:1;transform:none}}
+
+/* ———— Abschnittskopf ———— */
+.a-kopf{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.4rem,4vw,3.6rem);
+  align-items:end;margin-bottom:clamp(2rem,3.8vw,3rem)}
+.a-kopf h2{font-size:clamp(1.9rem,1.4rem + 2.3vw,3.2rem);margin-top:1rem}
+.a-kopf p{color:var(--grau)}
+@media(max-width:820px){.a-kopf{grid-template-columns:1fr;align-items:start}}
+
+/* ———— Rechtsgebiete / Leistungen ———— */
+.leistungen{padding-block:clamp(3.2rem,6.5vw,6rem)}
+.posten-reihe{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linie);
+  border-block:1px solid var(--linie)}
+.posten{position:relative;background:var(--papier);padding:clamp(1.5rem,2.8vw,2.2rem);
+  transition:background .3s}
+.posten::before{content:"";position:absolute;left:0;top:0;height:2px;width:0;background:var(--akzent);
+  transition:width .4s cubic-bezier(.22,.61,.36,1)}
+.posten:hover{background:var(--papier-2)}
+.posten:hover::before{width:100%}
+.posten-nr{display:block;font-size:.64rem;font-weight:700;letter-spacing:.2em;color:var(--akzent)}
+.posten h3{font-size:1.28rem;margin-top:.7rem}
+.posten p{margin-top:.6rem;font-size:.95rem;color:var(--grau)}
+@media(max-width:760px){.posten-reihe{grid-template-columns:1fr}}
+
+/* ———— Ablauf ———— */
+.ablauf{padding-block:clamp(3rem,6vw,5.5rem);background:var(--papier-2)}
+.strahl{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(1rem,2.4vw,2.4rem)}
+.strahl-gleis{position:absolute;left:0;right:0;top:9px;height:2px;background:var(--linie)}
+.strahl-gleis i{display:block;height:100%;width:0;background:var(--akzent);transition:width .25s linear}
+.schritt{position:relative;padding-top:2.5rem}
+.schritt::before{content:"";position:absolute;left:0;top:2px;width:16px;height:16px;border-radius:50%;
+  background:var(--papier-2);border:3px solid var(--linie);
+  transition:border-color .3s,transform .3s,box-shadow .3s}
+.schritt[data-an]::before{border-color:var(--akzent);transform:scale(1.08);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--akzent) 15%,transparent)}
+.schritt .nr{font-size:.64rem;font-weight:700;letter-spacing:.2em;color:var(--akzent)}
+.schritt h3{margin-top:.5rem}
+.schritt p{margin-top:.45rem;font-size:.93rem;color:var(--grau)}
+@media(max-width:880px){.strahl{grid-template-columns:1fr 1fr}.strahl-gleis{display:none}}
+@media(max-width:520px){.strahl{grid-template-columns:1fr}}
+
+/* ———— Band mit mitwanderndem Bild ———— */
+.band{position:relative;min-height:clamp(22rem,42vw,32rem);display:grid;align-items:center;
+  overflow:clip;color:#fff}
+.band-foto{position:absolute;inset:-10% 0;background-size:cover;background-position:center;
+  background-color:var(--tief-2);will-change:transform}
+.band::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(104deg,rgba(17,20,25,.93),rgba(17,20,25,.66) 54%,rgba(17,20,25,.34))}
+.band-in{position:relative;z-index:1;padding-block:clamp(2.8rem,5.5vw,4.4rem)}
+.band h2{font-size:clamp(1.9rem,1.4rem + 2.2vw,3rem);margin-top:1rem;color:#fff;max-width:20ch}
+.band > .huelle > p{margin-top:1.1rem;color:rgba(255,255,255,.72);max-width:38rem}
+.band .label{color:var(--akzent-hell)}
+.wege{display:grid;grid-template-columns:repeat(3,minmax(0,17rem));gap:1px;margin-top:2.2rem;
+  background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.18);border-radius:6px;overflow:hidden}
+.weg{background:rgba(17,20,25,.5);padding:1.1rem 1.3rem}
+.weg h3{font-size:.98rem;color:#fff}
+.weg p{margin-top:.35rem;font-size:.86rem;color:rgba(255,255,255,.66)}
+@media(max-width:760px){.wege{grid-template-columns:1fr}}
+
+/* ———— Team ———— */
+.team{padding-block:clamp(3rem,6vw,5.5rem)}
+.personen{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1.4rem,3vw,2.4rem)}
+.person{border-top:2px solid var(--tinte);padding-top:1.3rem;transition:border-color .3s}
+.person:hover{border-color:var(--akzent)}
+.kopfbild-huelle{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--papier-2);
+  border-radius:6px;margin-bottom:1.2rem}
+.person img.kopfbild{width:100%;height:100%;object-fit:cover;
+  transition:transform .9s cubic-bezier(.22,.61,.36,1)}
+.person:hover img.kopfbild{transform:scale(1.05)}
+.person .monogramm{position:absolute;inset:0;display:grid;place-items:center}
+.person .monogramm span{font-family:var(--anzeige);font-size:3rem;font-weight:600;
+  letter-spacing:-.04em;color:var(--akzent);opacity:.5}
+.person h3{font-size:1.18rem}
+.person .rolle{display:block;margin-top:.3rem;font-size:.64rem;font-weight:700;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--akzent)}
+.person p{margin-top:.7rem;font-size:.93rem;color:var(--grau)}
+@media(max-width:860px){.personen{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.personen{grid-template-columns:1fr}}
+
+/* ———— Sprechzeiten und Kosten ———— */
+.zeiten-flaeche{padding-block:clamp(3rem,6vw,5.5rem);background:var(--papier-2)}
+.zeiten-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.zeiten-text h2{font-size:clamp(1.9rem,1.4rem + 2.2vw,3rem);margin-top:1rem}
+.zeiten-text > p{margin-top:1.1rem;color:var(--grau)}
+.ruf-gross{display:inline-block;margin-top:1.5rem;font-family:var(--anzeige);font-weight:600;
+  letter-spacing:-.035em;font-size:clamp(1.8rem,1.4rem + 1.6vw,2.6rem);text-decoration:none}
+.ruf-zeit{margin-top:.4rem;font-size:.9rem;color:var(--grau)}
+.zeiten{background:var(--papier);border:1px solid var(--linie);border-radius:8px;
+  padding:clamp(1.4rem,2.6vw,2rem)}
+.zeiten table{width:100%;border-collapse:collapse;font-size:.96rem}
+.zeiten td{padding:.56rem 0;border-bottom:1px solid var(--linie)}
+.zeiten tr:last-child td{border-bottom:0}
+.zeiten td:last-child{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.zeiten-fuss{margin-top:1rem;font-size:.87rem;color:var(--grau)}
+.zeiten-ersatz{font-size:.96rem;color:var(--grau)}
+@media(max-width:860px){.zeiten-in{grid-template-columns:1fr}}
+
+/* ———— Fristband ———— */
+.frist{background:var(--tinte);color:rgba(255,255,255,.72);padding-block:clamp(2.4rem,4.6vw,3.6rem)}
+.frist-in{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:center}
+.frist h2{color:#fff;font-size:clamp(1.6rem,1.25rem + 1.6vw,2.4rem);margin-top:.9rem}
+.frist p{margin-top:1rem}
+.frist .label{color:var(--akzent-hell)}
+.frist .ruf-gross{color:#fff}
+@media(max-width:860px){.frist-in{grid-template-columns:1fr}}
+
+/* ———— Kontakt ———— */
+.kontakt-flaeche{padding-block:clamp(3rem,6vw,5.5rem)}
+.kontakt{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+.kontakt h2{font-size:clamp(1.9rem,1.4rem + 2.2vw,3rem);margin-top:1rem}
+.kontakt > div > p{margin-top:1.1rem;color:var(--grau)}
+.adresse{display:grid;grid-template-columns:1fr 1fr;gap:1.3rem;margin-top:1.9rem;
+  border-top:1px solid var(--linie);padding-top:1.5rem;font-size:.96rem}
+.adresse span{display:block;font-size:.64rem;font-weight:700;letter-spacing:.19em;
+  text-transform:uppercase;color:var(--akzent);margin-bottom:.4rem}
+.form{background:var(--papier-2);border:1px solid var(--linie);border-radius:8px;
+  padding:clamp(1.4rem,2.6vw,2.1rem)}
+.feld{margin-bottom:1rem}
+.feld label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--grau);margin-bottom:.45rem}
+.feld input,.feld textarea{width:100%;font-family:var(--text);font-size:.96rem;color:var(--tinte);
+  background:var(--papier);border:1px solid var(--linie);border-radius:5px;padding:.78rem .9rem;
+  transition:border-color .2s,box-shadow .2s}
+.feld textarea{min-height:7rem;resize:vertical;line-height:1.6}
+.feld input:focus,.feld textarea:focus{outline:none;border-color:var(--akzent);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--akzent) 14%,transparent)}
+.form .knopf{width:100%;justify-content:center;margin-top:.4rem}
+.form-hinweis{margin-top:.85rem;font-size:.83rem;color:var(--grau)}
+@media(max-width:860px){.kontakt{grid-template-columns:1fr}.adresse{grid-template-columns:1fr}}
+
+/* ———— Fuss ———— */
+.fuss{background:var(--tief);color:rgba(255,255,255,.6);padding-block:clamp(2.6rem,4.6vw,3.6rem);
+  font-size:.92rem}
+.fuss-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:1.9rem}
+.fuss b{display:block;font-family:var(--anzeige);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  font-size:1rem;color:#fff;margin-bottom:.7rem}
+.fuss .klein{font-size:.64rem;letter-spacing:.19em}
+.fuss a{color:rgba(255,255,255,.82)}
+.fuss .zeile{margin-top:2.2rem;padding-top:1.3rem;border-top:1px solid rgba(255,255,255,.12);
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.82rem}
+@media(max-width:760px){.fuss-grid{grid-template-columns:1fr}}
+
+/* Versatz beim Einlaufen der Reihen */
+.posten-reihe > *:nth-child(2){transition-delay:.05s}
+.posten-reihe > *:nth-child(3){transition-delay:.1s}
+.posten-reihe > *:nth-child(4){transition-delay:.15s}
+.posten-reihe > *:nth-child(5){transition-delay:.2s}
+.posten-reihe > *:nth-child(6){transition-delay:.25s}
+.personen > *:nth-child(2){transition-delay:.08s}
+.personen > *:nth-child(3){transition-delay:.16s}
+/* ——————————————————————————————————————————————————————————
+   Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+   Die Farben kommen aus der Marke TerminWerk (#132F38 und #44B370)
+   und NICHT aus der Akzentfarbe des Kunden: Die Kennzeichnung gehoert
+   uns, nicht seinem Betrieb, und soll sich sichtbar davon absetzen.
+   —————————————————————————————————————————————————————————— */
+/* Rueckfall, falls das Skript nicht laeuft. Den echten Wert setzt
+   _kern.js aus der gemessenen Hoehe der Leiste. */
+body{padding-bottom:5.5rem}
+@media(max-width:760px){body{padding-bottom:5rem}}
+
+:root{
+  --tw-tief:#101F26;
+  --tw-gruen:#44B370;
+  --tw-hell:#DCE5E2;
+}
+
+/* ———— Marke oben rechts ———— */
+.vorschaumarke{
+  position:fixed;
+  /* --marke-oben misst der gemeinsame Kern aus der echten Kopfzeile.
+     Die 84 Pixel sind nur der Rueckfall, falls das Skript nicht laeuft. */
+  top:calc(var(--marke-oben,84px) + env(safe-area-inset-top,0px));
+  right:max(16px,env(safe-area-inset-right,0px));
+  z-index:95;pointer-events:none;
+  display:flex;align-items:center;gap:.62rem;
+  padding:.6rem .95rem .6rem .7rem;
+  background:rgba(16,31,38,.93);
+  backdrop-filter:saturate(1.4) blur(8px);
+  border-left:4px solid var(--tw-gruen);
+  border-radius:4px;
+  box-shadow:0 10px 30px rgba(8,16,20,.4),0 2px 6px rgba(8,16,20,.3);
+  animation:vm-auf .5s cubic-bezier(.22,.61,.36,1) .35s both;
+}
+@keyframes vm-auf{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.vorschaumarke{animation:none}}
+.vm-zeichen{display:block;flex:none}
+.vm-zeichen svg{width:30px;height:30px;display:block}
+.vm-text{display:block;line-height:1.15}
+.vorschaumarke b{
+  display:block;font-size:.84rem;font-weight:800;letter-spacing:.17em;
+  text-transform:uppercase;color:#fff;
+}
+.vorschaumarke .vm-text span{
+  display:block;margin-top:.1rem;font-size:.7rem;font-weight:500;
+  letter-spacing:.04em;color:var(--tw-gruen);
+}
+@media (max-width:560px){
+  .vorschaumarke{top:calc(var(--marke-oben,68px) + env(safe-area-inset-top,0px));
+    padding:.45rem .7rem .45rem .52rem;gap:.45rem}
+  .vm-zeichen svg{width:24px;height:24px}
+  .vorschaumarke b{font-size:.72rem}
+  .vorschaumarke .vm-text span{font-size:.62rem}
+}
+
+/* ——————————————————————————————————————————————————————————
+   Die Entwurfsleiste unten.
+
+   Alles, was frueher der grosse Abschnitt "Das ist ein Entwurf" im
+   Seitenfluss enthielt, steckt jetzt hier: Ueberschrift, die vier
+   Schritte, die Taste, Impressum und Datenschutz. Zielhoehe rund
+   zwei Zentimeter, damit die Seite darueber ganz dem Betrieb gehoert.
+
+   Gebaut aus zwei Zeilen: oben die Hauptzeile, darunter ein duenner
+   Fuss mit den Rechtshinweisen. Die ausfuehrlichen Saetze liegen
+   dazwischen und klappen auf.
+
+   Eigene Schrift und keine Erbschaft aus der Kundenvorlage: Sonst
+   stuende die Leiste bei Bau in Grossbuchstaben und bei GaLaBau in
+   einer Serife — unser Wort an den Unternehmer sieht auf allen sieben
+   Branchen gleich aus.
+   —————————————————————————————————————————————————————————— */
+.entwurf,.entwurf *{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  text-transform:none;font-style:normal;letter-spacing:normal;
+  box-sizing:border-box;
+}
+.entwurf{
+  position:fixed;left:0;right:0;bottom:0;z-index:96;
+  background:linear-gradient(to right,var(--tw-tief),#16313B 58%,var(--tw-tief));
+  color:var(--tw-hell);
+  border-top:2px solid var(--tw-gruen);
+  box-shadow:0 -8px 28px rgba(8,16,20,.3);
+  max-height:84vh;overflow-y:auto;overscroll-behavior:contain;
+}
+.entwurf .entwurf-in{
+  width:min(1320px,100%);margin-inline:auto;
+  padding-inline:max(16px,env(safe-area-inset-left,0px));
+}
+
+/* ———— Hauptzeile ———— */
+.entwurf > .entwurf-in{
+  display:flex;align-items:center;gap:1.1rem;
+  padding-block:.6rem;
+}
+.entwurf-zeichen{flex:none;display:block}
+.entwurf-zeichen svg{width:28px;height:28px;display:block}
+
+.entwurf-wort{min-width:0;display:block;line-height:1.3}
+.entwurf-wort b{
+  display:block;font-size:.86rem;font-weight:700;color:#fff;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.entwurf-unter{
+  display:block;font-size:.76rem;color:#93A5AC;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* Die vier Schritte als knappe Kette — sichtbar bleibt, DASS es vier
+   gibt und wie sie heissen; die Saetze dazu stehen im Aufklappteil. */
+.entwurf-schritte{
+  list-style:none;margin:0 0 0 auto;padding:0;flex:none;
+  display:flex;align-items:center;gap:.5rem;
+}
+.entwurf-schritte li{
+  display:flex;align-items:center;gap:.34rem;
+  font-size:.76rem;font-weight:600;color:#C6D3CF;white-space:nowrap;
+  padding:.3rem .62rem;border-radius:999px;
+  background:rgba(255,255,255,.07);
+}
+.entwurf-schritte i{font-style:normal;font-size:.68rem;font-weight:700;color:var(--tw-gruen)}
+
+.entwurf-rechts{flex:none;display:flex;align-items:center;gap:.7rem}
+.entwurf-mehr-schalter{
+  display:inline-flex;align-items:center;gap:.38rem;
+  background:transparent;border:1px solid rgba(255,255,255,.22);
+  color:#C6D3CF;font-size:.78rem;font-weight:600;
+  padding:.42rem .78rem;border-radius:999px;cursor:pointer;
+  transition:border-color .2s,color .2s,background .2s;
+}
+.entwurf-mehr-schalter:hover{border-color:var(--tw-gruen);color:#fff;background:rgba(68,179,112,.14)}
+.entwurf-mehr-schalter svg{width:11px;height:8px;transition:transform .25s}
+.entwurf-mehr-schalter[aria-expanded="false"] svg{transform:rotate(180deg)}
+.entwurf-taste{
+  display:inline-flex;align-items:center;
+  background:var(--tw-gruen);color:#0B1A12;
+  font-size:.82rem;font-weight:700;padding:.48rem 1.05rem;border-radius:999px;
+  text-decoration:none;white-space:nowrap;
+  transition:background .2s,transform .2s,box-shadow .2s;
+  box-shadow:0 3px 14px rgba(68,179,112,.3);
+}
+.entwurf-taste:hover{background:#56C681;transform:translateY(-1px);box-shadow:0 6px 20px rgba(68,179,112,.4)}
+
+/* ———— Aufklappteil ———— */
+.entwurf-mehr{border-top:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.2)}
+.entwurf-mehr-in{padding-block:1.1rem 1.2rem}
+.entwurf-lang{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1rem 1.6rem;
+}
+.entwurf-lang li{border-top:1px solid rgba(255,255,255,.16);padding-top:.7rem}
+.entwurf-lang span{display:block;font-size:.7rem;font-weight:700;letter-spacing:.12em;color:var(--tw-gruen)}
+.entwurf-lang b{display:block;margin-top:.3rem;color:#fff;font-size:.95rem;font-weight:700}
+.entwurf-lang p{margin:.3rem 0 0;font-size:.82rem;line-height:1.55;color:#A9BAB5}
+.entwurf-bildhinweis{margin:1rem 0 0;font-size:.8rem;color:#8EA19C;max-width:46rem}
+
+/* ———— Duenner Fuss ———— */
+.entwurf-fuss{border-top:1px solid rgba(255,255,255,.12);background:rgba(0,0,0,.26)}
+.entwurf-fuss-in{
+  display:flex;align-items:center;justify-content:space-between;gap:.5rem 1rem;flex-wrap:wrap;
+  padding-block:.32rem calc(.32rem + env(safe-area-inset-bottom,0px));
+  font-size:.72rem;color:#8EA19C;
+}
+.entwurf-fuss-links{display:flex;align-items:center;gap:.9rem}
+/* Nur die Verweise im Fuss und im Aufklappteil sind gruen.
+   Vorher galt die Regel fuer JEDEN Verweis in der Leiste — und damit
+   auch fuer die Taste, die selbst gruen ist: gruene Schrift auf
+   gruenem Grund, der Knopf sah leer aus. */
+.entwurf-fuss a,.entwurf-mehr a{color:var(--tw-gruen);text-decoration:none}
+.entwurf-fuss a{border-bottom:1px solid rgba(68,179,112,.35)}
+.entwurf-fuss a:hover{color:#fff;border-bottom-color:#fff}
+
+/* ———— Schmaler ————
+   Der Platz geht in dieser Reihenfolge weg: erst die Frist, dann die
+   Schrittkette, dann der Untertitel. Die Hauptzeile und die Taste
+   bleiben bis zuletzt, denn das sind die beiden Dinge, die der
+   Unternehmer sehen muss. */
+@media (max-width:1240px){.entwurf-schritte li:nth-child(n+4){display:none}}
+@media (max-width:1080px){.entwurf-schritte{display:none}}
+@media (max-width:860px){.entwurf-lang{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .entwurf-frist{display:none}
+  .nur-breit{display:none}
+  .entwurf-wort b{font-size:.8rem}
+  .entwurf-unter{font-size:.71rem}
+  .entwurf-mehr-wort{display:none}
+  .entwurf-mehr-schalter{padding:.4rem .5rem}
+  .entwurf-taste{font-size:.74rem;padding:.42rem .72rem}
+}
+@media (min-width:761px){.nur-schmal{display:none}}
+/* Auf dem Telefon bricht die Hauptzeile um, statt alles in eine Reihe
+   zu quetschen: In einer Reihe blieben dem Satz "Unverbindlicher
+   Entwurf" noch 120 Pixel, er stand also als "Unverbindliche..." da —
+   und genau dieser Satz ist der Grund, warum die Leiste existiert.
+   Jetzt: oben das Zeichen und der Satz, darunter Knopf und Verweise. */
+@media (max-width:560px){
+  .entwurf-lang{grid-template-columns:1fr}
+  .entwurf-unter{display:none}
+  .entwurf > .entwurf-in{flex-wrap:wrap;gap:.5rem .6rem;padding-block:.55rem}
+  .entwurf-zeichen svg{width:22px;height:22px}
+  .entwurf-wort{flex:1 1 0}
+  .entwurf-wort b{font-size:.84rem;white-space:normal}
+  .entwurf-rechts{flex:1 0 100%;justify-content:space-between;gap:.6rem}
+  .entwurf-taste{font-size:.8rem;padding:.5rem 1rem}
+  .entwurf-mehr-wort{display:inline}
+  .entwurf-mehr-schalter{padding:.46rem .8rem;font-size:.76rem}
+  /* Damit der Fuss in EINE Zeile passt und die Leiste unter drei
+     Zentimetern bleibt. Dass der Entwurf nicht veroeffentlicht ist,
+     steht weiter da — nur der Zusatz zu den Suchmaschinen faellt weg. */
+  .entwurf-sperr{display:none}
+  .entwurf-fuss-in{padding-block:.26rem calc(.26rem + env(safe-area-inset-bottom,0px));font-size:.69rem}
+  .entwurf-fuss-links{gap:.7rem}
+}
+
+</style>
+</head>
+<body>
+
+<div class="fortschritt" data-fortschritt aria-hidden="true"></div>
+
+<div class="leiste" data-leiste>
+  <div class="huelle leiste-in">
+    <a class="marke-link" href="#oben" style="margin-right:0">
+      <span class="wortmarke"><b>Codex V</b></span>
+    </a>
+    <nav>
+      <a href="#leistungen">Rechtsgebiete</a>
+      <a href="#ablauf">Ablauf</a>
+      <a href="#team">Anwälte</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="kopf-ruf" href="tel:+4904088946507">+49 (0) 40 88946507</a>
+  </div>
+</div>
+
+<div class="kopfzone" id="oben">
+  <section class="buehne">
+    <div class="buehne-foto" data-foto-buehne data-eigen=""></div>
+
+    <header class="kopf">
+      <div class="huelle kopf-in">
+        <a class="marke-link" href="#oben">
+          <span class="logo" data-logo><img src="https://le-de.cdn-website.com/e6d19e7b20cd4155ae7e5d5c5032453a/dms3rep/multi/opt/Logo_CodexV_72dpi+%281%29-252w.png" alt="Steuerberatungskanzlei Codex V" onerror="this.closest('.logo').remove();"></span>
+          <span class="wortmarke"><b>Codex V</b><span>Steuerberatung Hamburg</span></span>
+        </a>
+        <nav>
+          <a href="#leistungen">Rechtsgebiete</a>
+          <a href="#ablauf">Ablauf</a>
+          <a href="#team">Anwälte</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <a class="kopf-ruf" href="tel:+4904088946507">+49 (0) 40 88946507</a>
+      </div>
+    </header>
+
+    <div class="huelle buehne-in">
+      <div>
+        <span class="label auf auf-1">Steuerberatung in Hamburg</span>
+        <h1 class="auf auf-2">Steuerfragen auf Deutsch <em>und auf Russisch.</em></h1>
+        <p class="buehne-lede auf auf-3">Die Kanzlei in Hamburg betreut Unternehmen aller Rechtsformen, Freiberufler und Existenzgründer: von der Buchhaltung und Lohnabrechnung bis zu Jahresabschluss, Steuererklärung und steuerlicher Beratung.</p>
+        <div class="tasten auf auf-4">
+          <a class="knopf knopf-voll" href="#kontakt">Termin anfragen<em aria-hidden="true">&rarr;</em></a>
+          <a class="knopf knopf-rand" href="#leistungen">Rechtsgebiete</a>
+        </div>
+      </div>
+      <div class="zahlen auf auf-5">
+        <div class="zahl"><b data-zaehlen></b><span>Kurzfristige Termine</span><p>Die Kanzlei bietet Ihnen Termine auch kurzfristig an.</p></div>
+        <div class="zahl"><b data-zaehlen></b><span>Deutsch und Russisch</span><p>Steuerliche Angelegenheiten besprechen wir auch in russischer Sprache.</p></div>
+        <div class="zahl"><b data-zaehlen></b><span>Umgehende Rückmeldung</span><p>Auf Ihre Anfragen melden wir uns ohne Verzögerung zurück.</p></div>
+      </div>
+    </div>
+
+    <div class="gebiete auf auf-5">
+      <div class="huelle gebiete-in" data-gebiete>
+        <a class="gebiet" href="#leistungen"><i>01</i>Steuerberatung</a>
+        <a class="gebiet" href="#leistungen"><i>02</i>Steuererklärungen</a>
+        <a class="gebiet" href="#leistungen"><i>03</i>Jahresabschluss</a>
+        <a class="gebiet" href="#leistungen"><i>04</i>Buchhaltung</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="leistungen" id="leistungen">
+  <div class="huelle">
+    <div class="a-kopf">
+      <div>
+        <span class="label">Rechtsgebiete</span>
+        <h2>Was wir für Sie übernehmen</h2>
+      </div>
+      <p>Von der laufenden Buchhaltung bis zur Begleitung bei Betriebsprüfungen: Sie entscheiden, welche Aufgaben bei uns liegen.</p>
+    </div>
+    <div class="posten-reihe">
+      <article class="posten"><span class="posten-nr">01</span><h3>Steuerberatung</h3><p>Wir analysieren Ihre steuerliche Situation in regelmäßigen Abständen und beraten zu Rechtsform, Liquidität, Nachfolge und Umstrukturierung.</p></article>
+      <article class="posten"><span class="posten-nr">02</span><h3>Steuererklärungen</h3><p>Wir erstellen Steuererklärungen aller Art für Unternehmen, Freiberufler und Privatpersonen.</p></article>
+      <article class="posten"><span class="posten-nr">03</span><h3>Jahresabschluss</h3><p>Wir fertigen den Jahresabschluss und werten Zahlen betriebswirtschaftlich für Sie aus.</p></article>
+      <article class="posten"><span class="posten-nr">04</span><h3>Buchhaltung</h3><p>Wir erfüllen die Buchhaltungspflichten, erledigen den laufenden Zahlungsverkehr und übernehmen Umsatzsteuervoranmeldungen.</p></article>
+      <article class="posten"><span class="posten-nr">05</span><h3>Lohnabrechnung</h3><p>Wir erstellen Lohn- und Gehaltsabrechnungen, pflegen Personalstammdaten und erledigen die Meldungen an Sozialversicherungsträger und Berufsgenossenschaften.</p></article>
+      <article class="posten"><span class="posten-nr">06</span><h3>Betriebsprüfungen</h3><p>Auf Wunsch begleiten wir Betriebsprüfungen, die bei Ihnen durchgeführt werden.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="ablauf" id="ablauf">
+  <div class="huelle">
+    <div class="a-kopf">
+      <div>
+        <span class="label">Ablauf</span>
+        <h2>So arbeiten wir zusammen</h2>
+      </div>
+      <p>Jeder Schritt wird erklärt, damit Sie jederzeit wissen, wo Ihre steuerlichen Angelegenheiten stehen.</p>
+    </div>
+    <div class="strahl" data-strahl>
+      <div class="strahl-gleis" aria-hidden="true"><i data-gleis></i></div>
+      <div class="schritt"><span class="nr">Schritt 1</span><h3>Anfrage</h3><p>Sie rufen an oder schreiben uns. Wir melden uns umgehend zurück und vereinbaren einen Termin.</p></div>
+      <div class="schritt"><span class="nr">Schritt 2</span><h3>Gespräch</h3><p>Wir klären, welche Aufgaben Sie abgeben möchten, und besprechen Ihre steuerliche Situation.</p></div>
+      <div class="schritt"><span class="nr">Schritt 3</span><h3>Bearbeitung</h3><p>Wir übernehmen die vereinbarten Aufgaben und erläutern Ihnen die Ergebnisse verständlich.</p></div>
+      <div class="schritt"><span class="nr">Schritt 4</span><h3>Laufende Betreuung</h3><p>In regelmäßigen Abständen setzen wir uns zusammen und sprechen Auswertungen und Maßnahmen durch.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="anfahrt">
+  <div class="band-foto" data-foto-band data-eigen=""></div>
+  <div class="huelle band-in">
+    <span class="label">So finden Sie uns</span>
+    <h2>So erreichen Sie uns</h2>
+    <p>Die Kanzlei sitzt im Herbstsweg, eine Beratungsstelle gibt es in der Hermannstraße.</p>
+    <div class="wege">
+      <div class="weg"><h3>Kanzlei</h3><p>Herbstsweg 15, 22307 Hamburg.</p></div>
+      <div class="weg"><h3>Beratungsstelle Altstadt</h3><p>Hermannstraße 16, 20095 Hamburg.</p></div>
+      <div class="weg"><h3>Telefon und E-Mail</h3><p>Sie erreichen uns unter +49 (0) 40 88946507 oder info@stb-codexv.de.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="team" id="team">
+  <div class="huelle">
+    <div class="a-kopf">
+      <div>
+        <span class="label">Anwälte</span>
+        <h2>Ihre Ansprechpartnerin</h2>
+      </div>
+      <p>Die Kanzlei wird von einer Steuerberaterin geführt, die Ihre Anliegen persönlich betreut.</p>
+    </div>
+    <div class="personen">
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="https://le-de.cdn-website.com/e6d19e7b20cd4155ae7e5d5c5032453a/dms3rep/multi/opt/FrauVladislavaSnisarevska1-2880w.jpg?jxl&v=jxl" alt="Vladislava Snisarevska" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono="Vladislava Snisarevska"><span></span></div>
+        </div>
+        <h3>Vladislava Snisarevska</h3><span class="rolle">Steuerberaterin</span><p>Frau Snisarevska betreut Mandanten persönlich, auf Deutsch und auf Russisch.</p>
+      </div>
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono=""><span></span></div>
+        </div>
+        <h3></h3><span class="rolle"></span><p></p>
+      </div>
+      <div class="person">
+        <div class="kopfbild-huelle">
+          <img class="kopfbild" src="" alt="" loading="lazy" onerror="this.remove();">
+          <div class="monogramm" data-mono=""><span></span></div>
+        </div>
+        <h3></h3><span class="rolle"></span><p></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="zeiten-flaeche" id="zeiten">
+  <div class="huelle zeiten-in">
+    <div class="zeiten-text">
+      <span class="label">Öffnungszeiten</span>
+      <h2>Wann wir für Sie da sind</h2>
+      <p>Am Wochenende sind Termine nach Vereinbarung möglich.</p>
+      <a class="ruf-gross" href="tel:+4904088946507">+49 (0) 40 88946507</a>
+      <p class="ruf-zeit">Telefon und E-Mail, Rückmeldung umgehend</p>
+    </div>
+    <div class="zeiten">
+      <table>
+        <tr><td>Montag</td><td>9:00 – 16:00</td></tr>
+        <tr><td>Dienstag</td><td>9:00 – 16:00</td></tr>
+        <tr><td>Mittwoch</td><td>9:00 – 16:00</td></tr>
+        <tr><td>Donnerstag</td><td>9:00 – 16:00</td></tr>
+        <tr><td>Freitag</td><td>9:00 – 16:00</td></tr>
+        <tr><td>Samstag</td><td>nach Vereinbarung</td></tr>
+      </table>
+      <p class="zeiten-fuss"></p>
+    </div>
+  </div>
+</section>
+
+<section class="frist">
+  <div class="huelle frist-in">
+    <div>
+      <span class="label">In dringenden Fällen: +49 (0) 175 874 6011</span>
+      <h2>In dringenden Fällen</h2>
+    </div>
+    <div>
+      <p>Wenn eine steuerliche Angelegenheit nicht warten kann, erreichen Sie uns unter +49 (0) 175 874 6011.</p>
+      <a class="ruf-gross" href="tel:+4904088946507">+49 (0) 40 88946507</a>
+      <p class="ruf-zeit" style="color:rgba(255,255,255,.5)">Außerhalb der Öffnungszeiten schreiben Sie uns eine E-Mail an info@stb-codexv.de.</p>
+    </div>
+  </div>
+</section>
+
+<section class="kontakt-flaeche" id="kontakt">
+  <div class="huelle kontakt">
+    <div>
+      <span class="label">Kontakt</span>
+      <h2>Schreiben Sie uns</h2>
+      <p>Schildern Sie kurz Ihr Anliegen. Wir melden uns umgehend bei Ihnen.</p>
+      <div class="adresse">
+        <div data-weg-wenn-leer><span>Anschrift</span>Herbstsweg 15<br>22307 Hamburg</div>
+        <div data-weg-wenn-leer><span>E-Mail</span><a href="mailto:info@stb-codexv.de">info@stb-codexv.de</a></div>
+        <div data-weg-wenn-leer><span>Abrechnung</span></div>
+      </div>
+    </div>
+    <form class="form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='In der Vorschau nicht aktiv';">
+      <div class="feld"><label for="f-name">Ihr Name</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required></div>
+      <div class="feld"><label for="f-tel">Telefon</label>
+        <input id="f-tel" name="telefon" type="tel" autocomplete="tel" required></div>
+      <div class="feld"><label for="f-mail">E-Mail</label>
+        <input id="f-mail" name="email" type="email"></div>
+      <div class="feld"><label for="f-text">Ihr Anliegen</label>
+        <textarea id="f-text" name="text" placeholder="Ich möchte einen Termin zur Buchhaltung und Lohnabrechnung vereinbaren."></textarea>
+        <p class="form-hinweis">Bitte schildern Sie Ihr Anliegen nur in Stichworten — Einzelheiten besprechen wir vertraulich am Telefon oder vor Ort.</p></div>
+      <button class="knopf knopf-dunkel" type="submit">Nachricht senden<em aria-hidden="true">&rarr;</em></button>
+      <p class="form-hinweis">Wir verwenden Ihre Angaben ausschließlich, um Ihr Anliegen zu bearbeiten
+        und Sie zurückzurufen. Eine Weitergabe an Dritte erfolgt nicht.</p>
+    </form>
+  </div>
+</section>
+
+<!-- Hier stand bis zum 16.11.2026 der Abschnitt "Das ist ein Entwurf.
+     Kein fertiges Angebot." mit den vier Schritten.
+
+     Der Inhalt ist nicht weg, er ist umgezogen: Er steckt jetzt in der
+     Leiste am unteren Bildrand (_marke.html, Klasse .entwurf). Grund:
+     Der Abschnitt schob sich im Seitenfluss zwischen die Seite des
+     Betriebs und dessen eigenen Fuss. Die ganze Seite soll aber dem
+     Betrieb gehoeren; unser Wort an ihn laeuft unten als Streifen mit.
+
+     Der Einsetzpunkt in den sieben Vorlagen bleibt bestehen, damit hier
+     wieder etwas hinein kann, ohne sieben Dateien anzufassen.
+
+     ACHTUNG, hier ist schon einmal etwas schiefgegangen: In diesen
+     Kommentar gehoert NIEMALS der Einsetzpunkt selbst als Text und auch
+     keine Reihe aus Minuszeichen. Ein HTML-Kommentar endet am ersten
+     Zeichenpaar aus zwei Minus und einer spitzen Klammer. Stand der
+     Einsetzpunkt hier drin, endete der Kommentar mittendrin, und der
+     Rest landete als sichtbarer Text im Seitenkoerper: eine lange,
+     nicht umbrechbare Zeichenkette, die alle sieben Branchen um gut
+     550 Pixel zur Seite schob. Gefunden hat das keine Element-Suche,
+     denn ein Textknoten ist kein Element. -->
+
+
+<footer class="fuss">
+  <div class="huelle">
+    <div class="fuss-grid">
+      <div><b>Steuerberatungskanzlei Codex V</b><p>Steuerberatungskanzlei Codex V · Herbstsweg 15 · 22307 Hamburg</p></div>
+      <div><b class="klein">Anschrift</b>Herbstsweg 15<br>22307 Hamburg<br>
+        <a href="tel:+4904088946507">+49 (0) 40 88946507</a></div>
+      <div><b class="klein">Erreichbarkeit</b>Telefon und E-Mail, Rückmeldung umgehend</div>
+    </div>
+    <div class="zeile">
+      <span>&copy; 2026 Steuerberatungskanzlei Codex V</span>
+      <span>Entwurf — Impressum und Datenschutzerklärung folgen mit der Veröffentlichung.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ——————————————————————————————————————————————————————————
+     Vorschau-Kennzeichnung — gemeinsam fuer alle Branchen.
+
+     Zweck: Wer diesen Link bekommt, soll in der ersten Sekunde
+     begreifen, dass das ein Entwurf ist und nicht die veroeffentlichte
+     Seite seines Betriebs. Bei Aerzten, Kanzleien und Krankenhaeusern
+     ist das keine Hoeflichkeit, sondern notwendig — dort reagiert man
+     empfindlich auf alles, was wie eine echte Veroeffentlichung
+     aussieht.
+
+     Bewusst KEIN seitenfuellendes Wasserzeichen quer ueber die Seite:
+     Der Entwurf muss gleichzeitig so gut aussehen, dass der Unternehmer
+     ihn kaufen will. Ein Raster aus "ENTWURF" ueber dem ganzen Bild
+     nimmt genau das kaputt. Stattdessen eine kraeftige Marke oben
+     rechts mit dem TerminWerk-Zeichen und eine Leiste unten.
+     —————————————————————————————————————————————————————————— -->
+<div class="vorschaumarke" aria-label="Diese Seite ist ein unverbindlicher Entwurf">
+  <span class="vm-zeichen" aria-hidden="true">
+    <svg viewBox="0 0 34 34" focusable="false">
+      <rect width="34" height="34" rx="9.5" fill="#132F38"/>
+      <rect x="9.1" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="18.3" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#fff"/>
+      <rect x="6.4" y="9.1" width="17.2" height="16" rx="2.8" fill="#fff"/>
+      <g fill="#132F38">
+        <rect x="8.9" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="18.1" y="15.1" width="2.5" height="2.5" rx=".7"/>
+        <rect x="8.9" y="19.4" width="2.5" height="2.5" rx=".7"/>
+        <rect x="13.5" y="19.4" width="2.5" height="2.5" rx=".7"/>
+      </g>
+      <circle cx="23.8" cy="23.4" r="7.6" fill="#132F38"/>
+      <circle cx="23.8" cy="23.4" r="6.2" fill="#44B370"/>
+      <g fill="#fff">
+        <circle cx="21.2" cy="23.4" r="1.05"/><circle cx="23.8" cy="23.4" r="1.05"/><circle cx="26.4" cy="23.4" r="1.05"/>
+      </g>
+    </svg>
+  </span>
+  <span class="vm-text">
+    <b>Vorschau</b>
+    <span>nicht veröffentlicht</span>
+  </span>
+</div>
+
+<!-- ——————————————————————————————————————————————————————————
+     Die Entwurfsleiste.
+
+     Hier stand frueher nur eine Zeile, und darueber im Seitenfluss ein
+     grosser dunkler Abschnitt "Das ist ein Entwurf. Kein fertiges
+     Angebot." mit vier Schritten. Der Inhalt war richtig — er loest
+     ein Verkaufsproblem: Wer einen fertig aussehenden Entwurf bekommt,
+     haelt ihn fuer ein Angebot zum Annehmen oder Ablehnen und meldet
+     sich dann einfach nicht mehr.
+
+     Nur war der Abschnitt zu gross. Er schob sich zwischen die Seite
+     des Betriebs und dessen eigenen Fuss und nahm dem Entwurf die
+     Wirkung. Jetzt steckt alles in dieser Leiste: Die ganze Seite
+     gehoert dem Betrieb, und unten laeuft unser schmaler Streifen mit.
+
+     Die ausfuehrlichen Saetze zu den vier Schritten sind nicht
+     geloescht, sondern stehen hinter "Mehr dazu" — sichtbar bleibt,
+     DASS es vier Schritte gibt und wie sie heissen.
+     —————————————————————————————————————————————————————————— -->
+<div class="entwurf" data-entwurf>
+  <div class="entwurf-in">
+
+    <span class="entwurf-zeichen" aria-hidden="true">
+      <svg viewBox="0 0 34 34" focusable="false">
+        <rect width="34" height="34" rx="9.5" fill="#fff"/>
+        <rect x="9.1" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#101F26"/>
+        <rect x="18.3" y="6.6" width="2.7" height="4.8" rx="1.35" fill="#101F26"/>
+        <rect x="6.4" y="9.1" width="17.2" height="16" rx="2.8" fill="#101F26"/>
+        <g fill="#fff">
+          <rect x="8.9" y="15.1" width="2.5" height="2.5" rx=".7"/>
+          <rect x="13.5" y="15.1" width="2.5" height="2.5" rx=".7"/>
+          <rect x="18.1" y="15.1" width="2.5" height="2.5" rx=".7"/>
+          <rect x="8.9" y="19.4" width="2.5" height="2.5" rx=".7"/>
+          <rect x="13.5" y="19.4" width="2.5" height="2.5" rx=".7"/>
+        </g>
+        <circle cx="23.8" cy="23.4" r="7.6" fill="#fff"/>
+        <circle cx="23.8" cy="23.4" r="6.2" fill="#44B370"/>
+        <g fill="#fff">
+          <circle cx="21.2" cy="23.4" r="1.05"/><circle cx="23.8" cy="23.4" r="1.05"/><circle cx="26.4" cy="23.4" r="1.05"/>
+        </g>
+      </svg>
+    </span>
+
+    <span class="entwurf-wort">
+      <b><span class="nur-breit">Unverbindlicher Entwurf für Steuerberatungskanzlei Codex V</span><span class="nur-schmal">Unverbindlicher Entwurf</span></b>
+      <span class="entwurf-unter">Kein fertiges Angebot — Farben, Texte, Bilder und Unterseiten bestimmen Sie mit.</span>
+    </span>
+
+    <ol class="entwurf-schritte" aria-label="So geht es weiter">
+      <li><i>01</i>Gespräch</li>
+      <li><i>02</i>Gestaltung</li>
+      <li><i>03</i>Freigabe</li>
+      <li><i>04</i>Veröffentlichung</li>
+    </ol>
+
+    <span class="entwurf-rechts">
+      <button class="entwurf-mehr-schalter" type="button" aria-expanded="false" aria-controls="tw-mehr">
+        <span class="entwurf-mehr-wort">Mehr dazu</span>
+        <svg viewBox="0 0 12 8" aria-hidden="true" focusable="false"><path d="M1 6.2 6 1.6l5 4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <a class="entwurf-taste" href="https://terminwerk-systeme.de/kontakt/">Gespräch vereinbaren</a>
+    </span>
+  </div>
+
+  <div class="entwurf-mehr" id="tw-mehr" hidden>
+    <div class="entwurf-in entwurf-mehr-in">
+      <ol class="entwurf-lang">
+        <li><span>01</span><b>Gespräch</b><p>Sie sagen, was bleiben soll und was nicht: Farben, Schrift,
+          Aufbau, Texte, Bilder. Auch ein grundsätzlich anderer Entwurf ist möglich.</p></li>
+        <li><span>02</span><b>Gestaltung</b><p>Wir arbeiten Ihre Wünsche ein und gestalten die Unterseiten
+          dazu — Leistungen, Team, Kontakt, Impressum und Datenschutz.</p></li>
+        <li><span>03</span><b>Freigabe</b><p>Sie sehen jede Seite, bevor sie online geht. Änderungen sind
+          bis dahin eingeplant und nicht die Ausnahme.</p></li>
+        <li><span>04</span><b>Veröffentlichung</b><p>Erst nach Ihrer Freigabe geht die Seite live — mit
+          Ihren eigenen Fotos, Impressum und Datenschutzerklärung.</p></li>
+      </ol>
+      <p class="entwurf-bildhinweis">Wo uns noch keine eigenen Aufnahmen vorliegen, stehen hier Bilder aus
+        einer Bildbibliothek. Sie werden durch Ihre eigenen ersetzt.</p>
+    </div>
+  </div>
+
+  <div class="entwurf-fuss">
+    <div class="entwurf-in entwurf-fuss-in">
+      <span>nicht veröffentlicht<span class="entwurf-sperr"> · für Suchmaschinen gesperrt</span></span>
+      <span class="entwurf-fuss-links">
+        <a href="https://terminwerk-systeme.de/impressum/">Impressum</a>
+        <a href="https://terminwerk-systeme.de/datenschutz/">Datenschutz</a>
+        <span class="entwurf-frist">gültig bis 16.12.2026</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  var SLUG = "codex-v";
+
+  /* Bilder: leere Platzhalter rauswerfen, damit nie ein kaputtes Bild steht.
+     Wo ein Kopfbild vorhanden ist, tritt es an die Stelle des Monogramms. */
+  function aufraeumen(){
+    var leer = function(el){
+      var s = el.getAttribute('src');
+      return !s || s === window.location.href || s === '#';
+    };
+
+    /* Ein Chip ohne Inhalt verschwindet. */
+    Array.prototype.forEach.call(document.querySelectorAll('[data-chip]'), function(c){
+      if (!c.textContent.trim()) c.remove();
+    });
+
+    /* Personen: wer keinen Namen hat, existiert nicht. Eine Kanzlei mit
+       einem Anwalt bekommt eine Kachel, nicht drei. Bleibt nur eine
+       uebrig, rueckt sie auf die halbe Breite statt auf ein Drittel. */
+    Array.prototype.forEach.call(document.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = document.querySelectorAll('.team .person');
+    var raster = document.querySelector('.team');
+    if (raster){
+      if (leute.length === 0){
+        var ab = raster.closest('.abschnitt');
+        if (ab) ab.remove();
+      } else if (leute.length === 1){
+        raster.style.gridTemplateColumns = 'minmax(0,22rem)';
+      } else if (leute.length === 2){
+        raster.style.gridTemplateColumns = 'repeat(2,minmax(0,1fr))';
+        raster.style.maxWidth = '52rem';
+      }
+    }
+
+    /* Dasselbe fuer Leistungen, Schritte, Wege und Referenzen: leere
+       Eintraege verschwinden, statt als leere Kaestchen dazustehen. */
+    [['.posten','h3'],['.schritt','h3'],['.weg','h3']].forEach(function(paar){
+      Array.prototype.forEach.call(document.querySelectorAll(paar[0]), function(el){
+        var t = el.querySelector(paar[1]);
+        if (!t || !t.textContent.trim()) el.remove();
+      });
+    });
+
+    /* Fakten: ein Platz ohne Inhalt verschwindet. Lieber zwei Fakten
+       als drei, von denen einer leer ist. */
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt'), function(f){
+      var b = f.querySelector('b'), sp = f.querySelector('span'), p = f.querySelector('p');
+      var leerB = !b || !b.textContent.trim();
+      var leerS = !sp || !sp.textContent.trim();
+      if (leerB && leerS) { f.remove(); return; }
+      if (leerB && b) b.remove();
+      if (leerS && sp) sp.remove();
+      if (p && !p.textContent.trim()) p.remove();
+    });
+
+    /* Zahlen: alle oder keine. Einer von dreien liess die Leiste halbfertig
+       aussehen — links gross "5,0", daneben zweimal Text in der Luft. Fehlt
+       bei einem die Zahl, fallen sie ueberall weg; dann traegt die
+       Beschriftung die Zeile, und das sieht gewollt aus. */
+    var fakten = Array.prototype.slice.call(document.querySelectorAll('.fakt'));
+    var ohneZahl = fakten.filter(function(f){
+      var b = f.querySelector('b');
+      return !b || !b.textContent.trim();
+    });
+    if (fakten.length && ohneZahl.length && ohneZahl.length < fakten.length){
+      fakten.forEach(function(f){
+        var b = f.querySelector('b');
+        if (b) b.remove();
+      });
+      var band = fakten[0].closest('.koennen') || fakten[0].parentNode;
+      if (band && band.setAttribute) band.setAttribute('data-ohne-zahlen', '');
+    }
+    if (fakten.length){
+      var umschlag = fakten[0].parentNode;
+      if (umschlag && umschlag.style) umschlag.style.setProperty('--spalten', String(fakten.length));
+    }
+
+    var kasten = document.querySelector('.fakten');
+    if (kasten && !kasten.querySelector('.fakt')) kasten.remove();
+    var leisteLeer = document.querySelector('.koennen');
+    if (leisteLeer && !leisteLeer.querySelector('.fakt')) leisteLeer.remove();
+
+    /* Buehnen-Ueberschrift: ist kein Akzentteil da, faellt er weg */
+    var akz = document.querySelector('.buehne h1 em');
+    if (akz && !akz.textContent.trim()) akz.remove();
+
+    /* Sprechzeiten: stehen keine echten Zeiten drin, kommt die Tabelle weg
+       und an ihre Stelle ein sauberer Satz. Eine Tabelle mit sechsmal
+       "bitte telefonisch erfragen" sieht schlechter aus als gar keine. */
+    var karte = document.querySelector('.zeiten');
+    if (karte){
+      var werte = Array.prototype.map.call(
+        karte.querySelectorAll('table td:last-child'),
+        function(c){ return c.textContent.trim(); });
+      var echte = werte.filter(function(w){ return w && !/^[-–—.]*$/.test(w); });
+      if (echte.length === 0){
+        var tab = karte.querySelector('table');
+        if (tab){
+          var satz = document.createElement('p');
+          satz.className = 'zeiten-ersatz';
+          satz.textContent = 'Termine vergeben wir telefonisch — so finden wir gleich einen Tag, der Ihnen passt.';
+          tab.parentNode.replaceChild(satz, tab);
+        }
+        var fuss = karte.querySelector('.zeiten-fuss');
+        if (fuss) fuss.textContent = 'Rufen Sie uns an, wir stimmen den Termin direkt mit Ihnen ab.';
+      }
+    }
+
+    /* Logo: traegt es, tritt es an die Stelle der gesetzten Wortmarke.
+       Traegt es nicht, bleibt die Wortmarke stehen — nie beides, nie keines. */
+    var platte = document.querySelector('.logo');
+    if (platte){
+      var bild = platte.querySelector('img');
+      if (!bild || leer(bild)) {
+        platte.remove();
+      } else {
+        var zeigen = function(){
+          if (!bild.naturalWidth) { platte.remove(); return; }
+          platte.style.display = 'flex';
+          var w = document.querySelector('.wortmarke');
+          if (w) w.remove();
+        };
+        if (bild.complete) zeigen(); else {
+          bild.addEventListener('load', zeigen);
+          bild.addEventListener('error', function(){ platte.remove(); });
+        }
+      }
+    }
+
+    /* Ohne eigenes Foto bleibt die hinterlegte Aufnahme des Rahmens stehen. */
+    Array.prototype.forEach.call(document.querySelectorAll('img.band-bild'), function(b){
+      if (leer(b)) b.remove();
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('img.kopfbild'), function(k){
+      if (leer(k)) { k.remove(); return; }
+      k.hidden = false;
+      var mono = k.parentNode.querySelector('.monogramm');
+      if (mono) mono.remove();
+      /* Ist das Foto quer — etwa ein Kopfbereich der alten Seite —,
+         bekommt die Kachel Querformat statt eines engen Beschnitts. */
+      var passe = function(){
+        if (!k.naturalWidth || !k.naturalHeight) return;
+        var v = k.naturalWidth / k.naturalHeight;
+        if (v > 1.3){ k.style.aspectRatio = '16/9'; k.style.objectPosition = 'center 28%'; }
+        else if (v > 1.05){ k.style.aspectRatio = '4/3'; }
+      };
+      if (k.complete) passe(); else k.addEventListener('load', passe);
+    });
+    /* Monogramm aus den Initialen des Namens, Titel werden übersprungen */
+    Array.prototype.forEach.call(document.querySelectorAll('.monogramm'), function(m){
+      var name = (m.getAttribute('data-mono') || '').trim();
+      var teile = name.split(/\s+/).filter(function(w){
+        return w.length > 1 && !/^(dr|med|dent|prof|dipl|m\.?sc|ba|ma)\.?$/i.test(w.replace(/\./g,''));
+      });
+      var ini = teile.slice(0, 2).map(function(w){ return w.charAt(0).toUpperCase(); }).join('');
+      var s = m.querySelector('span');
+      if (s) s.textContent = ini || '·';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', aufraeumen);
+  } else { aufraeumen(); }
+
+  /* Zahlen zaehlen hoch, sobald sie ins Bild kommen. Nur echte Zahlen —
+     "Kostal Partnerbetrieb" bleibt stehen wie es ist. */
+  function zaehlwerk(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+    var felder = [];
+    Array.prototype.forEach.call(document.querySelectorAll('.fakt b, [data-zaehlen]'), function(el){
+      var roh = el.textContent.trim();
+      var t = roh.match(/^(\D*?)(\d[\d.]*)(\D*)$/);
+      if (!t) return;
+      var ziel = parseInt(t[2].replace(/\./g, ''), 10);
+      if (!ziel || ziel > 100000) return;
+      el.dataset.vor = t[1]; el.dataset.nach = t[3]; el.dataset.ziel = String(ziel);
+      el.textContent = t[1] + '0' + t[3];
+      felder.push(el);
+    });
+    if (!felder.length) return;
+    var auge = new IntersectionObserver(function(e){
+      e.forEach(function(x){
+        if (!x.isIntersecting) return;
+        var el = x.target, ziel = +el.dataset.ziel, start = performance.now(), dauer = 1100;
+        (function lauf(jetzt){
+          var p = Math.min((jetzt - start) / dauer, 1);
+          var w = Math.round(ziel * (1 - Math.pow(1 - p, 3)));
+          el.textContent = el.dataset.vor + w + el.dataset.nach;
+          if (p < 1) requestAnimationFrame(lauf);
+        })(start);
+        auge.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    felder.forEach(function(el){ auge.observe(el); });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', zaehlwerk);
+  else zaehlwerk();
+
+  /* Bewegung beim Scrollen. Zurueckhaltend: einblenden und ein Stueck
+     nach oben, gestaffelt innerhalb einer Gruppe. Wer im Betriebssystem
+     weniger Bewegung eingestellt hat, bekommt gar keine. */
+  function bewegung(){
+    var sanft = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (sanft || !('IntersectionObserver' in window)) return;
+
+    var gruppen = ['.a-kopf','.kachel','.posten','.schritt','.weg','.fakt','.person',
+                   '.betrieb-bild','.zeiten','.form','.stoerung-in','.buehne-text > *',
+                   '.gebiet-in > *','.notdienst-in > *','.kontakt > div'];
+    var teile = [];
+    gruppen.forEach(function(w){
+      var n = document.querySelectorAll(w);
+      Array.prototype.forEach.call(n, function(el, i){
+        if (el.dataset.auf) return;
+        el.dataset.auf = '1';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        el.style.transition = 'opacity .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms, ' +
+                              'transform .62s cubic-bezier(.22,.61,.36,1) ' + Math.min(i,5)*70 + 'ms';
+        teile.push(el);
+      });
+    });
+    if (!teile.length) return;
+
+    var zeigen = function(el){
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+    };
+
+    /* Was beim Laden schon im Bild steht, wird sofort gezeigt — sonst
+       startet die Seite mit einem Loch, bis der Beobachter anspringt. */
+    var sofort = [];
+    teile.forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight && r.bottom > 0) sofort.push(el);
+    });
+    requestAnimationFrame(function(){ sofort.forEach(zeigen); });
+
+    var auge = new IntersectionObserver(function(eintraege){
+      eintraege.forEach(function(e){
+        if (!e.isIntersecting) return;
+        zeigen(e.target);
+        auge.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    teile.forEach(function(el){ auge.observe(el); });
+
+    /* Sicherheitsnetz: was nach zwei Sekunden noch unsichtbar ist, wird
+       sichtbar. Lieber ohne Effekt als eine leere Seite. */
+    setTimeout(function(){
+      teile.forEach(function(el){ if (el.style.opacity === '0'){ el.style.opacity='1'; el.style.transform='none'; } });
+    }, 2600);
+
+    /* Das Buehnenfoto faehrt beim Scrollen langsam mit. */
+    var foto = document.querySelector('.buehne-foto');
+    if (foto){
+      var laeuft = false;
+      window.addEventListener('scroll', function(){
+        if (laeuft) return;
+        laeuft = true;
+        requestAnimationFrame(function(){
+          var y = Math.min(window.scrollY, 700);
+          foto.style.transform = 'translate3d(0,' + (y * 0.12) + 'px,0) scale(1.06)';
+          laeuft = false;
+        });
+      }, { passive: true });
+      foto.style.transform = 'scale(1.06)';
+      foto.style.willChange = 'transform';
+    }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bewegung);
+  else bewegung();
+
+  function hinweis(titel, satz){
+    document.title = titel;
+    document.body.innerHTML =
+      '<div style="min-height:100vh;display:grid;place-items:center;padding:2rem;'
+      + 'background:#16211E;color:#AEBCB7;text-align:center;font-family:' + "'Inter'" + ',system-ui,sans-serif">'
+      + '<div style="max-width:46ch">'
+      + '<p style="font-family:' + "'Newsreader'" + ',Georgia,serif;font-size:1.7rem;color:#fff;margin:0 0 .9rem">' + titel + '</p>'
+      + '<p style="margin:0 0 1.4rem;line-height:1.6">' + satz + ' Veröffentlicht war er zu keiner Zeit.</p>'
+      + '<p style="margin:0 0 1.6rem;line-height:1.6">Wenn Sie ihn noch einmal sehen möchten, melden wir ihn gern erneut frei.</p>'
+      + '<p style="margin:0"><a href="https://terminwerk-systeme.de/kontakt/" style="color:#8FC9BC">TerminWerk Systeme</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/impressum/" style="color:#8FC9BC">Impressum</a>'
+      + ' &middot; <a href="https://terminwerk-systeme.de/datenschutz/" style="color:#8FC9BC">Datenschutz</a></p>'
+      + '</div></div>';
+    document.body.style.padding = "0";
+  }
+
+  /* ——— Die Vorschau-Marke unter die Kopfzeile setzen ———
+     Die Marke sitzt fest oben rechts. Ihr Abstand von oben stand bisher
+     als feste Zahl in _marke.css (84 Pixel, auf dem Telefon 68). Das
+     ging so lange gut, wie alle Kopfzeilen gleich hoch waren — auf dem
+     Telefon sind sie es nicht: Bau 92, Zahnarzt 95, GaLaBau 104 Pixel.
+     Die Marke lag dadurch bei sechs von sieben Branchen MITTEN IN DER
+     KOPFZEILE, und zwar genau die Kennzeichnung, die einem Arzt oder
+     einer Klinik zeigen soll, dass dies ein Entwurf ist.
+
+     Statt den Abstand in jeder Vorlage einzeln zu korrigieren, misst
+     die Seite die Kopfzeile jetzt selbst. Gemessen wird die ANFAENGLICHE
+     Hoehe: Kopfzeilen, die beim Scrollen schmaler werden, duerfen die
+     Marke nicht mitwandern lassen — eine springende Kennzeichnung
+     liest sich wie ein Fehler. */
+  (function(){
+    var setzen = function(){
+      var kopf = document.querySelector('.kopf');
+      if (!kopf) return;
+      var mass = kopf.getBoundingClientRect();
+      /* Nicht die Hoehe messen, sondern die UNTERKANTE — bei Kanzlei und
+         Steuer steht ueber der Kopfzeile noch ein Streifen, die Kopfzeile
+         beginnt dort erst bei 43 Pixeln. Mit der blossen Hoehe lag die
+         Marke dort weiterhin mitten drin.
+         Und zwar in beiden Zustaenden: oben auf der Seite steht die
+         Kopfzeile tiefer, nach dem Scrollen klebt sie an ihrem eigenen
+         Rand. Der groessere der beiden Werte gilt, damit die Marke in
+         keinem der beiden Faelle anstoesst. */
+      var kleben = parseFloat(getComputedStyle(kopf).top);
+      if (!isFinite(kleben) || kleben < 0) kleben = 0;
+      var unten = Math.round(Math.max(mass.bottom, kleben + mass.height));
+      if (unten < 30 || unten > 240) return;
+      document.documentElement.style.setProperty('--marke-oben', (unten + 12) + 'px');
+    };
+    setzen();
+    /* Noch einmal, sobald die Schriften geladen sind: vorher misst man
+       die Ersatzschrift, und die ist oft anders hoch. */
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(setzen);
+    setTimeout(setzen, 600);
+    var warten;
+    window.addEventListener('resize', function(){
+      clearTimeout(warten);
+      warten = setTimeout(function(){
+        document.documentElement.style.removeProperty('--marke-oben');
+        requestAnimationFrame(setzen);
+      }, 150);
+    });
+  })();
+
+  /* ——— Die Entwurfsleiste: Aufklappen und Platz freihalten ———
+     Die Leiste liegt fest am unteren Bildrand. Wie hoch sie ist, haengt
+     von der Breite ab — die Schrittkette faellt schmaler weg, der
+     Untertitel auch. Eine feste Zahl in der CSS waere also entweder zu
+     gross (Loch unter dem Fuss des Betriebs) oder zu klein (die Leiste
+     deckt dessen letzte Zeile zu). Darum misst die Seite selbst. */
+  (function(){
+    var leiste = document.querySelector('[data-entwurf]');
+    if (!leiste) return;
+    var schalter = leiste.querySelector('.entwurf-mehr-schalter');
+    var mehr = leiste.querySelector('.entwurf-mehr');
+
+    var abstand = function(){
+      /* Im aufgeklappten Zustand NICHT nachmessen: Sonst schoebe sich
+         die Seite beim Aufklappen unter einem weg. Die Leiste legt
+         sich dann einfach darueber, wie jedes Aufklappmenue. */
+      if (schalter && schalter.getAttribute('aria-expanded') === 'true') return;
+      var h = Math.round(leiste.getBoundingClientRect().height);
+      if (h > 10 && h < 400) document.body.style.paddingBottom = (h + 8) + 'px';
+    };
+    abstand();
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(abstand);
+    setTimeout(abstand, 500);
+    var warten;
+    window.addEventListener('resize', function(){
+      clearTimeout(warten); warten = setTimeout(abstand, 150);
+    });
+
+    if (schalter && mehr){
+      schalter.addEventListener('click', function(){
+        var auf = schalter.getAttribute('aria-expanded') === 'true';
+        schalter.setAttribute('aria-expanded', auf ? 'false' : 'true');
+        mehr.hidden = auf;
+        var wort = schalter.querySelector('.entwurf-mehr-wort');
+        if (wort) wort.textContent = auf ? 'Mehr dazu' : 'Weniger';
+        if (auf) abstand();
+      });
+      /* Mit Escape wieder zu — die Leiste deckt aufgeklappt einen
+         guten Teil des Bildes ab. */
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && schalter.getAttribute('aria-expanded') === 'true') schalter.click();
+      });
+    }
+  })();
+
+  var bis = new Date("2026-12-16T23:59:59");
+  if (!isNaN(bis.getTime()) && Date.now() > bis.getTime()) {
+    hinweis("Dieser Entwurf ist abgelaufen.",
+      "Der unverbindliche Entwurf für Steuerberatungskanzlei Codex V stand bis zum 16.12.2026 zur Ansicht bereit.");
+    return;
+  }
+  try{
+    fetch("../status.json", { cache: "no-store" })
+      .then(function(a){ return a.ok ? a.json() : null; })
+      .then(function(s){
+        if (s && s[SLUG] === "aus") {
+          hinweis("Dieser Entwurf wurde zurückgezogen.",
+            "Der unverbindliche Entwurf für Steuerberatungskanzlei Codex V steht nicht mehr zur Ansicht bereit.");
+        }
+      })
+      .catch(function(){});
+  }catch(e){}
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+  var ruhig = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var A = 'https://images.unsplash.com/';
+  var GROSS = '?auto=format&fit=crop&w=2200&q=78';
+  var MITTE = '?auto=format&fit=crop&w=1500&q=76';
+
+  var VORRAT = [
+    /* Besprechung und Raeume */
+    {id:'photo-1571624436279-b272aff752b5', b:1, t:1},
+    {id:'photo-1697059361419-349e924ed363', b:1, t:1},
+    {id:'photo-1782243206283-f0973fffedfc', b:1, t:1},
+    {id:'photo-1611817083831-9a97057b21e1', b:1, t:1},
+    {id:'photo-1687877954051-3c24d2c60c7d', b:1, t:1},
+    {id:'photo-1777264935754-aa53096c2d68', b:1, t:1},
+    {id:'photo-1462826303086-329426d1aef5', b:1, t:1},
+    {id:'photo-1560840907-9892fb83095e', b:1, t:1},
+    {id:'photo-1718936677222-0d727f3584b5', b:1, t:1},
+    {id:'photo-1687676627265-cd87e0412d6c', t:1},
+    {id:'photo-1559143255-903e3c79ad5d', t:1},
+    {id:'photo-1661169399398-dd271af8f651', t:1},
+    {id:'photo-1745920770891-b46fc1799646', t:1},
+    /* Unterlagen und Gespraech */
+    {id:'photo-1681505531034-8d67054e07f6', t:1},
+    {id:'photo-1517048676732-d65bc937f952', t:1},
+    {id:'photo-1642522029691-029b5a432954', t:1},
+    {id:'photo-1668092548064-730e05fd0324', t:1},
+    {id:'photo-1454165804606-c3d57bc86b40', t:1},
+    {id:'photo-1714974528749-fc028e54feb9', t:1},
+    {id:'photo-1758518730037-a16581a040e8', t:1},
+    {id:'photo-1562564055-71e051d33c19', t:1},
+    {id:'photo-1714974528737-3e6c7e4d11af', t:1},
+    {id:'photo-1714974528693-f77f6fcc56af', t:1},
+    {id:'photo-1714974528718-b3b52f91c334', t:1}
+  ];
+
+  var samen = (function(t){ var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) >>> 0; return h; })("codex-v" || "x");
+  var vergeben = {};
+  function streuung(versatz){
+    var x = (samen ^ (((versatz || 0) + 1) * 2654435761)) >>> 0;
+    x = (x ^ (x >>> 15)) >>> 0;
+    x = Math.imul(x, 2246822519) >>> 0;
+    return ((x ^ (x >>> 13)) >>> 0);
+  }
+  /* Buehne und Band waehlen nach Streuung, nicht nach Stichwort: Der
+     Text, den man ihnen gaebe, ist die Aneinanderreihung aller
+     Rechtsgebiete, und darin gewinnt irgendein Zufallswort. Ein
+     Besprechungsraum passt immer, und zwei Kanzleien am selben Ort
+     bekommen verschiedene Bilder. */
+  function waehle(rolle, versatz){
+    var satz = VORRAT.filter(function(e){ return e[rolle] && !vergeben[e.id]; });
+    if (!satz.length) satz = VORRAT.filter(function(e){ return e[rolle]; });
+    if (!satz.length) satz = VORRAT;
+    var g = satz[streuung(versatz) % satz.length];
+    vergeben[g.id] = 1;
+    return A + g.id;
+  }
+
+  /* ——— Leere Felder raeumen ———
+     Die Ueberschriften sind h3: Der gemeinsame Kern raeumt .posten,
+     .schritt und .weg nach h3 auf und wuerde sonst ALLE entfernen. */
+  var karten = Array.prototype.slice.call(document.querySelectorAll('.posten-reihe .posten'))
+    .filter(function(k){
+      var h = k.querySelector('h3');
+      if (!h || !h.textContent.trim()){ k.remove(); return false; }
+      return true;
+    });
+  if (!karten.length){
+    var ab = document.querySelector('.leistungen'); if (ab) ab.remove();
+  } else {
+    karten.forEach(function(k, i){
+      var nr = k.querySelector('.posten-nr');
+      if (nr) nr.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+    });
+  }
+
+  /* Leiste unten im Bild: leere Gebiete raus, und wenn keins bleibt,
+     faellt die ganze Leiste weg. */
+  (function(){
+    var reihe = document.querySelector('[data-gebiete]');
+    if (!reihe) return;
+    var da = Array.prototype.slice.call(reihe.querySelectorAll('.gebiet')).filter(function(g){
+      var t = g.textContent.replace(/^\s*\d+\s*/, '').trim();
+      if (!t){ g.remove(); return false; }
+      return true;
+    });
+    if (!da.length){ var b = reihe.closest('.gebiete'); if (b) b.remove(); return; }
+    da.forEach(function(g, i){
+      var n = g.querySelector('i');
+      if (n) n.textContent = (i + 1 < 10 ? '0' : '') + (i + 1);
+    });
+    if (da.length < 4) reihe.style.gridTemplateColumns = 'repeat(' + da.length + ',1fr)';
+  })();
+
+  /* Anfahrtsband */
+  (function(){
+    var band = document.querySelector('.band');
+    if (!band) return;
+    var wege = Array.prototype.slice.call(band.querySelectorAll('.weg')).filter(function(w){
+      var h = w.querySelector('h3');
+      if (!h || !h.textContent.trim()){ w.remove(); return false; }
+      return true;
+    });
+    var h2 = band.querySelector('h2');
+    if (h2 && !h2.textContent.trim()) h2.remove();
+    var p = band.querySelector('.band-in > p');
+    if (p && !p.textContent.trim()) p.remove();
+    if (!wege.length && !band.querySelector('h2')) band.remove();
+    else if (wege.length < 3){
+      var r = band.querySelector('.wege');
+      if (r) r.style.gridTemplateColumns = 'repeat(' + wege.length + ',minmax(0,19rem))';
+    }
+  })();
+
+  /* Fristband: ohne Ueberschrift UND ohne Text bliebe ein dunkles
+     Band stehen, in dem nur die Telefonnummer haengt. */
+  (function(){
+    var ab = document.querySelector('.frist');
+    if (!ab) return;
+    var h = ab.querySelector('h2'), p = ab.querySelector('p');
+    if (!((h && h.textContent.trim()) || (p && p.textContent.trim()))){ ab.remove(); return; }
+    if (h && !h.textContent.trim()) h.remove();
+    var l = ab.querySelector('.label');
+    if (l && !l.textContent.trim()) l.remove();
+  })();
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-weg-wenn-leer]'), function(d){
+    var b = d.querySelector('span');
+    var rest = d.textContent.replace(b ? b.textContent : '', '').trim();
+    if (!rest) d.remove();
+  });
+  (function(){
+    var a = document.querySelector('.adresse');
+    if (!a) return;
+    var n = a.children.length;
+    if (!n){ a.remove(); return; }
+    if (n < 3) a.style.gridTemplateColumns = 'repeat(' + n + ',1fr)';
+  })();
+
+  /* Team */
+  (function(){
+    var raster = document.querySelector('.personen');
+    if (!raster) return;
+    Array.prototype.forEach.call(raster.querySelectorAll('.person'), function(pp){
+      var h = pp.querySelector('h3');
+      if (!h || !h.textContent.trim()) pp.remove();
+    });
+    var leute = raster.querySelectorAll('.person');
+    if (!leute.length){ var ab2 = raster.closest('.team'); if (ab2) ab2.remove(); return; }
+    if (leute.length < 3) raster.style.gridTemplateColumns = 'repeat(' + leute.length + ',minmax(0,24rem))';
+  })();
+
+  /* ——— Bilder setzen ———
+     Nur einspringen, wo nichts steht: Hat die alte Seite eigene Fotos
+     geliefert, bleiben die stehen. */
+  (function(){
+    function setzen(sel, rolle, versatz, groesse){
+      var el = document.querySelector(sel);
+      if (!el) return;
+      /* Hat die alte Seite ein eigenes Foto geliefert, gewinnt das.
+         Stockbilder sind die Notloesung, nicht die erste Wahl. */
+      var eigen = (el.getAttribute('data-eigen') || '').trim();
+      el.style.backgroundImage = eigen
+        ? 'url("' + eigen + '")'
+        : 'url("' + waehle(rolle, versatz) + groesse + '")';
+    }
+    setzen('[data-foto-buehne]', 'b', 0, GROSS);
+    setzen('[data-foto-band]',   't', 3, MITTE);
+  })();
+
+  /* ——— Leiste faehrt ein, sobald die Buehne durch ist ——— */
+  (function(){
+    var leiste = document.querySelector('[data-leiste]');
+    var buehne = document.querySelector('.buehne');
+    if (!leiste || !buehne) return;
+    var laeuft = false;
+    var pruefe = function(){
+      laeuft = false;
+      if (buehne.getBoundingClientRect().bottom < 40) leiste.setAttribute('data-da', '');
+      else leiste.removeAttribute('data-da');
+    };
+    window.addEventListener('scroll', function(){
+      if (!laeuft){ laeuft = true; requestAnimationFrame(pruefe); }
+    }, { passive: true });
+    window.addEventListener('resize', pruefe);
+    pruefe();
+  })();
+
+  /* ——— Fortschrittsfaden ——— */
+  (function(){
+    var f = document.querySelector('[data-fortschritt]');
+    if (!f) return;
+    var laeuft = false;
+    var zeichne = function(){
+      laeuft = false;
+      var weg = document.documentElement.scrollHeight - window.innerHeight;
+      f.style.width = ((weg > 0 ? Math.min(1, window.scrollY / weg) : 0) * 100).toFixed(2) + '%';
+    };
+    window.addEventListener('scroll', function(){
+      if (!laeuft){ laeuft = true; requestAnimationFrame(zeichne); }
+    }, { passive: true });
+    window.addEventListener('resize', zeichne);
+    zeichne();
+  })();
+
+  /* ——— Bandbild wandert mit ———
+     Ueber transform und nicht ueber background-position: das laeuft
+     auf der Grafikkarte. Das Buehnenbild ist ausgenommen, dort laeuft
+     schon Ken Burns auf derselben Eigenschaft. */
+  (function(){
+    if (ruhig) return;
+    var el = document.querySelector('[data-foto-band]');
+    if (!el) return;
+    var laeuft = false;
+    var zeichne = function(){
+      laeuft = false;
+      var hoehe = window.innerHeight;
+      var m = el.parentNode.getBoundingClientRect();
+      if (m.bottom < -200 || m.top > hoehe + 200) return;
+      var mitte = (m.top + m.height / 2 - hoehe / 2) / hoehe;
+      el.style.transform = 'translate3d(0,' + (mitte * 46).toFixed(1) + 'px,0)';
+    };
+    window.addEventListener('scroll', function(){
+      if (!laeuft){ laeuft = true; requestAnimationFrame(zeichne); }
+    }, { passive: true });
+    window.addEventListener('resize', zeichne);
+    zeichne();
+  })();
+
+  /* ——— Zeitachse fuellt sich mit dem Scrollstand ——— */
+  (function(){
+    var strahl = document.querySelector('[data-strahl]');
+    var gleis = document.querySelector('[data-gleis]');
+    if (!strahl || !gleis) return;
+    var schritte = Array.prototype.slice.call(strahl.querySelectorAll('.schritt'));
+    if (!schritte.length) return;
+    if (ruhig){ gleis.style.width = '100%'; schritte.forEach(function(s){ s.setAttribute('data-an',''); }); return; }
+    var laeuft = false;
+    var zeichne = function(){
+      laeuft = false;
+      var m = strahl.getBoundingClientRect(), hoehe = window.innerHeight;
+      var anteil = (hoehe * 0.72 - m.top) / Math.max(1, m.height + hoehe * 0.2);
+      anteil = Math.max(0, Math.min(1, anteil));
+      gleis.style.width = (anteil * 100).toFixed(1) + '%';
+      schritte.forEach(function(s, i){
+        if (anteil >= (i + 0.5) / schritte.length) s.setAttribute('data-an', '');
+        else s.removeAttribute('data-an');
+      });
+    };
+    window.addEventListener('scroll', function(){
+      if (!laeuft){ laeuft = true; requestAnimationFrame(zeichne); }
+    }, { passive: true });
+    window.addEventListener('resize', zeichne);
+    zeichne();
+  })();
+})();
+</script>
+</body>
+</html>
