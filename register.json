@@ -1,5 +1,14 @@
 [
   {
+    "slug": "praxis-dr-jakob-2",
+    "firma": "Praxis Dr. Jakob",
+    "branche": "zahnarzt",
+    "gebaut": "2026-11-16",
+    "bis": "2026-12-16",
+    "adresse": "https://www.zahnarzt-hamburg-neuerwall.de/",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "dr-jakob",
     "firma": "Praxis Dr. Jakob",
     "branche": "zahnarzt",
