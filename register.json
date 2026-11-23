@@ -1,5 +1,14 @@
 [
   {
+    "slug": "gaertner-hamburg",
+    "firma": "Gärtner Hamburg",
+    "branche": "galabau",
+    "gebaut": "2026-11-23",
+    "bis": "2026-12-23",
+    "adresse": "",
+    "von": "david.senfft@outlook.de"
+  },
+  {
     "slug": "gordon-neumann",
     "firma": "Gordon Neumann – Fachanwalt für Arbeitsrecht",
     "branche": "kanzlei",
