@@ -1,5 +1,16 @@
 [
   {
+    "slug": "martinovic-bau",
+    "firma": "MARTINOVIC Hoch- und Tiefbau GmbH",
+    "branche": "bau",
+    "vorlageBranche": "bau",
+    "vorlage": "v3",
+    "gebaut": "2026-11-25",
+    "bis": "2026-12-25",
+    "adresse": "https://www.martinovic-bau.de/",
+    "von": "nicolas@terminwerk-systeme.de"
+  },
+  {
     "slug": "gaertner-hamburg",
     "firma": "Gärtner Hamburg",
     "branche": "galabau",
