@@ -1,5 +1,22 @@
 [
   {
+    "slug": "muhs-gartenbau",
+    "firma": "Muhs Garten- und Landschaftsbau GmbH",
+    "branche": "galabau",
+    "vorlageBranche": "galabau",
+    "vorlage": "v2",
+    "gebaut": "2026-11-26",
+    "bis": "2026-12-26",
+    "adresse": "https://www.muhs-gartenbau.de/",
+    "von": "david.senfft@outlook.de",
+    "fakten": {
+      "ampel": "gruen",
+      "offen": [],
+      "gestrichen": 0,
+      "korrigiert": 0
+    }
+  },
+  {
     "slug": "martinovic-bau",
     "firma": "MARTINOVIC Hoch- und Tiefbau GmbH",
     "branche": "bau",
